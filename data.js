@@ -4863,9 +4863,10 @@ SC_DATA.getDefaultComponents = function(shipSpec) {
     const stockLoadout = SC_DATA.stockLoadouts[shipSpec.name];
 
     // Populate weapons from stock or leave empty
+    // Falls back to first stock weapon if specific index doesn't exist
     if (shipSpec.weapons && shipSpec.weapons.length > 0) {
         defaults.weapons = shipSpec.weapons.map((w, i) => ({
-            name: stockLoadout?.weapons?.[i] || "",
+            name: stockLoadout?.weapons?.[i] || stockLoadout?.weapons?.[0] || "",
             size: w.size
         }));
     }
