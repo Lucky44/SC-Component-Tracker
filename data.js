@@ -1445,7 +1445,7 @@ quantumDrives: [
             name: "RSI Perseus",
             manufacturer: "RSI",
             size: "Large",
-            weapons: [{ size: 7 }, { size: 7 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 1 }, { size: 1 }],
+            weapons: [{ size: 8 }, { size: 8 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 1 }, { size: 1 }],
             shields: { count: 1, size: 3 },
             powerPlants: { count: 1, size: 3 },
             coolers: { count: 1, size: 3 },
@@ -3102,28 +3102,28 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        weapons: ["FL-33 Cannon","Leonids Cannon"]
+        weapons: ["Leonids Cannon","Leonids Cannon","FL-33 Cannon","FL-33 Cannon"]
     },
     "RSI Meteor PYAM Exec": {
         quantumDrives: ["Siren"],
         powerPlants: ["Charger"],
         coolers: ["Polar"],
         shields: ["ForceWall"],
-        weapons: ["M5A Cannon","Leonids Cannon"]
+        weapons: ["Leonids Cannon","Leonids Cannon","M5A Cannon","M5A Cannon"]
     },
     "RSI Meteor Wikelo Sneak Special": {
         quantumDrives: ["Zephyr"],
         powerPlants: ["Slipstream"],
         coolers: ["VaporBlock"],
         shields: ["Mirage"],
-        weapons: ["Omnisky IX Cannon","Leonids Cannon"]
+        weapons: ["Leonids Cannon","Leonids Cannon","Omnisky IX Cannon","Omnisky IX Cannon"]
     },
     "RSI Perseus": {
         quantumDrives: ["Pontes"],
         powerPlants: ["Centurion"],
         coolers: ["Mercury"],
         shields: ["SureStop"],
-        weapons: ["RSI Medusa Cannon","Mantis GT-220 Gatling","M2C \"Swarm\""]
+        weapons: ["RSI Medusa Cannon","RSI Medusa Cannon","Mantis GT-220 Gatling","Mantis GT-220 Gatling","Mantis GT-220 Gatling","Mantis GT-220 Gatling","M2C \"Swarm\"","M2C \"Swarm\""]
     },
     "RSI Polaris": {
         quantumDrives: ["Erebos"],
