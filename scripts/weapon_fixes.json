@@ -1,0 +1,543 @@
+{
+  "Aegis Avenger Stalker": {
+    "pilotWeapons": [
+      "Revenant Gatling",
+      "CF-227 Badger Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Aegis Avenger Titan": {
+    "pilotWeapons": [
+      "Revenant Gatling",
+      "CF-227 Badger Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Aegis Avenger Warlock": {
+    "pilotWeapons": [
+      "Revenant Gatling",
+      "CF-227 Badger Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Aegis Hammerhead": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater"
+    ]
+  },
+  "Aegis Reclaimer": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-557 Galdereen Repeater",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "Aegis Redeemer": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "AD4B Ballistic Gatling",
+      "AD4B Ballistic Gatling",
+      "M5A Cannon"
+    ]
+  },
+  "Aegis Retaliator Bomber": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-227 Badger Repeater",
+      "CF-227 Badger Repeater",
+      "CF-227 Badger Repeater",
+      "CF-227 Badger Repeater",
+      "CF-227 Badger Repeater"
+    ]
+  },
+  "Aegis Vanguard Sentinel": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "Suckerpunch-L Cannon"
+    ]
+  },
+  "Aegis Vanguard Warden": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-227 Badger Repeater"
+    ]
+  },
+  "Aegis Vanguard Hoplite": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-227 Badger Repeater"
+    ]
+  },
+  "Anvil C8X Pisces Expedition": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      "CF-227 Badger Repeater",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Anvil Carrack": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater"
+    ]
+  },
+  "Anvil F7C Hornet Mk II": {
+    "pilotWeapons": [
+      "CF-447 Rhino Repeater",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Anvil F7C-M Super Hornet": {
+    "pilotWeapons": [
+      "CF-337 Panther Repeater",
+      "Mantis GT-220 Gatling",
+      "CF-227 Badger Repeater",
+      ""
+    ],
+    "turretWeapons": [
+      "CF-447 Rhino Repeater"
+    ]
+  },
+  "Anvil F7A Hornet Mk II": {
+    "pilotWeapons": [
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater",
+      "Omnisky IX Cannon",
+      "Omnisky IX Cannon"
+    ],
+    "turretWeapons": null
+  },
+  "Anvil F8A Lightning": {
+    "pilotWeapons": [
+      "M5A Cannon",
+      "CF-337 Panther Repeater",
+      "CF-337 Panther Repeater",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Anvil Gladiator": {
+    "pilotWeapons": [
+      "CF-337 Panther Repeater",
+      "CF-337 Panther Repeater"
+    ],
+    "turretWeapons": [
+      "CF-337 Panther Repeater"
+    ]
+  },
+  "Anvil Hawk": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      "CF-227 Badger Repeater",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Anvil Valkyrie": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-447 Rhino Repeater",
+      "CF-337 Panther Repeater",
+      "CF-337 Panther Repeater",
+      "CF-337 Panther Repeater",
+      ""
+    ]
+  },
+  "Aopoa Khartu-al": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "C.O. Mustang Alpha": {
+    "pilotWeapons": [
+      "CF-117 Bulldog Repeater",
+      "",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "C.O. Mustang Delta": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      "CF-227 Badger Repeater",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "C.O. Mustang Beta": {
+    "pilotWeapons": [
+      "CF-117 Bulldog Repeater",
+      "",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Crusader A2 Hercules Starlifter": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "Omnisky XV Cannon",
+      "CF-447 Rhino Repeater"
+    ]
+  },
+  "Crusader C2 Hercules Starlifter": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-447 Rhino Repeater"
+    ]
+  },
+  "Crusader Spirit A1": {
+    "pilotWeapons": [
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "Drake Buccaneer": {
+    "pilotWeapons": [
+      "CF-447 Rhino Repeater",
+      "Revenant Gatling",
+      "CF-337 Panther Repeater",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Drake Caterpillar": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-227 Badger Repeater",
+      "CF-227 Badger Repeater"
+    ]
+  },
+  "Drake Corsair": {
+    "pilotWeapons": [
+      "CF-557 Galdereen Repeater",
+      "CF-557 Galdereen Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "Drake Cutter": {
+    "pilotWeapons": [
+      "CF-117 Bulldog Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Drake Herald": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      "CF-227 Badger Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "Esperia Blade": {
+    "pilotWeapons": [
+      "CF-447 Rhino Repeater",
+      "CF-337 Panther Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Esperia Glaive": {
+    "pilotWeapons": [
+      "'WRATH' Cannon",
+      "CF-557 Galdereen Repeater",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Esperia Prowler": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-557 Galdereen Repeater",
+      "CF-337 Panther Repeater"
+    ]
+  },
+  "Esperia Talon": {
+    "pilotWeapons": [
+      "CF-337 Panther Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Gatac Syulen": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Kruger P-52 Merlin": {
+    "pilotWeapons": [
+      "CF-117 Bulldog Repeater",
+      "CF-117 Bulldog Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "MISC Hull A": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "MISC Hull C": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-447 Rhino Repeater",
+      "",
+      ""
+    ]
+  },
+  "MISC Reliant Tana": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      "CF-227 Badger Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "MISC Starfarer": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "M6A Cannon",
+      "CF-337 Panther Repeater"
+    ]
+  },
+  "MISC Starfarer Gemini": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-557 Galdereen Repeater",
+      "CF-337 Panther Repeater"
+    ]
+  },
+  "Mirai Fury": {
+    "pilotWeapons": [
+      "CF-117 Bulldog Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Mirai Guardian": {
+    "pilotWeapons": [
+      "CF-117 Bulldog Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Origin 100i": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "Origin 125a": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Origin 135c": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "Origin 300i": {
+    "pilotWeapons": [
+      "SW16BR3 “Shredder” Repeater",
+      "CF-227 Badger Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Origin 325a": {
+    "pilotWeapons": [
+      "CF-447 Rhino Repeater",
+      "CF-337 Panther Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Origin 350r": {
+    "pilotWeapons": [
+      "M5A Cannon",
+      "CF-227 Badger Repeater",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "Origin 400i": {
+    "pilotWeapons": [
+      "CF-447 Rhino Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "Origin 600i Explorer": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "M7A Cannon",
+      "CF-447 Rhino Repeater"
+    ]
+  },
+  "Origin 600i Touring": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "M7A Cannon",
+      "CF-447 Rhino Repeater"
+    ]
+  },
+  "Origin 890 Jump": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "CF-557 Galdereen Repeater",
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater"
+    ]
+  },
+  "RSI Aurora CL": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "RSI Aurora ES": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "RSI Aurora LN": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      "",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "RSI Aurora LX": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "RSI Aurora MR": {
+    "pilotWeapons": [
+      "CF-227 Badger Repeater",
+      "",
+      ""
+    ],
+    "turretWeapons": null
+  },
+  "RSI Constellation Andromeda": {
+    "pilotWeapons": [
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "RSI Constellation Aquila": {
+    "pilotWeapons": [
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "RSI Constellation Phoenix": {
+    "pilotWeapons": [
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "RSI Constellation Taurus": {
+    "pilotWeapons": [
+      "CF-447 Rhino Repeater",
+      "CF-447 Rhino Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "RSI Perseus": {
+    "pilotWeapons": null,
+    "turretWeapons": [
+      "RSI Medusa Cannon",
+      "RSI Medusa Cannon",
+      "Mantis GT-220 Gatling",
+      "Mantis GT-220 Gatling",
+      "CF-117 Bulldog Repeater"
+    ]
+  },
+  "RSI Zeus Mk II CL": {
+    "pilotWeapons": [
+      "CF-337 Panther Repeater",
+      "CF-337 Panther Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "RSI Zeus Mk II ES": {
+    "pilotWeapons": [
+      "CF-337 Panther Repeater",
+      "CF-337 Panther Repeater"
+    ],
+    "turretWeapons": null
+  },
+  "RSI Zeus Mk II MR": {
+    "pilotWeapons": [
+      "CF-337 Panther Repeater",
+      "CF-337 Panther Repeater"
+    ],
+    "turretWeapons": null
+  }
+}

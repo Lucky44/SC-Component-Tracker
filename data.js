@@ -65,7 +65,7 @@ weapons: {
         { name: "Singe Cannon (S2)", manufacturer: "Banu", type: "Gun" },
         { name: "Sledge II Mass Driver Cannon", manufacturer: "Klaus & Werner", type: "Gun" },
         { name: "Strife Mass Driver Cannon", manufacturer: "Apocalypse Arms", type: "Gun" },
-        { name: "Suckerpunch-L Cannon", manufacturer: "Joker Engineering", type: "Gun" },
+        { name: "Suckerpunch-L Cannon Cannon", manufacturer: "Joker Engineering", type: "Gun" },
         { name: "SureGrip TH2 Tractor Beam", manufacturer: "Greycat Industrial", type: "Gun" },
         { name: "SW16BR2 “Sawbuck” Repeater", manufacturer: "Behring", type: "Gun" },
         { name: "Tarantula GT-870 Mark 2 Cannon", manufacturer: "Gallenson Tactical Systems", type: "Gun" },
@@ -602,11 +602,11 @@ quantumDrives: [
             size: "Large",
             pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 2, size: 2 },
-                { type: "manned", guns: 2, size: 2 },
-                { type: "manned", guns: 2, size: 2 },
-                { type: "manned", guns: 2, size: 2 },
-                { type: "manned", guns: 2, size: 2 }
+                { type: "manned", guns: 2, size: 3 },
+                { type: "manned", guns: 2, size: 3 },
+                { type: "manned", guns: 2, size: 3 },
+                { type: "manned", guns: 2, size: 3 },
+                { type: "manned", guns: 2, size: 3 }
             ],
             shields: { count: 6, size: 2 },
             powerPlants: { count: 2, size: 2 },
@@ -2022,14 +2022,14 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["SuperDrive"],
         coolers: ["Mercury"],
         shields: ["Stronghold"],
-        turretWeapons: ["CF-447 Rhino","CF-447 Rhino","CF-447 Rhino","CF-447 Rhino","CF-447 Rhino","CF-447 Rhino"]
+        turretWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater"]
     },
     "Aegis Hammerhead 2949 Best In Show Edition": {
         quantumDrives: ["Kama"],
         powerPlants: ["SuperDrive"],
         coolers: ["Mercury"],
         shields: ["Stronghold"],
-        turretWeapons: ["CF-447 Rhino","CF-447 Rhino","CF-447 Rhino","CF-447 Rhino","CF-447 Rhino","CF-447 Rhino"]
+        turretWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater"]
     },
     "Aegis Idris-M": {
         quantumDrives: ["Frontline"],
@@ -2089,11 +2089,11 @@ SC_DATA.stockLoadouts = {
     },
     "Aegis Redeemer": {
         quantumDrives: ["Crossfield"],
-        powerPlants: ["Centurion","Centurion"],
+        powerPlants: ["Durango","Durango"],
         coolers: ["Blizzard"],
         shields: ["FullStop"],
         pilotWeapons: ["C-788 Cannon","C-788 Cannon"],
-        turretWeapons: ["AD4B","AD4B","M5A"]
+        turretWeapons: ["AD4B Ballistic Gatling","AD4B Ballistic Gatling","M5A Cannon"]
     },
     "Aegis Retaliator": {
         quantumDrives: ["Crossfield"],
@@ -2108,7 +2108,13 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Maelstrom"],
         coolers: ["Arctic"],
         shields: ["FullStop"],
-        turretWeapons: ["CF-337 Panther","CF-337 Panther","CF-337 Panther","CF-337 Panther","CF-337 Panther"]
+        turretWeapons: [
+            "CF-337 Panther Repeater",
+            "CF-337 Panther Repeater",
+            "CF-337 Panther Repeater",
+            "CF-337 Panther Repeater",
+            "CF-337 Panther Repeater"
+        ]
     },
     "Aegis Sabre": {
         quantumDrives: ["Drift"],
@@ -2180,7 +2186,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Arctic"],
         shields: ["FullStop"],
         pilotWeapons: ["Deadbolt V Cannon","BRVS Repeater","BRVS Repeater","BRVS Repeater","BRVS Repeater"],
-        turretWeapons: ["SW16BR2"]
+        turretWeapons: ["CF-227 Badger Repeater"]
     },
     "Aegis Vanguard Sentinel": {
         quantumDrives: ["Nova"],
@@ -2188,7 +2194,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["HeatSink"],
         shields: ["Sheut"],
         pilotWeapons: ["Attrition-5 Repeater","ATVS Repeater","ATVS Repeater","ATVS Repeater","ATVS Repeater"],
-        turretWeapons: ["Suckerpunch-L"]
+        turretWeapons: ["Suckerpunch-L Cannon Cannon"]
     },
     "Aegis Vanguard Warden": {
         quantumDrives: ["Crossfield"],
@@ -2196,7 +2202,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Arctic"],
         shields: ["FullStop"],
         pilotWeapons: ["Deadbolt V Cannon","MVSA Cannon","MVSA Cannon","MVSA Cannon","MVSA Cannon"],
-        turretWeapons: ["SW16BR2"]
+        turretWeapons: ["CF-227 Badger Repeater"]
     },
     "Anvil Arrow": {
         quantumDrives: ["Beacon"],
@@ -2275,7 +2281,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Reliance"],
         coolers: ["Ice-Flush"],
         shields: ["Barbican"],
-        turretWeapons: ["CF-447 Rhino","CF-447 Rhino","CF-447 Rhino","CF-447 Rhino"]
+        turretWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater"]
     },
     "Anvil Carrack Expedition": {
         quantumDrives: ["Kama"],
@@ -2455,11 +2461,11 @@ SC_DATA.stockLoadouts = {
     },
     "Anvil Gladiator": {
         quantumDrives: ["Beacon"],
-        powerPlants: ["Maelstrom"],
+        powerPlants: ["Regulus"],
         coolers: ["Bracer"],
-        shields: ["FullStop"],
-        pilotWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater"],
-        turretWeapons: ["CF-337 Panther"]
+        shields: ["Shimmer"],
+        pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"],
+        turretWeapons: ["CF-337 Panther Repeater"]
     },
     "Anvil Hawk": {
         quantumDrives: ["Rush"],
@@ -2522,15 +2528,15 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Maelstrom"],
         coolers: ["Arctic"],
         shields: ["FullStop"],
-        pilotWeapons: ["CF-337 Panther","CF-337 Panther"],
-        turretWeapons: ["CF-447 Rhino","CF-447 Rhino","CF-337 Panther","CF-337 Panther"]
+        pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"],
+        turretWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater"]
     },
     "Aopoa Khartu-al": {
         quantumDrives: ["Eos"],
         powerPlants: ["DynaFlux"],
         coolers: ["Polar"],
         shields: ["ForceWall"],
-        pilotWeapons: ["CF-447 Rhino Repeater"],
+        pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"],
         turretWeapons: []
     },
     "Aopoa San'tok.yāi": {
@@ -2541,7 +2547,7 @@ SC_DATA.stockLoadouts = {
         pilotWeapons: ["Yeng’tu Repeater"],
         turretWeapons: []
     },
-    "Argo CSV-SM\n": {
+    "Argo CSV-SM": {
         quantumDrives: [],
         powerPlants: ["Radix"],
         coolers: ["Frost-Star SL"],
@@ -4055,10 +4061,13 @@ SC_DATA.getDefaultComponents = function(shipSpec) {
         }
     }
 
-    // Populate pilot weapons from stock or leave empty
+    const stockPilotWeapons = Array.isArray(stockLoadout?.pilotWeapons) && stockLoadout.pilotWeapons.length > 0 ? stockLoadout.pilotWeapons : null;
+    const stockTurretWeapons = Array.isArray(stockLoadout?.turretWeapons) && stockLoadout.turretWeapons.length > 0 ? stockLoadout.turretWeapons : null;
+
+    // Populate pilot weapons from stock or leave empty (avoid duplicating the first stock weapon across all mounts)
     if (shipSpec.pilotWeapons && shipSpec.pilotWeapons.length > 0) {
         defaults.pilotWeapons = shipSpec.pilotWeapons.map((w, i) => ({
-            name: stockLoadout?.pilotWeapons?.[i] || stockLoadout?.pilotWeapons?.[0] || "",
+            name: stockPilotWeapons ? (stockPilotWeapons[i] || "") : "",
             size: w.size
         }));
     }
@@ -4066,12 +4075,12 @@ SC_DATA.getDefaultComponents = function(shipSpec) {
     // Populate turrets with stock weapons. Only apply stock loadout mapping when it provides
     // a weapon per turret; otherwise leave weapons blank so Loadout extraction/grouping can run.
     if (shipSpec.turrets && shipSpec.turrets.length > 0) {
-        if (stockLoadout && Array.isArray(stockLoadout.turretWeapons) && stockLoadout.turretWeapons.length === shipSpec.turrets.length) {
+        if (stockTurretWeapons && stockTurretWeapons.length > 0) {
             defaults.turrets = shipSpec.turrets.map((t, i) => ({
                 type: t.type,
                 guns: t.guns,
                 size: t.size,
-                weapon: stockLoadout.turretWeapons[i] || ""
+                weapon: stockTurretWeapons[i] || ''
             }));
         } else {
             // create turret stubs without weapon names to allow better extraction/grouping later
@@ -4298,7 +4307,8 @@ SC_DATA.getDefaultComponents = function(shipSpec) {
     }
 
     // Ensure each collapsed turret has a sensible representative weapon name if empty
-    if (defaults.turrets && defaults.turrets.length > 0) {
+    // Skip auto-fill when explicit stock turret weapons were supplied; blanks are safer than incorrect defaults.
+    if (!stockTurretWeapons && defaults.turrets && defaults.turrets.length > 0) {
         for (let i = 0; i < defaults.turrets.length; i++) {
             const t = defaults.turrets[i];
             if (!t) continue;
@@ -4308,15 +4318,17 @@ SC_DATA.getDefaultComponents = function(shipSpec) {
                     t.weapon = weaponsOfSize[0].name;
                 } else {
                     // fallback: find any weapon whose size <= mount size
-                    const anyMatch = Object.keys(SC_DATA.weapons).map(k => parseInt(k,10)).sort((a,b)=>a-b)
+                    const anyMatch = Object.keys(SC_DATA.weapons).map(k => parseInt(k, 10)).sort((a, b) => a - b)
                         .reverse()
-                        .find(sz => (SC_DATA.weapons[sz]||[]).length > 0 && sz <= (t.size || Infinity));
+                        .find(sz => (SC_DATA.weapons[sz] || []).length > 0 && sz <= (t.size || Infinity));
                     if (anyMatch) {
                         t.weapon = SC_DATA.weapons[anyMatch][0].name;
                     }
                 }
             }
-    
+        }
+    }
+
     // Ship-specific override: Aegis Reclaimer weapon turrets
     // Use explicit, known stock weapons for the Reclaimer's primary turrets.
     try {
@@ -4333,8 +4345,6 @@ SC_DATA.getDefaultComponents = function(shipSpec) {
         }
     } catch (e) {
         // ignore
-    }
-        }
     }
 
     return defaults;
