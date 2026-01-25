@@ -2186,7 +2186,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Arctic"],
         shields: ["FullStop"],
         pilotWeapons: ["Deadbolt V Cannon","BRVS Repeater","BRVS Repeater","BRVS Repeater","BRVS Repeater"],
-        turretWeapons: ["SW16BR2 "Sawbuck" Repeater"]
+        turretWeapons: ["NDB-28 Repeater"]
     },
     "Aegis Vanguard Sentinel": {
         quantumDrives: ["Nova"],
@@ -2202,7 +2202,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Arctic"],
         shields: ["FullStop"],
         pilotWeapons: ["Deadbolt V Cannon","MVSA Cannon","MVSA Cannon","MVSA Cannon","MVSA Cannon"],
-        turretWeapons: ["SW16BR2 "Sawbuck" Repeater"]
+        turretWeapons: ["NDB-28 Repeater"]
     },
     "Anvil Arrow": {
         quantumDrives: ["Beacon"],
