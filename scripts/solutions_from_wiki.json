@@ -200,7 +200,13 @@
     },
     "Anvil F7C Hornet Mk I": {
       "pilotWeapon": {
+        "0": "CF-337 Panther Repeater",
+        "1": "CF-337 Panther Repeater",
         "2": "CF-337 Panther Repeater"
+      },
+      "turretWeapon": {
+        "0": "Anvil Noise Launcher",
+        "1": "Anvil Decoy Launcher"
       }
     },
     "Anvil F7C Hornet Mk II": {
@@ -212,6 +218,10 @@
     },
     "Anvil F8A Lightning": {
       "pilotWeapon": {
+        "0": "M6A Cannon",
+        "1": "M6A Cannon",
+        "2": "M5A Cannon",
+        "3": "M5A Cannon",
         "4": "M5A Cannon",
         "5": "M5A Cannon"
       }
@@ -289,26 +299,45 @@
     },
     "C.O. Mustang Alpha": {
       "pilotWeapon": {
+        "0": "CF-227 Badger Repeater",
+        "1": "CF-227 Badger Repeater"
+      },
+      "turretWeapon": {
+        "0": "CF-227 Badger Repeater",
         "1": "CF-227 Badger Repeater"
       }
     },
     "C.O. Mustang Beta": {
       "pilotWeapon": {
+        "0": "CF-227 Badger Repeater",
+        "1": "CF-227 Badger Repeater"
+      },
+      "turretWeapon": {
+        "0": "CF-227 Badger Repeater",
         "1": "CF-227 Badger Repeater"
       }
     },
     "C.O. Mustang Delta": {
       "pilotWeapon": {
-        "2": "CF-227 Badger Repeater"
+        "0": "Jericho XL",
+        "1": "Jericho XL",
+        "2": "CF-227 Badger Repeater",
+        "3": "CF-227 Badger Repeater"
+      },
+      "turretWeapon": {
+        "0": "CF-227 Badger Repeater",
+        "1": "CF-227 Badger Repeater"
       }
     },
     "C.O. Mustang Gamma": {
       "pilotWeapon": {
+        "0": "CF-117 Bulldog Repeater",
         "1": "CF-117 Bulldog Repeater"
       }
     },
     "C.O. Mustang Omega": {
       "pilotWeapon": {
+        "0": "CF-117 Bulldog Repeater",
         "1": "CF-117 Bulldog Repeater"
       }
     },
@@ -604,7 +633,30 @@
     },
     "Aegis Vanguard Warden": {
       "turretWeapon": {
+        "0": "SW16BR2 Sawbuck Repeater",
         "1": "SW16BR2 Sawbuck Repeater"
+      },
+      "pilotWeapon": {
+        "0": "Deadbolt V Cannon"
+      },
+      "shield": {
+        "0": "FullStop",
+        "1": "FullStop"
+      },
+      "cooler": {
+        "0": "Arctic",
+        "1": "Arctic"
+      },
+      "powerPlant": {
+        "0": "M",
+        "1": "a",
+        "2": "e",
+        "3": "l",
+        "4": "s",
+        "5": "t",
+        "6": "r",
+        "7": "o",
+        "8": "m"
       }
     },
     "Aegis Vanguard Hoplite": {
@@ -614,12 +666,58 @@
     },
     "Aegis Vanguard Sentinel": {
       "turretWeapon": {
+        "0": "Suckerpunch-L Cannon",
         "1": "Suckerpunch-L Cannon"
+      },
+      "pilotWeapon": {
+        "0": "Attrition-5 Repeater"
+      },
+      "shield": {
+        "0": "Sheut",
+        "1": "Sheut"
+      },
+      "cooler": {
+        "0": "HeatSink",
+        "1": "HeatSink"
+      },
+      "powerPlant": {
+        "0": "G",
+        "1": "a",
+        "2": "m",
+        "3": "m",
+        "4": "a",
+        "5": "M",
+        "6": "a",
+        "7": "x"
       }
     },
     "Aegis Vanguard Harbinger": {
       "turretWeapon": {
+        "0": "Jericho XL",
         "1": "Jericho XL"
+      },
+      "pilotWeapon": {
+        "0": "Deadbolt V Cannon"
+      },
+      "shield": {
+        "0": "SecureShield",
+        "1": "SecureShield"
+      },
+      "cooler": {
+        "0": "Permafrost",
+        "1": "Permafrost"
+      },
+      "powerPlant": {
+        "0": "T",
+        "1": "u",
+        "2": "r",
+        "3": "b",
+        "4": "o",
+        "5": "D",
+        "6": "r",
+        "7": "i",
+        "8": "v",
+        "9": "e"
       }
     },
     "Gatac Railen": {
@@ -645,6 +743,142 @@
     },
     "Mustang Omega": {
       "pilotWeapon": {
+        "0": "CF-117 Bulldog Repeater",
+        "1": "CF-117 Bulldog Repeater"
+      }
+    },
+    "Anvil F7A Hornet Mk II": {
+      "turretWeapon": {
+        "0": "Omnisky IX Cannon",
+        "1": "Omnisky IX Cannon"
+      },
+      "shield": {
+        "0": "AllStop"
+      },
+      "cooler": {
+        "0": "Bracer",
+        "1": "Bracer"
+      },
+      "powerPlant": {
+        "0": "M",
+        "1": "a",
+        "2": "e",
+        "3": "l",
+        "4": "s",
+        "5": "t",
+        "6": "r",
+        "7": "o",
+        "8": "m"
+      },
+      "pilotWeapon": {
+        "0": "Revenant Gatling",
+        "1": "Revenant Gatling"
+      }
+    },
+    "Drake Freelancer": {
+      "turretWeapon": {
+        "0": "CF-337 Panther Repeater",
+        "1": "CF-337 Panther Repeater"
+      },
+      "shield": {
+        "0": "5MA Chimalli",
+        "1": "5MA Chimalli",
+        "2": "5MA Chimalli"
+      },
+      "cooler": {
+        "0": "Frost-Star EX",
+        "1": "Frost-Star EX"
+      },
+      "powerPlant": {
+        "0": "D",
+        "1": "a",
+        "2": "y",
+        "3": "B",
+        "4": "r",
+        "5": "e",
+        "6": "a",
+        "7": "k"
+      }
+    },
+    "Crusader A1 Spirit": {
+      "pilotWeapon": {
+        "0": "M5A Cannon",
+        "1": "M5A Cannon"
+      },
+      "turretWeapon": {
+        "0": "CF-227 Badger Repeater"
+      },
+      "shield": {
+        "0": "FullStop"
+      },
+      "cooler": {
+        "0": "Boreal"
+      },
+      "powerPlant": {
+        "0": "U",
+        "1": "l",
+        "2": "t",
+        "3": "r",
+        "4": "a",
+        "5": "F",
+        "6": "l",
+        "7": "u",
+        "8": "x"
+      }
+    },
+    "Crusader C1 Spirit": {
+      "pilotWeapon": {
+        "0": "M5A Cannon",
+        "1": "M5A Cannon"
+      },
+      "turretWeapon": {
+        "0": "M5A Cannon"
+      },
+      "shield": {
+        "0": "FullStop"
+      },
+      "cooler": {
+        "0": "Boreal"
+      },
+      "powerPlant": {
+        "0": "U",
+        "1": "l",
+        "2": "t",
+        "3": "r",
+        "4": "a",
+        "5": "F",
+        "6": "l",
+        "7": "u",
+        "8": "x"
+      }
+    },
+    "RSI Polaris": {
+      "turretWeapon": {
+        "0": "CF-337 Panther Repeater"
+      },
+      "shield": {
+        "0": "Glacis"
+      },
+      "cooler": {
+        "0": "Serac"
+      },
+      "powerPlant": {
+        "0": "S",
+        "1": "t",
+        "2": "e",
+        "3": "l",
+        "4": "l",
+        "5": "a",
+        "6": "t",
+        "7": "e"
+      }
+    },
+    "Anvil F7C-M Super Hornet Mk I": {
+      "pilotWeapon": {
+        "0": "Mantis GT-220 Gatling",
+        "1": "Mantis GT-220 Gatling"
+      },
+      "turretWeapon": {
         "0": "CF-117 Bulldog Repeater",
         "1": "CF-117 Bulldog Repeater"
       }

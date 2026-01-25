@@ -17,15 +17,6 @@
       "current": ""
     }
   ],
-  "Anvil F7A Hornet Mk II": [
-    {
-      "type": "WEAPON",
-      "slot": "turretWeapon[1] (Turret[0])",
-      "size": 3,
-      "issue": "MISSING",
-      "current": ""
-    }
-  ],
   "Anvil F8A Lightning": [
     {
       "type": "WEAPON",
@@ -50,15 +41,6 @@
       "issue": "MISSING",
       "current": ""
     },
-    {
-      "type": "WEAPON",
-      "slot": "pilotWeapon[3]",
-      "size": 1,
-      "issue": "MISSING",
-      "current": ""
-    }
-  ],
-  "C.O. Mustang Delta": [
     {
       "type": "WEAPON",
       "slot": "pilotWeapon[3]",
