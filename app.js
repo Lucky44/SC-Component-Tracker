@@ -130,13 +130,26 @@ function searchComponents(query) {
     appData.ships.forEach(ship => {
         const components = ship.components || {};
 
-        (components.weapons || []).forEach(weapon => {
+        // Search pilot weapons
+        (components.pilotWeapons || []).forEach(weapon => {
             if (weapon.name && weapon.name.toLowerCase().includes(searchTerm)) {
                 results.installed.push({
                     shipName: ship.name,
                     shipNickname: ship.nickname,
                     component: weapon.name,
-                    type: 'weapon'
+                    type: 'pilot weapon'
+                });
+            }
+        });
+
+        // Search turret weapons
+        (components.turrets || []).forEach(turret => {
+            if (turret.weapon && turret.weapon.toLowerCase().includes(searchTerm)) {
+                results.installed.push({
+                    shipName: ship.name,
+                    shipNickname: ship.nickname,
+                    component: `${turret.guns}x ${turret.weapon}`,
+                    type: 'turret'
                 });
             }
         });
@@ -203,7 +216,12 @@ function populateShipDropdown() {
 
     // Group ships by manufacturer
     const byManufacturer = {};
+
+    // Exclude ground/variant ships (e.g., Wikelo, Best in Show) from selection
+    const isVariantName = name => /wikelo|best in show|best-in-show|variant/i.test(name || '');
+
     SC_DATA.ships.forEach(ship => {
+        if (isVariantName(ship.name)) return; // skip variants
         if (!byManufacturer[ship.manufacturer]) {
             byManufacturer[ship.manufacturer] = [];
         }
@@ -272,7 +290,7 @@ function createComponentDropdown(type, size, selectedValue = '') {
 // ============ Slot Management ============
 
 function clearAllSlots() {
-    ['weaponSlots', 'shieldSlots', 'powerPlantSlots', 'coolerSlots', 'quantumDriveSlots'].forEach(id => {
+    ['pilotWeaponSlots', 'turretSlots', 'shieldSlots', 'powerPlantSlots', 'coolerSlots', 'quantumDriveSlots'].forEach(id => {
         document.getElementById(id).innerHTML = '';
     });
 }
@@ -296,13 +314,70 @@ function addSlot(containerId, type, size, value = '') {
     container.appendChild(slot);
 }
 
+// Add a turret slot with type label and weapon dropdown
+function addTurretSlot(turretSpec, index, weapon = '') {
+    const container = document.getElementById('turretSlots');
+    const slot = document.createElement('div');
+    slot.className = 'component-slot turret-slot';
+    slot.dataset.size = turretSpec.size;
+    slot.dataset.guns = turretSpec.guns;
+    slot.dataset.type = turretSpec.type;
+    slot.dataset.index = index;
+
+    // Turret info label (e.g., "Manned 4x S4" or "Remote 2x S3")
+    const typeLabel = document.createElement('span');
+    typeLabel.className = 'slot-size turret-label';
+    const typeText = turretSpec.type === 'manned' ? 'Manned' : 'Remote';
+    typeLabel.textContent = `${typeText} ${turretSpec.guns}x S${turretSpec.size}`;
+    slot.appendChild(typeLabel);
+
+    // Determine the actual weapon size for the installed weapon (some turrets mount smaller guns)
+    function getWeaponSizeByName(name) {
+        if (!name) return null;
+        for (const sizeKey of Object.keys(SC_DATA.weapons)) {
+            const size = parseInt(sizeKey, 10);
+            const list = SC_DATA.weapons[size] || [];
+            if (list.find(w => w.name && w.name.toLowerCase() === name.toLowerCase())) {
+                return size;
+            }
+        }
+        return null;
+    }
+
+    // Infer weapon size when installed weapon is unknown: many turrets mount multiple smaller guns.
+    function inferWeaponSizeFromMount(mountSize, guns) {
+        if (!mountSize) return 1;
+        if (guns >= 2) {
+            if (mountSize >= 5) return 3;
+            if (mountSize === 4) return 3;
+            if (mountSize === 3) return 3;
+            if (mountSize === 2) return 2;
+        }
+        return mountSize;
+    }
+
+    const weaponSize = getWeaponSizeByName(weapon) || inferWeaponSizeFromMount(turretSpec.size, turretSpec.guns) || turretSpec.size;
+    const select = createComponentDropdown('weapon', weaponSize, weapon);
+    slot.appendChild(select);
+
+    console.debug('SC Debug: turret', index, { mountSize: turretSpec.size, guns: turretSpec.guns, weapon, weaponSize });
+
+    // Update turret label to show per-gun size and mount size when different
+    if (weaponSize && weaponSize !== turretSpec.size) {
+        typeLabel.textContent = `${typeText} ${turretSpec.guns}x S${weaponSize} (mount S${turretSpec.size})`;
+    }
+
+    container.appendChild(slot);
+}
+
 // Populate slots based on ship spec
 function populateSlotsForShip(shipSpec, existingComponents = null) {
     clearAllSlots();
 
     if (!shipSpec) {
         // Reset hints
-        document.getElementById('weaponsHint').textContent = 'Select a ship to see available hardpoints';
+        document.getElementById('pilotWeaponsHint').textContent = 'Select a ship to see available hardpoints';
+        document.getElementById('turretsHint').textContent = 'Select a ship to see available turrets';
         document.getElementById('shieldsHint').textContent = 'Select a ship to see available slots';
         document.getElementById('powerPlantsHint').textContent = 'Select a ship to see available slots';
         document.getElementById('coolersHint').textContent = 'Select a ship to see available slots';
@@ -313,7 +388,9 @@ function populateSlotsForShip(shipSpec, existingComponents = null) {
 
     // Show slots summary
     const slotsInfo = document.getElementById('shipSlotsInfo');
-    const weaponSizes = (shipSpec.weapons || []).map(w => `S${w.size}`).join(', ') || 'None';
+    const pilotWeaponSizes = (shipSpec.pilotWeapons || []).map(w => `S${w.size}`).join(', ') || 'None';
+    // We'll compute turret summary from the rendered/default turret list below (to reflect collapsed/grouped turrets)
+    let turretInfo = 'None';
     const shieldInfo = shipSpec.shields ? `${shipSpec.shields.count}x Size ${shipSpec.shields.size}` : 'None';
     const ppInfo = shipSpec.powerPlants ? `${shipSpec.powerPlants.count}x Size ${shipSpec.powerPlants.size}` : 'None';
     const coolerInfo = shipSpec.coolers ? `${shipSpec.coolers.count}x Size ${shipSpec.coolers.size}` : 'None';
@@ -321,7 +398,8 @@ function populateSlotsForShip(shipSpec, existingComponents = null) {
 
     slotsInfo.innerHTML = `
         <div class="slot-summary">
-            <span class="slot-item"><strong>Weapons:</strong> ${weaponSizes}</span>
+            <span class="slot-item"><strong>Pilot:</strong> ${pilotWeaponSizes}</span>
+            <span class="slot-item"><strong>Turrets:</strong> ${turretInfo}</span>
             <span class="slot-item"><strong>Shields:</strong> ${shieldInfo}</span>
             <span class="slot-item"><strong>Power:</strong> ${ppInfo}</span>
             <span class="slot-item"><strong>Coolers:</strong> ${coolerInfo}</span>
@@ -330,16 +408,80 @@ function populateSlotsForShip(shipSpec, existingComponents = null) {
     `;
     slotsInfo.classList.remove('hidden');
 
-    // Weapons
-    const weapons = shipSpec.weapons || [];
-    if (weapons.length > 0) {
-        document.getElementById('weaponsHint').textContent = `${weapons.length} hardpoints`;
-        weapons.forEach((w, i) => {
-            const value = existingComponents?.weapons?.[i]?.name || '';
-            addSlot('weaponSlots', 'weapon', w.size, value);
+    // Pilot Weapons
+    const pilotWeapons = shipSpec.pilotWeapons || [];
+    if (pilotWeapons.length > 0) {
+        document.getElementById('pilotWeaponsHint').textContent = `${pilotWeapons.length} pilot-controlled hardpoints`;
+        pilotWeapons.forEach((w, i) => {
+            const value = existingComponents?.pilotWeapons?.[i]?.name || '';
+            addSlot('pilotWeaponSlots', 'weapon', w.size, value);
         });
     } else {
-        document.getElementById('weaponsHint').textContent = 'No weapon hardpoints';
+        document.getElementById('pilotWeaponsHint').textContent = 'No pilot weapons';
+    }
+
+    // Turrets: prefer to render from provided existingComponents (defaults/collapsed) when available
+    const specTurrets = shipSpec.turrets || [];
+    const renderedTurrets = (existingComponents && existingComponents.turrets && existingComponents.turrets.length > 0)
+        ? existingComponents.turrets
+        : specTurrets;
+
+    // Compute turret summary using per-gun weapon size when available (fall back to turret.size)
+    (function computeTurretSummary() {
+        if (!renderedTurrets || renderedTurrets.length === 0) {
+            turretInfo = 'None';
+            // update the displayed summary
+            const items = slotsInfo.querySelectorAll('.slot-item');
+            if (items && items[1]) items[1].innerHTML = `<strong>Turrets:</strong> ${turretInfo}`;
+            return;
+        }
+        function findWeaponSizeByName(name) {
+            if (!name) return null;
+            for (const key of Object.keys(SC_DATA.weapons)) {
+                const size = parseInt(key, 10);
+                const list = SC_DATA.weapons[size] || [];
+                if (list.find(w => w.name && w.name.toLowerCase() === name.toLowerCase())) return size;
+            }
+            return null;
+        }
+
+        const counts = {};
+        // Count mounts (one per turret entry) using per-gun weapon size when available
+        renderedTurrets.forEach(t => {
+            const w = t.weapon || '';
+            const perSize = findWeaponSizeByName(w) || parseInt(t.size, 10) || 0;
+            if (!perSize) return;
+            counts[perSize] = (counts[perSize] || 0) + 1;
+        });
+        // convert counts to array of strings like '1x S5'
+        const entries = Object.keys(counts).map(k => ({ size: parseInt(k,10), guns: counts[k] }));
+        // prefer descending size order
+        entries.sort((a,b) => b.size - a.size);
+        turretInfo = entries.map(e => `${e.guns}x S${e.size}`).join(', ') || 'None';
+        const items = slotsInfo.querySelectorAll('.slot-item');
+        if (items && items[1]) items[1].innerHTML = `<strong>Turrets:</strong> ${turretInfo}`;
+    })();
+
+    if (renderedTurrets.length > 0) {
+        const mannedCount = renderedTurrets.filter(t => t.type === 'manned').length;
+        const remoteCount = renderedTurrets.filter(t => t.type === 'remote').length;
+        let turretHint = `${renderedTurrets.length} turrets`;
+        if (mannedCount > 0 && remoteCount > 0) {
+            turretHint += ` (${mannedCount} manned, ${remoteCount} remote)`;
+        } else if (mannedCount > 0) {
+            turretHint += ' (manned)';
+        } else if (remoteCount > 0) {
+            turretHint += ' (remote)';
+        }
+        document.getElementById('turretsHint').textContent = turretHint;
+
+        renderedTurrets.forEach((t, i) => {
+            // If renderedTurrets comes from defaults it already includes weapon/size/guns info.
+            const weapon = t.weapon || (existingComponents?.turrets?.[i]?.weapon || '');
+            addTurretSlot(t, i, weapon);
+        });
+    } else {
+        document.getElementById('turretsHint').textContent = 'No turrets';
     }
 
     // Shields
@@ -399,6 +541,23 @@ function getSlotValues(containerId) {
     return values;
 }
 
+// Get turret values with their metadata
+function getTurretValues() {
+    const container = document.getElementById('turretSlots');
+    const slots = container.querySelectorAll('.turret-slot');
+    const values = [];
+    slots.forEach(slot => {
+        const select = slot.querySelector('select');
+        values.push({
+            type: slot.dataset.type,
+            guns: parseInt(slot.dataset.guns, 10),
+            size: parseInt(slot.dataset.size, 10),
+            weapon: select.value || ''
+        });
+    });
+    return values;
+}
+
 // ============ UI Rendering ============
 
 const TYPE_LABELS = {
@@ -441,7 +600,8 @@ function renderShips() {
                     </div>
                 </div>
                 <div class="ship-components">
-                    ${renderComponentList('Weapons', components.weapons)}
+                    ${renderComponentList('Pilot Weapons', components.pilotWeapons)}
+                    ${renderTurretList(components.turrets)}
                     ${renderComponentList('Shields', components.shields)}
                     ${renderComponentList('Power', components.powerPlants)}
                     ${renderComponentList('Coolers', components.coolers)}
@@ -461,6 +621,24 @@ function renderComponentList(label, components) {
         return `<div class="component-row"><span class="component-label">${label}:</span> <span class="component-empty">None</span></div>`;
     }
     return `<div class="component-row"><span class="component-label">${label}:</span> <span class="component-value">${names.join(', ')}</span></div>`;
+}
+
+function renderTurretList(turrets) {
+    if (!turrets || turrets.length === 0) {
+        return `<div class="component-row"><span class="component-label">Turrets:</span> <span class="component-empty">None</span></div>`;
+    }
+
+    const turretDescriptions = turrets.map(t => {
+        if (!t.weapon) return null;
+        const typePrefix = t.type === 'manned' ? 'M' : 'R';
+        return `${typePrefix}: ${t.guns}x ${t.weapon} (S${t.size})`;
+    }).filter(Boolean);
+
+    if (turretDescriptions.length === 0) {
+        return `<div class="component-row"><span class="component-label">Turrets:</span> <span class="component-empty">None equipped</span></div>`;
+    }
+
+    return `<div class="component-row"><span class="component-label">Turrets:</span> <span class="component-value">${turretDescriptions.join(', ')}</span></div>`;
 }
 
 function renderStorage() {
@@ -596,6 +774,41 @@ function openShipModal(shipId = null) {
             // Get the ship spec and populate slots with existing values
             currentShipSpec = getShipSpec(ship.name);
             if (currentShipSpec) {
+                // Merge defaults into the saved components without overwriting user selections.
+                // This fills empty slots with up-to-date defaults (inferred turret grouping, sizes).
+                function mergeDefaultsInto(existing, defaults) {
+                    if (!defaults) return existing || {};
+                    existing = existing || {};
+
+                    const mergeArray = (key) => {
+                        const dst = existing[key] || [];
+                        const src = defaults[key] || [];
+                        const len = Math.max(dst.length, src.length);
+                        const out = [];
+                        for (let i = 0; i < len; i++) {
+                            const d = dst[i] || {};
+                            const s = src[i] || {};
+                            // start from default, then overlay saved values so saved values win when present
+                            out[i] = { ...(s || {}), ...(d || {}) };
+                            if (!out[i].name && s && s.name) out[i].name = s.name;
+                            if (!out[i].weapon && s && s.weapon) out[i].weapon = s.weapon;
+                            if (!out[i].size && s && s.size) out[i].size = s.size;
+                        }
+                        existing[key] = out;
+                    };
+
+                    mergeArray('pilotWeapons');
+                    mergeArray('turrets');
+                    mergeArray('shields');
+                    mergeArray('coolers');
+                    mergeArray('powerPlants');
+                    mergeArray('quantumDrives');
+
+                    return existing;
+                }
+
+                const defaults = SC_DATA.getDefaultComponents(currentShipSpec);
+                ship.components = mergeDefaultsInto(ship.components, defaults);
                 populateSlotsForShip(currentShipSpec, ship.components);
             }
         }
@@ -614,6 +827,7 @@ function onShipSelectionChange(e) {
 
     // Get default components to pre-populate the slots
     const defaults = SC_DATA.getDefaultComponents(currentShipSpec);
+    console.debug('SC Debug: defaults for', shipName, defaults);
     populateSlotsForShip(currentShipSpec, defaults);
 }
 
@@ -726,6 +940,16 @@ function populateStorageComponentDropdown(type, size) {
         }
         select.appendChild(option);
     });
+
+    // If a selectedValue was provided but not present in the options (size mismatch or missing),
+    // add it as a selected option so the UI shows the actual stock item.
+    if (selectedValue && !Array.from(select.options).some(o => o.value === selectedValue)) {
+        const extra = document.createElement('option');
+        extra.value = selectedValue;
+        extra.textContent = `${selectedValue} (stock)`;
+        extra.selected = true;
+        select.appendChild(extra);
+    }
 }
 
 // Delete confirmation
@@ -781,7 +1005,8 @@ function handleShipSubmit(e) {
         name: shipName,
         nickname: document.getElementById('shipNickname').value.trim(),
         components: {
-            weapons: getSlotValues('weaponSlots'),
+            pilotWeapons: getSlotValues('pilotWeaponSlots'),
+            turrets: getTurretValues(),
             shields: getSlotValues('shieldSlots'),
             powerPlants: getSlotValues('powerPlantSlots'),
             coolers: getSlotValues('coolerSlots'),
