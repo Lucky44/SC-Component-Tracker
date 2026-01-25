@@ -413,6 +413,184 @@
     },
     "Gatac Syulen": {},
     "Mirai Guardian": {},
-    "MISC Starfarer": {}
+    "MISC Starfarer": {},
+    "RSI Constellation Andromeda": {
+      "turretWeapon": {
+        "0": "CF-337 Panther Repeater",
+        "1": "CF-337 Panther Repeater"
+      }
+    },
+    "RSI Constellation Aquila": {
+      "turretWeapon": {
+        "0": "CF-337 Panther Repeater",
+        "1": "CF-337 Panther Repeater"
+      }
+    },
+    "RSI Constellation Phoenix": {
+      "turretWeapon": {
+        "0": "CF-337 Panther Repeater",
+        "1": "CF-337 Panther Repeater"
+      }
+    },
+    "RSI Constellation Taurus": {
+      "turretWeapon": {
+        "0": "CF-337 Panther Repeater",
+        "1": "CF-337 Panther Repeater"
+      }
+    },
+    "RSI Scorpius": {
+      "pilotWeapon": {
+        "1": "CF-337 Panther Repeater"
+      },
+      "turretWeapon": {
+        "0": "CF-337 Panther Repeater",
+        "1": "CF-337 Panther Repeater"
+      }
+    },
+    "RSI Aurora CL": {
+      "pilotWeapon": {
+        "1": "CF-117 Bulldog Repeater",
+        "2": "CF-117 Bulldog Repeater"
+      }
+    },
+    "RSI Aurora LN": {
+      "pilotWeapon": {
+        "1": "CF-117 Bulldog Repeater",
+        "2": "CF-117 Bulldog Repeater",
+        "3": "CF-117 Bulldog Repeater"
+      }
+    },
+    "RSI Aurora LX": {
+      "pilotWeapon": {
+        "1": "CF-117 Bulldog Repeater",
+        "2": "CF-117 Bulldog Repeater"
+      }
+    },
+    "RSI Aurora MR": {
+      "pilotWeapon": {
+        "1": "CF-117 Bulldog Repeater",
+        "2": "CF-117 Bulldog Repeater"
+      }
+    },
+    "Origin 300i": {
+      "pilotWeapon": {
+        "2": "SW16BR3 Shredder Repeater"
+      }
+    },
+    "Origin 315p": {
+      "pilotWeapon": {
+        "1": "SW16BR3 Shredder Repeater",
+        "2": "SW16BR3 Shredder Repeater"
+      }
+    },
+    "Origin 325a": {
+      "pilotWeapon": {
+        "2": "SW16BR3 Shredder Repeater"
+      }
+    },
+    "Origin 350r": {
+      "pilotWeapon": {
+        "2": "CF-337 Panther Repeater"
+      }
+    },
+    "Origin 400i": {
+      "turretWeapon": {
+        "0": "CF-337 Panther Repeater",
+        "1": "CF-337 Panther Repeater"
+      }
+    },
+    "Origin M50": {
+      "pilotWeapon": {
+        "1": "CF-227 Badger Repeater"
+      }
+    },
+    "RSI Mantis": {
+      "pilotWeapon": {
+        "1": "FL-33 Cannon"
+      }
+    },
+    "Origin 890 Jump": {
+      "turretWeapon": {
+        "3": "CF-337 Panther Repeater",
+        "4": "CF-337 Panther Repeater",
+        "5": "CF-337 Panther Repeater"
+      }
+    },
+    "Origin 600i Explorer": {
+      "turretWeapon": {
+        "2": "CF-337 Panther Repeater",
+        "3": "CF-337 Panther Repeater"
+      }
+    },
+    "Origin 600i Touring": {
+      "turretWeapon": {
+        "2": "CF-337 Panther Repeater",
+        "3": "CF-337 Panther Repeater"
+      }
+    },
+    "Origin 600i": {
+      "turretWeapon": {
+        "2": "CF-337 Panther Repeater",
+        "3": "CF-337 Panther Repeater"
+      }
+    },
+    "RSI Zeus Mk II CL": {
+      "turretWeapon": {
+        "0": "CF-337 Panther Repeater",
+        "1": "CF-337 Panther Repeater"
+      }
+    },
+    "RSI Zeus Mk II ES": {
+      "turretWeapon": {
+        "0": "CF-337 Panther Repeater",
+        "1": "CF-337 Panther Repeater"
+      }
+    },
+    "RSI Zeus Mk II MR": {
+      "turretWeapon": {
+        "0": "CF-337 Panther Repeater",
+        "1": "CF-337 Panther Repeater"
+      }
+    },
+    "Drake Caterpillar": {},
+    "MISC Reliant Kore": {},
+    "MISC Reliant Mako": {},
+    "MISC Reliant Sen": {},
+    "MISC Reliant Tana": {},
+    "Mirai Razor": {},
+    "Mirai Razor EX": {},
+    "Mirai Razor LX": {},
+    "Mirai Guardian MX": {},
+    "Esperia Talon": {},
+    "Esperia Talon Shrike": {},
+    "Aegis Vanguard Warden": {
+      "turretWeapon": {
+        "1": "SW16BR2 Sawbuck Repeater"
+      }
+    },
+    "Aegis Vanguard Hoplite": {
+      "turretWeapon": {
+        "1": "SW16BR2 Sawbuck Repeater"
+      }
+    },
+    "Aegis Vanguard Sentinel": {
+      "turretWeapon": {
+        "1": "Suckerpunch-L Cannon"
+      }
+    },
+    "Aegis Vanguard Harbinger": {
+      "turretWeapon": {
+        "1": "Jericho XL"
+      }
+    },
+    "Gatac Railen": {},
+    "Kruger L-21 Wolf": {},
+    "Kruger P-52 Merlin": {},
+    "Kruger P-72 Archimedes": {},
+    "Anvil Terrapin": {
+      "turretWeapon": {
+        "1": "CF-227 Badger Repeater"
+      }
+    }
   }
 }
