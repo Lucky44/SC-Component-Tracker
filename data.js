@@ -2206,7 +2206,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["CF-337 Panther Repeater","Mantis GT-220 Gatling","Scorpion GT-215 Gatling","GVSR Repeater"],
+        pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","YellowJacket GT-210 Gatling"],
         turretWeapons: []
     },
     "Anvil Asgard": {
