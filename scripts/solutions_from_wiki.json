@@ -202,7 +202,8 @@
       "pilotWeapon": {
         "0": "CF-337 Panther Repeater",
         "1": "CF-337 Panther Repeater",
-        "2": "CF-337 Panther Repeater"
+        "2": "CF-337 Panther Repeater",
+        "3": "Unknown"
       },
       "turretWeapon": {
         "0": "Anvil Noise Launcher",
@@ -223,7 +224,9 @@
         "2": "M5A Cannon",
         "3": "M5A Cannon",
         "4": "M5A Cannon",
-        "5": "M5A Cannon"
+        "5": "M5A Cannon",
+        "6": "Unknown",
+        "7": "Unknown"
       }
     },
     "Anvil Hawk": {
@@ -306,7 +309,9 @@
     "C.O. Mustang Alpha": {
       "pilotWeapon": {
         "0": "CF-227 Badger Repeater",
-        "1": "CF-227 Badger Repeater"
+        "1": "CF-227 Badger Repeater",
+        "2": "Unknown",
+        "3": "Unknown"
       },
       "turretWeapon": {
         "0": "CF-227 Badger Repeater",
@@ -316,7 +321,9 @@
     "C.O. Mustang Beta": {
       "pilotWeapon": {
         "0": "CF-227 Badger Repeater",
-        "1": "CF-227 Badger Repeater"
+        "1": "CF-227 Badger Repeater",
+        "2": "Unknown",
+        "3": "Unknown"
       },
       "turretWeapon": {
         "0": "CF-227 Badger Repeater",
@@ -338,13 +345,17 @@
     "C.O. Mustang Gamma": {
       "pilotWeapon": {
         "0": "CF-117 Bulldog Repeater",
-        "1": "CF-117 Bulldog Repeater"
+        "1": "CF-117 Bulldog Repeater",
+        "2": "Unknown",
+        "3": "Unknown"
       }
     },
     "C.O. Mustang Omega": {
       "pilotWeapon": {
         "0": "CF-117 Bulldog Repeater",
-        "1": "CF-117 Bulldog Repeater"
+        "1": "CF-117 Bulldog Repeater",
+        "2": "Unknown",
+        "3": "Unknown"
       }
     },
     "C.O. Nomad": {
@@ -411,11 +422,19 @@
       },
       "coolers": {
         "1": "ColdSnap"
+      },
+      "turretWeapon": {
+        "0": "Unknown",
+        "1": "Unknown"
       }
     },
     "Drake Cutlass Blue": {
       "pilotWeapon": {
         "2": "CF-337 Panther Repeater"
+      },
+      "turretWeapon": {
+        "0": "Unknown",
+        "1": "Unknown"
       }
     },
     "Drake Corsair": {
@@ -435,16 +454,28 @@
     "MISC Freelancer": {
       "pilotWeapon": {
         "1": "CF-337 Panther Repeater"
+      },
+      "turretWeapon": {
+        "0": "Unknown",
+        "1": "Unknown"
       }
     },
     "MISC Freelancer DUR": {
       "pilotWeapon": {
         "1": "Attrition-3 Repeater"
+      },
+      "turretWeapon": {
+        "0": "Unknown",
+        "1": "Unknown"
       }
     },
     "MISC Freelancer MAX": {
       "pilotWeapon": {
         "1": "CF-337 Panther Repeater"
+      },
+      "turretWeapon": {
+        "0": "Unknown",
+        "1": "Unknown"
       }
     },
     "Esperia Prowler": {
@@ -463,12 +494,18 @@
         "3": "M6A Cannon"
       }
     },
-    "Crusader Spirit C1": {},
+    "Crusader Spirit C1": {
+      "turretWeapon": {
+        "1": "Unknown"
+      }
+    },
     "Drake Buccaneer": {
       "pilotWeapon": {
         "0": "Revenant Gatling",
         "1": "CF-337 Panther Repeater",
-        "2": "CF-337 Panther Repeater"
+        "2": "CF-337 Panther Repeater",
+        "3": "Unknown",
+        "4": "Unknown"
       }
     },
     "Gatac Syulen": {
@@ -476,8 +513,16 @@
         "1": "CF-337 Panther Repeater"
       }
     },
-    "Mirai Guardian": {},
-    "MISC Starfarer": {},
+    "Mirai Guardian": {
+      "pilotWeapon": {
+        "1": "Unknown"
+      }
+    },
+    "MISC Starfarer": {
+      "turretWeapon": {
+        "3": "Unknown"
+      }
+    },
     "RSI Constellation Andromeda": {
       "turretWeapon": {
         "0": "CF-337 Panther Repeater",
@@ -631,8 +676,16 @@
         "1": "CF-227 Badger Repeater"
       }
     },
-    "MISC Reliant Mako": {},
-    "MISC Reliant Sen": {},
+    "MISC Reliant Mako": {
+      "pilotWeapon": {
+        "1": "Unknown"
+      }
+    },
+    "MISC Reliant Sen": {
+      "pilotWeapon": {
+        "1": "Unknown"
+      }
+    },
     "MISC Reliant Tana": {
       "pilotWeapon": {
         "0": "CF-227 Badger Repeater",
@@ -643,7 +696,11 @@
         "1": "CF-337 Panther Repeater"
       }
     },
-    "Mirai Razor": {},
+    "Mirai Razor": {
+      "pilotWeapon": {
+        "1": "Unknown"
+      }
+    },
     "Mirai Razor EX": {},
     "Mirai Razor LX": {},
     "Mirai Guardian MX": {},
@@ -757,8 +814,16 @@
       }
     },
     "Kruger L-21 Wolf": {},
-    "Kruger P-52 Merlin": {},
-    "Kruger P-72 Archimedes": {},
+    "Kruger P-52 Merlin": {
+      "pilotWeapon": {
+        "2": "Unknown"
+      }
+    },
+    "Kruger P-72 Archimedes": {
+      "pilotWeapon": {
+        "1": "Unknown"
+      }
+    },
     "Anvil Terrapin": {
       "turretWeapon": {
         "1": "CF-227 Badger Repeater"
@@ -880,7 +945,70 @@
         "1": "CF-117 Bulldog Repeater"
       }
     },
-    "Esperia Blade": {},
-    "Esperia Glaive": {}
+    "Esperia Blade": {
+      "pilotWeapon": {
+        "2": "Unknown"
+      }
+    },
+    "Esperia Glaive": {
+      "pilotWeapon": {
+        "2": "Unknown",
+        "3": "Unknown"
+      }
+    },
+    "Anvil F7C-M Super Hornet": {
+      "pilotWeapon": {
+        "3": "Unknown"
+      }
+    },
+    "Crusader Spirit A1": {
+      "turretWeapon": {
+        "0": "Unknown",
+        "1": "Unknown"
+      }
+    },
+    "Crusader Spirit E1": {
+      "turretWeapon": {
+        "1": "Unknown"
+      }
+    },
+    "Drake Cutlass Steel": {
+      "turretWeapon": {
+        "0": "Unknown",
+        "1": "Unknown"
+      }
+    },
+    "MISC Freelancer MIS": {
+      "turretWeapon": {
+        "0": "Unknown",
+        "1": "Unknown"
+      }
+    },
+    "MISC Hull A": {
+      "pilotWeapon": {
+        "1": "Unknown"
+      }
+    },
+    "MISC Razor": {
+      "pilotWeapon": {
+        "1": "Unknown"
+      }
+    },
+    "MISC Starfarer Gemini": {
+      "turretWeapon": {
+        "3": "Unknown"
+      }
+    },
+    "Mirai Fury": {
+      "pilotWeapon": {
+        "1": "Unknown"
+      }
+    },
+    "Origin 125a": {
+      "pilotWeapon": {
+        "1": "Unknown",
+        "2": "Unknown"
+      }
+    }
   }
 }
