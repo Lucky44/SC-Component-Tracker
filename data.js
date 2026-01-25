@@ -729,7 +729,9 @@ quantumDrives: [
             pilotWeapons: [],
             turrets: [
                 { type: "manned", guns: 2, size: 4 },
-                { type: "manned", guns: 2, size: 4 }
+                { type: "manned", guns: 2, size: 4 },
+                { type: "manned", guns: 2, size: 4 },
+                { type: "remote", guns: 2, size: 4 }
             ],
             shields: { count: 2, size: 3 },
             powerPlants: { count: 2, size: 3 },
