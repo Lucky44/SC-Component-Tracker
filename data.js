@@ -65,7 +65,7 @@ weapons: {
         { name: "Singe Cannon (S2)", manufacturer: "Banu", type: "Gun" },
         { name: "Sledge II Mass Driver Cannon", manufacturer: "Klaus & Werner", type: "Gun" },
         { name: "Strife Mass Driver Cannon", manufacturer: "Apocalypse Arms", type: "Gun" },
-        { name: "Suckerpunch-L Cannon Cannon", manufacturer: "Joker Engineering", type: "Gun" },
+        { name: "Suckerpunch-L Cannon", manufacturer: "Joker Engineering", type: "Gun" },
         { name: "SureGrip TH2 Tractor Beam", manufacturer: "Greycat Industrial", type: "Gun" },
         { name: "SW16BR2 “Sawbuck” Repeater", manufacturer: "Behring", type: "Gun" },
         { name: "Tarantula GT-870 Mark 2 Cannon", manufacturer: "Gallenson Tactical Systems", type: "Gun" },
@@ -1950,7 +1950,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["PowerBolt"],
         coolers: ["Bracer"],
         shields: ["Shimmer"],
-        pilotWeapons: ["Revenant Gatling","CF-227 Badger Repeater",""],
+        pilotWeapons: ["Revenant Gatling","Omnisky IX Cannon"],
         turretWeapons: []
     },
     "Aegis Avenger Titan": {
@@ -1958,7 +1958,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Endurance"],
         coolers: ["Bracer"],
         shields: ["Bulwark"],
-        pilotWeapons: ["Revenant Gatling","CF-227 Badger Repeater",""],
+        pilotWeapons: ["Revenant Gatling","Omnisky IX Cannon"],
         turretWeapons: []
     },
     "Aegis Avenger Titan Renegade": {
@@ -1974,7 +1974,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["Shimmer"],
-        pilotWeapons: ["Revenant Gatling","CF-227 Badger Repeater",""],
+        pilotWeapons: ["Revenant Gatling","Omnisky IX Cannon"],
         turretWeapons: []
     },
     "Aegis Eclipse": {
@@ -1990,7 +1990,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["CF-337 Panther Repeater","Mantis GT-220 Gatling"],
+        pilotWeapons: ["CF-337 Panther Repeater", "Mantis GT-220 Gatling", "CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Aegis Gladius Dunlevy": {
@@ -1998,7 +1998,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["QuadraCell"],
         coolers: ["Glacier"],
         shields: ["FR-66"],
-        pilotWeapons: ["CF-337 Panther Repeater","Mantis GT-220 Gatling"],
+        pilotWeapons: ["CF-337 Panther Repeater", "Mantis GT-220 Gatling", "CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Aegis Gladius Pirate": {
@@ -2006,7 +2006,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Charger"],
         coolers: ["Polar"],
         shields: ["SecureHyde"],
-        pilotWeapons: ["CF-337 Panther Repeater","Mantis GT-220 Gatling"],
+        pilotWeapons: ["CF-337 Panther Repeater", "Mantis GT-220 Gatling", "CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Aegis Gladius Valiant": {
@@ -2014,7 +2014,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["Omnisky IX Cannon","CF-337 Panther Repeater"],
+        pilotWeapons: ["Omnisky IX Cannon", "CF-337 Panther Repeater", "CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Aegis Hammerhead": {
@@ -2022,35 +2022,21 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["SuperDrive"],
         coolers: ["Mercury"],
         shields: ["Stronghold"],
-        turretWeapons: [
-            "CF-447 Rhino Repeater",
-            "CF-447 Rhino Repeater",
-            "CF-447 Rhino Repeater",
-            "CF-447 Rhino Repeater",
-            "CF-447 Rhino Repeater",
-            "CF-447 Rhino Repeater"
-        ]
+        turretWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater"]
     },
     "Aegis Hammerhead 2949 Best In Show Edition": {
         quantumDrives: ["Kama"],
         powerPlants: ["SuperDrive"],
         coolers: ["Mercury"],
         shields: ["Stronghold"],
-        turretWeapons: [
-            "CF-447 Rhino Repeater",
-            "CF-447 Rhino Repeater",
-            "CF-447 Rhino Repeater",
-            "CF-447 Rhino Repeater",
-            "CF-447 Rhino Repeater",
-            "CF-447 Rhino Repeater"
-        ]
+        turretWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater"]
     },
     "Aegis Idris-M": {
         quantumDrives: ["Frontline"],
         powerPlants: ["Main Powerplant"],
         coolers: ["Exotherm"],
         shields: ["Holdstrong"],
-        pilotWeapons: ["Revenant Gatling","CF-557 Galdereen Repeater","M9A Cannon","Destroyer Mass Driver Cannon","M2C Swarm"],
+        pilotWeapons: ["Revenant Gatling","CF-557 Galdereen Repeater","M9A Cannon","Destroyer Mass Driver Cannon","M2C \"Swarm\""],
         turretWeapons: []
     },
     "Aegis Idris-P": {
@@ -2058,7 +2044,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Main Powerplant"],
         coolers: ["Exotherm"],
         shields: ["Holdstrong"],
-        pilotWeapons: ["Revenant Gatling","CF-557 Galdereen Repeater","M7A Cannon","M2C Swarm"],
+        pilotWeapons: ["Revenant Gatling","CF-557 Galdereen Repeater","M7A Cannon","M2C \"Swarm\""],
         turretWeapons: []
     },
     "Aegis Idris-P Wikelo War Special": {
@@ -2066,7 +2052,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Main Powerplant"],
         coolers: ["Exotherm"],
         shields: ["Holdstrong"],
-        pilotWeapons: ["Revenant Gatling","Attrition-5 Repeater","M2C Swarm"],
+        pilotWeapons: ["Revenant Gatling","Attrition-5 Repeater","M2C \"Swarm\""],
         turretWeapons: []
     },
     "Aegis Javelin": {
@@ -2083,24 +2069,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Algid"],
         shields: ["RS-Barrier"],
         pilotWeapons: [],
-        turretWeapons: [
-            "CF-557 Galdereen Repeater",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+        turretWeapons: ["M2C \"Swarm\""]
     },
     "Aegis Reclaimer 2949 Best In Show Edition": {
         quantumDrives: ["Kama"],
@@ -2120,7 +2089,7 @@ SC_DATA.stockLoadouts = {
     },
     "Aegis Redeemer": {
         quantumDrives: ["Crossfield"],
-        powerPlants: ["Main Powerplant","Main Powerplant"],
+        powerPlants: ["Durango","Durango"],
         coolers: ["Blizzard"],
         shields: ["FullStop"],
         pilotWeapons: ["C-788 Cannon","C-788 Cannon"],
@@ -2217,7 +2186,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Arctic"],
         shields: ["FullStop"],
         pilotWeapons: ["Deadbolt V Cannon","BRVS Repeater","BRVS Repeater","BRVS Repeater","BRVS Repeater"],
-        turretWeapons: ["CF-227 Badger Repeater"]
+        turretWeapons: ["SW16BR2 "Sawbuck" Repeater"]
     },
     "Aegis Vanguard Sentinel": {
         quantumDrives: ["Nova"],
@@ -2225,7 +2194,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["HeatSink"],
         shields: ["Sheut"],
         pilotWeapons: ["Attrition-5 Repeater","ATVS Repeater","ATVS Repeater","ATVS Repeater","ATVS Repeater"],
-        turretWeapons: ["Suckerpunch-L Cannon Cannon"]
+        turretWeapons: ["Suckerpunch-L Cannon"]
     },
     "Aegis Vanguard Warden": {
         quantumDrives: ["Crossfield"],
@@ -2233,7 +2202,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Arctic"],
         shields: ["FullStop"],
         pilotWeapons: ["Deadbolt V Cannon","MVSA Cannon","MVSA Cannon","MVSA Cannon","MVSA Cannon"],
-        turretWeapons: ["CF-227 Badger Repeater"]
+        turretWeapons: ["SW16BR2 "Sawbuck" Repeater"]
     },
     "Anvil Arrow": {
         quantumDrives: ["Beacon"],
@@ -2304,7 +2273,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["Shimmer"],
-        pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater","",""],
+        pilotWeapons: ["CF-117 Bulldog Repeater","FL-11 Cannon"],
         turretWeapons: []
     },
     "Anvil Carrack": {
@@ -2351,7 +2320,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Maelstrom"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater","Omnisky IX Cannon","Omnisky IX Cannon"],
+        pilotWeapons: ["Revenant Gatling","Revenant Gatling","Omnisky IX Cannon","Omnisky IX Cannon"],
         turretWeapons: ["Omnisky IX Cannon"]
     },
     "Anvil F7C Hornet Mk I": {
@@ -2367,7 +2336,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["CF-447 Rhino Repeater","","","",""],
+        pilotWeapons: ["Revenant Gatling"],
         turretWeapons: []
     },
     "Anvil F7C Hornet Wildfire Mk I": {
@@ -2415,8 +2384,8 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["CF-337 Panther Repeater","Mantis GT-220 Gatling","CF-227 Badger Repeater",""],
-        turretWeapons: ["CF-447 Rhino Repeater"]
+        pilotWeapons: ["CF-117 Bulldog Repeater","Mantis GT-220 Gatling","Mantis GT-220 Gatling"],
+        turretWeapons: ["CF-227 Badger"]
     },
     "Anvil F7C-R Hornet Tracker Mk I": {
         quantumDrives: ["Eos"],
@@ -2451,11 +2420,11 @@ SC_DATA.stockLoadouts = {
         turretWeapons: []
     },
     "Anvil F8A Lightning": {
-        quantumDrives: ["Odyssey"],
+        quantumDrives: ["Expedition"],
         powerPlants: ["Maelstrom"],
-        coolers: ["Arctic"],
+        coolers: ["Polar"],
         shields: ["Sheut"],
-        pilotWeapons: ["M5A Cannon","CF-337 Panther Repeater","CF-337 Panther Repeater","","","","",""],
+        pilotWeapons: ["M5A Cannon","M6A Cannon","CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Anvil F8C Lightning": {
@@ -2503,7 +2472,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater","","","",""],
+        pilotWeapons: ["CF-227 Badger Repeater","Suckerpunch Cannon"],
         turretWeapons: []
     },
     "Anvil Hurricane": {
@@ -2531,9 +2500,9 @@ SC_DATA.stockLoadouts = {
         turretWeapons: []
     },
     "Anvil Terrapin": {
-        quantumDrives: ["Aither"],
+        quantumDrives: ["Eos"],
         powerPlants: ["DayBreak"],
-        coolers: ["Arctic"],
+        coolers: ["Polar"],
         shields: ["5MA 'Chimalli'"],
         pilotWeapons: [],
         turretWeapons: ["CF-227 Badger Repeater"]
@@ -2560,13 +2529,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Arctic"],
         shields: ["FullStop"],
         pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"],
-        turretWeapons: [
-            "CF-447 Rhino Repeater",
-            "CF-337 Panther Repeater",
-            "CF-337 Panther Repeater",
-            "CF-337 Panther Repeater",
-            ""
-        ]
+        turretWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater"]
     },
     "Aopoa Khartu-al": {
         quantumDrives: ["Eos"],
@@ -2658,17 +2621,17 @@ SC_DATA.stockLoadouts = {
     },
     "ARGO MOLE": {
         quantumDrives: ["Huracan"],
-        powerPlants: ["Diligence",""],
-        coolers: ["CoolCore",""],
-        shields: ["5MA 'Chimalli'",""],
+        powerPlants: ["Ginzel"],
+        coolers: ["ThermalCore"],
+        shields: ["5CA 'Akura'"],
         pilotWeapons: [],
         turretWeapons: []
     },
     "ARGO RAFT": {
-        quantumDrives: ["Colossus"],
-        powerPlants: ["Breton"],
-        coolers: ["Eco-Flow"],
-        shields: ["Bulwark"],
+        quantumDrives: ["Bolon"],
+        powerPlants: ["Diligence"],
+        coolers: ["CoolCore"],
+        shields: ["Aspis"],
         pilotWeapons: [],
         turretWeapons: []
     },
@@ -2689,7 +2652,7 @@ SC_DATA.stockLoadouts = {
         turretWeapons: []
     },
     "Banu Defender": {
-        quantumDrives: ["Crossfield"],
+        quantumDrives: ["Beacon"],
         powerPlants: ["IonBurst"],
         coolers: ["Polar"],
         shields: ["Sukoran"],
@@ -2701,7 +2664,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["ZapJet"],
         coolers: ["Winter-Star"],
         shields: ["INK"],
-        pilotWeapons: ["CF-117 Bulldog Repeater","","",""],
+        pilotWeapons: ["CF-227 Badger Repeater"],
         turretWeapons: []
     },
     "C.O. Mustang Beta": {
@@ -2709,7 +2672,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Roughneck"],
         coolers: ["Hydrocel"],
         shields: ["INK"],
-        pilotWeapons: ["CF-117 Bulldog Repeater","","",""],
+        pilotWeapons: ["CF-227 Badger Repeater"],
         turretWeapons: []
     },
     "C.O. Mustang CitizenCon 2948 Edition": {
@@ -2725,7 +2688,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["OverDrive"],
         coolers: ["Winter-Star"],
         shields: ["SecureHyde"],
-        pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater","",""],
+        pilotWeapons: ["CF-227 Badger Repeater","Jericho XL"],
         turretWeapons: []
     },
     "C.O. Mustang Gamma": {
@@ -2782,7 +2745,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Mercury"],
         shields: ["FullBlock"],
         pilotWeapons: [],
-        turretWeapons: ["Omnisky XV Cannon","CF-447 Rhino Repeater"]
+        turretWeapons: ["Omnisky XV Cannon","M7A Cannon","CF-557 Galdereen Repeater","M6A Cannon","CF-447 Rhino Repeater"]
     },
     "Crusader A2 Hercules Starlifter Wikelo War Special": {
         quantumDrives: ["Balandin"],
@@ -2861,7 +2824,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["UltraFlux"],
         coolers: ["Boreal"],
         shields: ["FullStop"],
-        pilotWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater"],
+        pilotWeapons: ["M5A Cannon","CF-227 Badger Repeater"],
         turretWeapons: []
     },
     "Crusader Spirit C1": {
@@ -2886,7 +2849,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["ThermalCore"],
         shields: ["Stronghold"],
         pilotWeapons: [],
-        turretWeapons: ["CF-447 Rhino Repeater"]
+        turretWeapons: ["M7A Cannon","M6A Cannon","CF-447 Rhino Repeater"]
     },
     "Crusader Intrepid": {
         quantumDrives: ["FoxFire"],
@@ -2933,7 +2896,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["JS-300"],
         coolers: ["Polar"],
         shields: ["WEB"],
-        pilotWeapons: ["CF-447 Rhino Repeater","Revenant Gatling","CF-337 Panther Repeater","",""],
+        pilotWeapons: ["YellowJacket GT-210 Gatling","Revenant Gatling","CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Drake Caterpillar": {
@@ -2942,7 +2905,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["ThermalCore"],
         shields: ["Stronghold"],
         pilotWeapons: [],
-        turretWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"]
+        turretWeapons: ["CF-447 Rhino Repeater","M5A Cannon","CF-337 Panther Repeater"]
     },
     "Drake Caterpillar Pirate": {
         quantumDrives: ["Pontes"],
@@ -2965,7 +2928,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["DayBreak"],
         coolers: ["Frost-Star EX"],
         shields: ["5CA 'Akura'"],
-        pilotWeapons: ["CF-557 Galdereen Repeater","CF-557 Galdereen Repeater"],
+        pilotWeapons: ["CF-227 Badger Repeater","M6A Cannon","M7A Cannon"],
         turretWeapons: []
     },
     "Drake Cutlass Black": {
@@ -3005,7 +2968,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["LightBlossom"],
         coolers: ["BlastChill"],
         shields: ["HEX"],
-        pilotWeapons: ["CF-117 Bulldog Repeater",""],
+        pilotWeapons: ["CF-227 Badger Repeater"],
         turretWeapons: []
     },
     "Drake Cutter Rambler": {
@@ -3061,7 +3024,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Slipstream"],
         coolers: ["HeatSafe"],
         shields: ["Shimmer"],
-        pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"],
+        pilotWeapons: ["Mantis GT-220 Gatling","CF-227 Badger Repeater"],
         turretWeapons: []
     },
     "Drake Mule": {
@@ -3089,19 +3052,19 @@ SC_DATA.stockLoadouts = {
         turretWeapons: []
     },
     "Esperia Blade": {
-        quantumDrives: ["Cascade"],
-        powerPlants: ["Bolide"],
-        coolers: ["AbsoluteZero"],
-        shields: ["CoverAll"],
-        pilotWeapons: ["CF-447 Rhino Repeater","CF-337 Panther Repeater",""],
+        quantumDrives: ["Rush"],
+        powerPlants: ["Charger"],
+        coolers: ["IcePlunge"],
+        shields: ["AllStop"],
+        pilotWeapons: ["'WARLORD' Cannon","'WHIP' Cannon"],
         turretWeapons: []
     },
     "Esperia Glaive": {
-        quantumDrives: ["Crossfield"],
-        powerPlants: ["Bolide"],
-        coolers: ["Arctic"],
-        shields: ["CoverAll"],
-        pilotWeapons: ["'WRATH' Cannon","CF-557 Galdereen Repeater","",""],
+        quantumDrives: ["Beacon"],
+        powerPlants: ["Fierell Cascade"],
+        coolers: ["Bracer"],
+        shields: ["AllStop"],
+        pilotWeapons: ["'WRATH' Cannon","'WEAK' Repeater"],
         turretWeapons: []
     },
     "Esperia Prowler": {
@@ -3110,7 +3073,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["HeatSink"],
         shields: ["Obscura"],
         pilotWeapons: [],
-        turretWeapons: ["CF-557 Galdereen Repeater","CF-337 Panther Repeater"]
+        turretWeapons: ["Lightstrike III Cannon","Deadbolt V Cannon"]
     },
     "Esperia Prowler Utility": {
         quantumDrives: ["Nova"],
@@ -3141,7 +3104,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Slipstream"],
         coolers: ["VaporBlock"],
         shields: ["Shimmer"],
-        pilotWeapons: ["CF-337 Panther Repeater",""],
+        pilotWeapons: ["Lightstrike IV Cannon"],
         turretWeapons: []
     },
     "Esperia Talon Shrike": {
@@ -3165,7 +3128,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["LightBlossom"],
         coolers: ["BlastChill"],
         shields: ["HEX"],
-        pilotWeapons: ["CF-227 Badger Repeater",""],
+        pilotWeapons: ["CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Gatac Railen": {
@@ -3242,17 +3205,17 @@ SC_DATA.stockLoadouts = {
     },
     "Kruger P-52 Merlin": {
         quantumDrives: [],
-        powerPlants: ["Defiant"],
-        coolers: ["Cryo-Star SL"],
-        shields: ["Castra"],
-        pilotWeapons: ["CF-117 Bulldog Repeater","CF-117 Bulldog Repeater",""],
+        powerPlants: ["LightBlossom"],
+        coolers: ["Frost-Star"],
+        shields: ["SecureHyde"],
+        pilotWeapons: ["Tigerstrike T-19P","CF-117 Bulldog Repeater"],
         turretWeapons: []
     },
     "Kruger P-72 Archimedes": {
         quantumDrives: [],
-        powerPlants: ["Defiant"],
-        coolers: ["Cryo-Star SL"],
-        shields: ["Castra"],
+        powerPlants: ["Charger"],
+        coolers: ["Bracer"],
+        shields: ["Targa"],
         pilotWeapons: ["CF-117 Bulldog Repeater"],
         turretWeapons: []
     },
@@ -3266,10 +3229,10 @@ SC_DATA.stockLoadouts = {
     },
     "Mirai Fury": {
         quantumDrives: [],
-        powerPlants: ["Defiant"],
-        coolers: ["Cryo-Star SL"],
-        shields: ["Castra"],
-        pilotWeapons: ["CF-117 Bulldog Repeater",""],
+        powerPlants: ["Roughneck"],
+        coolers: ["Hydrocel"],
+        shields: ["Cloak"],
+        pilotWeapons: ["CF-227 Badger Repeater"],
         turretWeapons: []
     },
     "Mirai Fury LX": {
@@ -3289,11 +3252,11 @@ SC_DATA.stockLoadouts = {
         turretWeapons: []
     },
     "Mirai Guardian": {
-        quantumDrives: ["Beacon"],
+        quantumDrives: ["Crossfield"],
         powerPlants: ["OverDrive"],
-        coolers: ["Bracer"],
-        shields: ["AllStop"],
-        pilotWeapons: ["CF-117 Bulldog Repeater",""],
+        coolers: ["Arctic"],
+        shields: ["FullStop"],
+        pilotWeapons: ["M7A Cannon"],
         turretWeapons: []
     },
     "Mirai Guardian MX": {
@@ -3428,8 +3391,8 @@ SC_DATA.stockLoadouts = {
         quantumDrives: ["Goliath"],
         powerPlants: ["IonBurst"],
         coolers: ["ArcticStorm"],
-        shields: ["Bulwark"],
-        pilotWeapons: ["CF-227 Badger Repeater",""],
+        shields: ["Armada"],
+        pilotWeapons: ["CF-117 Bulldog Repeater"],
         turretWeapons: []
     },
     "MISC Hull C": {
@@ -3438,7 +3401,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Blizzard"],
         shields: ["Stronghold"],
         pilotWeapons: [],
-        turretWeapons: ["CF-447 Rhino Repeater","",""]
+        turretWeapons: ["CF-337 Panther Repeater"]
     },
     "MISC Prospector": {
         quantumDrives: ["Goliath"],
@@ -3485,7 +3448,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["IonBurst"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"],
+        pilotWeapons: ["CF-227 Badger Repeater","CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "MISC Starfarer": {
@@ -3494,7 +3457,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["ThermalCore"],
         shields: ["Stronghold"],
         pilotWeapons: [],
-        turretWeapons: ["M6A Cannon","CF-337 Panther Repeater"]
+        turretWeapons: ["M6A Cannon","CF-447 Rhino Repeater","CF-337 Panther Repeater"]
     },
     "MISC Starfarer Gemini": {
         quantumDrives: ["Pontes"],
@@ -3502,7 +3465,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Mercury"],
         shields: ["Stronghold"],
         pilotWeapons: [],
-        turretWeapons: ["CF-557 Galdereen Repeater","CF-337 Panther Repeater"]
+        turretWeapons: ["M6A Cannon","CF-557 Galdereen Repeater","CF-337 Panther Repeater"]
     },
     "MISC Starfarer Teach's Special": {
         quantumDrives: ["Kama"],
@@ -3549,7 +3512,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["PowerBolt"],
         coolers: ["ArcticStorm"],
         shields: ["WEB"],
-        pilotWeapons: ["CF-227 Badger Repeater"],
+        pilotWeapons: ["CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Origin 125a": {
@@ -3557,7 +3520,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["CF-227 Badger Repeater","",""],
+        pilotWeapons: ["CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Origin 135c": {
@@ -3565,7 +3528,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Fortitude"],
         coolers: ["Thermax"],
         shields: ["Bulwark"],
-        pilotWeapons: ["CF-227 Badger Repeater"],
+        pilotWeapons: ["CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Origin 300i": {
@@ -3573,7 +3536,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["PowerBolt"],
         coolers: ["ArcticStorm"],
         shields: ["WEB"],
-        pilotWeapons: ["SW16BR3 “Shredder” Repeater","CF-227 Badger Repeater",""],
+        pilotWeapons: ["SW16BR3 “Shredder” Repeater","M5A Cannon"],
         turretWeapons: []
     },
     "Origin 315p": {
@@ -3589,7 +3552,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["CF-447 Rhino Repeater","CF-337 Panther Repeater",""],
+        pilotWeapons: ["SW16BR3 “Shredder” Repeater","M6A Cannon"],
         turretWeapons: []
     },
     "Origin 350r": {
@@ -3597,19 +3560,19 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["SunFlare"],
         coolers: ["QuikCool"],
         shields: ["Targa"],
-        pilotWeapons: ["M5A Cannon","CF-227 Badger Repeater",""],
+        pilotWeapons: ["M5A Cannon","CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Origin 400i": {
         quantumDrives: ["Torrent"],
         powerPlants: ["Sedulity"],
         coolers: ["Snowfall"],
-        shields: ["BLOC"],
-        pilotWeapons: ["CF-447 Rhino Repeater"],
+        shields: ["GUARD"],
+        pilotWeapons: ["CF-337 Panther Repeater","CF-447 Rhino Repeater"],
         turretWeapons: []
     },
     "Origin 600i": {
-        quantumDrives: ["Drifter"],
+        quantumDrives: ["Odyssey"],
         powerPlants: ["Durango"],
         coolers: ["FrostBurn"],
         shields: ["Stronghold"],
@@ -3633,12 +3596,12 @@ SC_DATA.stockLoadouts = {
         turretWeapons: []
     },
     "Origin 600i Touring": {
-        quantumDrives: ["Drifter"],
+        quantumDrives: ["Odyssey"],
         powerPlants: ["Durango"],
         coolers: ["FrostBurn"],
         shields: ["Stronghold"],
         pilotWeapons: [],
-        turretWeapons: ["M7A Cannon","CF-447 Rhino Repeater"]
+        turretWeapons: ["M7A Cannon","CF-337 Panther Repeater"]
     },
     "Origin 85X Limited": {
         quantumDrives: ["Beacon"],
@@ -3649,12 +3612,12 @@ SC_DATA.stockLoadouts = {
         turretWeapons: []
     },
     "Origin 600i Explorer": {
-        quantumDrives: ["Drifter"],
+        quantumDrives: ["Odyssey"],
         powerPlants: ["Durango"],
         coolers: ["FrostBurn"],
         shields: ["Stronghold"],
         pilotWeapons: [],
-        turretWeapons: ["M7A Cannon","CF-447 Rhino Repeater"]
+        turretWeapons: ["M7A Cannon","CF-337 Panther Repeater"]
     },
     "Origin M50": {
         quantumDrives: ["Beacon"],
@@ -3670,7 +3633,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Serac","Serac"],
         shields: ["Glacis","Glacis"],
         pilotWeapons: [],
-        turretWeapons: ["CF-557 Galdereen Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater"]
+        turretWeapons: ["M6A Cannon","CF-337 Panther Repeater","M2C \"Swarm\""]
     },
     "Origin M50 Interceptor": {
         quantumDrives: ["LightFire"],
@@ -3701,7 +3664,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Roughneck"],
         coolers: ["Hydrocel"],
         shields: ["Bulwark"],
-        pilotWeapons: ["CF-227 Badger Repeater","",""],
+        pilotWeapons: ["CF-117 Bulldog Repeater"],
         turretWeapons: []
     },
     "RSI Aurora ES": {
@@ -3709,7 +3672,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["ZapJet"],
         coolers: ["BlastChill"],
         shields: ["INK"],
-        pilotWeapons: ["CF-227 Badger Repeater"],
+        pilotWeapons: ["9-Series Longsword Cannon"],
         turretWeapons: []
     },
     "RSI Aurora LN": {
@@ -3717,7 +3680,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Charger"],
         coolers: ["Bracer"],
         shields: ["SecureHyde"],
-        pilotWeapons: ["CF-227 Badger Repeater","","",""],
+        pilotWeapons: ["CF-117 Bulldog Repeater"],
         turretWeapons: []
     },
     "RSI Aurora LX": {
@@ -3725,7 +3688,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["LumaCore"],
         coolers: ["QuikCool"],
         shields: ["Targa"],
-        pilotWeapons: ["CF-227 Badger Repeater","",""],
+        pilotWeapons: ["CF-117 Bulldog Repeater"],
         turretWeapons: []
     },
     "RSI Aurora MR": {
@@ -3733,7 +3696,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Roughneck"],
         coolers: ["Hydrocel"],
         shields: ["Bulwark"],
-        pilotWeapons: ["CF-227 Badger Repeater","",""],
+        pilotWeapons: ["CF-117 Bulldog Repeater"],
         turretWeapons: []
     },
     "RSI Constellation Andromeda": {
@@ -3741,7 +3704,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["DayBreak"],
         coolers: ["Frost-Star EX"],
         shields: ["5CA 'Akura'"],
-        pilotWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater"],
+        pilotWeapons: ["CF-337 Panther Repeater","CF-557 Galdereen Repeater"],
         turretWeapons: []
     },
     "RSI Constellation Aquila": {
@@ -3749,7 +3712,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["DayBreak"],
         coolers: ["Frost-Star EX"],
         shields: ["5CA 'Akura'"],
-        pilotWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater"],
+        pilotWeapons: ["CF-337 Panther Repeater","M7A Cannon"],
         turretWeapons: []
     },
     "RSI Constellation Phoenix": {
@@ -3757,7 +3720,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["DayBreak"],
         coolers: ["Frost-Star EX"],
         shields: ["5CA 'Akura'"],
-        pilotWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater"],
+        pilotWeapons: ["CF-337 Panther Repeater","Omnisky XV Cannon","M2C \"Swarm\""],
         turretWeapons: []
     },
     "RSI Constellation Phoenix Emerald": {
@@ -3765,7 +3728,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["DayBreak"],
         coolers: ["Frost-Star EX"],
         shields: ["5CA 'Akura'"],
-        pilotWeapons: ["CF-337 Panther Repeater","Omnisky XV Cannon","M2C Swarm"],
+        pilotWeapons: ["CF-337 Panther Repeater","Omnisky XV Cannon","M2C \"Swarm\""],
         turretWeapons: []
     },
     "RSI Constellation Taurus": {
@@ -3773,7 +3736,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Diligence"],
         coolers: ["CoolCore"],
         shields: ["Stronghold"],
-        pilotWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater"],
+        pilotWeapons: ["CF-337 Panther Repeater","CF-557 Galdereen Repeater"],
         turretWeapons: []
     },
     "RSI Constellation Taurus Wikelo War Special": {
@@ -3793,10 +3756,10 @@ SC_DATA.stockLoadouts = {
         turretWeapons: []
     },
     "RSI Mantis": {
-        quantumDrives: ["Crossfield"],
-        powerPlants: ["Bolide"],
-        coolers: ["Arctic"],
-        shields: ["CoverAll"],
+        quantumDrives: ["Beacon"],
+        powerPlants: ["Regulus"],
+        coolers: ["Bracer"],
+        shields: ["AllStop"],
         pilotWeapons: ["FL-33 Cannon"],
         turretWeapons: []
     },
@@ -3830,20 +3793,14 @@ SC_DATA.stockLoadouts = {
         coolers: ["Mercury"],
         shields: ["SureStop"],
         pilotWeapons: [],
-        turretWeapons: [
-            "RSI Medusa Cannon",
-            "RSI Medusa Cannon",
-            "Mantis GT-220 Gatling",
-            "Mantis GT-220 Gatling",
-            "CF-117 Bulldog Repeater"
-        ]
+        turretWeapons: ["RSI Medusa Cannon","RSI Medusa Cannon","Mantis GT-220 Gatling","Mantis GT-220 Gatling","Mantis GT-220 Gatling","Mantis GT-220 Gatling","M2C \"Swarm\"","M2C \"Swarm\""]
     },
     "RSI Polaris": {
         quantumDrives: ["Erebos"],
         powerPlants: ["Stellate"],
         coolers: ["Serac"],
         shields: ["Glacis"],
-        pilotWeapons: ["CF-337 Panther Repeater","Omnisky XII Cannon","Maris Cannon","M2C Swarm"],
+        pilotWeapons: ["CF-337 Panther Repeater","Omnisky XII Cannon","Maris Cannon","M2C \"Swarm\""],
         turretWeapons: []
     },
     "RSI Salvation": {
@@ -3855,9 +3812,9 @@ SC_DATA.stockLoadouts = {
         turretWeapons: []
     },
     "RSI Scorpius": {
-        quantumDrives: ["Aither"],
-        powerPlants: ["Bolide"],
-        coolers: ["Arctic"],
+        quantumDrives: ["Eos"],
+        powerPlants: ["Regulus"],
+        coolers: ["Polar"],
         shields: ["FullStop"],
         pilotWeapons: ["CF-337 Panther Repeater"],
         turretWeapons: []
@@ -3915,7 +3872,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Genoa"],
         coolers: ["Snowpack"],
         shields: ["Rampart"],
-        pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"],
+        pilotWeapons: ["Omnisky XII Cannon","CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "RSI Zeus Mk II ES": {
@@ -3923,7 +3880,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["FullForce"],
         coolers: ["ColdSnap"],
         shields: ["5MA 'Chimalli'"],
-        pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"],
+        pilotWeapons: ["Omnisky XII Cannon","CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "RSI Zeus Mk II ES Wikelo Work Special": {
@@ -3939,7 +3896,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Genoa"],
         coolers: ["Snowpack"],
         shields: ["Rampart"],
-        pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"],
+        pilotWeapons: ["Omnisky XII Cannon","CF-337 Panther Repeater"],
         turretWeapons: []
     },
     "Syulen PYAM Exec": {
@@ -4029,9 +3986,8 @@ SC_DATA.stockLoadouts = {
         shields: ["AllStop"],
         pilotWeapons: ["'WAR' Cannon","'WRATH' Cannon","'WEAK' Repeater"],
         turretWeapons: []
-    }
+    },
 };
-
 
 
 // Generate default loadout for a ship using actual stock components from game data
