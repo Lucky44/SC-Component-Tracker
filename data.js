@@ -840,7 +840,7 @@ quantumDrives: [
             size: "Medium",
             pilotWeapons: [{ size: 4 }, { size: 4 }],
             turrets: [
-                { type: "manned", guns: 2, size: 4 }
+                { type: "manned", guns: 4, size: 3 }
             ],
             shields: { count: 1, size: 2 },
             powerPlants: { count: 2, size: 1 },
@@ -2480,8 +2480,8 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["FullStop"],
-        pilotWeapons: ["CF-447 Rhino Repeater","CF-337 Panther Repeater"],
-        turretWeapons: []
+        pilotWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater"],
+        turretWeapons: ["CF-337 Panther Repeater"]
     },
     "Anvil Paladin": {
         quantumDrives: ["SparkFire"],
