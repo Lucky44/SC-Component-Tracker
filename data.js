@@ -807,7 +807,7 @@ quantumDrives: [
             turrets: [],
             shields: { count: 2, size: 2 },
             powerPlants: { count: 1, size: 2 },
-            coolers: { count: 1, size: 2 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 2 }
         },
         {
@@ -2428,9 +2428,9 @@ SC_DATA.stockLoadouts = {
         turretWeapons: []
     },
     "Anvil F8C Lightning": {
-        quantumDrives: ["Expedition"],
+        quantumDrives: ["Crossfield"],
         powerPlants: ["Maelstrom"],
-        coolers: ["Polar"],
+        coolers: ["Polar","Polar"],
         shields: ["Sheut"],
         pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","Tarantula GT-870 Mark 3 Cannon","Tarantula GT-870 Mark 3 Cannon","CF-227 Badger Repeater","CF-227 Badger Repeater","Tarantula GT-870 Mark 2 Cannon","Tarantula GT-870 Mark 2 Cannon"],
         turretWeapons: []
