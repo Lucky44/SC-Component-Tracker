@@ -1038,7 +1038,7 @@ quantumDrives: [
             pilotWeapons: [{ size: 5 }, { size: 5 }],
             turrets: [
                 { name: "Remote Main", type: "remote", guns: 2, size: 4 },
-                { name: "Remote Rear", type: "remote", guns: 1, size: 4 }
+                { name: "Remote 2x S4", type: "remote", guns: 2, size: 4 }
             ],
             shields: { count: 2, size: 3 },
             powerPlants: { count: 2, size: 3 },
@@ -2850,7 +2850,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["ThermalCore"],
         shields: ["Stronghold"],
         pilotWeapons: ["M7A Cannon", "M7A Cannon"],
-        turretWeapons: ["M6A Cannon", "M6A Cannon", "CF-447 Rhino Repeater"]
+        turretWeapons: ["M6A Cannon", "M6A Cannon", "CF-447 Rhino Repeater", "CF-447 Rhino Repeater"]
     },
     "Crusader Intrepid": {
         quantumDrives: ["FoxFire"],
