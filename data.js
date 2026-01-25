@@ -2321,7 +2321,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Bracer"],
         shields: ["AllStop"],
         pilotWeapons: ["Revenant Gatling","Revenant Gatling","Omnisky IX Cannon","Omnisky IX Cannon"],
-        turretWeapons: ["Omnisky IX Cannon","Omnisky IX Cannon","Omnisky IX Cannon","Omnisky IX Cannon"]
+        turretWeapons: ["Omnisky IX Cannon","Omnisky IX Cannon"]
     },
     "Anvil F7C Hornet Mk I": {
         quantumDrives: ["Eos"],
