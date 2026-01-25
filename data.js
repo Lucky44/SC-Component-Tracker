@@ -628,10 +628,9 @@ quantumDrives: [
             name: "Aegis Vanguard Harbinger",
             manufacturer: "Aegis",
             size: "Large",
-            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 5 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
             turrets: [
-                { type: "remote", guns: 4, size: 2 },
-                { type: "manned", guns: 2, size: 2 }
+                { type: "manned", guns: 2, size: 3 }
             ],
             shields: { count: 2, size: 2 },
             powerPlants: { count: 1, size: 2 },
@@ -642,9 +641,8 @@ quantumDrives: [
             name: "Aegis Vanguard Sentinel",
             manufacturer: "Aegis",
             size: "Large",
-            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 5 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
             turrets: [
-                { type: "remote", guns: 4, size: 2 },
                 { type: "manned", guns: 2, size: 2 }
             ],
             shields: { count: 2, size: 2 },
@@ -656,9 +654,8 @@ quantumDrives: [
             name: "Aegis Vanguard Warden",
             manufacturer: "Aegis",
             size: "Large",
-            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 5 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
             turrets: [
-                { type: "remote", guns: 4, size: 2 },
                 { type: "manned", guns: 2, size: 2 }
             ],
             shields: { count: 2, size: 2 },
@@ -670,9 +667,8 @@ quantumDrives: [
             name: "Aegis Vanguard Hoplite",
             manufacturer: "Aegis",
             size: "Large",
-            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 5 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
             turrets: [
-                { type: "remote", guns: 4, size: 2 },
                 { type: "manned", guns: 2, size: 2 }
             ],
             shields: { count: 2, size: 2 },
