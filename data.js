@@ -779,9 +779,8 @@ quantumDrives: [
             name: "Anvil F7A Hornet Mk II",
             manufacturer: "Anvil",
             size: "Medium",
-            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 3 }, { size: 3 }],
             turrets: [
-                { type: "manned", guns: 2, size: 3 },
                 { type: "manned", guns: 2, size: 3 }
             ],
             shields: { count: 2, size: 1 },
@@ -2321,8 +2320,8 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Maelstrom"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["Revenant Gatling","Revenant Gatling"],
-        turretWeapons: ["Omnisky IX Cannon","Omnisky IX Cannon","C5-173f Ball Turret","Omnisky IX Cannon","Omnisky IX Cannon"]
+        pilotWeapons: ["Revenant Gatling","Revenant Gatling","Omnisky IX Cannon","Omnisky IX Cannon"],
+        turretWeapons: ["C5-173f Ball Turret","Omnisky IX Cannon","Omnisky IX Cannon"]
     },
     "Anvil F7C Hornet Mk I": {
         quantumDrives: ["Eos"],
