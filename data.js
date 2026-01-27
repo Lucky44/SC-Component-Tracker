@@ -2888,7 +2888,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Graupel"],
         shields: ["Aspis"],
         pilotWeapons: ["Mantis GT-220 Gatling","Mantis GT-220 Gatling","DR Model-XJ3 Repeater","DR Model-XJ3 Repeater"],
-        turretWeapons: ["Unknown","Unknown"]
+        turretWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"]
     },
     "Drake Cutlass Red": {
         quantumDrives: ["Bolon"],
