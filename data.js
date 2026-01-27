@@ -969,7 +969,7 @@ quantumDrives: [
             name: "C.O. Mustang Gamma",
             manufacturer: "Consolidated Outland",
             size: "Small",
-            pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 1 }, { size: 1 }],
+            pilotWeapons: [{ size: 1 }, { size: 1 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -2685,7 +2685,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["LumaCore"],
         coolers: ["QuikCool"],
         shields: ["Falco"],
-        pilotWeapons: ["CF-117 Bulldog Repeater","CF-117 Bulldog Repeater","Unknown","Unknown"],
+        pilotWeapons: ["CF-117 Bulldog Repeater","CF-117 Bulldog Repeater"],
         turretWeapons: []
     },
                                                     "C.O. Mustang Omega": {
