@@ -2664,7 +2664,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["ZapJet"],
         coolers: ["Winter-Star"],
         shields: ["INK"],
-        pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater","Unknown","Unknown"],
+        pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"],
         turretWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"]
     },
                                                     "C.O. Mustang Beta": {
@@ -3024,7 +3024,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Slipstream"],
         coolers: ["HeatSafe"],
         shields: ["Shimmer"],
-        pilotWeapons: ["Mantis GT-220 Gatling","CF-227 Badger Repeater"],
+        pilotWeapons: ["Mantis GT-220 Gatling","CF-227 Badger Repeater","CF-227 Badger Repeater"],
         turretWeapons: []
     },
     "Drake Mule": {
@@ -3712,7 +3712,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["DayBreak"],
         coolers: ["Frost-Star EX"],
         shields: ["5CA 'Akura'"],
-        pilotWeapons: ["CF-337 Panther Repeater","M7A Cannon"],
+        pilotWeapons: ["M7A Cannon","M7A Cannon","M7A Cannon","M7A Cannon"],
         turretWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"]
     },
                                             "RSI Constellation Phoenix": {
