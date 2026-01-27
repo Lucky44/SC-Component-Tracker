@@ -1220,7 +1220,7 @@ quantumDrives: [
             name: "Drake Vulture",
             manufacturer: "Drake",
             size: "Medium",
-            pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 1 }, { size: 1 }],
+            pilotWeapons: [{ size: 1 }, { size: 1 }],
             turrets: [],
             shields: { count: 3, size: 1 },
             powerPlants: { count: 2, size: 1 },
@@ -1397,7 +1397,7 @@ quantumDrives: [
             name: "MISC Prospector",
             manufacturer: "MISC",
             size: "Small",
-            pilotWeapons: [{ size: 1 }],
+            pilotWeapons: [{ size: 1 }, { size: 1 }],
             turrets: [],
             shields: { count: 3, size: 1 },
             powerPlants: { count: 1, size: 2 },
@@ -3335,7 +3335,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Trommel"],
         coolers: ["Snowfall"],
         shields: ["Bulwark"],
-        pilotWeapons: ["CF-117 Bulldog Repeater"],
+        pilotWeapons: ["CF-117 Bulldog Repeater","CF-117 Bulldog Repeater"],
         turretWeapons: []
     },
     "MISC Prospector Wikelo Work Special": {
@@ -3343,7 +3343,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Sedulity"],
         coolers: ["Snowpack"],
         shields: ["Guardian"],
-        pilotWeapons: ["NDB-26 Repeater"],
+        pilotWeapons: ["NDB-26 Repeater","NDB-26 Repeater"],
         turretWeapons: []
     },
                         "MISC Reliant Kore": {
