@@ -1279,20 +1279,6 @@ quantumDrives: [
 
         // ===== GATAC =====
         {
-            name: "Gatac Railen",
-            manufacturer: "Gatac",
-            size: "Large",
-            pilotWeapons: [],
-            turrets: [
-                { type: "manned", guns: 2, size: 3 },
-                { type: "manned", guns: 2, size: 3 }
-            ],
-            shields: { count: 2, size: 2 },
-            powerPlants: { count: 2, size: 2 },
-            coolers: { count: 2, size: 2 },
-            quantumDrive: { size: 2 }
-        },
-        {
             name: "Gatac Syulen",
             manufacturer: "Gatac",
             size: "Small",
@@ -3087,14 +3073,6 @@ SC_DATA.stockLoadouts = {
         shields: ["HEX"],
         pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"],
         turretWeapons: []
-    },
-                                    "Gatac Railen": {
-        quantumDrives: ["Crossfield"],
-        powerPlants: ["Maelstrom"],
-        coolers: ["Arctic"],
-        shields: ["FullStop"],
-        pilotWeapons: [],
-        turretWeapons: ["S4 Weapon","S4 Weapon","S4 Weapon","S4 Weapon"]
     },
     "Grey's Shiv": {
         quantumDrives: ["Odyssey"],
