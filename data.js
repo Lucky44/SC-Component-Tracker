@@ -482,7 +482,7 @@ quantumDrives: [
             name: "Aegis Avenger Stalker",
             manufacturer: "Aegis",
             size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -493,7 +493,7 @@ quantumDrives: [
             name: "Aegis Avenger Titan",
             manufacturer: "Aegis",
             size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -504,7 +504,7 @@ quantumDrives: [
             name: "Aegis Avenger Warlock",
             manufacturer: "Aegis",
             size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -742,8 +742,10 @@ quantumDrives: [
             name: "Anvil F7C Hornet Mk I",
             manufacturer: "Anvil",
             size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 2 }, { size: 2 }, { size: 3 }],
-            turrets: [],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
+            turrets: [
+                { type: "remote", guns: 2, size: 1 }
+            ],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
             coolers: { count: 2, size: 1 },
@@ -764,7 +766,7 @@ quantumDrives: [
             name: "Anvil F7C-M Super Hornet",
             manufacturer: "Anvil",
             size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 2 }],
             turrets: [
                 { type: "manned", guns: 1, size: 4 }
             ],
@@ -790,7 +792,7 @@ quantumDrives: [
             name: "Anvil F8A Lightning",
             manufacturer: "Anvil",
             size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 2 }, { size: 2 }],
             turrets: [],
             shields: { count: 2, size: 2 },
             powerPlants: { count: 1, size: 2 },
@@ -1809,7 +1811,7 @@ quantumDrives: [
             name: "RSI Constellation Taurus",
             manufacturer: "RSI",
             size: "Large",
-            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            pilotWeapons: [{ size: 5 }, { size: 5 }],
             turrets: [
                 { type: "manned", guns: 2, size: 5 }
             ],
@@ -1896,7 +1898,7 @@ quantumDrives: [
             name: "RSI Zeus Mk II CL",
             manufacturer: "RSI",
             size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
             turrets: [
                 { type: "remote", guns: 2, size: 3 }
             ],
@@ -1909,7 +1911,7 @@ quantumDrives: [
             name: "RSI Zeus Mk II ES",
             manufacturer: "RSI",
             size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
             turrets: [
                 { type: "remote", guns: 2, size: 3 }
             ],
@@ -1922,7 +1924,7 @@ quantumDrives: [
             name: "RSI Zeus Mk II MR",
             manufacturer: "RSI",
             size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
             turrets: [
                 { type: "remote", guns: 2, size: 3 }
             ],
@@ -2073,7 +2075,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Algid"],
         shields: ["RS-Barrier"],
         pilotWeapons: [],
-        turretWeapons: ["M2C \"Swarm\"","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater"]
+        turretWeapons: ["M2C \"Swarm\"","CF-337 Panther Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater"]
     },
     "Aegis Reclaimer 2949 Best In Show Edition": {
         quantumDrives: ["Kama"],
@@ -2097,7 +2099,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Blizzard","Blizzard"],
         shields: ["FullStop","FullStop","FullStop","FullStop","FullStop","FullStop"],
         pilotWeapons: ["C-788 Cannon","C-788 Cannon"],
-        turretWeapons: ["AD4B Ballistic Gatling","AD4B Ballistic Gatling","M5A Cannon","AD4B Ballistic Gatling","AD4B Ballistic Gatling","M5A Cannon","M5A Cannon","AD4B Ballistic Gatling","AD4B Ballistic Gatling","M6A Cannon"]
+        turretWeapons: ["AD4B Ballistic Gatling","M5A Cannon","M6A Cannon"]
     },
     "Aegis Retaliator": {
         quantumDrives: ["Crossfield"],
@@ -2113,7 +2115,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Arctic","Arctic"],
         shields: ["FullStop","FullStop","FullStop","FullStop","FullStop","FullStop"],
         pilotWeapons: [],
-        turretWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater"]
+        turretWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater"]
     },
                                                         "Aegis Sabre": {
         quantumDrives: ["Drift"],
@@ -2481,7 +2483,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Bracer","Bracer"],
         shields: ["FullStop","FullStop"],
         pilotWeapons: ["CF-447 Rhino Repeater","CF-447 Rhino Repeater"],
-        turretWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater"]
+        turretWeapons: ["CF-337 Panther Repeater"]
     },
     "Anvil Paladin": {
         quantumDrives: ["SparkFire"],
@@ -2619,22 +2621,6 @@ SC_DATA.stockLoadouts = {
         pilotWeapons: ["M5A Cannon"],
         turretWeapons: []
     },
-    "ARGO MOLE": {
-        quantumDrives: ["Huracan"],
-        powerPlants: ["Ginzel"],
-        coolers: ["ThermalCore"],
-        shields: ["5CA 'Akura'"],
-        pilotWeapons: [],
-        turretWeapons: []
-    },
-    "ARGO RAFT": {
-        quantumDrives: ["Bolon"],
-        powerPlants: ["Diligence"],
-        coolers: ["CoolCore"],
-        shields: ["Aspis"],
-        pilotWeapons: [],
-        turretWeapons: []
-    },
     "Argo RAFT Wikelo Work Special": {
         quantumDrives: ["Huracan"],
         powerPlants: ["Sedulity"],
@@ -2745,7 +2731,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Mercury"],
         shields: ["FullBlock"],
         pilotWeapons: [],
-        turretWeapons: ["Omnisky XV Cannon","M7A Cannon","CF-557 Galdereen Repeater","M6A Cannon","CF-447 Rhino Repeater"]
+        turretWeapons: ["M7A Cannon","CF-447 Rhino Repeater"]
     },
     "Crusader A2 Hercules Starlifter Wikelo War Special": {
         quantumDrives: ["Balandin"],
@@ -2881,7 +2867,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["CoolCore","CoolCore"],
         shields: ["Stronghold"],
         pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"],
-        turretWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater"]
+        turretWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"]
     },
     "Cutlass Black PYAM Exec": {
         quantumDrives: ["Odyssey"],

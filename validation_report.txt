@@ -1,25 +1,15 @@
 
-=== Aegis Avenger Stalker ===
-- oversized-weapon: pilotWeapons[1] 'Omnisky IX Cannon' size 3 > mount S2
-- oversized-weapon: pilotWeapons[2] 'Omnisky IX Cannon' size 3 > mount S2
-
-=== Aegis Avenger Titan ===
-- oversized-weapon: pilotWeapons[1] 'Omnisky IX Cannon' size 3 > mount S2
-- oversized-weapon: pilotWeapons[2] 'Omnisky IX Cannon' size 3 > mount S2
-
-=== Aegis Avenger Warlock ===
-- oversized-weapon: pilotWeapons[1] 'Omnisky IX Cannon' size 3 > mount S2
-- oversized-weapon: pilotWeapons[2] 'Omnisky IX Cannon' size 3 > mount S2
-
 === Aegis Reclaimer ===
 - turret-length-mismatch: turretWeapons has 17, expected 16 (per-gun) or 16 (per-turret)
+- A-hardpoint-spec-missing: turrets: stock lists 17 > spec mounts (guns=16, turrets=16)
 
 === Aegis Redeemer ===
-- too-many-pilot-weapons: stock has 4, spec has 2
 - turret-length-mismatch: turretWeapons has 10, expected 6 (per-gun) or 3 (per-turret)
+- A-hardpoint-spec-missing: turrets: stock lists 10 > spec mounts (guns=6, turrets=3)
 
 === Aegis Retaliator Bomber ===
 - turret-length-mismatch: turretWeapons has 15, expected 10 (per-gun) or 5 (per-turret)
+- A-hardpoint-spec-missing: turrets: stock lists 15 > spec mounts (guns=10, turrets=5)
 
 === Aegis Vanguard Hoplite ===
 - unknown-weapon: turretWeapons[0] 'SW16BR2 Sawbuck Repeater' not found
@@ -30,60 +20,66 @@
 - unknown-weapon: turretWeapons[1] 'SW16BR2 Sawbuck Repeater' not found
 
 === Anvil F7C Hornet Mk I ===
-- oversized-weapon: pilotWeapons[1] 'CF-337 Panther Repeater' size 3 > mount S2
-- oversized-weapon: pilotWeapons[2] 'CF-337 Panther Repeater' size 3 > mount S2
 - unknown-weapon: pilotWeapons[3] 'Unknown' not found
 - unknown-weapon: turretWeapons[0] 'Anvil Noise Launcher' not found
 - unknown-weapon: turretWeapons[1] 'Anvil Decoy Launcher' not found
 
 === Anvil F7C-M Super Hornet ===
-- oversized-weapon: pilotWeapons[2] 'Mantis GT-220 Gatling' size 3 > mount S2
 - unknown-weapon: pilotWeapons[3] 'Unknown' not found
 - unknown-weapon: turretWeapons[0] 'CF-227 Badger' not found
 
 === Anvil F8A Lightning ===
-- oversized-weapon: pilotWeapons[0] 'M6A Cannon' size 4 > mount S3
-- oversized-weapon: pilotWeapons[1] 'M6A Cannon' size 4 > mount S3
-- oversized-weapon: pilotWeapons[4] 'M5A Cannon' size 3 > mount S2
-- oversized-weapon: pilotWeapons[5] 'M5A Cannon' size 3 > mount S2
 - unknown-weapon: pilotWeapons[6] 'Unknown' not found
 - unknown-weapon: pilotWeapons[7] 'Unknown' not found
 
 === Anvil Hurricane ===
 - turret-length-mismatch: turretWeapons has 5, expected 4 (per-gun) or 1 (per-turret)
+- A-hardpoint-spec-missing: turrets: stock lists 5 > spec mounts (guns=4, turrets=1)
 
 === Anvil Valkyrie ===
-- too-many-pilot-weapons: stock has 2, spec has 0
+- oversized-weapon: pilotWeapons[0] 'CF-337 Panther Repeater' size 3 > mount S2
+- oversized-weapon: pilotWeapons[1] 'CF-337 Panther Repeater' size 3 > mount S2
 
 === Argo MOLE ===
-- too-many-pilot-weapons: stock has 1, spec has 0
+- B-missing-stock-pilot: pilot mount 1 has no stock weapon
 
 === Argo RAFT ===
-- too-many-pilot-weapons: stock has 1, spec has 0
+- oversized-weapon: pilotWeapons[0] 'M5A Cannon' size 3 > mount S1
+- B-missing-stock-pilot: pilot mount 1 has no stock weapon
+
+=== ARGO MOLE ===
+- B-missing-stock-pilot: pilot mount 0 has no stock weapon
+- B-missing-stock-pilot: pilot mount 1 has no stock weapon
+
+=== ARGO RAFT ===
+- B-missing-stock-pilot: pilot mount 0 has no stock weapon
+- B-missing-stock-pilot: pilot mount 1 has no stock weapon
 
 === Banu Defender ===
 - unknown-weapon: turretWeapons[0] 'Singe Cannon' not found
 - unknown-weapon: turretWeapons[1] 'Singe Cannon' not found
 - unknown-weapon: turretWeapons[2] 'Singe Cannon' not found
 - unknown-weapon: turretWeapons[3] 'Singe Cannon' not found
+- A-hardpoint-spec-missing: turrets present in stock but spec has none
 
 === C.O. Mustang Alpha ===
 - oversized-weapon: pilotWeapons[0] 'CF-227 Badger Repeater' size 2 > mount S1
 - oversized-weapon: pilotWeapons[1] 'CF-227 Badger Repeater' size 2 > mount S1
-- unknown-weapon: pilotWeapons[2] 'Unknown' not found
-- unknown-weapon: pilotWeapons[3] 'Unknown' not found
+- A-hardpoint-spec-missing: turrets present in stock but spec has none
 
 === C.O. Mustang Beta ===
 - oversized-weapon: pilotWeapons[0] 'CF-227 Badger Repeater' size 2 > mount S1
 - oversized-weapon: pilotWeapons[1] 'CF-227 Badger Repeater' size 2 > mount S1
 - unknown-weapon: pilotWeapons[2] 'Unknown' not found
 - unknown-weapon: pilotWeapons[3] 'Unknown' not found
+- A-hardpoint-spec-missing: turrets present in stock but spec has none
 
 === C.O. Mustang Delta ===
 - oversized-weapon: pilotWeapons[0] 'Jericho XL' size 3 > mount S2
 - oversized-weapon: pilotWeapons[1] 'Jericho XL' size 3 > mount S2
 - oversized-weapon: pilotWeapons[2] 'CF-227 Badger Repeater' size 2 > mount S1
 - oversized-weapon: pilotWeapons[3] 'CF-227 Badger Repeater' size 2 > mount S1
+- A-hardpoint-spec-missing: turrets present in stock but spec has none
 
 === C.O. Mustang Gamma ===
 - unknown-weapon: pilotWeapons[2] 'Unknown' not found
@@ -97,9 +93,11 @@
 - oversized-weapon: pilotWeapons[1] 'CF-337 Panther Repeater' size 3 > mount S2
 - oversized-weapon: pilotWeapons[2] 'CF-337 Panther Repeater' size 3 > mount S2
 - unknown-weapon: turretWeapons[0] 'SureGrip S1 Tractor' not found
+- A-hardpoint-spec-missing: turrets present in stock but spec has none
 
 === Crusader A2 Hercules Starlifter ===
 - turret-length-mismatch: turretWeapons has 5, expected 4 (per-gun) or 2 (per-turret)
+- A-hardpoint-spec-missing: turrets: stock lists 5 > spec mounts (guns=4, turrets=2)
 
 === Crusader Spirit A1 ===
 - unknown-weapon: turretWeapons[0] 'Unknown' not found
@@ -113,6 +111,7 @@
 
 === Crusader Mercury Star Runner ===
 - turret-length-mismatch: turretWeapons has 6, expected 4 (per-gun) or 2 (per-turret)
+- A-hardpoint-spec-missing: turrets: stock lists 6 > spec mounts (guns=4, turrets=2)
 
 === Drake Buccaneer ===
 - unknown-weapon: pilotWeapons[3] 'Unknown' not found
@@ -129,12 +128,11 @@
 - unknown-weapon: turretWeapons[1] 'Unknown' not found
 
 === Drake Cutlass Blue ===
-- too-many-pilot-weapons: stock has 3, spec has 2
+- B-missing-stock-pilot: pilot mount 3 has no stock weapon
 - unknown-weapon: turretWeapons[0] 'Unknown' not found
 - unknown-weapon: turretWeapons[1] 'Unknown' not found
 
 === Drake Cutlass Steel ===
-- too-many-pilot-weapons: stock has 4, spec has 2
 - unknown-weapon: turretWeapons[0] 'Unknown' not found
 - unknown-weapon: turretWeapons[1] 'Unknown' not found
 
@@ -142,11 +140,10 @@
 - oversized-weapon: pilotWeapons[0] 'CF-227 Badger Repeater' size 2 > mount S1
 - oversized-weapon: pilotWeapons[1] 'CF-227 Badger Repeater' size 2 > mount S1
 
-=== Drake Herald ===
-- oversized-weapon: pilotWeapons[0] 'Mantis GT-220 Gatling' size 3 > mount S2
-
 === Drake Vulture ===
-- too-many-pilot-weapons: stock has 1, spec has 0
+- B-missing-stock-pilot: pilot mount 1 has no stock weapon
+- B-missing-stock-pilot: pilot mount 2 has no stock weapon
+- B-missing-stock-pilot: pilot mount 3 has no stock weapon
 
 === Esperia Blade ===
 - unknown-weapon: pilotWeapons[2] 'Unknown' not found
@@ -154,9 +151,6 @@
 === Esperia Glaive ===
 - unknown-weapon: pilotWeapons[2] 'Unknown' not found
 - unknown-weapon: pilotWeapons[3] 'Unknown' not found
-
-=== Esperia Prowler ===
-- too-many-pilot-weapons: stock has 2, spec has 0
 
 === Esperia Talon ===
 - oversized-weapon: pilotWeapons[0] 'Lightstrike IV Cannon' size 4 > mount S3
@@ -208,6 +202,9 @@
 === MISC Hull A ===
 - unknown-weapon: pilotWeapons[1] 'Unknown' not found
 
+=== MISC Reliant Kore ===
+- A-hardpoint-spec-missing: turrets present in stock but spec has none
+
 === MISC Reliant Mako ===
 - unknown-weapon: pilotWeapons[1] 'Unknown' not found
 
@@ -248,29 +245,10 @@
 - oversized-weapon: pilotWeapons[1] 'CF-337 Panther Repeater' size 3 > mount S2
 - oversized-weapon: pilotWeapons[2] 'CF-337 Panther Repeater' size 3 > mount S2
 
-=== Origin 400i ===
-- too-many-pilot-weapons: stock has 2, spec has 1
-
 === Origin 600i ===
-- too-many-pilot-weapons: stock has 2, spec has 0
-
-=== RSI Constellation Aquila ===
-- oversized-weapon: pilotWeapons[1] 'M7A Cannon' size 5 > mount S4
+- B-missing-stock-pilot: pilot mount 2 has no stock weapon
 
 === RSI Constellation Phoenix ===
-- oversized-weapon: pilotWeapons[1] 'Omnisky XV Cannon' size 5 > mount S4
-- too-many-pilot-weapons: stock has 3, spec has 2
+- B-missing-stock-pilot: pilot mount 3 has no stock weapon
 
-=== RSI Constellation Taurus ===
-- oversized-weapon: pilotWeapons[1] 'CF-557 Galdereen Repeater' size 5 > mount S4
-
-=== RSI Zeus Mk II CL ===
-- oversized-weapon: pilotWeapons[0] 'Omnisky XII Cannon' size 4 > mount S3
-
-=== RSI Zeus Mk II ES ===
-- oversized-weapon: pilotWeapons[0] 'Omnisky XII Cannon' size 4 > mount S3
-
-=== RSI Zeus Mk II MR ===
-- oversized-weapon: pilotWeapons[0] 'Omnisky XII Cannon' size 4 > mount S3
-
-Total issues: 134
+Total issues: 128
