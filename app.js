@@ -639,10 +639,10 @@ function renderShips() {
                 <div class="ship-components">
                     ${renderComponentList('Pilot Weapons', components.pilotWeapons)}
                     ${renderTurretList(components.turrets)}
-                    ${renderComponentList('Shields', components.shields)}
-                    ${renderComponentList('Power', components.powerPlants)}
                     ${renderComponentList('Coolers', components.coolers)}
+                    ${renderComponentList('Power', components.powerPlants)}
                     ${renderComponentList('QT Drive', components.quantumDrives)}
+                    ${renderComponentList('Shields', components.shields)}
                 </div>
             </div>
         `;
@@ -693,7 +693,7 @@ function renderStorage() {
 
     // Group by type
     const grouped = {};
-    const typeOrder = ['weapons', 'shields', 'powerPlants', 'coolers', 'quantumDrives'];
+    const typeOrder = ['weapons', 'coolers', 'powerPlants', 'quantumDrives', 'shields'];
 
     appData.storage.forEach((item, index) => {
         if (!grouped[item.type]) {
