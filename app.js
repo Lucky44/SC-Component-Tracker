@@ -601,6 +601,12 @@ const TYPE_LABELS = {
 
 function renderShips() {
     const container = document.getElementById('shipsList');
+    const heading = document.getElementById('shipsHeading');
+
+    if (heading) {
+        const count = appData.ships.length;
+        heading.textContent = `My Ships: ${count} in hangar`;
+    }
 
     if (appData.ships.length === 0) {
         container.innerHTML = `
