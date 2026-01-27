@@ -956,8 +956,10 @@ quantumDrives: [
             name: "C.O. Mustang Beta",
             manufacturer: "Consolidated Outland",
             size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 2 }, { size: 1 }, { size: 1 }],
-            turrets: [],
+            pilotWeapons: [{ size: 1 }, { size: 1 }],
+            turrets: [
+                { type: "manned", guns: 2, size: 2 }
+            ],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
             coolers: { count: 1, size: 1 },
@@ -2659,7 +2661,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Roughneck"],
         coolers: ["Hydrocel"],
         shields: ["INK"],
-        pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater","Unknown","Unknown"],
+        pilotWeapons: ["Empty","Empty"],
         turretWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"]
     },
     "C.O. Mustang CitizenCon 2948 Edition": {
