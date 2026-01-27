@@ -1589,7 +1589,7 @@ quantumDrives: [
             name: "Origin 300i",
             manufacturer: "Origin",
             size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 2 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -1600,7 +1600,7 @@ quantumDrives: [
             name: "Origin 315p",
             manufacturer: "Origin",
             size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 3 }, { size: 2 }, { size: 2 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -2187,7 +2187,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Arctic"],
         shields: ["FullStop"],
         pilotWeapons: ["Deadbolt V Cannon","BRVS Repeater","BRVS Repeater","BRVS Repeater","BRVS Repeater"],
-        turretWeapons: ["SW16BR2 “Sawbuck” Repeater","SW16BR2 “Sawbuck” Repeater"]
+        turretWeapons: ["SW16BR2 \"Sawbuck\" Repeater","SW16BR2 \"Sawbuck\" Repeater"]
     },
                                         "Aegis Vanguard Sentinel": {
         quantumDrives: ["Nova"],
@@ -2203,7 +2203,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Arctic"],
         shields: ["FullStop"],
         pilotWeapons: ["Deadbolt V Cannon","MVSA Cannon","MVSA Cannon","MVSA Cannon","MVSA Cannon"],
-        turretWeapons: ["SW16BR2 “Sawbuck” Repeater","SW16BR2 “Sawbuck” Repeater"]
+        turretWeapons: ["SW16BR2 \"Sawbuck\" Repeater","SW16BR2 \"Sawbuck\" Repeater"]
     },
     "Anvil Arrow": {
         quantumDrives: ["Beacon"],
@@ -2331,7 +2331,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["ArcticStorm","ArcticStorm"],
         shields: ["WEB","WEB"],
         pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","Unknown"],
-        turretWeapons: ["Empty","Empty"]
+        turretWeapons: ["RSI Noise Launcher","Aegis Sabre - Decoy Launcher"]
     },
                                                         "Anvil F7C Hornet Mk II": {
         quantumDrives: ["Eos"],
@@ -3522,7 +3522,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["PowerBolt"],
         coolers: ["ArcticStorm"],
         shields: ["WEB"],
-        pilotWeapons: ["SW16BR3 “Shredder” Repeater","M5A Cannon","SW16BR3 “Shredder” Repeater"],
+        pilotWeapons: ["SW16BR3 “Shredder” Repeater","M5A Cannon","SW16BR3 \"Shredder\" Repeater"],
         turretWeapons: []
     },
                                             "Origin 315p": {
@@ -3530,7 +3530,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["SonicLite"],
         coolers: ["HeatSafe"],
         shields: ["Shimmer"],
-        pilotWeapons: ["SW16BR3 “Shredder” Repeater","SW16BR3 “Shredder” Repeater","SW16BR3 “Shredder” Repeater"],
+        pilotWeapons: ["SW16BR3 “Shredder” Repeater","SW16BR3 \"Shredder\" Repeater","SW16BR3 \"Shredder\" Repeater"],
         turretWeapons: []
     },
                                             "Origin 325a": {
@@ -3538,7 +3538,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Regulus"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["SW16BR3 “Shredder” Repeater","M6A Cannon","SW16BR3 “Shredder” Repeater"],
+        pilotWeapons: ["SW16BR3 “Shredder” Repeater","M6A Cannon","SW16BR3 \"Shredder\" Repeater"],
         turretWeapons: []
     },
                                             "Origin 350r": {
