@@ -1323,7 +1323,7 @@ quantumDrives: [
             name: "Kruger P-52 Merlin",
             manufacturer: "Kruger",
             size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 1 }, { size: 2 }],
+            pilotWeapons: [{ size: 2 }, { size: 1 }, { size: 1 }],
             turrets: [],
             shields: { count: 1, size: 0 },
             powerPlants: { count: 1, size: 1 },
@@ -3197,7 +3197,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["LightBlossom"],
         coolers: ["Frost-Star"],
         shields: ["SecureHyde"],
-        pilotWeapons: ["Tigerstrike T-19P","CF-117 Bulldog Repeater","Unknown"],
+        pilotWeapons: ["Tigerstrike T-19P","CF-117 Bulldog Repeater","CF-117 Bulldog Repeater"],
         turretWeapons: []
     },
                 "Kruger P-72 Archimedes": {
