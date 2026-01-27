@@ -2899,7 +2899,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["TurboDrive"],
         coolers: ["Graupel"],
         shields: ["Aspis"],
-        pilotWeapons: ["DR Model-XJ3 Repeater","Mantis GT-220 Gatling","CF-337 Panther Repeater","Empty"],
+        pilotWeapons: ["Mantis GT-220 Gatling","Mantis GT-220 Gatling","DR Model-XJ3 Repeater","DR Model-XJ3 Repeater"],
         turretWeapons: ["Unknown","Unknown"]
     },
     "Drake Cutlass Red": {
