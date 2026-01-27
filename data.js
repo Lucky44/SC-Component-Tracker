@@ -1535,7 +1535,7 @@ quantumDrives: [
             name: "Mirai Guardian",
             manufacturer: "Mirai",
             size: "Small",
-            pilotWeapons: [{ size: 1 }, { size: 1 }],
+            pilotWeapons: [{ size: 5 }, { size: 5 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -3245,7 +3245,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["OverDrive"],
         coolers: ["Arctic"],
         shields: ["FullStop"],
-        pilotWeapons: ["M3A Cannon","Unknown"],
+        pilotWeapons: ["M7A Cannon","M7A Cannon"],
         turretWeapons: []
     },
     "Mirai Guardian MX": {
