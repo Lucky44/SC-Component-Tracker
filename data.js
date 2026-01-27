@@ -1197,7 +1197,8 @@ quantumDrives: [
             size: "Medium",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [
-                { type: "manned", guns: 2, size: 3 }
+                { type: "manned", guns: 2, size: 3 },
+                { type: "remote", guns: 2, size: 2 }
             ],
             shields: { count: 1, size: 2 },
             powerPlants: { count: 1, size: 2 },
@@ -2915,8 +2916,8 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["TurboDrive"],
         coolers: ["Arctic"],
         shields: ["FullStop"],
-        pilotWeapons: ["CF-337 Panther Repeater","Mantis GT-220 Gatling","CF-227 Badger Repeater","YellowJacket GT-210 Gatling"],
-        turretWeapons: ["Unknown","Unknown"]
+        pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","Mantis GT-220 Gatling","Mantis GT-220 Gatling"],
+        turretWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater"]
     },
                                     "Drake Cutter": {
         quantumDrives: ["FoxFire"],
