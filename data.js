@@ -2616,7 +2616,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Winter-Star"],
         shields: ["INK"],
         pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater","Empty","Empty"],
-        turretWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"]
+        turretWeapons: []
     },
                                                     "C.O. Mustang Beta": {
         quantumDrives: ["Rush"],
@@ -2640,7 +2640,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Winter-Star"],
         shields: ["SecureHyde"],
         pilotWeapons: ["Jericho XL","Jericho XL","CF-227 Badger Repeater","CF-227 Badger Repeater"],
-        turretWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"]
+        turretWeapons: []
     },
                                                     "C.O. Mustang Gamma": {
         quantumDrives: ["Rush"],
@@ -2664,7 +2664,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Ultra-Flow"],
         shields: ["WEB"],
         pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater"],
-        turretWeapons: ["SureGrip TH2 Tractor Beam"]
+        turretWeapons: []
     },
     "C.O. Nomad Teach's Special": {
         quantumDrives: ["Expedition"],
@@ -2880,7 +2880,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["ColdSnap","ColdSnap"],
         shields: ["STOP","STOP"],
         pilotWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","Mantis GT-220 Gatling","Mantis GT-220 Gatling"],
-        turretWeapons: ["Unknown","Unknown"]
+        turretWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"]
     },
                                                 "Drake Cutlass Blue": {
         quantumDrives: ["Bolon"],
@@ -3352,7 +3352,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["ArcticStorm"],
         shields: ["WEB"],
         pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"],
-        turretWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"]
+        turretWeapons: []
     },
                 "MISC Reliant Mako": {
         quantumDrives: ["Drift"],
