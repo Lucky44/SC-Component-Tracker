@@ -1102,19 +1102,6 @@ quantumDrives: [
             coolers: { count: 1, size: 2 },
             quantumDrive: { size: 2 }
         },
-        {
-            name: "Crusader Spirit E1",
-            manufacturer: "Crusader",
-            size: "Medium",
-            pilotWeapons: [],
-            turrets: [
-                { type: "remote", guns: 2, size: 3 }
-            ],
-            shields: { count: 1, size: 2 },
-            powerPlants: { count: 1, size: 2 },
-            coolers: { count: 1, size: 2 },
-            quantumDrive: { size: 2 }
-        },
 
         // ===== DRAKE =====
         {
@@ -2810,14 +2797,6 @@ SC_DATA.stockLoadouts = {
         shields: ["FullStop"],
         pilotWeapons: ["M5A Cannon","M5A Cannon","M5A Cannon","M5A Cannon"],
         turretWeapons: []
-    },
-                "Crusader Spirit E1": {
-        quantumDrives: ["Yeager"],
-        powerPlants: ["UltraFlux"],
-        coolers: ["Boreal"],
-        shields: ["FullStop"],
-        pilotWeapons: [],
-        turretWeapons: ["M5A Cannon","Unknown"]
     },
     "Crusader C2 Hercules Starlifter": {
         quantumDrives: ["Kama"],
