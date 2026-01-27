@@ -62,6 +62,7 @@ function validate() {
     // Pilot weapons existence and size checks
     const pws = Array.isArray(loadout.pilotWeapons) ? loadout.pilotWeapons : [];
     pws.forEach((wName, i) => {
+      if (wName === 'Empty') return; // Skip intentionally empty hardpoints
       const size = findWeaponSizeByName(SC_DATA, wName);
       if (wName && size == null) addIssue('unknown-weapon', shipName, `pilotWeapons[${i}] '${wName}' not found`);
       if (spec && spec.pilotWeapons && spec.pilotWeapons[i]) {
@@ -69,14 +70,29 @@ function validate() {
         if (size != null && size > mount) addIssue('oversized-weapon', shipName, `pilotWeapons[${i}] '${wName}' size ${size} > mount S${mount}`);
       }
     });
-    if (spec && spec.pilotWeapons && pws.length > spec.pilotWeapons.length) {
-      addIssue('too-many-pilot-weapons', shipName, `stock has ${pws.length}, spec has ${spec.pilotWeapons.length}`);
+    if (spec && spec.pilotWeapons) {
+      if (pws.length > spec.pilotWeapons.length) {
+        addIssue('A-hardpoint-spec-missing', shipName, `pilot: stock has ${pws.length}, spec has ${spec.pilotWeapons.length}`);
+        addIssue('too-many-pilot-weapons', shipName, `stock has ${pws.length}, spec has ${spec.pilotWeapons.length}`);
+      }
+      // Missing stock entries for existing mounts (empty or too few)
+      for (let i = 0; i < spec.pilotWeapons.length; i++) {
+        const name = pws[i];
+        if (!name || name === 'Empty') continue; // Skip empty or 'Empty' placeholder
+        // If we reach here, there's an actual weapon name but it might be missing
+      }
+      // Check for genuinely missing entries (not 'Empty', just undefined)
+      for (let i = 0; i < spec.pilotWeapons.length; i++) {
+        const name = pws[i];
+        if (name === undefined) addIssue('B-missing-stock-pilot', shipName, `pilot mount ${i} has no stock weapon`);
+      }
     }
 
     // Turret weapons existence and size checks
     const tws = Array.isArray(loadout.turretWeapons) ? loadout.turretWeapons : [];
     if (tws.length > 0) {
       tws.forEach((wName, i) => {
+        if (wName === 'Empty') return; // Skip intentionally empty hardpoints
         const size = findWeaponSizeByName(SC_DATA, wName);
         if (wName && size == null) addIssue('unknown-weapon', shipName, `turretWeapons[${i}] '${wName}' not found`);
       });
@@ -85,6 +101,11 @@ function validate() {
         const perTurret = spec.turrets.length;
         if (![totalGuns, perTurret].includes(tws.length)) {
           addIssue('turret-length-mismatch', shipName, `turretWeapons has ${tws.length}, expected ${totalGuns} (per-gun) or ${perTurret} (per-turret)`);
+          if (tws.length > Math.max(totalGuns, perTurret)) {
+            addIssue('A-hardpoint-spec-missing', shipName, `turrets: stock lists ${tws.length} > spec mounts (guns=${totalGuns}, turrets=${perTurret})`);
+          } else {
+            addIssue('B-missing-stock-turret', shipName, `turrets: stock lists ${tws.length} < spec expectation (guns=${totalGuns}, turrets=${perTurret})`);
+          }
         }
         // Check sizes assuming per-gun list when lengths match, else treat as per-turret representative
         if (tws.length === totalGuns) {
@@ -95,6 +116,7 @@ function validate() {
               const name = tws[idx++];
               const size = findWeaponSizeByName(SC_DATA, name);
               if (name && size != null && size > t.size) addIssue('oversized-weapon', shipName, `turret ${ti} gun ${j} '${name}' size ${size} > mount S${t.size}`);
+              if (!name) addIssue('B-missing-stock-turret', shipName, `turret ${ti} gun ${j} has no stock weapon`);
             }
           });
         } else if (tws.length === perTurret) {
@@ -102,9 +124,14 @@ function validate() {
             const name = tws[ti];
             const size = findWeaponSizeByName(SC_DATA, name);
             if (name && size != null && size > t.size) addIssue('oversized-weapon', shipName, `turret ${ti} '${name}' size ${size} > mount S${t.size}`);
+            if (!name) addIssue('B-missing-stock-turret', shipName, `turret ${ti} has no stock weapon`);
           });
         }
       }
+    }
+    // If stock lists turrets but spec has none
+    if (tws.length > 0 && spec && (!spec.turrets || spec.turrets.length === 0)) {
+      addIssue('A-hardpoint-spec-missing', shipName, `turrets present in stock but spec has none`);
     }
 
     // Shields, power plants, coolers, quantum drives — existence and size

@@ -2664,7 +2664,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["ZapJet"],
         coolers: ["Winter-Star"],
         shields: ["INK"],
-        pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"],
+        pilotWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater","Empty","Empty"],
         turretWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater"]
     },
                                                     "C.O. Mustang Beta": {
@@ -3696,7 +3696,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Roughneck"],
         coolers: ["Hydrocel"],
         shields: ["Bulwark"],
-        pilotWeapons: ["CF-117 Bulldog Repeater","CF-117 Bulldog Repeater"],
+        pilotWeapons: ["CF-117 Bulldog Repeater","CF-117 Bulldog Repeater","Empty","Empty"],
         turretWeapons: []
     },
                                             "RSI Constellation Andromeda": {
