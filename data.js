@@ -862,7 +862,7 @@ quantumDrives: [
             name: "Anvil Valkyrie",
             manufacturer: "Anvil",
             size: "Large",
-            pilotWeapons: [],
+            pilotWeapons: [{ size: 2 }, { size: 2 }],
             turrets: [
                 { type: "remote", guns: 2, size: 4 },
                 { type: "manned", guns: 1, size: 3 },
@@ -894,7 +894,7 @@ quantumDrives: [
             name: "ARGO MOLE",
             manufacturer: "ARGO",
             size: "Large",
-            pilotWeapons: [],
+            pilotWeapons: [{ size: 2 }, { size: 2 }],
             turrets: [],
             shields: { count: 2, size: 2 },
             powerPlants: { count: 2, size: 3 },
@@ -905,7 +905,7 @@ quantumDrives: [
             name: "ARGO RAFT",
             manufacturer: "ARGO",
             size: "Medium",
-            pilotWeapons: [],
+            pilotWeapons: [{ size: 1 }, { size: 1 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 2 },
@@ -1181,7 +1181,7 @@ quantumDrives: [
             name: "Drake Cutlass Blue",
             manufacturer: "Drake",
             size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [
                 { type: "manned", guns: 2, size: 3 }
             ],
@@ -1205,7 +1205,7 @@ quantumDrives: [
             name: "Drake Cutlass Steel",
             manufacturer: "Drake",
             size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [
                 { type: "manned", guns: 2, size: 3 }
             ],
@@ -1218,7 +1218,7 @@ quantumDrives: [
             name: "Drake Herald",
             manufacturer: "Drake",
             size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 3 }, { size: 2 }, { size: 2 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -1229,7 +1229,7 @@ quantumDrives: [
             name: "Drake Vulture",
             manufacturer: "Drake",
             size: "Medium",
-            pilotWeapons: [],
+            pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 1 }, { size: 1 }],
             turrets: [],
             shields: { count: 3, size: 1 },
             powerPlants: { count: 2, size: 1 },
@@ -1264,7 +1264,7 @@ quantumDrives: [
             name: "Esperia Prowler",
             manufacturer: "Esperia",
             size: "Medium",
-            pilotWeapons: [],
+            pilotWeapons: [{ size: 5 }, { size: 5 }],
             turrets: [
                 { type: "remote", guns: 2, size: 5 },
                 { type: "manned", guns: 2, size: 3 }
@@ -1631,7 +1631,7 @@ quantumDrives: [
             name: "Origin 400i",
             manufacturer: "Origin",
             size: "Medium",
-            pilotWeapons: [{ size: 4 }],
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
             turrets: [
                 { type: "remote", guns: 2, size: 3 }
             ],
@@ -1644,7 +1644,7 @@ quantumDrives: [
             name: "Origin 600i",
             manufacturer: "Origin",
             size: "Large",
-            pilotWeapons: [],
+            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 5 }],
             turrets: [
                 { type: "remote", guns: 2, size: 5 },
                 { type: "remote", guns: 2, size: 4 }
@@ -1783,7 +1783,7 @@ quantumDrives: [
             name: "RSI Constellation Aquila",
             manufacturer: "RSI",
             size: "Large",
-            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 4 }, { size: 4 }],
             turrets: [
                 { type: "manned", guns: 2, size: 5 }
             ],
@@ -1796,7 +1796,7 @@ quantumDrives: [
             name: "RSI Constellation Phoenix",
             manufacturer: "RSI",
             size: "Large",
-            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 5 }, { size: 5 }],
             turrets: [
                 { type: "manned", guns: 2, size: 5 }
             ],
@@ -2096,7 +2096,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Durango","Durango"],
         coolers: ["Blizzard","Blizzard"],
         shields: ["FullStop","FullStop","FullStop","FullStop","FullStop","FullStop"],
-        pilotWeapons: ["C-788 Cannon","C-788 Cannon","C-788 Cannon","C-788 Cannon"],
+        pilotWeapons: ["C-788 Cannon","C-788 Cannon"],
         turretWeapons: ["AD4B Ballistic Gatling","AD4B Ballistic Gatling","M5A Cannon","AD4B Ballistic Gatling","AD4B Ballistic Gatling","M5A Cannon","M5A Cannon","AD4B Ballistic Gatling","AD4B Ballistic Gatling","M6A Cannon"]
     },
     "Aegis Retaliator": {
