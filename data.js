@@ -1258,7 +1258,7 @@ quantumDrives: [
             name: "Esperia Glaive",
             manufacturer: "Esperia",
             size: "Medium",
-            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 1 }, { size: 1 }],
             turrets: [],
             shields: { count: 1, size: 2 },
             powerPlants: { count: 1, size: 1 },
@@ -3053,7 +3053,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Fierell Cascade"],
         coolers: ["Bracer"],
         shields: ["AllStop"],
-        pilotWeapons: ["'WRATH' Cannon","'WEAK' Repeater","Unknown","Unknown"],
+        pilotWeapons: ["'WRATH' Cannon","'WRATH' Cannon","'WEAK' Repeater","'WEAK' Repeater"],
         turretWeapons: []
     },
                                                 "Esperia Prowler": {
