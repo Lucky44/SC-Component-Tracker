@@ -1783,7 +1783,7 @@ quantumDrives: [
             name: "RSI Constellation Aquila",
             manufacturer: "RSI",
             size: "Large",
-            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 4 }, { size: 4 }],
+            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 5 }, { size: 5 }],
             turrets: [
                 { type: "manned", guns: 2, size: 5 }
             ],
@@ -1796,7 +1796,7 @@ quantumDrives: [
             name: "RSI Constellation Phoenix",
             manufacturer: "RSI",
             size: "Large",
-            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 5 }, { size: 5 }],
+            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 5 }, { size: 5 }],
             turrets: [
                 { type: "manned", guns: 2, size: 5 }
             ],
