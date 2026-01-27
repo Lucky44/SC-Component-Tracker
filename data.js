@@ -3706,7 +3706,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["DayBreak"],
         coolers: ["Frost-Star EX"],
         shields: ["5CA 'Akura'"],
-        pilotWeapons: ["CF-337 Panther Repeater","Omnisky XV Cannon","M2C \"Swarm\""],
+        pilotWeapons: ["Omnisky XV Cannon","Omnisky XV Cannon","Omnisky XV Cannon","Omnisky XV Cannon"],
         turretWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater"]
     },
     "RSI Constellation Phoenix Emerald": {
@@ -3714,7 +3714,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["DayBreak"],
         coolers: ["Frost-Star EX"],
         shields: ["5CA 'Akura'"],
-        pilotWeapons: ["CF-337 Panther Repeater","Omnisky XV Cannon","M2C \"Swarm\""],
+        pilotWeapons: ["Omnisky XV Cannon","Omnisky XV Cannon","Omnisky XV Cannon","Omnisky XV Cannon"],
         turretWeapons: []
     },
                                             "RSI Constellation Taurus": {
