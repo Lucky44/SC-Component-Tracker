@@ -1455,7 +1455,7 @@ quantumDrives: [
             name: "MISC Reliant Tana",
             manufacturer: "MISC",
             size: "Small",
-            pilotWeapons: [{ size: 3 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }],
             turrets: [
                 { type: "manned", guns: 2, size: 3 }
             ],
@@ -2075,7 +2075,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Algid"],
         shields: ["RS-Barrier"],
         pilotWeapons: [],
-        turretWeapons: ["M2C \"Swarm\"","CF-337 Panther Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater"]
+        turretWeapons: ["M2C \"Swarm\"","CF-337 Panther Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater"]
     },
     "Aegis Reclaimer 2949 Best In Show Edition": {
         quantumDrives: ["Kama"],
@@ -2099,7 +2099,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Blizzard","Blizzard"],
         shields: ["FullStop","FullStop","FullStop","FullStop","FullStop","FullStop"],
         pilotWeapons: ["C-788 Cannon","C-788 Cannon"],
-        turretWeapons: ["AD4B Ballistic Gatling","M5A Cannon","M6A Cannon"]
+        turretWeapons: ["AD4B Ballistic Gatling","M5A Cannon","M5A Cannon"]
     },
     "Aegis Retaliator": {
         quantumDrives: ["Crossfield"],
@@ -2891,7 +2891,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["ThermalCore"],
         shields: ["Stronghold"],
         pilotWeapons: [],
-        turretWeapons: ["CF-447 Rhino Repeater","M5A Cannon","CF-337 Panther Repeater","CF-447 Rhino Repeater"]
+        turretWeapons: ["CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater","CF-227 Badger Repeater"]
     },
     "Drake Caterpillar Pirate": {
         quantumDrives: ["Pontes"],
