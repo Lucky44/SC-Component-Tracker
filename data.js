@@ -2608,7 +2608,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Polar","Polar"],
         shields: ["Sukoran","Sukoran"],
         pilotWeapons: ["Singe Cannon (S3)","Singe Cannon (S3)","Singe Cannon (S3)","Singe Cannon (S3)"],
-        turretWeapons: ["Singe Cannon (S3)","Singe Cannon (S3)","Singe Cannon (S3)","Singe Cannon (S3)"]
+        turretWeapons: []
     },
                                                     "C.O. Mustang Alpha": {
         quantumDrives: ["Rush"],
