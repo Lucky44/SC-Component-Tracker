@@ -2562,7 +2562,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Ginzel"],
         coolers: ["ThermalCore"],
         shields: ["5CA 'Akura'"],
-        pilotWeapons: ["CF-227 Badger Repeater"],
+        pilotWeapons: ["CF-227 Badger Repeater","Empty"],
         turretWeapons: []
     },
     "Argo MOLE Carbon": {
@@ -2618,7 +2618,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Diligence"],
         coolers: ["CoolCore"],
         shields: ["Aspis"],
-        pilotWeapons: ["M5A Cannon"],
+        pilotWeapons: ["M5A Cannon","Empty"],
         turretWeapons: []
     },
     "Argo RAFT Wikelo Work Special": {
@@ -2930,7 +2930,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["TurboDrive"],
         coolers: ["Graupel"],
         shields: ["Aspis"],
-        pilotWeapons: ["DR Model-XJ3 Repeater","Mantis GT-220 Gatling","CF-337 Panther Repeater"],
+        pilotWeapons: ["DR Model-XJ3 Repeater","Mantis GT-220 Gatling","CF-337 Panther Repeater","Empty"],
         turretWeapons: ["Unknown","Unknown"]
     },
     "Drake Cutlass Red": {
@@ -3026,7 +3026,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Fortitude"],
         coolers: ["Thermax"],
         shields: ["Bulwark"],
-        pilotWeapons: ["CF-117 Bulldog Repeater"],
+        pilotWeapons: ["CF-117 Bulldog Repeater","Empty","Empty","Empty"],
         turretWeapons: []
     },
     "Drake Vulture Teach's Special": {
@@ -3242,7 +3242,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["OverDrive"],
         coolers: ["Arctic"],
         shields: ["FullStop"],
-        pilotWeapons: ["M7A Cannon","Unknown"],
+        pilotWeapons: ["M3A Cannon","Unknown"],
         turretWeapons: []
     },
     "Mirai Guardian MX": {
@@ -3562,7 +3562,7 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Durango"],
         coolers: ["FrostBurn"],
         shields: ["Stronghold"],
-        pilotWeapons: ["M7A Cannon","CF-337 Panther Repeater"],
+        pilotWeapons: ["M7A Cannon","CF-337 Panther Repeater","Empty"],
         turretWeapons: ["CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater"]
     },
     "Origin 600i 2951 BIS": {
