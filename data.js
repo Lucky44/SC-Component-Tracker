@@ -1297,7 +1297,7 @@ quantumDrives: [
             size: "Small",
             pilotWeapons: [{ size: 2 }, { size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 0 },
+            shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
             coolers: { count: 1, size: 1 },
             quantumDrive: null
@@ -1308,7 +1308,7 @@ quantumDrives: [
             size: "Small",
             pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 0 },
+            shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
             coolers: { count: 1, size: 1 },
             quantumDrive: null
