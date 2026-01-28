@@ -1835,8 +1835,8 @@ quantumDrives: [
             size: "Large",
             pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 1, size: 8 },
-                { type: "manned", guns: 1, size: 8 },
+                { type: "manned", guns: 2, size: 8 },
+                { type: "manned", guns: 2, size: 8 },
                 { type: "manned", guns: 2, size: 3 },
                 { type: "manned", guns: 2, size: 3 },
                 { type: "remote", guns: 2, size: 1 }
@@ -3720,7 +3720,7 @@ SC_DATA.stockLoadouts = {
         coolers: ["Mercury"],
         shields: ["SureStop"],
         pilotWeapons: [],
-        turretWeapons: ["RSI Medusa Cannon","RSI Medusa Cannon","Mantis GT-220 Gatling","Mantis GT-220 Gatling","Mantis GT-220 Gatling","Mantis GT-220 Gatling","M2C \"Swarm\"","M2C \"Swarm\""]
+        turretWeapons: ["RSI Medusa Cannon","RSI Medusa Cannon","RSI Medusa Cannon","RSI Medusa Cannon","Mantis GT-220 Gatling","Mantis GT-220 Gatling","Mantis GT-220 Gatling","Mantis GT-220 Gatling","M2C \"Swarm\"","M2C \"Swarm\""]
     },
                                 "RSI Polaris": {
         quantumDrives: ["Erebos"],
