@@ -2,7 +2,7 @@
 
 // ============ Data Layer ============
 
-const APP_VERSION = '0.40';
+const APP_VERSION = '0.50';
 const STORAGE_KEY = 'sc-component-tracker-data';
 
 const defaultData = {
@@ -685,7 +685,6 @@ function renderStorage() {
         container.innerHTML = `
             <div class="empty-state">
                 <p>No components in storage.</p>
-                <button class="btn btn-primary" onclick="openStorageModal()">Add Component</button>
             </div>
         `;
         return;
@@ -910,54 +909,73 @@ function openStorageModal(index = null) {
         document.getElementById('storageType').value = item.type;
         document.getElementById('storageQuantity').value = item.quantity;
 
-        // Trigger type change to populate size/component
-        populateStorageSizeDropdown(item.type);
-        if (item.size) {
-            document.getElementById('storageSize').value = item.size;
-            populateStorageComponentDropdown(item.type, item.size, item.name);
-            document.getElementById('storageComponent').value = item.name;
-        }
+        // Populate components for this type and select the current one
+        populateStorageComponentsForType(item.type, item.name);
     } else {
         title.textContent = 'Add Component to Storage';
+        document.getElementById('storageComponentGroup').classList.add('hidden');
     }
 
     openModal('storageModal');
 }
 
-function populateStorageSizeDropdown(type) {
-    const sizeGroup = document.getElementById('storageSizeGroup');
-    const sizeSelect = document.getElementById('storageSize');
+function populateStorageComponentsForType(type, selectedValue = null) {
+    const select = document.getElementById('storageComponent');
     const componentGroup = document.getElementById('storageComponentGroup');
+    select.innerHTML = '<option value="">Select a component...</option>';
 
-    sizeSelect.innerHTML = '<option value="">Select size...</option>';
-    document.getElementById('storageComponent').innerHTML = '<option value="">Select a component...</option>';
+    if (!type) {
+        componentGroup.classList.add('hidden');
+        return;
+    }
+
+    let components = [];
 
     if (type === 'weapons') {
-        // Weapons have sizes 1-7
+        // Flatten all weapon sizes into one list
         for (let i = 1; i <= 7; i++) {
-            if (SC_DATA.weapons[i] && SC_DATA.weapons[i].length > 0) {
-                const option = document.createElement('option');
-                option.value = i;
-                option.textContent = `Size ${i}`;
-                sizeSelect.appendChild(option);
+            if (SC_DATA.weapons[i]) {
+                components = components.concat(SC_DATA.weapons[i].map(w => ({ ...w, size: i })));
             }
         }
-        sizeGroup.classList.remove('hidden');
-        componentGroup.classList.remove('hidden');
-    } else if (['shields', 'powerPlants', 'coolers', 'quantumDrives'].includes(type)) {
-        // Components have sizes 1-3
-        for (let i = 1; i <= 3; i++) {
-            const option = document.createElement('option');
-            option.value = i;
-            const labels = { 1: 'Small', 2: 'Medium', 3: 'Large' };
-            option.textContent = `${labels[i]} (Size ${i})`;
-            sizeSelect.appendChild(option);
-        }
-        sizeGroup.classList.remove('hidden');
-        componentGroup.classList.remove('hidden');
-    } else {
-        sizeGroup.classList.add('hidden');
+    } else if (type === 'shields') {
+        components = SC_DATA.shields;
+    } else if (type === 'powerPlants') {
+        components = SC_DATA.powerPlants;
+    } else if (type === 'coolers') {
+        components = SC_DATA.coolers;
+    } else if (type === 'quantumDrives') {
+        components = SC_DATA.quantumDrives;
     }
+
+    // Sort alphabetically by name
+    components.sort((a, b) => a.name.localeCompare(b.name));
+
+    components.forEach(comp => {
+        const option = document.createElement('option');
+        option.value = comp.name;
+        if (type === 'weapons') {
+            option.textContent = `${comp.name} (S${comp.size}, ${comp.type})`;
+        } else {
+            option.textContent = `${comp.name} (Size ${comp.size})`;
+        }
+        select.appendChild(option);
+    });
+
+    // If a selectedValue was provided but not in options, add it
+    if (selectedValue && !Array.from(select.options).some(o => o.value === selectedValue)) {
+        const extra = document.createElement('option');
+        extra.value = selectedValue;
+        extra.textContent = `${selectedValue} (stock)`;
+        extra.selected = true;
+        select.appendChild(extra);
+    }
+
+    if (selectedValue) {
+        select.value = selectedValue;
+    }
+
+    componentGroup.classList.remove('hidden');
 }
 
 function populateStorageComponentDropdown(type, size, selectedValue = null) {
@@ -1084,12 +1102,35 @@ function handleShipSubmit(e) {
     closeModal('shipModal');
 }
 
+function getComponentSize(type, name) {
+    if (type === 'weapons') {
+        for (let i = 1; i <= 7; i++) {
+            if (SC_DATA.weapons[i]) {
+                const found = SC_DATA.weapons[i].find(w => w.name === name);
+                if (found) return i;
+            }
+        }
+    } else if (type === 'shields') {
+        const found = SC_DATA.shields.find(c => c.name === name);
+        if (found) return found.size;
+    } else if (type === 'powerPlants') {
+        const found = SC_DATA.powerPlants.find(c => c.name === name);
+        if (found) return found.size;
+    } else if (type === 'coolers') {
+        const found = SC_DATA.coolers.find(c => c.name === name);
+        if (found) return found.size;
+    } else if (type === 'quantumDrives') {
+        const found = SC_DATA.quantumDrives.find(c => c.name === name);
+        if (found) return found.size;
+    }
+    return null;
+}
+
 function handleStorageSubmit(e) {
     e.preventDefault();
 
     const indexStr = document.getElementById('storageIndex').value;
     const type = document.getElementById('storageType').value;
-    const size = document.getElementById('storageSize').value;
     const name = document.getElementById('storageComponent').value;
 
     if (!name) {
@@ -1097,10 +1138,12 @@ function handleStorageSubmit(e) {
         return;
     }
 
+    const size = getComponentSize(type, name);
+
     const item = {
         type: type,
         name: name,
-        size: size ? parseInt(size, 10) : null,
+        size: size,
         quantity: parseInt(document.getElementById('storageQuantity').value, 10) || 1
     };
 
@@ -1192,7 +1235,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add ship button
     document.getElementById('addShipBtn').addEventListener('click', () => openShipModal());
 
-    // Add storage button
+    // Open storage list button
+    document.getElementById('openStorageListBtn').addEventListener('click', () => {
+        renderStorage();
+        openModal('storageListModal');
+    });
+
+    // Add storage button (inside storage list modal)
     document.getElementById('addStorageBtn').addEventListener('click', () => openStorageModal());
 
     // Ship form submit
@@ -1201,15 +1250,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Storage form submit
     document.getElementById('storageForm').addEventListener('submit', handleStorageSubmit);
 
-    // Storage type change
+    // Storage type change - populate components directly
     document.getElementById('storageType').addEventListener('change', (e) => {
-        populateStorageSizeDropdown(e.target.value);
-    });
-
-    // Storage size change
-    document.getElementById('storageSize').addEventListener('change', (e) => {
-        const type = document.getElementById('storageType').value;
-        populateStorageComponentDropdown(type, e.target.value);
+        populateStorageComponentsForType(e.target.value);
     });
 
     // Confirm delete button

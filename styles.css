@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,26 +7,32 @@
 }
 
 :root {
-    --bg-primary: #0a0e17;
-    --bg-secondary: #141b2d;
-    --bg-card: #1a2332;
-    --bg-hover: #243044;
-    --text-primary: #e8eaed;
-    --text-secondary: #9aa0a6;
-    --accent: #4dabf7;
-    --accent-hover: #74c0fc;
-    --danger: #f03e3e;
-    --danger-hover: #ff6b6b;
-    --border: #2d3748;
-    --success: #40c057;
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-card: #2a2a2a;
+    --bg-hover: #3a3a3a;
+    --text-primary: #e8e8e8;
+    --text-secondary: #8a8a8a;
+    --accent: #ff9500;
+    --accent-hover: #ffb347;
+    --accent-glow: rgba(255, 149, 0, 0.4);
+    --danger: #ff4757;
+    --danger-hover: #ff6b7a;
+    --border: #3a3a3a;
+    --success: #2ed573;
+    --corner-size: 8px;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
+}
+
+h1, h2, h3, h4, .btn, .section-header {
+    font-family: 'Orbitron', sans-serif;
 }
 
 .app {
@@ -48,7 +56,8 @@ body {
 .header h1 {
     font-size: 1.8rem;
     margin: 0;
-    color: var(--text-primary);
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent-glow);
 }
 
 .app-version {
@@ -175,7 +184,7 @@ body {
 }
 
 .section-header h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--text-primary);
 }
 
@@ -183,42 +192,120 @@ body {
 .btn {
     padding: 8px 16px;
     font-size: 0.9rem;
-    border: none;
-    border-radius: 6px;
+    border: 1px solid var(--accent);
+    border-radius: 0;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
+    clip-path: polygon(
+        0 0,
+        calc(100% - var(--corner-size)) 0,
+        100% var(--corner-size),
+        100% 100%,
+        var(--corner-size) 100%,
+        0 calc(100% - var(--corner-size))
+    );
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
 }
 
 .btn-primary {
     background-color: var(--accent);
     color: #000;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .btn-primary:hover {
     background-color: var(--accent-hover);
+    box-shadow: 0 0 20px var(--accent-glow), 0 0 30px var(--accent-glow);
 }
 
 .btn-secondary {
-    background-color: var(--bg-hover);
-    color: var(--text-primary);
+    background-color: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 .btn-secondary:hover {
-    background-color: var(--border);
+    background-color: var(--accent);
+    color: #000;
+    box-shadow: 0 0 15px var(--accent-glow);
 }
 
 .btn-danger {
     background-color: var(--danger);
     color: white;
+    border-color: var(--danger);
 }
 
 .btn-danger:hover {
     background-color: var(--danger-hover);
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.4);
 }
 
 .btn-small {
     padding: 4px 10px;
     font-size: 0.8rem;
+    --corner-size: 5px;
+}
+
+.btn-large {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    width: 100%;
+    --corner-size: 12px;
+}
+
+/* Pulse animation for primary buttons */
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 10px var(--accent-glow); }
+    50% { box-shadow: 0 0 20px var(--accent-glow), 0 0 30px var(--accent-glow); }
+}
+
+.btn-primary {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.btn-primary:hover {
+    animation: none;
+}
+
+/* Storage Button Section */
+.storage-button-section {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#openStorageListBtn {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+    border: 1px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    min-width: 220px;
+}
+
+#addShipBtn {
+    min-width: 220px;
+    font-size: 1.1rem;
+    padding: 12px 24px;
+}
+
+#openStorageListBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 149, 0, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+#openStorageListBtn:hover::before {
+    left: 100%;
 }
 
 /* Ships List */
@@ -229,26 +316,59 @@ body {
 }
 
 .ship-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px;
+    background-color: #4a2800;
+    border: 1px solid var(--accent);
+    border-radius: 0;
+    padding: 12px 16px;
+    position: relative;
+    line-height: 1.3;
+    clip-path: polygon(
+        0 0,
+        calc(100% - 12px) 0,
+        100% 12px,
+        100% 100%,
+        12px 100%,
+        0 calc(100% - 12px)
+    );
+}
+
+.ship-card::before,
+.ship-card::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: var(--accent);
+    border-style: solid;
+}
+
+.ship-card::before {
+    top: 4px;
+    left: 4px;
+    border-width: 2px 0 0 2px;
+}
+
+.ship-card::after {
+    bottom: 4px;
+    right: 4px;
+    border-width: 0 2px 2px 0;
 }
 
 .ship-card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .ship-name {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
+    color: #ffffff;
 }
 
 .ship-nickname {
-    color: var(--text-secondary);
+    color: #ffffff;
     font-weight: normal;
     font-style: italic;
 }
@@ -261,25 +381,25 @@ body {
 .ship-components {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 8px;
-    font-size: 0.9rem;
+    gap: 4px;
+    font-size: 1rem;
 }
 
 .component-row {
-    color: var(--text-secondary);
+    color: #ffffff;
 }
 
 .component-label {
-    color: var(--text-primary);
+    color: #ffffff;
     font-weight: 500;
 }
 
 .component-value {
-    color: var(--text-secondary);
+    color: #ffffff;
 }
 
 .component-empty {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.7);
     font-style: italic;
 }
 
@@ -358,12 +478,21 @@ body {
 
 .modal-content {
     background-color: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    border: 1px solid var(--accent);
+    border-radius: 0;
     width: 90%;
     max-width: 500px;
     max-height: 90vh;
     overflow-y: auto;
+    clip-path: polygon(
+        0 0,
+        calc(100% - 16px) 0,
+        100% 16px,
+        100% 100%,
+        16px 100%,
+        0 calc(100% - 16px)
+    );
+    box-shadow: 0 0 30px rgba(255, 149, 0, 0.2);
 }
 
 .modal-small {
@@ -386,6 +515,12 @@ body {
     font-size: 1.2rem;
 }
 
+.modal-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .modal-close {
     background: none;
     border: none;
@@ -398,6 +533,12 @@ body {
 
 .modal-close:hover {
     color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 16px 20px;
+    max-height: 60vh;
+    overflow-y: auto;
 }
 
 /* Forms */
