@@ -1847,6 +1847,24 @@ quantumDrives: [
             quantumDrive: { size: 3 }
         },
         {
+            name: "RSI Polaris",
+            manufacturer: "RSI",
+            size: "Capital",
+            pilotWeapons: [],
+            turrets: [
+                { type: "manned", guns: 2, size: 6 },
+                { type: "manned", guns: 4, size: 4 },
+                { type: "manned", guns: 4, size: 4 },
+                { type: "manned", guns: 4, size: 3 },
+                { type: "manned", guns: 4, size: 3 },
+                { type: "remote", guns: 4, size: 3 }
+            ],
+            shields: { count: 1, size: 4 },
+            powerPlants: { count: 1, size: 4 },
+            coolers: { count: 1, size: 4 },
+            quantumDrive: { size: 3 }
+        },
+        {
             name: "RSI Scorpius",
             manufacturer: "RSI",
             size: "Medium",
@@ -3720,15 +3738,15 @@ SC_DATA.stockLoadouts = {
         coolers: ["Mercury"],
         shields: ["SureStop"],
         pilotWeapons: [],
-        turretWeapons: ["RSI Medusa Cannon","RSI Medusa Cannon","RSI Medusa Cannon","RSI Medusa Cannon","Mantis GT-220 Gatling","Mantis GT-220 Gatling","Mantis GT-220 Gatling","Mantis GT-220 Gatling","M2C \"Swarm\"","M2C \"Swarm\""]
+        turretWeapons: ["RSI Medusa Cannon","RSI Medusa Cannon","Mantis GT-220 Gatling","Mantis GT-220 Gatling","M2C \"Swarm\""]
     },
-                                "RSI Polaris": {
+    "RSI Polaris": {
         quantumDrives: ["Erebos"],
         powerPlants: ["Stellate"],
         coolers: ["Serac"],
         shields: ["Glacis"],
-        pilotWeapons: ["CF-337 Panther Repeater","Omnisky XII Cannon","Maris Cannon","M2C \"Swarm\""],
-        turretWeapons: ["CF-337 Panther Repeater"]
+        pilotWeapons: [],
+        turretWeapons: ["Maris Cannon","Omnisky XII Cannon","Omnisky XII Cannon","CF-337 Panther Repeater","CF-337 Panther Repeater","CF-337 Panther Repeater"]
     },
     "RSI Salvation": {
         quantumDrives: ["Colossus"],
