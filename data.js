@@ -849,6 +849,21 @@ quantumDrives: [
             quantumDrive: { size: 1 }
         },
         {
+            name: "Anvil Paladin",
+            manufacturer: "Anvil",
+            size: "Large",
+            pilotWeapons: [],
+            turrets: [
+                { type: "remote", guns: 4, size: 5 },
+                { type: "remote", guns: 2, size: 4 },
+                { type: "remote", guns: 2, size: 4 }
+            ],
+            shields: { count: 1, size: 3 },
+            powerPlants: { count: 3, size: 2 },
+            coolers: { count: 2, size: 2 },
+            quantumDrive: { size: 2 }
+        },
+        {
             name: "Anvil Terrapin",
             manufacturer: "Anvil",
             size: "Medium",
@@ -2473,8 +2488,8 @@ SC_DATA.stockLoadouts = {
         powerPlants: ["Maelstrom"],
         coolers: ["Arctic"],
         shields: ["Stronghold"],
-        pilotWeapons: ["CF-447 Rhino Repeater","CF-557 Galdereen Repeater"],
-        turretWeapons: []
+        pilotWeapons: [],
+        turretWeapons: ["CF-557 Galdereen Repeater","CF-557 Galdereen Repeater","CF-557 Galdereen Repeater","CF-557 Galdereen Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater","CF-447 Rhino Repeater"]
     },
     "Anvil Spartan": {
         quantumDrives: [],
