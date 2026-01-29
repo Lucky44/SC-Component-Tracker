@@ -1,4 +1,4 @@
-# SC Component Tracker
+# SC Component Tracker by Tripp Robbins
 
 A browser-based component management application for Star Citizen. Track your ships and their loadouts including weapons, shields, coolers, power plants, and quantum drives with a full inventory system.
 
