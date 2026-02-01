@@ -2,7 +2,7 @@
 
 // ============ Data Layer ============
 
-const APP_VERSION = '0.53';
+const APP_VERSION = '0.61';
 const STORAGE_KEY = 'sc-component-tracker-data';
 
 const defaultData = {
@@ -63,8 +63,36 @@ function getShipById(id) {
 }
 
 // Get ship spec from database
+// Falls back to base ship for variants (e.g., "Aegis Gladius Pirate" -> "Aegis Gladius")
 function getShipSpec(shipName) {
-    return SC_DATA.ships.find(s => s.name === shipName);
+    // Direct match
+    let spec = SC_DATA.ships.find(s => s.name === shipName);
+    if (spec) return spec;
+
+    // Try to find base ship for variants
+    // Variants are typically named "Manufacturer Ship Variant" where base is "Manufacturer Ship"
+    const baseShipName = findBaseShipName(shipName);
+    if (baseShipName && baseShipName !== shipName) {
+        spec = SC_DATA.ships.find(s => s.name === baseShipName);
+        if (spec) {
+            // Return a copy with the variant name for display purposes
+            return { ...spec, name: shipName, isVariant: true, baseName: baseShipName };
+        }
+    }
+
+    return null;
+}
+
+// Find the base ship name for a variant
+// e.g., "Aegis Gladius Pirate" -> "Aegis Gladius"
+function findBaseShipName(variantName) {
+    // Check each base ship to see if the variant starts with its name
+    for (const ship of SC_DATA.ships) {
+        if (variantName.startsWith(ship.name + ' ')) {
+            return ship.name;
+        }
+    }
+    return null;
 }
 
 // Get display name for a ship (without manufacturer prefix)
@@ -215,27 +243,51 @@ function populateShipDropdown() {
     const select = document.getElementById('shipName');
     select.innerHTML = '<option value="">Select a ship...</option>';
 
+    // Collect all ship names from both ships array and stockLoadouts
+    const allShipNames = new Set();
+
+    // Add base ships
+    SC_DATA.ships.forEach(ship => allShipNames.add(ship.name));
+
+    // Add variants from stockLoadouts (they have loadout data)
+    Object.keys(SC_DATA.stockLoadouts).forEach(name => allShipNames.add(name));
+
+    // Exclude problematic variants (Wikelo special editions, etc.)
+    const isExcludedVariant = name => /wikelo|best in show|best-in-show/i.test(name || '');
+
     // Group ships by manufacturer
     const byManufacturer = {};
 
-    // Exclude ground/variant ships (e.g., Wikelo, Best in Show) from selection
-    const isVariantName = name => /wikelo|best in show|best-in-show|variant/i.test(name || '');
+    allShipNames.forEach(shipName => {
+        if (isExcludedVariant(shipName)) return;
 
-    SC_DATA.ships.forEach(ship => {
-        if (isVariantName(ship.name)) return; // skip variants
-        if (!byManufacturer[ship.manufacturer]) {
-            byManufacturer[ship.manufacturer] = [];
+        // Get spec (will fall back to base ship for variants)
+        const spec = getShipSpec(shipName);
+        if (!spec) return; // Skip if no spec found (no base ship)
+
+        const manufacturer = spec.manufacturer;
+        if (!byManufacturer[manufacturer]) {
+            byManufacturer[manufacturer] = [];
         }
-        byManufacturer[ship.manufacturer].push(ship);
+        byManufacturer[manufacturer].push({
+            name: shipName,
+            displayName: getShipDisplayName(shipName)
+        });
     });
 
+    // Sort ships within each manufacturer by display name
+    Object.values(byManufacturer).forEach(ships => {
+        ships.sort((a, b) => a.displayName.localeCompare(b.displayName));
+    });
+
+    // Build dropdown with optgroups
     Object.keys(byManufacturer).sort().forEach(manufacturer => {
         const optgroup = document.createElement('optgroup');
         optgroup.label = manufacturer;
         byManufacturer[manufacturer].forEach(ship => {
             const option = document.createElement('option');
             option.value = ship.name;
-            option.textContent = getShipDisplayName(ship.name);
+            option.textContent = ship.displayName;
             optgroup.appendChild(option);
         });
         select.appendChild(optgroup);

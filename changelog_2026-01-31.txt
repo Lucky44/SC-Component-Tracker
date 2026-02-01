@@ -1,0 +1,88 @@
+Changelog - 2026-01-31 (v0.61)
+===============================
+
+Branch: main
+
+Session Start: ~2:27 PM
+
+Actions Taken:
+--------------
+1. Restarted the local Python HTTP server on port 8000
+
+2. Researched unp4k tooling for extracting Star Citizen game data:
+   - unp4k (github.com/dolkensp/unp4k) extracts files from Data.p4k
+   - unforge.exe converts CryXML and game.dcb (DataForge) to readable formats
+   - Alternative tools: StarBreaker, scdatatools (Python), StarCitizen-GameData
+
+3. Researched scunpacked data structure:
+   - ships.json contains full ship specs + Loadout arrays
+   - ship-items.json contains component/weapon index with display names
+   - Loadout data includes: power plants, coolers, shields, quantum drives, weapons
+
+4. Compared scunpacked data with app's stockLoadouts:
+   - FINDING: ships.json ALREADY contains all stock loadout data with human-readable names!
+   - The ~252 manually-entered stockLoadouts can be auto-extracted from ships.json
+   - Example verified: Gladius has Regulus, Bracer, AllStop, Beacon, CF-337 Panther, Mantis GT-220
+
+Key Finding:
+------------
+The manual work of entering stock loadouts is NOT needed going forward!
+A script can parse ships.json and auto-generate stockLoadouts data.
+
+Files Modified:
+---------------
+- changelog_2026-01-31.txt (created - this file)
+- data.js - Replaced manual stockLoadouts with auto-extracted data (214 ships after filtering)
+- app.js - Added variant ship support:
+  - getShipSpec() now falls back to base ship for variants
+  - findBaseShipName() helper to map variants to base ships
+  - populateShipDropdown() includes variants from stockLoadouts
+
+Files Created:
+--------------
+- scripts/extract-loadouts.js - Extraction script to parse ships.json
+- scripts/extracted-loadouts.js - Generated output (260 ships, 208 with complete data)
+
+Commits Made:
+-------------
+v0.61: Auto-extract ship specs and stock loadouts from ships.json
+
+Notes for Next Steps:
+---------------------
+- Created v0.60 branch with extraction script
+- Script extracts: powerPlants, coolers, shields, quantumDrives, pilotWeapons, turretWeapons
+- Results: 260 ships extracted, 208 with complete component data, 52 partial (vehicles/snubs)
+- Replaced stockLoadouts in data.js with auto-extracted data
+- Only 4 conflicts found with existing data (trusted extracted data)
+- TODO: Manually add snub fighter loadouts (P-52, P-72, Fury) later
+- Syntax check passed, ready for browser testing
+
+Continued Session - 2026-02-01:
+-------------------------------
+5. Created ship specs extraction script (scripts/extract-ships.js):
+   - Extracts hardpoint configurations: pilot weapons, turrets, shields, power plants, coolers, QD
+   - Properly distinguishes pilot weapons from manned/remote turrets
+   - Uses MaxSize from hardpoints, with ClassName fallback for quantum drives
+   - Filters out variants (uses base ship prefix detection)
+   - Results: 176 base ships with hardpoint data
+
+6. Fixed quantum drive size extraction:
+   - Issue: Some QD hardpoints have MaxSize:0
+   - Solution: Parse size from ClassName (e.g., "QDRV_JUST_S03_Kama" -> S3)
+
+7. Replaced manual ships array in data.js with extracted data:
+   - Created scripts/update-data.js helper script
+   - 176 ships with complete hardpoint specs
+   - Includes Grey's Shiv and other Teach's Ship Shop ships
+
+Files Created (continued session):
+----------------------------------
+- scripts/extract-ships.js - Extracts ship hardpoint specs from ships.json
+- scripts/extracted-ships.js - Generated output (176 ships with hardpoints)
+- scripts/update-data.js - Helper to merge extracted data into data.js
+- scripts/debug-ship.js - Debug helper for analyzing ship data
+
+Previous Session Context:
+-------------------------
+- API integration work is on feature/api-integration branch (not working well)
+- Background image variants still untracked
