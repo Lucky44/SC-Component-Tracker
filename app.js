@@ -1506,11 +1506,26 @@ async function checkForUpdate() {
         btn.classList.remove('checking');
         btn.textContent = 'Check for Update';
 
-        if (!localVersion || remoteVersion > localVersion) {
-            // Update available
+        // Determine if an update is actually available
+        const remoteShipCount = data.ships ? data.ships.length : 0;
+        const localShipCount = SC_DATA.ships ? SC_DATA.ships.length : 0;
+        const remoteLoadoutCount = data.stockLoadouts ? Object.keys(data.stockLoadouts).length : 0;
+        const localLoadoutCount = SC_DATA.stockLoadouts ? Object.keys(SC_DATA.stockLoadouts).length : 0;
+
+        // Update is available if:
+        // 1. Remote has a newer version than stored version, OR
+        // 2. Remote has more ships/loadouts than currently loaded
+        const hasNewerVersion = localVersion && remoteVersion > localVersion;
+        const hasMoreData = remoteShipCount > localShipCount || remoteLoadoutCount > localLoadoutCount;
+
+        if (hasNewerVersion || hasMoreData) {
             showUpdateModal(data, localVersion, remoteVersion);
             btn.classList.add('has-update');
         } else {
+            // Data is current - store the version so future checks work properly
+            if (!localVersion) {
+                setStoredDataVersion(remoteVersion);
+            }
             showToast('Ship data is up to date');
         }
     } catch (error) {
@@ -1526,20 +1541,34 @@ function showUpdateModal(newData, localVersion, remoteVersion) {
     const message = document.getElementById('updateMessage');
     const actions = document.getElementById('updateActions');
 
-    const localDate = localVersion ? new Date(localVersion).toLocaleDateString() : 'None (using bundled data)';
     const remoteDate = new Date(remoteVersion).toLocaleDateString();
-    const shipCount = newData.ships ? newData.ships.length : 0;
-    const loadoutCount = newData.stockLoadouts ? Object.keys(newData.stockLoadouts).length : 0;
+    const newShipCount = newData.ships ? newData.ships.length : 0;
+    const newLoadoutCount = newData.stockLoadouts ? Object.keys(newData.stockLoadouts).length : 0;
+    const currentShipCount = SC_DATA.ships ? SC_DATA.ships.length : 0;
+    const currentLoadoutCount = SC_DATA.stockLoadouts ? Object.keys(SC_DATA.stockLoadouts).length : 0;
+
+    const shipDiff = newShipCount - currentShipCount;
+    const loadoutDiff = newLoadoutCount - currentLoadoutCount;
+
+    let changes = [];
+    if (shipDiff > 0) {
+        changes.push(`+${shipDiff} new ships with hardpoints`);
+    }
+    if (loadoutDiff > 0) {
+        changes.push(`+${loadoutDiff} new stock loadouts`);
+    }
+    if (changes.length === 0) {
+        changes.push('Updated ship specifications');
+    }
 
     message.innerHTML = `
         <div class="update-info">
-            <p class="update-current"><strong>Your data:</strong> ${localDate}</p>
-            <p class="update-available"><strong>Available:</strong> ${remoteDate}</p>
-            <p><strong>New data includes:</strong></p>
+            <p><strong>Update available</strong> (${remoteDate})</p>
+            <p><strong>Changes:</strong></p>
             <ul>
-                <li>${shipCount} ships with hardpoint specs</li>
-                <li>${loadoutCount} ships with stock loadouts</li>
+                ${changes.map(c => `<li>${c}</li>`).join('')}
             </ul>
+            <p class="update-summary">Current: ${currentShipCount} ships → New: ${newShipCount} ships</p>
         </div>
     `;
 

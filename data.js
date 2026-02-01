@@ -482,7 +482,7 @@ quantumDrives: [
             name: "Aegis Avenger Stalker",
             manufacturer: "Aegis",
             size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 4 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -493,7 +493,7 @@ quantumDrives: [
             name: "Aegis Avenger Titan",
             manufacturer: "Aegis",
             size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 4 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -504,7 +504,7 @@ quantumDrives: [
             name: "Aegis Avenger Warlock",
             manufacturer: "Aegis",
             size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 4 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -514,10 +514,9 @@ quantumDrives: [
         {
             name: "Aegis Eclipse",
             manufacturer: "Aegis",
-            size: "Medium",
+            size: "Small",
             pilotWeapons: [{ size: 2 }, { size: 2 }],
             turrets: [],
-            missiles: 3,
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
             coolers: { count: 2, size: 1 },
@@ -540,13 +539,13 @@ quantumDrives: [
             size: "Large",
             pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 4, size: 4 },
-                { type: "manned", guns: 4, size: 4 },
-                { type: "manned", guns: 4, size: 4 },
-                { type: "manned", guns: 4, size: 4 },
-                { type: "manned", guns: 4, size: 4 },
-                { type: "manned", guns: 4, size: 4 }
-            ],
+            { type: "manned", guns: 8, size: 4 },
+            { type: "manned", guns: 8, size: 4 },
+            { type: "manned", guns: 8, size: 4 },
+            { type: "manned", guns: 8, size: 4 },
+            { type: "manned", guns: 8, size: 4 },
+            { type: "manned", guns: 8, size: 4 }
+        ],
             shields: { count: 2, size: 3 },
             powerPlants: { count: 2, size: 3 },
             coolers: { count: 2, size: 3 },
@@ -558,24 +557,14 @@ quantumDrives: [
             size: "Large",
             pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 1, size: 5 },
-                { type: "remote", guns: 1, size: 5 },
-                { type: "remote", guns: 1, size: 5 },
-                { type: "remote", guns: 1, size: 4 },
-                { type: "remote", guns: 1, size: 4 },
-                { type: "remote", guns: 1, size: 4 },
-                { type: "remote", guns: 1, size: 4 },
-                { type: "remote", guns: 1, size: 4 },
-                { type: "remote", guns: 1, size: 4 },
-                // Point defense turrets
-                { type: "remote", guns: 1, size: 1 },
-                { type: "remote", guns: 1, size: 1 },
-                { type: "remote", guns: 1, size: 1 },
-                { type: "remote", guns: 1, size: 1 },
-                { type: "remote", guns: 1, size: 1 },
-                { type: "remote", guns: 1, size: 1 },
-                { type: "remote", guns: 1, size: 1 }
-            ],
+            { type: "manned", guns: 4, size: 5 },
+            { type: "remote", guns: 4, size: 3 },
+            { type: "remote", guns: 4, size: 3 },
+            { type: "remote", guns: 4, size: 3 },
+            { type: "remote", guns: 4, size: 3 },
+            { type: "remote", guns: 4, size: 3 },
+            { type: "remote", guns: 4, size: 3 }
+        ],
             shields: { count: 1, size: 4 },
             powerPlants: { count: 1, size: 4 },
             coolers: { count: 1, size: 4 },
@@ -584,13 +573,14 @@ quantumDrives: [
         {
             name: "Aegis Redeemer",
             manufacturer: "Aegis",
-            size: "Large",
+            size: "Medium",
             pilotWeapons: [{ size: 4 }, { size: 4 }],
             turrets: [
-                { type: "manned", guns: 2, size: 4 },
-                { type: "manned", guns: 2, size: 4 },
-                { type: "remote", guns: 2, size: 3 }
-            ],
+            { type: "manned", guns: 4, size: 4 },
+            { type: "manned", guns: 4, size: 4 },
+            { type: "manned", guns: 1, size: 3 },
+            { type: "manned", guns: 1, size: 3 }
+        ],
             shields: { count: 6, size: 2 },
             powerPlants: { count: 2, size: 3 },
             coolers: { count: 1, size: 3 },
@@ -599,24 +589,24 @@ quantumDrives: [
         {
             name: "Aegis Retaliator",
             manufacturer: "Aegis",
-            size: "Large",
+            size: "Medium",
             pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 2, size: 3 },
-                { type: "manned", guns: 2, size: 3 },
-                { type: "manned", guns: 2, size: 3 },
-                { type: "manned", guns: 2, size: 3 },
-                { type: "manned", guns: 2, size: 3 }
-            ],
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 4, size: 3 }
+        ],
             shields: { count: 6, size: 2 },
             powerPlants: { count: 2, size: 2 },
-            coolers: { count: 2, size: 2 },
+            coolers: { count: 2, size: 3 },
             quantumDrive: { size: 2 }
         },
         {
             name: "Aegis Sabre",
             manufacturer: "Aegis",
-            size: "Medium",
+            size: "Small",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 2, size: 1 },
@@ -627,37 +617,9 @@ quantumDrives: [
         {
             name: "Aegis Vanguard Harbinger",
             manufacturer: "Aegis",
-            size: "Large",
-            pilotWeapons: [{ size: 5 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
-            turrets: [
-                { type: "manned", guns: 2, size: 3 }
-            ],
-            shields: { count: 2, size: 2 },
-            powerPlants: { count: 1, size: 2 },
-            coolers: { count: 2, size: 2 },
-            quantumDrive: { size: 2 }
-        },
-        {
-            name: "Aegis Vanguard Sentinel",
-            manufacturer: "Aegis",
-            size: "Large",
-            pilotWeapons: [{ size: 5 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
-            turrets: [
-                { type: "manned", guns: 2, size: 2 }
-            ],
-            shields: { count: 2, size: 2 },
-            powerPlants: { count: 1, size: 2 },
-            coolers: { count: 2, size: 2 },
-            quantumDrive: { size: 2 }
-        },
-        {
-            name: "Aegis Vanguard Warden",
-            manufacturer: "Aegis",
-            size: "Large",
-            pilotWeapons: [{ size: 5 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
-            turrets: [
-                { type: "manned", guns: 2, size: 2 }
-            ],
+            size: "Medium",
+            pilotWeapons: [{ size: 5 }],
+            turrets: [],
             shields: { count: 2, size: 2 },
             powerPlants: { count: 1, size: 2 },
             coolers: { count: 2, size: 2 },
@@ -666,11 +628,37 @@ quantumDrives: [
         {
             name: "Aegis Vanguard Hoplite",
             manufacturer: "Aegis",
-            size: "Large",
-            pilotWeapons: [{ size: 5 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
+            size: "Medium",
+            pilotWeapons: [{ size: 5 }],
             turrets: [
-                { type: "manned", guns: 2, size: 2 }
-            ],
+            { type: "manned", guns: 4, size: 2 }
+        ],
+            shields: { count: 2, size: 2 },
+            powerPlants: { count: 1, size: 2 },
+            coolers: { count: 2, size: 2 },
+            quantumDrive: { size: 2 }
+        },
+        {
+            name: "Aegis Vanguard Sentinel",
+            manufacturer: "Aegis",
+            size: "Medium",
+            pilotWeapons: [{ size: 5 }],
+            turrets: [
+            { type: "manned", guns: 4, size: 2 }
+        ],
+            shields: { count: 2, size: 2 },
+            powerPlants: { count: 1, size: 2 },
+            coolers: { count: 2, size: 2 },
+            quantumDrive: { size: 2 }
+        },
+        {
+            name: "Aegis Vanguard Warden",
+            manufacturer: "Aegis",
+            size: "Medium",
+            pilotWeapons: [{ size: 5 }],
+            turrets: [
+            { type: "manned", guns: 4, size: 2 }
+        ],
             shields: { count: 2, size: 2 },
             powerPlants: { count: 1, size: 2 },
             coolers: { count: 2, size: 2 },
@@ -682,7 +670,7 @@ quantumDrives: [
             name: "Anvil Arrow",
             manufacturer: "Anvil",
             size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 1 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -695,8 +683,8 @@ quantumDrives: [
             size: "Small",
             pilotWeapons: [{ size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 1, size: 0 },
             coolers: { count: 1, size: 1 },
             quantumDrive: { size: 1 }
         },
@@ -706,8 +694,8 @@ quantumDrives: [
             size: "Small",
             pilotWeapons: [{ size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 1, size: 0 },
             coolers: { count: 1, size: 1 },
             quantumDrive: { size: 1 }
         },
@@ -715,10 +703,10 @@ quantumDrives: [
             name: "Anvil C8X Pisces Expedition",
             manufacturer: "Anvil",
             size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 2 }, { size: 1 }, { size: 1 }],
+            pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 1, size: 0 },
             coolers: { count: 1, size: 1 },
             quantumDrive: { size: 1 }
         },
@@ -728,24 +716,55 @@ quantumDrives: [
             size: "Large",
             pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 2, size: 4 },
-                { type: "manned", guns: 2, size: 4 },
-                { type: "manned", guns: 2, size: 4 },
-                { type: "remote", guns: 2, size: 4 }
-            ],
+            { type: "manned", guns: 4, size: 4 },
+            { type: "remote", guns: 4, size: 4 },
+            { type: "manned", guns: 4, size: 4 },
+            { type: "manned", guns: 4, size: 4 }
+        ],
             shields: { count: 2, size: 3 },
             powerPlants: { count: 2, size: 3 },
             coolers: { count: 2, size: 3 },
             quantumDrive: { size: 3 }
         },
         {
+            name: "Anvil F7 Hornet Mk Wikelo",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 3, size: 1 },
+            powerPlants: { count: 1, size: 2 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Anvil F7A Hornet Mk I",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 5 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 2 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Anvil F7A Hornet Mk II",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 2 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
             name: "Anvil F7C Hornet Mk I",
             manufacturer: "Anvil",
-            size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
-            turrets: [
-                { type: "remote", guns: 2, size: 2 }
-            ],
+            size: "Small",
+            pilotWeapons: [{ size: 3 }, { size: 2 }, { size: 5 }, { size: 3 }, { size: 2 }, { size: 3 }, { size: 3 }, { size: 3 }],
+            turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
             coolers: { count: 2, size: 1 },
@@ -754,8 +773,8 @@ quantumDrives: [
         {
             name: "Anvil F7C Hornet Mk II",
             manufacturer: "Anvil",
-            size: "Medium",
-            pilotWeapons: [{ size: 4 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
+            size: "Small",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
             turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 2, size: 1 },
@@ -763,48 +782,120 @@ quantumDrives: [
             quantumDrive: { size: 1 }
         },
         {
-            name: "Anvil F7C-M Super Hornet Mk I",
+            name: "Anvil F7C Hornet Wildfire Mk I",
             manufacturer: "Anvil",
-            size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
-            turrets: [
-                { type: "manned", guns: 2, size: 1 },
-                { type: "remote", guns: 2, size: 2 }
-            ],
+            size: "Small",
+            pilotWeapons: [{ size: 3 }, { size: 2 }, { size: 5 }, { size: 3 }, { size: 2 }, { size: 3 }, { size: 3 }, { size: 3 }],
+            turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
             coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
-            name: "Anvil F7A Hornet Mk II",
+            name: "Anvil F7C-M Hornet Heartseeker Mk I",
             manufacturer: "Anvil",
-            size: "Medium",
-            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 3 }, { size: 3 }],
-            turrets: [
-                { type: "manned", guns: 2, size: 3 }
-            ],
+            size: "Small",
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 5 }],
+            turrets: [],
             shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Anvil F7C-M Hornet Heartseeker Mk II",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 3, size: 1 },
             powerPlants: { count: 1, size: 2 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Anvil F7C-M Super Hornet Mk I",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 5 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Anvil F7C-M Super Hornet Mk II",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 3, size: 1 },
+            powerPlants: { count: 1, size: 2 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Anvil F7C-R Hornet Tracker Mk I",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 3 }, { size: 2 }, { size: 5 }, { size: 3 }, { size: 2 }, { size: 3 }, { size: 3 }, { size: 3 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Anvil F7C-R Hornet Tracker Mk II",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 2, size: 1 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Anvil F7C-S Hornet Ghost Mk I",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 3 }, { size: 2 }, { size: 5 }, { size: 3 }, { size: 2 }, { size: 3 }, { size: 3 }, { size: 3 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Anvil F7C-S Hornet Ghost Mk II",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 2, size: 1 },
             coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "Anvil F8A Lightning",
             manufacturer: "Anvil",
-            size: "Medium",
-            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
+            size: "Small",
+            pilotWeapons: [{ size: 3 }, { size: 4 }, { size: 3 }, { size: 4 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 2, size: 2 },
             powerPlants: { count: 1, size: 2 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "Anvil F8C Lightning",
             manufacturer: "Anvil",
-            size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
+            size: "Small",
+            pilotWeapons: [{ size: 2 }, { size: 3 }, { size: 2 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 2, size: 2 },
             powerPlants: { count: 1, size: 2 },
@@ -814,13 +905,13 @@ quantumDrives: [
         {
             name: "Anvil Gladiator",
             manufacturer: "Anvil",
-            size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
+            size: "Small",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
             turrets: [
-                { type: "manned", guns: 1, size: 3 }
-            ],
-            shields: { count: 2, size: 1 },
-            powerPlants: { count: 1, size: 1 },
+            { type: "manned", guns: 4, size: 3 }
+        ],
+            shields: { count: 1, size: 2 },
+            powerPlants: { count: 1, size: 2 },
             coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
@@ -828,7 +919,7 @@ quantumDrives: [
             name: "Anvil Hawk",
             manufacturer: "Anvil",
             size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 1 }, { size: 1 }],
             turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -838,11 +929,11 @@ quantumDrives: [
         {
             name: "Anvil Hurricane",
             manufacturer: "Anvil",
-            size: "Medium",
+            size: "Small",
             pilotWeapons: [{ size: 4 }, { size: 4 }],
             turrets: [
-                { type: "manned", guns: 4, size: 3 }
-            ],
+            { type: "manned", guns: 8, size: 3 }
+        ],
             shields: { count: 1, size: 2 },
             powerPlants: { count: 2, size: 1 },
             coolers: { count: 2, size: 1 },
@@ -851,13 +942,18 @@ quantumDrives: [
         {
             name: "Anvil Paladin",
             manufacturer: "Anvil",
-            size: "Large",
+            size: "Medium",
             pilotWeapons: [],
             turrets: [
-                { type: "remote", guns: 4, size: 5 },
-                { type: "remote", guns: 2, size: 4 },
-                { type: "remote", guns: 2, size: 4 }
-            ],
+            { type: "manned", guns: 1, size: 4 },
+            { type: "manned", guns: 1, size: 4 },
+            { type: "manned", guns: 1, size: 5 },
+            { type: "manned", guns: 1, size: 5 },
+            { type: "manned", guns: 1, size: 5 },
+            { type: "manned", guns: 1, size: 5 },
+            { type: "manned", guns: 1, size: 4 },
+            { type: "manned", guns: 1, size: 4 }
+        ],
             shields: { count: 1, size: 3 },
             powerPlants: { count: 3, size: 2 },
             coolers: { count: 2, size: 2 },
@@ -866,32 +962,51 @@ quantumDrives: [
         {
             name: "Anvil Terrapin",
             manufacturer: "Anvil",
-            size: "Medium",
+            size: "Small",
             pilotWeapons: [],
-            turrets: [
-                { type: "remote", guns: 2, size: 2 }
-            ],
-            shields: { count: 2, size: 2 },
+            turrets: [],
+            shields: { count: 2, size: 0 },
             powerPlants: { count: 1, size: 2 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "Anvil Valkyrie",
             manufacturer: "Anvil",
-            size: "Large",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
+            size: "Medium",
+            pilotWeapons: [{ size: 6 }, { size: 6 }],
             turrets: [
-                { type: "remote", guns: 2, size: 4 },
-                { type: "manned", guns: 1, size: 3 },
-                { type: "manned", guns: 1, size: 3 },
-                { type: "manned", guns: 1, size: 3 },
-                { type: "manned", guns: 1, size: 3 }
-            ],
-            shields: { count: 2, size: 2 },
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 1, size: 4 },
+            { type: "manned", guns: 1, size: 4 }
+        ],
+            shields: { count: 4, size: 2 },
             powerPlants: { count: 2, size: 2 },
             coolers: { count: 2, size: 2 },
             quantumDrive: { size: 2 }
+        },
+        {
+            name: "F8C Lightning PYAM Exec",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 2 }, { size: 3 }, { size: 2 }, { size: 3 }, { size: 3 }, { size: 3 }],
+            turrets: [],
+            shields: { count: 2, size: 2 },
+            powerPlants: { count: 1, size: 2 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Hornet F7A Mk II PYAM Exec",
+            manufacturer: "Anvil",
+            size: "Small",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 2 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
         },
 
         // ===== AOPOA =====
@@ -899,11 +1014,22 @@ quantumDrives: [
             name: "Aopoa Khartu-al",
             manufacturer: "Aopoa",
             size: "Medium",
-            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
             turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
             coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Aopoa San'tok.yāi",
+            manufacturer: "Aopoa",
+            size: "Small",
+            pilotWeapons: [],
+            turrets: [],
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 2, size: 0 },
+            coolers: { count: 2, size: 0 },
             quantumDrive: { size: 1 }
         },
 
@@ -911,21 +1037,69 @@ quantumDrives: [
         {
             name: "Argo MOLE",
             manufacturer: "Argo",
-            size: "Large",
+            size: "Medium",
             pilotWeapons: [{ size: 2 }, { size: 2 }],
             turrets: [],
-            shields: { count: 2, size: 2 },
-            powerPlants: { count: 2, size: 3 },
-            coolers: { count: 2, size: 3 },
+            shields: { count: 1, size: 3 },
+            powerPlants: { count: 1, size: 3 },
+            coolers: { count: 1, size: 3 },
             quantumDrive: { size: 2 }
+        },
+        {
+            name: "Argo MPUV Cargo",
+            manufacturer: "Argo",
+            size: "Small",
+            pilotWeapons: [],
+            turrets: [],
+            shields: { count: 1, size: 1 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 2, size: 0 },
+            quantumDrive: { size: 0 }
+        },
+        {
+            name: "Argo MPUV Personnel",
+            manufacturer: "Argo",
+            size: "Small",
+            pilotWeapons: [],
+            turrets: [],
+            shields: { count: 1, size: 1 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 2, size: 0 },
+            quantumDrive: { size: 0 }
+        },
+        {
+            name: "Argo MPUV Tractor",
+            manufacturer: "Argo",
+            size: "Small",
+            pilotWeapons: [],
+            turrets: [
+            { type: "manned", guns: 1, size: 1 }
+        ],
+            shields: { count: 1, size: 1 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 1, size: 0 },
+            quantumDrive: { size: 0 }
         },
         {
             name: "Argo RAFT",
             manufacturer: "Argo",
             size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 1 }],
+            pilotWeapons: [{ size: 1 }, { size: 1 }],
+            turrets: [
+            { type: "remote", guns: 4, size: 3 }
+        ],
+            shields: { count: 3, size: 2 },
+            powerPlants: { count: 2, size: 2 },
+            coolers: { count: 2, size: 2 },
+            quantumDrive: { size: 2 }
+        },
+        {
+            name: "Argo SRV",
+            manufacturer: "Argo",
+            size: "Medium",
+            pilotWeapons: [],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 1, size: 2 },
             powerPlants: { count: 1, size: 2 },
             coolers: { count: 1, size: 2 },
             quantumDrive: { size: 2 }
@@ -935,7 +1109,7 @@ quantumDrives: [
         {
             name: "Banu Defender",
             manufacturer: "Banu",
-            size: "Medium",
+            size: "Small",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 1, size: 2 },
@@ -949,35 +1123,44 @@ quantumDrives: [
             name: "C.O. Mustang Alpha",
             manufacturer: "Consolidated Outland",
             size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 2 }, { size: 1 }, { size: 1 }],
+            pilotWeapons: [{ size: 2 }, { size: 2 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
-            quantumDrive: { size: 1 }
-        },
-        {
-            name: "C.O. Mustang Delta",
-            manufacturer: "Consolidated Outland",
-            size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 2 }, { size: 2 }],
-            turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "C.O. Mustang Beta",
             manufacturer: "Consolidated Outland",
             size: "Small",
-            pilotWeapons: [{ size: 1 }, { size: 1 }],
-            turrets: [
-                { type: "manned", guns: 2, size: 2 }
-            ],
-            shields: { count: 1, size: 1 },
+            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "C.O. Mustang CitizenCon 2948 Edition",
+            manufacturer: "Consolidated Outland",
+            size: "Small",
+            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "C.O. Mustang Delta",
+            manufacturer: "Consolidated Outland",
+            size: "Small",
+            pilotWeapons: [{ size: 2 }, { size: 2 }, { size: 1 }, { size: 1 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
@@ -986,9 +1169,9 @@ quantumDrives: [
             size: "Small",
             pilotWeapons: [{ size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
@@ -997,9 +1180,9 @@ quantumDrives: [
             size: "Small",
             pilotWeapons: [{ size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
@@ -1007,7 +1190,9 @@ quantumDrives: [
             manufacturer: "Consolidated Outland",
             size: "Small",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
-            turrets: [],
+            turrets: [
+            { type: "manned", guns: 1, size: 1 }
+        ],
             shields: { count: 3, size: 1 },
             powerPlants: { count: 1, size: 1 },
             coolers: { count: 2, size: 1 },
@@ -1019,12 +1204,18 @@ quantumDrives: [
             name: "Crusader A2 Hercules Starlifter",
             manufacturer: "Crusader",
             size: "Large",
-            pilotWeapons: [],
+            pilotWeapons: [{ size: 5 }, { size: 5 }],
             turrets: [
-                { type: "remote", guns: 2, size: 5 },
-                { type: "remote", guns: 2, size: 4 }
-            ],
-            shields: { count: 2, size: 3 },
+            { type: "remote", guns: 2, size: 5 },
+            { type: "remote", guns: 2, size: 5 },
+            { type: "remote", guns: 4, size: 5 },
+            { type: "remote", guns: 4, size: 5 },
+            { type: "remote", guns: 4, size: 4 },
+            { type: "remote", guns: 4, size: 4 },
+            { type: "remote", guns: 4, size: 4 },
+            { type: "manned", guns: 1, size: 5 }
+        ],
+            shields: { count: 3, size: 3 },
             powerPlants: { count: 2, size: 3 },
             coolers: { count: 2, size: 3 },
             quantumDrive: { size: 3 }
@@ -1033,22 +1224,22 @@ quantumDrives: [
             name: "Crusader Ares Inferno",
             manufacturer: "Crusader",
             size: "Medium",
-            pilotWeapons: [{ size: 7 }],
+            pilotWeapons: [{ size: 1 }],
             turrets: [],
             shields: { count: 2, size: 2 },
             powerPlants: { count: 2, size: 2 },
-            coolers: { count: 2, size: 2 },
+            coolers: { count: 3, size: 2 },
             quantumDrive: { size: 2 }
         },
         {
             name: "Crusader Ares Ion",
             manufacturer: "Crusader",
             size: "Medium",
-            pilotWeapons: [{ size: 7 }],
+            pilotWeapons: [{ size: 1 }],
             turrets: [],
             shields: { count: 2, size: 2 },
             powerPlants: { count: 2, size: 2 },
-            coolers: { count: 2, size: 2 },
+            coolers: { count: 3, size: 2 },
             quantumDrive: { size: 2 }
         },
         {
@@ -1057,23 +1248,35 @@ quantumDrives: [
             size: "Large",
             pilotWeapons: [{ size: 5 }, { size: 5 }],
             turrets: [
-                { name: "Remote Main", type: "remote", guns: 2, size: 4 },
-                { name: "Remote 2x S4", type: "remote", guns: 2, size: 4 }
-            ],
+            { type: "remote", guns: 4, size: 4 },
+            { type: "remote", guns: 4, size: 4 }
+        ],
             shields: { count: 2, size: 3 },
             powerPlants: { count: 2, size: 3 },
             coolers: { count: 2, size: 3 },
             quantumDrive: { size: 3 }
         },
         {
+            name: "Crusader Intrepid",
+            manufacturer: "Crusader",
+            size: "Small",
+            pilotWeapons: [{ size: 4 }],
+            turrets: [],
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 1, size: 0 },
+            quantumDrive: { size: 1 }
+        },
+        {
             name: "Crusader M2 Hercules Starlifter",
             manufacturer: "Crusader",
             size: "Large",
-            pilotWeapons: [],
+            pilotWeapons: [{ size: 5 }, { size: 5 }],
             turrets: [
-                { type: "remote", guns: 2, size: 5 },
-                { type: "remote", guns: 2, size: 4 }
-            ],
+            { type: "remote", guns: 4, size: 4 },
+            { type: "remote", guns: 4, size: 4 },
+            { type: "remote", guns: 4, size: 4 }
+        ],
             shields: { count: 2, size: 3 },
             powerPlants: { count: 2, size: 3 },
             coolers: { count: 2, size: 3 },
@@ -1082,12 +1285,12 @@ quantumDrives: [
         {
             name: "Crusader Mercury Star Runner",
             manufacturer: "Crusader",
-            size: "Large",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
+            size: "Medium",
+            pilotWeapons: [],
             turrets: [
-                { type: "remote", guns: 2, size: 3 },
-                { type: "remote", guns: 2, size: 3 }
-            ],
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 4, size: 3 }
+        ],
             shields: { count: 1, size: 3 },
             powerPlants: { count: 2, size: 2 },
             coolers: { count: 2, size: 2 },
@@ -1099,8 +1302,8 @@ quantumDrives: [
             size: "Medium",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [
-                { type: "remote", guns: 2, size: 2 }
-            ],
+            { type: "manned", guns: 4, size: 2 }
+        ],
             shields: { count: 1, size: 2 },
             powerPlants: { count: 1, size: 2 },
             coolers: { count: 1, size: 2 },
@@ -1120,10 +1323,38 @@ quantumDrives: [
 
         // ===== DRAKE =====
         {
+            name: "Corsair PYAM Exec",
+            manufacturer: "Drake",
+            size: "Medium",
+            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 4 }, { size: 4 }, { size: 5 }, { size: 5 }],
+            turrets: [
+            { type: "manned", guns: 4, size: 2 },
+            { type: "manned", guns: 4, size: 2 }
+        ],
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 2, size: 0 },
+            coolers: { count: 2, size: 0 },
+            quantumDrive: { size: 2 }
+        },
+        {
+            name: "Cutlass Black PYAM Exec",
+            manufacturer: "Drake",
+            size: "Medium",
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
+            turrets: [
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 1, size: 1 }
+        ],
+            shields: { count: 1, size: 2 },
+            powerPlants: { count: 1, size: 2 },
+            coolers: { count: 2, size: 2 },
+            quantumDrive: { size: 2 }
+        },
+        {
             name: "Drake Buccaneer",
             manufacturer: "Drake",
             size: "Small",
-            pilotWeapons: [{ size: 4 }, { size: 3 }, { size: 3 }, { size: 1 }, { size: 1 }],
+            pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 4 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -1134,40 +1365,40 @@ quantumDrives: [
             name: "Drake Caterpillar",
             manufacturer: "Drake",
             size: "Large",
-            pilotWeapons: [],
+            pilotWeapons: [{ size: 4 }, { size: 3 }, { size: 3 }, { size: 5 }, { size: 4 }],
             turrets: [
-                { type: "manned", guns: 2, size: 2 },
-                { type: "manned", guns: 2, size: 2 }
-            ],
+            { type: "manned", guns: 4, size: 4 },
+            { type: "manned", guns: 4, size: 4 }
+        ],
             shields: { count: 3, size: 3 },
             powerPlants: { count: 2, size: 3 },
             coolers: { count: 2, size: 3 },
             quantumDrive: { size: 3 }
         },
         {
-            name: "Drake Corsair",
-            manufacturer: "Drake",
-            size: "Large",
-            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 4 }, { size: 4 }, { size: 5 }, { size: 5 }],
-            turrets: [
-                { type: "manned", guns: 2, size: 2 },
-                { type: "manned", guns: 2, size: 2 }
-            ],
-            shields: { count: 1, size: 3 },
-            powerPlants: { count: 2, size: 2 },
-            coolers: { count: 2, size: 2 },
-            quantumDrive: { size: 2 }
-        },
-        {
-            name: "Drake Cutter",
+            name: "Drake Clipper",
             manufacturer: "Drake",
             size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 2, size: 1 },
             coolers: { count: 1, size: 1 },
             quantumDrive: { size: 1 }
+        },
+        {
+            name: "Drake Corsair",
+            manufacturer: "Drake",
+            size: "Medium",
+            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 4 }, { size: 4 }, { size: 5 }, { size: 5 }],
+            turrets: [
+            { type: "manned", guns: 4, size: 2 },
+            { type: "manned", guns: 4, size: 2 }
+        ],
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 2, size: 0 },
+            coolers: { count: 2, size: 0 },
+            quantumDrive: { size: 2 }
         },
         {
             name: "Drake Cutlass Black",
@@ -1175,8 +1406,9 @@ quantumDrives: [
             size: "Medium",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [
-                { type: "manned", guns: 2, size: 3 }
-            ],
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 1, size: 1 }
+        ],
             shields: { count: 1, size: 2 },
             powerPlants: { count: 1, size: 2 },
             coolers: { count: 2, size: 2 },
@@ -1188,8 +1420,8 @@ quantumDrives: [
             size: "Medium",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [
-                { type: "manned", guns: 2, size: 3 }
-            ],
+            { type: "manned", guns: 4, size: 3 }
+        ],
             shields: { count: 1, size: 2 },
             powerPlants: { count: 1, size: 2 },
             coolers: { count: 2, size: 2 },
@@ -1199,7 +1431,7 @@ quantumDrives: [
             name: "Drake Cutlass Red",
             manufacturer: "Drake",
             size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 1, size: 2 },
             powerPlants: { count: 1, size: 2 },
@@ -1212,13 +1444,36 @@ quantumDrives: [
             size: "Medium",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [
-                { type: "manned", guns: 2, size: 3 },
-                { type: "remote", guns: 2, size: 2 }
-            ],
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 1, size: 2 },
+            { type: "manned", guns: 1, size: 2 }
+        ],
             shields: { count: 1, size: 2 },
             powerPlants: { count: 1, size: 2 },
             coolers: { count: 2, size: 2 },
             quantumDrive: { size: 2 }
+        },
+        {
+            name: "Drake Cutter",
+            manufacturer: "Drake",
+            size: "Small",
+            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            turrets: [],
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 1, size: 0 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Drake Golem",
+            manufacturer: "Drake",
+            size: "Small",
+            pilotWeapons: [{ size: 1 }, { size: 1 }],
+            turrets: [],
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 1, size: 0 },
+            quantumDrive: { size: 1 }
         },
         {
             name: "Drake Herald",
@@ -1226,20 +1481,20 @@ quantumDrives: [
             size: "Small",
             pilotWeapons: [{ size: 3 }, { size: 2 }, { size: 2 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "Drake Vulture",
             manufacturer: "Drake",
-            size: "Medium",
+            size: "Small",
             pilotWeapons: [{ size: 1 }, { size: 1 }],
             turrets: [],
             shields: { count: 3, size: 1 },
-            powerPlants: { count: 2, size: 1 },
-            coolers: { count: 2, size: 1 },
+            powerPlants: { count: 2, size: 0 },
+            coolers: { count: 2, size: 0 },
             quantumDrive: { size: 1 }
         },
 
@@ -1247,12 +1502,12 @@ quantumDrives: [
         {
             name: "Esperia Blade",
             manufacturer: "Esperia",
-            size: "Medium",
+            size: "Small",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 2 }, { size: 2 }],
             turrets: [],
-            shields: { count: 1, size: 2 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
@@ -1261,22 +1516,19 @@ quantumDrives: [
             size: "Medium",
             pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 2 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "Esperia Prowler",
             manufacturer: "Esperia",
             size: "Medium",
-            pilotWeapons: [{ size: 5 }, { size: 5 }],
-            turrets: [
-                { type: "remote", guns: 2, size: 5 },
-                { type: "manned", guns: 2, size: 3 }
-            ],
-            shields: { count: 2, size: 2 },
-            powerPlants: { count: 2, size: 2 },
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 5 }, { size: 5 }],
+            turrets: [],
+            shields: { count: 4, size: 2 },
+            powerPlants: { count: 1, size: 2 },
             coolers: { count: 2, size: 2 },
             quantumDrive: { size: 2 }
         },
@@ -1291,92 +1543,123 @@ quantumDrives: [
             coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
+        {
+            name: "Vanduul Scythe",
+            manufacturer: "Esperia",
+            size: "Medium",
+            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 1 }, { size: 1 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
 
         // ===== GATAC =====
         {
             name: "Gatac Syulen",
             manufacturer: "Gatac",
-            size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
+            size: "Medium",
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            shields: { count: 2, size: 0 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 1, size: 0 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Syulen PYAM Exec",
+            manufacturer: "Gatac",
+            size: "Medium",
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
+            turrets: [],
+            shields: { count: 2, size: 0 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 1, size: 0 },
             quantumDrive: { size: 1 }
         },
 
-        // ===== KRUGER =====
+        // ===== GREY'S MARKET =====
+        {
+            name: "Grey's Shiv",
+            manufacturer: "Grey's Market",
+            size: "Medium",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [
+            { type: "manned", guns: 8, size: 3 }
+        ],
+            shields: { count: 1, size: 2 },
+            powerPlants: { count: 1, size: 2 },
+            coolers: { count: 2, size: 2 },
+            quantumDrive: { size: 2 }
+        },
+
+        // ===== KRUGER INTERGALATIC =====
+        {
+            name: "Kruger L-21 Wolf",
+            manufacturer: "Kruger Intergalatic",
+            size: "Small",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 2, size: 0 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "Kruger L-22 Alpha Wolf",
+            manufacturer: "Kruger Intergalatic",
+            size: "Small",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 2, size: 0 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
         {
             name: "Kruger P-52 Merlin",
-            manufacturer: "Kruger",
+            manufacturer: "Kruger Intergalatic",
             size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 1 }, { size: 1 }],
+            pilotWeapons: [{ size: 1 }, { size: 1 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
-            quantumDrive: null
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 0 }
         },
         {
             name: "Kruger P-72 Archimedes",
-            manufacturer: "Kruger",
+            manufacturer: "Kruger Intergalatic",
             size: "Small",
             pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 1 }, { size: 1 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
-            quantumDrive: null
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 0 }
         },
 
         // ===== MISC =====
         {
+            name: "MISC Fortune",
+            manufacturer: "MISC",
+            size: "Small",
+            pilotWeapons: [{ size: 1 }, { size: 1 }],
+            turrets: [],
+            shields: { count: 3, size: 1 },
+            powerPlants: { count: 1, size: 2 },
+            coolers: { count: 1, size: 2 },
+            quantumDrive: { size: 1 }
+        },
+        {
             name: "MISC Freelancer",
             manufacturer: "MISC",
             size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
+            pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 2, size: 3 }
-            ],
-            shields: { count: 3, size: 2 },
-            powerPlants: { count: 2, size: 2 },
-            coolers: { count: 2, size: 2 },
-            quantumDrive: { size: 2 }
-        },
-        {
-            name: "MISC Freelancer DUR",
-            manufacturer: "MISC",
-            size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
-            turrets: [
-                { type: "manned", guns: 2, size: 3 }
-            ],
-            shields: { count: 3, size: 2 },
-            powerPlants: { count: 2, size: 2 },
-            coolers: { count: 2, size: 2 },
-            quantumDrive: { size: 2 }
-        },
-        {
-            name: "MISC Freelancer MAX",
-            manufacturer: "MISC",
-            size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
-            turrets: [
-                { type: "manned", guns: 2, size: 3 }
-            ],
-            shields: { count: 3, size: 2 },
-            powerPlants: { count: 2, size: 2 },
-            coolers: { count: 2, size: 2 },
-            quantumDrive: { size: 2 }
-        },
-        {
-            name: "MISC Freelancer MIS",
-            manufacturer: "MISC",
-            size: "Medium",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
-            turrets: [
-                { type: "manned", guns: 2, size: 3 }
-            ],
+            { type: "manned", guns: 4, size: 3 }
+        ],
             shields: { count: 3, size: 2 },
             powerPlants: { count: 2, size: 2 },
             coolers: { count: 2, size: 2 },
@@ -1386,11 +1669,11 @@ quantumDrives: [
             name: "MISC Hull A",
             manufacturer: "MISC",
             size: "Small",
-            pilotWeapons: [{ size: 1 }, { size: 1 }],
+            pilotWeapons: [],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 1, size: 2 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
@@ -1399,11 +1682,10 @@ quantumDrives: [
             size: "Large",
             pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 2, size: 4 },
-                { type: "manned", guns: 2, size: 4 },
-                { type: "manned", guns: 2, size: 4 }
-            ],
-            shields: { count: 2, size: 3 },
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 4, size: 3 }
+        ],
+            shields: { count: 4, size: 3 },
             powerPlants: { count: 2, size: 3 },
             coolers: { count: 2, size: 3 },
             quantumDrive: { size: 3 }
@@ -1422,78 +1704,91 @@ quantumDrives: [
         {
             name: "MISC Reliant Kore",
             manufacturer: "MISC",
-            size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            size: "Medium",
+            pilotWeapons: [{ size: 2 }, { size: 4 }, { size: 2 }, { size: 4 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
-            quantumDrive: { size: 1 }
-        },
-        {
-            name: "MISC Reliant Tana",
-            manufacturer: "MISC",
-            size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 3 }],
-            turrets: [
-                { type: "manned", guns: 2, size: 3 }
-            ],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "MISC Reliant Mako",
             manufacturer: "MISC",
-            size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            size: "Medium",
+            pilotWeapons: [{ size: 2 }, { size: 4 }, { size: 2 }, { size: 4 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "MISC Reliant Sen",
             manufacturer: "MISC",
-            size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 2 }],
+            size: "Medium",
+            pilotWeapons: [{ size: 2 }, { size: 4 }, { size: 2 }, { size: 4 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
+        },
+        {
+            name: "MISC Reliant Tana",
+            manufacturer: "MISC",
+            size: "Medium",
+            pilotWeapons: [{ size: 2 }, { size: 4 }, { size: 2 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "MISC Starfarer",
             manufacturer: "MISC",
             size: "Large",
-            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 4 }, { size: 4 }],
+            pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 2, size: 4 },
-                { type: "manned", guns: 2, size: 3 },
-                { type: "manned", guns: 2, size: 3 }
-            ],
-            shields: { count: 2, size: 3 },
+            { type: "manned", guns: 4, size: 4 },
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 4, size: 3 }
+        ],
+            shields: { count: 3, size: 3 },
             powerPlants: { count: 2, size: 3 },
             coolers: { count: 2, size: 3 },
             quantumDrive: { size: 3 }
         },
         {
-            name: "MISC Starfarer Gemini",
+            name: "MISC Starlancer MAX",
             manufacturer: "MISC",
             size: "Large",
-            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 4 }, { size: 4 }],
+            pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 2, size: 5 },
-                { type: "manned", guns: 2, size: 3 },
-                { type: "manned", guns: 2, size: 3 }
-            ],
+            { type: "manned", guns: 4, size: 4 },
+            { type: "manned", guns: 4, size: 4 }
+        ],
+            shields: { count: 1, size: 3 },
+            powerPlants: { count: 2, size: 2 },
+            coolers: { count: 2, size: 2 },
+            quantumDrive: { size: 2 }
+        },
+        {
+            name: "MISC Starlancer TAC",
+            manufacturer: "MISC",
+            size: "Large",
+            pilotWeapons: [],
+            turrets: [
+            { type: "manned", guns: 4, size: 4 },
+            { type: "manned", guns: 4, size: 4 },
+            { type: "manned", guns: 4, size: 5 },
+            { type: "manned", guns: 4, size: 5 }
+        ],
             shields: { count: 2, size: 3 },
-            powerPlants: { count: 2, size: 3 },
-            coolers: { count: 2, size: 3 },
-            quantumDrive: { size: 3 }
+            powerPlants: { count: 1, size: 3 },
+            coolers: { count: 1, size: 3 },
+            quantumDrive: { size: 2 }
         },
 
         // ===== MIRAI =====
@@ -1501,12 +1796,12 @@ quantumDrives: [
             name: "Mirai Fury",
             manufacturer: "Mirai",
             size: "Small",
-            pilotWeapons: [{ size: 1 }, { size: 1 }],
+            pilotWeapons: [{ size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
-            quantumDrive: null
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 2, size: 0 },
+            quantumDrive: { size: 0 }
         },
         {
             name: "Mirai Guardian",
@@ -1514,9 +1809,9 @@ quantumDrives: [
             size: "Small",
             pilotWeapons: [{ size: 5 }, { size: 5 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 2 },
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 2, size: 0 },
+            coolers: { count: 1, size: 0 },
             quantumDrive: { size: 2 }
         },
         {
@@ -1527,7 +1822,7 @@ quantumDrives: [
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
 
@@ -1536,11 +1831,11 @@ quantumDrives: [
             name: "Origin 100i",
             manufacturer: "Origin",
             size: "Small",
-            pilotWeapons: [{ size: 3 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
@@ -1551,18 +1846,18 @@ quantumDrives: [
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "Origin 135c",
             manufacturer: "Origin",
             size: "Small",
-            pilotWeapons: [{ size: 3 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
@@ -1571,31 +1866,31 @@ quantumDrives: [
             size: "Small",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "Origin 315p",
             manufacturer: "Origin",
             size: "Small",
-            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 2 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "Origin 325a",
             manufacturer: "Origin",
             size: "Small",
-            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 3 }],
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
@@ -1604,22 +1899,23 @@ quantumDrives: [
             size: "Small",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "Origin 400i",
             manufacturer: "Origin",
             size: "Medium",
-            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            pilotWeapons: [{ size: 4 }, { size: 4 }, { size: 1 }],
             turrets: [
-                { type: "remote", guns: 2, size: 3 }
-            ],
-            shields: { count: 1, size: 2 },
-            powerPlants: { count: 1, size: 2 },
-            coolers: { count: 1, size: 2 },
+            { type: "remote", guns: 4, size: 3 },
+            { type: "remote", guns: 4, size: 3 }
+        ],
+            shields: { count: 1, size: 3 },
+            powerPlants: { count: 2, size: 2 },
+            coolers: { count: 2, size: 2 },
             quantumDrive: { size: 2 }
         },
         {
@@ -1628,52 +1924,38 @@ quantumDrives: [
             size: "Large",
             pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 5 }],
             turrets: [
-                { type: "remote", guns: 2, size: 5 },
-                { type: "remote", guns: 2, size: 4 }
-            ],
+            { type: "remote", guns: 4, size: 3 },
+            { type: "remote", guns: 4, size: 3 }
+        ],
             shields: { count: 2, size: 3 },
             powerPlants: { count: 1, size: 3 },
             coolers: { count: 2, size: 3 },
             quantumDrive: { size: 2 }
         },
         {
-            name: "Origin 600i",
+            name: "Origin 85X Limited",
             manufacturer: "Origin",
-            size: "Large",
-            pilotWeapons: [],
+            size: "Small",
+            pilotWeapons: [{ size: 1 }, { size: 1 }],
             turrets: [
-                { type: "remote", guns: 2, size: 5 },
-                { type: "remote", guns: 2, size: 4 }
-            ],
-            shields: { count: 2, size: 3 },
-            powerPlants: { count: 1, size: 3 },
-            coolers: { count: 2, size: 3 },
-            quantumDrive: { size: 2 }
-        },
-        {
-            name: "Origin 600i Touring",
-            manufacturer: "Origin",
-            size: "Large",
-            pilotWeapons: [],
-            turrets: [
-                { type: "remote", guns: 2, size: 5 },
-                { type: "remote", guns: 2, size: 4 }
-            ],
-            shields: { count: 2, size: 3 },
-            powerPlants: { count: 1, size: 3 },
-            coolers: { count: 2, size: 3 },
-            quantumDrive: { size: 2 }
+            { type: "manned", guns: 4, size: 2 }
+        ],
+            shields: { count: 1, size: 1 },
+            powerPlants: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
+            quantumDrive: { size: 1 }
         },
         {
             name: "Origin 890 Jump",
             manufacturer: "Origin",
-            size: "Capital",
+            size: "Large",
             pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 2, size: 5 },
-                { type: "manned", guns: 2, size: 4 },
-                { type: "manned", guns: 2, size: 4 }
-            ],
+            { type: "manned", guns: 4, size: 4 },
+            { type: "manned", guns: 4, size: 4 },
+            { type: "remote", guns: 4, size: 3 },
+            { type: "remote", guns: 4, size: 3 }
+        ],
             shields: { count: 2, size: 4 },
             powerPlants: { count: 1, size: 4 },
             coolers: { count: 2, size: 4 },
@@ -1687,53 +1969,75 @@ quantumDrives: [
             turrets: [],
             shields: { count: 1, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
 
         // ===== RSI =====
         {
+            name: "RSI Apollo Medivac",
+            manufacturer: "RSI",
+            size: "Large",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 4, size: 0 },
+            powerPlants: { count: 2, size: 0 },
+            coolers: { count: 2, size: 0 },
+            quantumDrive: { size: 2 }
+        },
+        {
+            name: "RSI Apollo Triage",
+            manufacturer: "RSI",
+            size: "Large",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 4, size: 0 },
+            powerPlants: { count: 2, size: 0 },
+            coolers: { count: 2, size: 0 },
+            quantumDrive: { size: 2 }
+        },
+        {
             name: "RSI Aurora CL",
             manufacturer: "RSI",
             size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 1 }, { size: 1 }],
+            pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "RSI Aurora ES",
             manufacturer: "RSI",
             size: "Small",
-            pilotWeapons: [{ size: 2 }],
+            pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "RSI Aurora LN",
             manufacturer: "RSI",
             size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 2 }, { size: 1 }, { size: 1 }],
+            pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "RSI Aurora LX",
             manufacturer: "RSI",
             size: "Small",
-            pilotWeapons: [{ size: 2 }, { size: 1 }, { size: 1 }],
+            pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
@@ -1742,20 +2046,20 @@ quantumDrives: [
             size: "Small",
             pilotWeapons: [{ size: 1 }, { size: 1 }, { size: 1 }, { size: 1 }],
             turrets: [],
-            shields: { count: 1, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            shields: { count: 2, size: 1 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "RSI Constellation Andromeda",
             manufacturer: "RSI",
-            size: "Large",
+            size: "Medium",
             pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 5 }, { size: 5 }],
             turrets: [
-                { type: "manned", guns: 2, size: 3 },
-                { type: "manned", guns: 2, size: 3 }
-            ],
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 4, size: 3 }
+        ],
             shields: { count: 1, size: 3 },
             powerPlants: { count: 2, size: 2 },
             coolers: { count: 2, size: 2 },
@@ -1764,11 +2068,11 @@ quantumDrives: [
         {
             name: "RSI Constellation Aquila",
             manufacturer: "RSI",
-            size: "Large",
+            size: "Medium",
             pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 5 }, { size: 5 }],
             turrets: [
-                { type: "manned", guns: 2, size: 5 }
-            ],
+            { type: "manned", guns: 4, size: 3 }
+        ],
             shields: { count: 1, size: 3 },
             powerPlants: { count: 2, size: 2 },
             coolers: { count: 2, size: 2 },
@@ -1777,11 +2081,12 @@ quantumDrives: [
         {
             name: "RSI Constellation Phoenix",
             manufacturer: "RSI",
-            size: "Large",
+            size: "Medium",
             pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 5 }, { size: 5 }],
             turrets: [
-                { type: "manned", guns: 2, size: 5 }
-            ],
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 4, size: 3 }
+        ],
             shields: { count: 1, size: 3 },
             powerPlants: { count: 2, size: 2 },
             coolers: { count: 2, size: 2 },
@@ -1790,54 +2095,44 @@ quantumDrives: [
         {
             name: "RSI Constellation Taurus",
             manufacturer: "RSI",
-            size: "Large",
-            pilotWeapons: [{ size: 5 }, { size: 5 }],
+            size: "Medium",
+            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 5 }, { size: 5 }],
             turrets: [
-                { type: "manned", guns: 2, size: 5 }
-            ],
+            { type: "manned", guns: 4, size: 3 },
+            { type: "manned", guns: 2, size: 2 }
+        ],
             shields: { count: 1, size: 3 },
             powerPlants: { count: 2, size: 2 },
             coolers: { count: 2, size: 2 },
             quantumDrive: { size: 2 }
         },
         {
+            name: "RSI Hermes",
+            manufacturer: "RSI",
+            size: "Large",
+            pilotWeapons: [{ size: 4 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 4, size: 0 },
+            powerPlants: { count: 2, size: 0 },
+            coolers: { count: 2, size: 0 },
+            quantumDrive: { size: 2 }
+        },
+        {
             name: "RSI Mantis",
             manufacturer: "RSI",
-            size: "Medium",
+            size: "Small",
             pilotWeapons: [{ size: 3 }, { size: 3 }],
             turrets: [],
-            shields: { count: 1, size: 2 },
+            shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
             name: "RSI Meteor",
             manufacturer: "RSI",
-            size: "Medium",
-            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 3 }, { size: 3 }],
-            turrets: [],
-            shields: { count: 2, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 2, size: 1 },
-            quantumDrive: { size: 1 }
-        },
-        {
-            name: "RSI Meteor PYAM Exec",
-            manufacturer: "RSI",
-            size: "Medium",
-            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 3 }, { size: 3 }],
-            turrets: [],
-            shields: { count: 2, size: 1 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 2, size: 1 },
-            quantumDrive: { size: 1 }
-        },
-        {
-            name: "RSI Meteor Wikelo Sneak Special",
-            manufacturer: "RSI",
-            size: "Medium",
-            pilotWeapons: [{ size: 5 }, { size: 5 }, { size: 3 }, { size: 3 }],
+            size: "Small",
+            pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 5 }, { size: 5 }, { size: 3 }, { size: 3 }],
             turrets: [],
             shields: { count: 2, size: 1 },
             powerPlants: { count: 1, size: 1 },
@@ -1850,46 +2145,57 @@ quantumDrives: [
             size: "Large",
             pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 2, size: 8 },
-                { type: "manned", guns: 2, size: 8 },
-                { type: "manned", guns: 2, size: 3 },
-                { type: "manned", guns: 2, size: 3 },
-                { type: "remote", guns: 2, size: 1 }
-            ],
-            shields: { count: 1, size: 3 },
-            powerPlants: { count: 1, size: 3 },
-            coolers: { count: 1, size: 3 },
+            { type: "manned", guns: 8, size: 8 },
+            { type: "manned", guns: 8, size: 8 }
+        ],
+            shields: { count: 2, size: 0 },
+            powerPlants: { count: 2, size: 0 },
+            coolers: { count: 2, size: 0 },
             quantumDrive: { size: 3 }
         },
         {
             name: "RSI Polaris",
             manufacturer: "RSI",
-            size: "Capital",
+            size: "Large",
             pilotWeapons: [],
             turrets: [
-                { type: "manned", guns: 2, size: 6 },
-                { type: "manned", guns: 4, size: 4 },
-                { type: "manned", guns: 4, size: 4 },
-                { type: "manned", guns: 4, size: 3 },
-                { type: "manned", guns: 4, size: 3 },
-                { type: "remote", guns: 4, size: 3 }
-            ],
-            shields: { count: 1, size: 4 },
-            powerPlants: { count: 1, size: 4 },
-            coolers: { count: 1, size: 4 },
+            { type: "manned", guns: 8, size: 3 },
+            { type: "manned", guns: 8, size: 3 },
+            { type: "manned", guns: 8, size: 4 },
+            { type: "manned", guns: 8, size: 4 },
+            { type: "manned", guns: 4, size: 6 },
+            { type: "manned", guns: 1, size: 3 },
+            { type: "manned", guns: 1, size: 3 },
+            { type: "manned", guns: 1, size: 3 },
+            { type: "manned", guns: 1, size: 3 }
+        ],
+            shields: { count: 1, size: 0 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 1, size: 0 },
             quantumDrive: { size: 3 }
+        },
+        {
+            name: "RSI Salvation",
+            manufacturer: "RSI",
+            size: "Small",
+            pilotWeapons: [{ size: 1 }, { size: 1 }],
+            turrets: [],
+            shields: { count: 2, size: 0 },
+            powerPlants: { count: 1, size: 0 },
+            coolers: { count: 1, size: 0 },
+            quantumDrive: { size: 1 }
         },
         {
             name: "RSI Scorpius",
             manufacturer: "RSI",
-            size: "Medium",
+            size: "Small",
             pilotWeapons: [{ size: 3 }, { size: 3 }, { size: 3 }, { size: 3 }],
             turrets: [
-                { type: "manned", guns: 4, size: 3 }
-            ],
+            { type: "remote", guns: 8, size: 3 }
+        ],
             shields: { count: 1, size: 2 },
-            powerPlants: { count: 1, size: 1 },
-            coolers: { count: 1, size: 1 },
+            powerPlants: { count: 2, size: 1 },
+            coolers: { count: 2, size: 1 },
             quantumDrive: { size: 1 }
         },
         {
@@ -1897,12 +2203,10 @@ quantumDrives: [
             manufacturer: "RSI",
             size: "Medium",
             pilotWeapons: [{ size: 4 }, { size: 4 }],
-            turrets: [
-                { type: "remote", guns: 2, size: 3 }
-            ],
-            shields: { count: 1, size: 2 },
-            powerPlants: { count: 1, size: 2 },
-            coolers: { count: 1, size: 2 },
+            turrets: [],
+            shields: { count: 3, size: 0 },
+            powerPlants: { count: 2, size: 0 },
+            coolers: { count: 2, size: 0 },
             quantumDrive: { size: 2 }
         },
         {
@@ -1910,27 +2214,25 @@ quantumDrives: [
             manufacturer: "RSI",
             size: "Medium",
             pilotWeapons: [{ size: 4 }, { size: 4 }],
-            turrets: [
-                { type: "remote", guns: 2, size: 3 }
-            ],
-            shields: { count: 1, size: 2 },
-            powerPlants: { count: 1, size: 2 },
-            coolers: { count: 1, size: 2 },
+            turrets: [],
+            shields: { count: 4, size: 0 },
+            powerPlants: { count: 2, size: 0 },
+            coolers: { count: 2, size: 0 },
             quantumDrive: { size: 2 }
         },
+
+        // ===== VANDUUL =====
         {
-            name: "RSI Zeus Mk II CL",
-            manufacturer: "RSI",
+            name: "Esperia Stinger",
+            manufacturer: "Vanduul",
             size: "Medium",
-            pilotWeapons: [{ size: 4 }, { size: 4 }],
-            turrets: [
-                { type: "remote", guns: 2, size: 3 }
-            ],
-            shields: { count: 1, size: 2 },
-            powerPlants: { count: 1, size: 2 },
-            coolers: { count: 1, size: 2 },
-            quantumDrive: { size: 2 }
-        },
+            pilotWeapons: [{ size: 5 }, { size: 1 }, { size: 2 }, { size: 4 }, { size: 4 }, { size: 4 }, { size: 2 }, { size: 4 }],
+            turrets: [],
+            shields: { count: 2, size: 2 },
+            powerPlants: { count: 2, size: 3 },
+            coolers: { count: 3, size: 2 },
+            quantumDrive: { size: 1 }
+        }
     ],
 };
 
