@@ -3,7 +3,7 @@
 ## Current State - SYNCED
 - **data.js**: 142 ships (bundled fallback) - SYNCED with processed-data.json
 - **processed-data.json**: 142 ships (on GitHub)
-- **App Version**: 0.66
+- **App Version**: 0.67
 
 ## Session Summary (2026-02-01)
 
@@ -21,13 +21,17 @@
    - Duration: 2 seconds (was 1.4 seconds)
    - Size: doubled (font-size 1.8rem, padding 20px 28px)
 
-4. **Cache-busting updated to v=66** for all assets
+4. **Cache-busting updated to v=67** for all assets
+
+5. **Unified button styling** (v0.67)
+   - "Check for Update" button now matches "About" link styling exactly
+   - Font family, size, border-radius all inherit from .about-btn
 
 ### Files Modified
-- `app.js` - v0.66, improved update check logic, toast duration 2000ms
+- `app.js` - v0.67, improved update check logic, toast duration 2000ms
 - `data.js` - 142 ships synced from processed-data.json
 - `styles.css` - toast positioned top-center, doubled size
-- `index.html` - cache-busting v=66 for CSS and JS
+- `index.html` - cache-busting v=67 for CSS and JS
 - `scripts/replace-ships-array.js` - utility to sync ships array
 - `scripts/compare-ships.js` - utility to compare ship lists
 

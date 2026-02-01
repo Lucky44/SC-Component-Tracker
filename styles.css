@@ -121,6 +121,9 @@ h1, h2, h3, h4, .btn, .section-header {
 .update-btn {
     cursor: pointer;
     background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 0;
 }
 
 .update-btn.checking {
