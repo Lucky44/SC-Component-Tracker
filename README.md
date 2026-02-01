@@ -2,14 +2,14 @@
 
 A browser-based component management application for Star Citizen. Track your ships and their loadouts including weapons, shields, coolers, power plants, and quantum drives with a full inventory system.
 
-**[Use the App](https://lucky44.github.io/SC-Component-Tracker/)** — No download required, runs in your browser.
+**[Use the App](https://lucky44.github.io/SC-Component-Tracker/)** — Runs in your browser.
 
 **Version:** 0.67
 
 ## Features
 
 ### Ship Management
-- Add ships from a catalog of 142 Star Citizen vessels
+- Add ships from a catalog of 142 Star Citizen ships; no ground vehicles included
 - Assign custom nicknames to your ships
 - Ships displayed in a responsive grid layout
 - Ships organized by manufacturer for easy navigation
