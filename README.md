@@ -4,14 +4,14 @@ A browser-based component management application for Star Citizen. Track your sh
 
 **[Use the App](https://lucky44.github.io/SC-Component-Tracker/)** — No download required, runs in your browser.
 
-**Version:** 0.52
+**Version:** 0.67
 
 ## Features
 
 ### Ship Management
-- Add ships from an expandable catalog of 90+ Star Citizen vessels
+- Add ships from a catalog of 142 Star Citizen vessels
 - Assign custom nicknames to your ships
-- Ships displayed in a responsive 4-column grid layout
+- Ships displayed in a responsive grid layout
 - Ships organized by manufacturer for easy navigation
 
 ### Component Configuration
@@ -36,13 +36,18 @@ A browser-based component management application for Star Citizen. Track your sh
 - Pre-configured default loadouts for each ship
 - Auto-fill functionality when adding new ships
 
+### Data Management
+- **Export/Import** - Backup your data to JSON files and restore on any device
+- **Check for Update** - In-app button to fetch latest ship data from GitHub
+- Data persists in browser localStorage across sessions
+
 ## Tech Stack
 
 - **Frontend:** Vanilla JavaScript (ES6+)
 - **Styling:** Custom CSS3 with sci-fi Orange HUD theme
 - **Fonts:** Orbitron (headings), Rajdhani (body)
 - **Storage:** Browser LocalStorage (no backend required)
-- **Validation:** Node.js scripts for data integrity
+- **Data Updates:** GitHub raw URL for ship data updates
 
 ## Getting Started
 
@@ -69,10 +74,12 @@ Just visit **https://lucky44.github.io/SC-Component-Tracker/** — no installati
 
 ## Usage
 
-1. **Add a Ship** - Click "Add Ship" and select from the dropdown organized by manufacturer
+1. **Add a Ship** - Click "+ Add Ship" and select from the dropdown organized by manufacturer
 2. **Configure Components** - Use the dropdowns to select weapons, shields, power plants, coolers, and quantum drives
-3. **Manage Storage** - Click "Storage" to view and manage your spare components inventory
+3. **Manage Storage** - Click "My Stored Components" to view and manage your spare components inventory
 4. **Search Components** - Use the search bar to find components across all ships and storage
+5. **Export/Import** - Use the Export/Import buttons to backup or restore your data
+6. **Check for Updates** - Click "Check for Update" to fetch the latest ship data
 
 All data is automatically saved to your browser's local storage.
 
@@ -83,45 +90,23 @@ SC-Component-Tracker/
 ├── index.html          # Main HTML structure with modals
 ├── app.js              # Application logic and event handlers
 ├── styles.css          # Responsive styling with sci-fi theme
-├── data.js             # Ship and component database
-├── validate.js         # Data integrity validation tool
-├── CHANGELOG.md        # Version history
-├── FUTURE_UPDATES_PLAN.txt  # Data maintenance guide
+├── data.js             # Bundled ship and component database (fallback)
+├── processed-data.json # Latest ship data for browser updates
 └── scripts/            # Utility scripts for data management
-    ├── apply_wiki_solutions_v2.js
-    ├── audit_problem_slots.js
-    └── ...
+    ├── update-from-scunpacked.js  # Generate processed-data.json
+    ├── compare-ships.js           # Compare data.js vs processed-data.json
+    └── replace-ships-array.js     # Sync ships to data.js
 ```
-
-## Validation
-
-Run the validation script to check data integrity:
-
-```bash
-node validate.js | tee validation_report.txt
-```
-
-This checks for:
-- Unknown weapon names
-- Oversized weapons vs mount sizes
-- Turret configuration mismatches
-- Missing stock loadout entries
-
-Review [validation_report.txt](validation_report.txt) for details.
 
 ## Updating Ship Data
 
-See [FUTURE_UPDATES_PLAN.txt](FUTURE_UPDATES_PLAN.txt) for the complete guide on maintaining and updating ship specifications.
+Ship data is extracted from [scunpacked](https://github.com/AlistairHavelin/scunpacked) and processed for this app.
 
-Quick process:
-1. Find data from [starcitizen.tools](https://starcitizen.tools) wiki
-2. Add to `scripts/solutions_from_wiki.json`
-3. Run `node scripts/apply_wiki_solutions_v2.js`
-4. Verify with `node scripts/audit_problem_slots.js`
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for recent updates.
+To update ship data:
+1. Download latest `ships.json` from scunpacked
+2. Run `node scripts/update-from-scunpacked.js`
+3. Commit and push `processed-data.json`
+4. Users can then click "Check for Update" in the app
 
 ## Browser Support
 
@@ -132,7 +117,7 @@ See [CHANGELOG.md](CHANGELOG.md) for recent updates.
 
 ## Contributing
 
-Contributions are welcome! Please ensure any data changes pass validation before submitting.
+Contributions are welcome! Please ensure any data changes are tested before submitting.
 
 ## License
 
