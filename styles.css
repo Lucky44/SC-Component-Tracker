@@ -160,16 +160,16 @@ h1, h2, h3, h4, .btn, .section-header {
 
 .toast {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
+    left: 50%;
+    top: 70px;
+    transform: translateX(-50%) translateY(-10px);
     background: rgba(20, 27, 45, 0.95);
     color: #fff;
-    padding: 10px 14px;
-    border-radius: 6px;
-    font-size: 0.9rem;
+    padding: 20px 28px;
+    border-radius: 12px;
+    font-size: 1.8rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
     opacity: 0;
-    transform: translateY(10px);
     transition: opacity 0.2s ease, transform 0.2s ease;
     pointer-events: none;
     z-index: 999;
@@ -177,7 +177,7 @@ h1, h2, h3, h4, .btn, .section-header {
 
 .toast.toast-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
 }
 
 .search-container {

@@ -2,7 +2,7 @@
 
 // ============ Data Layer ============
 
-const APP_VERSION = '0.65';
+const APP_VERSION = '0.66';
 const STORAGE_KEY = 'sc-component-tracker-data';
 const DATA_VERSION_KEY = 'sc-component-tracker-data-version';
 
@@ -1226,7 +1226,7 @@ function showToast(message) {
     }
     toast._hideTimeout = setTimeout(() => {
         toast.classList.remove('toast-visible');
-    }, 1400);
+    }, 2000);
 }
 
 function setAppVersionBadge() {
@@ -1518,6 +1518,12 @@ async function checkForUpdate() {
         const hasNewerVersion = localVersion && remoteVersion > localVersion;
         const hasMoreData = remoteShipCount > localShipCount || remoteLoadoutCount > localLoadoutCount;
 
+        console.log('Update check:', {
+            localShipCount, remoteShipCount,
+            localLoadoutCount, remoteLoadoutCount,
+            hasNewerVersion, hasMoreData
+        });
+
         if (hasNewerVersion || hasMoreData) {
             showUpdateModal(data, localVersion, remoteVersion);
             btn.classList.add('has-update');
@@ -1526,6 +1532,7 @@ async function checkForUpdate() {
             if (!localVersion) {
                 setStoredDataVersion(remoteVersion);
             }
+            console.log('Showing toast: Ship data is up to date');
             showToast('Ship data is up to date');
         }
     } catch (error) {
