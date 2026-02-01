@@ -185,3 +185,62 @@ Technical Notes:
   - 'sc-ships-data' - Full ship data cache
   - 'sc-component-tracker-data-version' - Version timestamp
 - processed-data.json structure: { version, lastUpdated, ships, stockLoadouts }
+
+Continued Session - 2026-02-01 (v0.63-v0.67):
+---------------------------------------------
+19. Synced data.js with processed-data.json (v0.65):
+    - Created scripts/replace-ships-array.js to replace ships array
+    - data.js now has 142 ships (was 114), matching processed-data.json
+    - Ship naming fixes applied:
+      - ARGO MOLE -> Argo MOLE
+      - ARGO RAFT -> Argo RAFT
+      - Aegis Retaliator Bomber -> Aegis Retaliator
+      - Origin 600i Explorer -> Origin 600i
+      - Anvil F7C-M Super Hornet -> Anvil F7C-M Super Hornet Mk I
+      - RSI Zeus Mk II MR -> RSI Zeus Mk II CL
+
+20. Fixed "Check for Update" button logic (v0.65-v0.66):
+    - Now compares ship counts instead of just version strings
+    - Shows "Ship data is up to date" toast when current
+    - Shows update modal with diff ("+X new ships") when update available
+    - Fixed button blink issue - was working but toast too brief
+
+21. Improved toast notifications (v0.66):
+    - Position: moved from bottom-right to top-center
+    - Duration: increased from 1.4s to 2s
+    - Size: doubled (font-size 1.8rem, padding 20px 28px)
+
+22. Unified button styling (v0.67):
+    - "Check for Update" button now matches "About" link exactly
+    - Added font-family: inherit, font-size: inherit, border-radius: 0
+
+23. Updated README.md (v0.67):
+    - Version 0.52 -> 0.67
+    - Ship count 90+ -> 142 ships
+    - Added Data Management section (Export/Import, Check for Update)
+    - Updated project structure
+    - Simplified ship data update instructions
+
+Commits Made (v0.63-v0.67):
+---------------------------
+- v0.63: Add in-app Check for Update feature
+- v0.64: Filter out ground vehicles from ship data
+- v0.65: Sync data.js ships with processed-data.json (142 ships)
+- v0.65: Fix ship naming and clean up processed data
+- v0.66: Improve toast notifications and update check
+- v0.67: Unify About and Check for Update button styling
+- Update README to v0.67
+
+Files Modified:
+---------------
+- app.js - v0.67, update check logic, toast improvements
+- data.js - 142 ships synced from processed-data.json
+- styles.css - toast positioning, button styling
+- index.html - cache-busting v=67
+- README.md - updated to v0.67 with current features
+- SYNC_NOTES.md - session documentation
+
+Scripts Created:
+----------------
+- scripts/replace-ships-array.js - Sync ships from processed-data.json to data.js
+- scripts/compare-ships.js - Compare ships between data.js and processed-data.json
