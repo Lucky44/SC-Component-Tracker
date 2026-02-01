@@ -295,7 +295,7 @@ function main() {
         .filter(s => s.Name && s.IsSpaceship)
         .map(s => s.Name);
 
-    // Filter to spaceships only, exclude variants
+    // Filter to spaceships only, exclude variants and ground vehicles
     const baseShips = shipsData.filter(ship => {
         if (!ship.Name) return false;
         if (!ship.IsSpaceship) return false;

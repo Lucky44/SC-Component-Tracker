@@ -223,7 +223,7 @@ function main() {
     let skippedCount = 0;
 
     for (const ship of shipsData) {
-        // Skip ground vehicles and non-spaceships
+        // Skip ground vehicles, gravlev vehicles, and non-spaceships
         if (!ship.IsSpaceship) continue;
 
         const shipName = getShipDisplayName(ship);

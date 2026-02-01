@@ -1,5 +1,5 @@
 // Auto-generated ship specs from ships.json
-// Generated: 2026-02-01T04:22:01.612Z
+// Generated: 2026-02-01T04:35:55.546Z
 // Ships with hardpoint data: 167
 
 const EXTRACTED_SHIPS = [
