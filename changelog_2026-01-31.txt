@@ -75,14 +75,51 @@ Continued Session - 2026-02-01:
    - 176 ships with complete hardpoint specs
    - Includes Grey's Shiv and other Teach's Ship Shop ships
 
+8. Fixed turret detection in ship extraction:
+   - Issue: Reclaimer showing 6 empty pilot weapons (should be 0)
+   - Fix: Detect turrets by hardpoint name containing "turret"
+   - Also detects remote turrets named "hardpoint_remote_turret_*"
+
+9. Created validation script (scripts/validate-extraction.js):
+   - Checks pilot weapon consistency (hardpoints vs stock loadouts)
+   - Checks turret weapon consistency
+   - Detects ships with no weapons (utility ships, ground vehicles)
+   - Identifies variants without base ships
+   - Run after extraction to catch issues
+
+10. Fixed PDC turret detection in loadout extraction:
+    - Issue: Reclaimer PDC weapons (M2C Swarm) categorized as pilot weapons
+    - Fix: Detect PDCTurret type in categorizeWeapons function
+    - Reduces validation issues from 79 to ~40
+
+11. Created update-from-scunpacked.js script:
+    - Downloads ships.json from GitHub (StarCitizenWiki/scunpacked-data)
+    - Backs up existing ships.json
+    - Runs all extraction scripts automatically
+    - Runs validation and reports issues
+    - Single command: node scripts/update-from-scunpacked.js
+
+12. Updated background image to v1d:
+    - Changed styles.css to use background_v1d_1920.jpg
+
 Files Created (continued session):
 ----------------------------------
 - scripts/extract-ships.js - Extracts ship hardpoint specs from ships.json
 - scripts/extracted-ships.js - Generated output (176 ships with hardpoints)
 - scripts/update-data.js - Helper to merge extracted data into data.js
 - scripts/debug-ship.js - Debug helper for analyzing ship data
+- scripts/validate-extraction.js - Validates extracted data for inconsistencies
+- scripts/update-from-scunpacked.js - One-command update from scunpacked data
+
+Commits Made (continued session):
+---------------------------------
+- v0.61: Auto-extract ship specs and stock loadouts from ships.json
+- Add updated background image and Claude instructions
+- Fix turret detection in ship extraction script
+- Add validation script and fix turret detection in loadout extraction
+- Add update script and new background image
 
 Previous Session Context:
 -------------------------
 - API integration work is on feature/api-integration branch (not working well)
-- Background image variants still untracked
+- Background image updated to v1d
