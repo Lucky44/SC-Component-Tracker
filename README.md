@@ -4,7 +4,7 @@ A browser-based component management application for Star Citizen. Track your sh
 
 **[Use the App](https://lucky44.github.io/SC-Component-Tracker/)** — Runs in your browser.
 
-**Version:** 0.67
+**Version:** 0.72
 
 ## Features
 
@@ -13,6 +13,7 @@ A browser-based component management application for Star Citizen. Track your sh
 - Assign custom nicknames to your ships
 - Ships displayed in a responsive grid layout
 - Ships organized by manufacturer for easy navigation
+- **Compact View** - Toggle between detailed and compact display modes
 
 ### Component Configuration
 - **Pilot Weapons** - Up to 8 hardpoints per ship (sizes S1-S7)
