@@ -1,5 +1,5 @@
 // Auto-generated ship specs from ships.json
-// Generated: 2026-02-02T17:18:41.118Z
+// Generated: 2026-02-02T17:47:33.187Z
 // Ships with hardpoint data: 167
 
 const EXTRACTED_SHIPS = [
@@ -197,32 +197,32 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 4
             }
         ],
@@ -246,61 +246,65 @@ const EXTRACTED_SHIPS = [
         "name": "Aegis Idris-M",
         "manufacturer": "Aegis",
         "size": "Large",
-        "pilotWeapons": [],
+        "pilotWeapons": [
+            {
+                "size": 10
+            }
+        ],
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 7
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             }
         ],
@@ -328,62 +332,62 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             }
         ],
@@ -411,62 +415,62 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             }
         ],
@@ -492,6 +496,16 @@ const EXTRACTED_SHIPS = [
         "size": "Large",
         "pilotWeapons": [],
         "turrets": [
+            {
+                "type": "manned",
+                "guns": 4,
+                "size": 9
+            },
+            {
+                "type": "manned",
+                "guns": 4,
+                "size": 9
+            },
             {
                 "type": "manned",
                 "guns": 2,
@@ -552,37 +566,37 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -617,12 +631,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
@@ -660,27 +674,27 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -742,6 +756,18 @@ const EXTRACTED_SHIPS = [
         "pilotWeapons": [
             {
                 "size": 5
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
             }
         ],
         "turrets": [],
@@ -768,12 +794,24 @@ const EXTRACTED_SHIPS = [
         "pilotWeapons": [
             {
                 "size": 5
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
             }
         ],
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 2
             }
         ],
@@ -800,12 +838,24 @@ const EXTRACTED_SHIPS = [
         "pilotWeapons": [
             {
                 "size": 5
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
             }
         ],
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 2
             }
         ],
@@ -832,12 +882,24 @@ const EXTRACTED_SHIPS = [
         "pilotWeapons": [
             {
                 "size": 5
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
+            },
+            {
+                "size": 2
             }
         ],
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 2
             }
         ],
@@ -913,12 +975,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -1039,22 +1101,22 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             }
         ],
@@ -1082,22 +1144,22 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             }
         ],
@@ -1164,22 +1226,10 @@ const EXTRACTED_SHIPS = [
         "size": "Small",
         "pilotWeapons": [
             {
-                "size": 3
-            },
-            {
-                "size": 3
-            },
-            {
                 "size": 2
             },
             {
                 "size": 2
-            },
-            {
-                "size": 3
-            },
-            {
-                "size": 3
             },
             {
                 "size": 4
@@ -1188,7 +1238,13 @@ const EXTRACTED_SHIPS = [
                 "size": 4
             }
         ],
-        "turrets": [],
+        "turrets": [
+            {
+                "type": "remote",
+                "guns": 2,
+                "size": 3
+            }
+        ],
         "shields": {
             "count": 2,
             "size": 1
@@ -1255,24 +1311,6 @@ const EXTRACTED_SHIPS = [
                 "size": 3
             },
             {
-                "size": 2
-            },
-            {
-                "size": 5
-            },
-            {
-                "size": 3
-            },
-            {
-                "size": 2
-            },
-            {
-                "size": 3
-            },
-            {
-                "size": 3
-            },
-            {
                 "size": 3
             }
         ],
@@ -1331,25 +1369,16 @@ const EXTRACTED_SHIPS = [
                 "size": 3
             },
             {
-                "size": 2
-            },
-            {
-                "size": 3
-            },
-            {
-                "size": 2
-            },
-            {
-                "size": 3
-            },
-            {
-                "size": 3
-            },
-            {
                 "size": 3
             }
         ],
-        "turrets": [],
+        "turrets": [
+            {
+                "type": "remote",
+                "guns": 1,
+                "size": 4
+            }
+        ],
         "shields": {
             "count": 2,
             "size": 1
@@ -1384,7 +1413,13 @@ const EXTRACTED_SHIPS = [
                 "size": 3
             }
         ],
-        "turrets": [],
+        "turrets": [
+            {
+                "type": "remote",
+                "guns": 1,
+                "size": 4
+            }
+        ],
         "shields": {
             "count": 2,
             "size": 1
@@ -1422,7 +1457,7 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             }
         ],
@@ -1460,7 +1495,13 @@ const EXTRACTED_SHIPS = [
                 "size": 3
             }
         ],
-        "turrets": [],
+        "turrets": [
+            {
+                "type": "remote",
+                "guns": 2,
+                "size": 2
+            }
+        ],
         "shields": {
             "count": 2,
             "size": 1
@@ -1527,24 +1568,6 @@ const EXTRACTED_SHIPS = [
                 "size": 3
             },
             {
-                "size": 2
-            },
-            {
-                "size": 5
-            },
-            {
-                "size": 3
-            },
-            {
-                "size": 2
-            },
-            {
-                "size": 3
-            },
-            {
-                "size": 3
-            },
-            {
                 "size": 3
             }
         ],
@@ -1599,24 +1622,6 @@ const EXTRACTED_SHIPS = [
         "manufacturer": "Anvil",
         "size": "Small",
         "pilotWeapons": [
-            {
-                "size": 3
-            },
-            {
-                "size": 2
-            },
-            {
-                "size": 5
-            },
-            {
-                "size": 3
-            },
-            {
-                "size": 2
-            },
-            {
-                "size": 3
-            },
             {
                 "size": 3
             },
@@ -1826,7 +1831,7 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -1902,7 +1907,7 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 3
             }
         ],
@@ -2028,12 +2033,17 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
+                "size": 3
+            },
+            {
+                "type": "manned",
+                "guns": 2,
                 "size": 3
             },
             {
@@ -2078,12 +2088,17 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
+                "size": 3
+            },
+            {
+                "type": "manned",
+                "guns": 2,
                 "size": 3
             },
             {
@@ -2322,7 +2337,20 @@ const EXTRACTED_SHIPS = [
         "name": "Aopoa San'tok.yāi",
         "manufacturer": "Aopoa",
         "size": "Small",
-        "pilotWeapons": [],
+        "pilotWeapons": [
+            {
+                "size": 3
+            },
+            {
+                "size": 3
+            },
+            {
+                "size": 3
+            },
+            {
+                "size": 3
+            }
+        ],
         "turrets": [],
         "shields": {
             "count": 1,
@@ -2418,13 +2446,7 @@ const EXTRACTED_SHIPS = [
         "manufacturer": "Argo",
         "size": "Small",
         "pilotWeapons": [],
-        "turrets": [
-            {
-                "type": "manned",
-                "guns": 1,
-                "size": 1
-            }
-        ],
+        "turrets": [],
         "shields": {
             "count": 1,
             "size": 1
@@ -2456,7 +2478,7 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -2725,13 +2747,7 @@ const EXTRACTED_SHIPS = [
                 "size": 3
             }
         ],
-        "turrets": [
-            {
-                "type": "manned",
-                "guns": 1,
-                "size": 1
-            }
-        ],
+        "turrets": [],
         "shields": {
             "count": 3,
             "size": 1
@@ -2763,12 +2779,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 2
             }
         ],
@@ -2803,43 +2819,38 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "remote",
-                "guns": 2,
-                "size": 5
-            },
-            {
-                "type": "remote",
-                "guns": 2,
-                "size": 5
-            },
-            {
-                "type": "remote",
-                "guns": 4,
-                "size": 5
-            },
-            {
-                "type": "remote",
-                "guns": 4,
-                "size": 5
-            },
-            {
-                "type": "remote",
-                "guns": 4,
-                "size": 4
-            },
-            {
-                "type": "remote",
-                "guns": 4,
-                "size": 4
-            },
-            {
-                "type": "remote",
-                "guns": 4,
-                "size": 4
-            },
-            {
-                "type": "manned",
                 "guns": 1,
                 "size": 5
+            },
+            {
+                "type": "remote",
+                "guns": 1,
+                "size": 5
+            },
+            {
+                "type": "remote",
+                "guns": 2,
+                "size": 5
+            },
+            {
+                "type": "remote",
+                "guns": 2,
+                "size": 5
+            },
+            {
+                "type": "remote",
+                "guns": 2,
+                "size": 4
+            },
+            {
+                "type": "remote",
+                "guns": 2,
+                "size": 4
+            },
+            {
+                "type": "remote",
+                "guns": 2,
+                "size": 4
             }
         ],
         "shields": {
@@ -2863,6 +2874,9 @@ const EXTRACTED_SHIPS = [
         "manufacturer": "Crusader",
         "size": "Medium",
         "pilotWeapons": [
+            {
+                "size": 7
+            },
             {
                 "size": 1
             }
@@ -2889,6 +2903,9 @@ const EXTRACTED_SHIPS = [
         "manufacturer": "Crusader",
         "size": "Medium",
         "pilotWeapons": [
+            {
+                "size": 7
+            },
             {
                 "size": 1
             }
@@ -2925,7 +2942,7 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -2960,12 +2977,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             }
         ],
@@ -3026,17 +3043,17 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             }
         ],
@@ -3063,13 +3080,18 @@ const EXTRACTED_SHIPS = [
         "pilotWeapons": [],
         "turrets": [
             {
-                "type": "manned",
-                "guns": 4,
+                "type": "remote",
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
+                "size": 3
+            },
+            {
+                "type": "manned",
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -3116,12 +3138,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 2
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 2
             }
         ],
@@ -3168,12 +3190,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 2
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 2
             }
         ],
@@ -3214,13 +3236,8 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
-            },
-            {
-                "type": "manned",
-                "guns": 1,
-                "size": 1
             }
         ],
         "shields": {
@@ -3260,13 +3277,8 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
-            },
-            {
-                "type": "manned",
-                "guns": 1,
-                "size": 1
             }
         ],
         "shields": {
@@ -3347,12 +3359,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             }
         ],
@@ -3434,12 +3446,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 2
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 2
             }
         ],
@@ -3480,13 +3492,8 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
-            },
-            {
-                "type": "manned",
-                "guns": 1,
-                "size": 1
             }
         ],
         "shields": {
@@ -3526,53 +3533,7 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
-                "size": 3
-            },
-            {
-                "type": "manned",
-                "guns": 1,
-                "size": 1
-            }
-        ],
-        "shields": {
-            "count": 1,
-            "size": 2
-        },
-        "powerPlants": {
-            "count": 1,
-            "size": 2
-        },
-        "coolers": {
-            "count": 2,
-            "size": 2
-        },
-        "quantumDrive": {
-            "size": 2
-        }
-    },
-    {
-        "name": "Drake Cutlass Blue",
-        "manufacturer": "Drake",
-        "size": "Medium",
-        "pilotWeapons": [
-            {
-                "size": 3
-            },
-            {
-                "size": 3
-            },
-            {
-                "size": 3
-            },
-            {
-                "size": 3
-            }
-        ],
-        "turrets": [
-            {
-                "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -3613,7 +3574,48 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
+                "size": 3
+            }
+        ],
+        "shields": {
+            "count": 1,
+            "size": 2
+        },
+        "powerPlants": {
+            "count": 1,
+            "size": 2
+        },
+        "coolers": {
+            "count": 2,
+            "size": 2
+        },
+        "quantumDrive": {
+            "size": 2
+        }
+    },
+    {
+        "name": "Drake Cutlass Blue",
+        "manufacturer": "Drake",
+        "size": "Medium",
+        "pilotWeapons": [
+            {
+                "size": 3
+            },
+            {
+                "size": 3
+            },
+            {
+                "size": 3
+            },
+            {
+                "size": 3
+            }
+        ],
+        "turrets": [
+            {
+                "type": "manned",
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -3719,12 +3721,27 @@ const EXTRACTED_SHIPS = [
             },
             {
                 "size": 3
+            },
+            {
+                "size": 1
+            },
+            {
+                "size": 1
+            },
+            {
+                "size": 1
+            },
+            {
+                "size": 1
+            },
+            {
+                "size": 1
             }
         ],
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
@@ -3958,7 +3975,7 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -4153,7 +4170,7 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 3
             }
         ],
@@ -4421,11 +4438,24 @@ const EXTRACTED_SHIPS = [
         "name": "MISC Freelancer",
         "manufacturer": "MISC",
         "size": "Medium",
-        "pilotWeapons": [],
+        "pilotWeapons": [
+            {
+                "size": 3
+            },
+            {
+                "size": 3
+            },
+            {
+                "size": 3
+            },
+            {
+                "size": 3
+            }
+        ],
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -4450,7 +4480,13 @@ const EXTRACTED_SHIPS = [
         "manufacturer": "MISC",
         "size": "Small",
         "pilotWeapons": [],
-        "turrets": [],
+        "turrets": [
+            {
+                "type": "remote",
+                "guns": 2,
+                "size": 1
+            }
+        ],
         "shields": {
             "count": 1,
             "size": 2
@@ -4475,12 +4511,17 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
+                "size": 3
+            },
+            {
+                "type": "remote",
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -4673,21 +4714,34 @@ const EXTRACTED_SHIPS = [
         "name": "MISC Starfarer",
         "manufacturer": "MISC",
         "size": "Large",
-        "pilotWeapons": [],
+        "pilotWeapons": [
+            {
+                "size": 4
+            },
+            {
+                "size": 4
+            },
+            {
+                "size": 4
+            },
+            {
+                "size": 4
+            }
+        ],
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -4711,16 +4765,29 @@ const EXTRACTED_SHIPS = [
         "name": "MISC Starlancer MAX",
         "manufacturer": "MISC",
         "size": "Large",
-        "pilotWeapons": [],
+        "pilotWeapons": [
+            {
+                "size": 4
+            },
+            {
+                "size": 4
+            },
+            {
+                "size": 4
+            },
+            {
+                "size": 4
+            }
+        ],
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             }
         ],
@@ -4744,26 +4811,45 @@ const EXTRACTED_SHIPS = [
         "name": "MISC Starlancer TAC",
         "manufacturer": "MISC",
         "size": "Large",
-        "pilotWeapons": [],
+        "pilotWeapons": [
+            {
+                "size": 4
+            },
+            {
+                "size": 4
+            },
+            {
+                "size": 4
+            },
+            {
+                "size": 4
+            },
+            {
+                "size": 1
+            },
+            {
+                "size": 1
+            }
+        ],
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 5
             }
         ],
@@ -5016,12 +5102,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -5059,12 +5145,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -5099,7 +5185,7 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 2
             }
         ],
@@ -5127,22 +5213,22 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 4
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "remote",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -5619,12 +5705,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -5665,7 +5751,7 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -5706,12 +5792,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 4,
+                "guns": 2,
                 "size": 3
             }
         ],
@@ -5752,13 +5838,8 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 4,
-                "size": 3
-            },
-            {
-                "type": "manned",
                 "guns": 2,
-                "size": 2
+                "size": 3
             }
         ],
         "shields": {
@@ -5884,12 +5965,12 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 8
             },
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 8
             }
         ],
@@ -5917,27 +5998,27 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 8,
-                "size": 4
-            },
-            {
-                "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 4
             },
             {
                 "type": "manned",
                 "guns": 4,
+                "size": 4
+            },
+            {
+                "type": "manned",
+                "guns": 2,
                 "size": 6
             },
             {
@@ -5985,27 +6066,27 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 3
             },
             {
                 "type": "manned",
-                "guns": 8,
-                "size": 4
-            },
-            {
-                "type": "manned",
-                "guns": 8,
+                "guns": 4,
                 "size": 4
             },
             {
                 "type": "manned",
                 "guns": 4,
+                "size": 4
+            },
+            {
+                "type": "manned",
+                "guns": 2,
                 "size": 6
             },
             {
@@ -6095,7 +6176,7 @@ const EXTRACTED_SHIPS = [
         "turrets": [
             {
                 "type": "remote",
-                "guns": 8,
+                "guns": 4,
                 "size": 3
             }
         ],

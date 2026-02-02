@@ -141,12 +141,13 @@ function extractPilotWeapons(loadout) {
             }
 
             // Check if this is a gun hardpoint (gimbal mount or direct weapon)
-            // Must have "hardpoint_gun" in name, or be a Turret.GunTurret at top level
-            const isGunHardpoint = hpName.startsWith('hardpoint_gun') ||
-                                   hpName.startsWith('hardpoint_class');
+            // Only count: Turret.GunTurret (gimbal), WeaponGun.Gun (direct gun), or hardpoint_gun_*
+            // Do NOT count hardpoint_class_* alone - that includes missile racks and module mounts
+            const isGunHardpoint = hpName.startsWith('hardpoint_gun');
             const isGimbalMount = type === 'Turret.GunTurret';
+            const isDirectGun = type === 'WeaponGun.Gun';
 
-            if (!inMannedOrRemoteTurret && (isGunHardpoint || isGimbalMount) && item.MaxSize > 0) {
+            if (!inMannedOrRemoteTurret && (isGunHardpoint || isGimbalMount || isDirectGun) && item.MaxSize > 0) {
                 // This is a pilot weapon hardpoint
                 weapons.push({ size: item.MaxSize });
                 // Don't recurse into this - we've counted the mount
@@ -179,13 +180,25 @@ function extractTurrets(loadout) {
         let maxSize = 0;
         for (const item of items) {
             const hpName = (item.HardpointName || '').toLowerCase();
-            // Count gimbal mounts or weapon hardpoints inside the turret
-            if ((hpName.includes('weapon') || hpName.includes('gun') || hpName.includes('class') ||
-                 item.Type === 'Turret.GunTurret') && item.MaxSize > 0) {
+            const type = item.Type || '';
+
+            // Gimbal mounts (Turret.GunTurret) count as 1 weapon - don't recurse into them
+            // This prevents double-counting the gimbal + the gun inside
+            if (type === 'Turret.GunTurret' && item.MaxSize > 0) {
                 count++;
                 maxSize = Math.max(maxSize, item.MaxSize);
+                // Don't recurse - the gimbal IS the weapon mount
+                continue;
             }
-            // Recurse
+
+            // Direct guns (WeaponGun.Gun) also count
+            if (type === 'WeaponGun.Gun' && item.MaxSize > 0) {
+                count++;
+                maxSize = Math.max(maxSize, item.MaxSize);
+                continue;
+            }
+
+            // Recurse into other nested items (but not gimbals/guns)
             if (item.Loadout) {
                 const sub = countWeaponHardpoints(item.Loadout);
                 count += sub.count;

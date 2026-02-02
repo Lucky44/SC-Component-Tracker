@@ -67,3 +67,55 @@ Files Modified:
 - app.js - Version 0.70 -> 0.71, added toggleViewMode() and isCompactView state
 - index.html - Cache-busting v=70 -> v=71
 - styles.css - Added compact view styles
+
+---
+
+Changelog - 2026-02-02 (v0.72)
+===============================
+
+Summary:
+--------
+Fixed ship hardpoint extraction bugs and removed "Kruger" prefix from ship names.
+
+Changes:
+--------
+1. Fixed pilot weapons over-counting in extract-ships.js:
+   - Was matching hardpoint_class_* which included missile racks and module mounts
+   - Now only counts Turret.GunTurret (gimbals), WeaponGun.Gun, or hardpoint_gun_*
+   - F7C Hornet Mk I: 8 pilot weapons -> 2 (correct)
+
+2. Fixed turret weapons double-counting in extract-ships.js:
+   - Was counting both gimbal mount AND gun inside = 2x actual count
+   - Hurricane turret: 8 guns -> 4 (correct)
+   - Hammerhead: 48 guns -> 24 (correct: 6 turrets x 4 guns)
+
+3. Removed "Kruger" prefix from Kruger ship names:
+   - "Kruger L-21 Wolf" -> "L-21 Wolf"
+   - "Kruger L-22 Alpha Wolf" -> "L-22 Alpha Wolf"
+   - "Kruger P-52 Merlin" -> "P-52 Merlin"
+   - "Kruger P-72 Archimedes" -> "P-72 Archimedes"
+   - Updated both ship specs and stockLoadouts keys
+
+Files Modified:
+---------------
+- app.js - Version 0.71 -> 0.72
+- index.html - Cache-busting v=71 -> v=72
+- data.js - Fixed ship specs (142 ships), renamed Kruger ships
+- scripts/extract-ships.js - Fixed hardpoint counting bugs
+
+---
+
+TODO for Next Session:
+======================
+1. Component size extraction bug:
+   - Ships like L-21, L-22, Perseus, Polaris have shields/powerPlants with size: 0
+   - Need to investigate extractComponents() in extract-ships.js
+   - Root cause: scunpacked data may store sizes differently
+
+2. Stock loadout incomplete data:
+   - Hurricane shows 1/4 turret weapons (should be 4)
+   - Many ships have fewer weapons than hardpoints in scunpacked data
+   - May need to filter updates to not overwrite user data with incomplete loadouts
+
+3. Add "Kruger" to NAME_NORMALIZATIONS in update-from-scunpacked.js:
+   - Strip "Kruger" prefix from ship names during extraction

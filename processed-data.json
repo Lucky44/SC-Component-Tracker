@@ -1,6 +1,6 @@
 {
-  "version": "2026-02-01T11:30:17.557Z",
-  "lastUpdated": "2026-02-01",
+  "version": "2026-02-02T17:47:47.136Z",
+  "lastUpdated": "2026-02-02",
   "ships": [
     {
       "name": "Aegis Avenger Stalker",
@@ -167,32 +167,32 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 4
         }
       ],
@@ -220,37 +220,37 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 5
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -285,12 +285,12 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
@@ -328,27 +328,27 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -410,6 +410,18 @@
       "pilotWeapons": [
         {
           "size": 5
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
         }
       ],
       "turrets": [],
@@ -436,12 +448,24 @@
       "pilotWeapons": [
         {
           "size": 5
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
         }
       ],
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 2
         }
       ],
@@ -468,12 +492,24 @@
       "pilotWeapons": [
         {
           "size": 5
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
         }
       ],
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 2
         }
       ],
@@ -500,12 +536,24 @@
       "pilotWeapons": [
         {
           "size": 5
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
+        },
+        {
+          "size": 2
         }
       ],
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 2
         }
       ],
@@ -537,7 +585,13 @@
           "size": 3
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 1
+        }
+      ],
       "shields": {
         "count": 1,
         "size": 1
@@ -655,22 +709,22 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         }
       ],
@@ -699,10 +753,22 @@
           "size": 4
         },
         {
+          "size": 3
+        },
+        {
+          "size": 3
+        },
+        {
           "size": 4
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 3
+        }
+      ],
       "shields": {
         "count": 3,
         "size": 1
@@ -725,22 +791,10 @@
       "size": "Small",
       "pilotWeapons": [
         {
-          "size": 5
+          "size": 2
         },
         {
-          "size": 3
-        },
-        {
-          "size": 3
-        },
-        {
-          "size": 3
-        },
-        {
-          "size": 3
-        },
-        {
-          "size": 3
+          "size": 2
         },
         {
           "size": 4
@@ -749,7 +803,13 @@
           "size": 4
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 3
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 1
@@ -775,10 +835,22 @@
           "size": 4
         },
         {
+          "size": 3
+        },
+        {
+          "size": 3
+        },
+        {
           "size": 4
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 3
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 1
@@ -800,24 +872,6 @@
       "manufacturer": "Anvil",
       "size": "Small",
       "pilotWeapons": [
-        {
-          "size": 3
-        },
-        {
-          "size": 2
-        },
-        {
-          "size": 5
-        },
-        {
-          "size": 3
-        },
-        {
-          "size": 2
-        },
-        {
-          "size": 3
-        },
         {
           "size": 3
         },
@@ -880,28 +934,16 @@
           "size": 3
         },
         {
-          "size": 2
-        },
-        {
-          "size": 5
-        },
-        {
-          "size": 3
-        },
-        {
-          "size": 2
-        },
-        {
-          "size": 3
-        },
-        {
-          "size": 3
-        },
-        {
           "size": 3
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 1,
+          "size": 4
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 1
@@ -927,16 +969,22 @@
           "size": 3
         },
         {
-          "size": 3
+          "size": 1
+        },
+        {
+          "size": 1
         },
         {
           "size": 3
-        },
-        {
-          "size": 5
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 1,
+          "size": 4
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 1
@@ -962,16 +1010,22 @@
           "size": 4
         },
         {
-          "size": 4
+          "size": 3
         },
         {
-          "size": 4
+          "size": 3
         },
         {
           "size": 4
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 4
+        }
+      ],
       "shields": {
         "count": 3,
         "size": 1
@@ -997,16 +1051,22 @@
           "size": 3
         },
         {
-          "size": 3
+          "size": 1
+        },
+        {
+          "size": 1
         },
         {
           "size": 3
-        },
-        {
-          "size": 5
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 2
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 1
@@ -1032,10 +1092,22 @@
           "size": 4
         },
         {
+          "size": 3
+        },
+        {
+          "size": 3
+        },
+        {
           "size": 4
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 3
+        }
+      ],
       "shields": {
         "count": 3,
         "size": 1
@@ -1057,24 +1129,6 @@
       "manufacturer": "Anvil",
       "size": "Small",
       "pilotWeapons": [
-        {
-          "size": 3
-        },
-        {
-          "size": 2
-        },
-        {
-          "size": 5
-        },
-        {
-          "size": 3
-        },
-        {
-          "size": 2
-        },
-        {
-          "size": 3
-        },
         {
           "size": 3
         },
@@ -1133,24 +1187,6 @@
       "manufacturer": "Anvil",
       "size": "Small",
       "pilotWeapons": [
-        {
-          "size": 3
-        },
-        {
-          "size": 2
-        },
-        {
-          "size": 5
-        },
-        {
-          "size": 3
-        },
-        {
-          "size": 2
-        },
-        {
-          "size": 3
-        },
         {
           "size": 3
         },
@@ -1228,7 +1264,13 @@
           "size": 3
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 3
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 2
@@ -1269,7 +1311,13 @@
           "size": 3
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 2
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 2
@@ -1301,7 +1349,7 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -1377,7 +1425,7 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 3
         }
       ],
@@ -1465,7 +1513,13 @@
       "manufacturer": "Anvil",
       "size": "Small",
       "pilotWeapons": [],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 2
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 0
@@ -1497,12 +1551,17 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
+          "size": 3
+        },
+        {
+          "type": "manned",
+          "guns": 2,
           "size": 3
         },
         {
@@ -1556,7 +1615,13 @@
           "size": 3
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 2
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 2
@@ -1582,10 +1647,22 @@
           "size": 4
         },
         {
+          "size": 3
+        },
+        {
+          "size": 3
+        },
+        {
           "size": 4
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 3
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 1
@@ -1635,7 +1712,20 @@
       "name": "Aopoa San'tok.yāi",
       "manufacturer": "Aopoa",
       "size": "Small",
-      "pilotWeapons": [],
+      "pilotWeapons": [
+        {
+          "size": 3
+        },
+        {
+          "size": 3
+        },
+        {
+          "size": 3
+        },
+        {
+          "size": 3
+        }
+      ],
       "turrets": [],
       "shields": {
         "count": 1,
@@ -1731,13 +1821,7 @@
       "manufacturer": "Argo",
       "size": "Small",
       "pilotWeapons": [],
-      "turrets": [
-        {
-          "type": "manned",
-          "guns": 1,
-          "size": 1
-        }
-      ],
+      "turrets": [],
       "shields": {
         "count": 1,
         "size": 1
@@ -1769,7 +1853,7 @@
       "turrets": [
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -1850,15 +1934,14 @@
       "name": "C.O. Mustang Alpha",
       "manufacturer": "Consolidated Outland",
       "size": "Small",
-      "pilotWeapons": [
+      "pilotWeapons": [],
+      "turrets": [
         {
-          "size": 2
-        },
-        {
+          "type": "remote",
+          "guns": 2,
           "size": 2
         }
       ],
-      "turrets": [],
       "shields": {
         "count": 2,
         "size": 1
@@ -1879,15 +1962,14 @@
       "name": "C.O. Mustang Beta",
       "manufacturer": "Consolidated Outland",
       "size": "Small",
-      "pilotWeapons": [
+      "pilotWeapons": [],
+      "turrets": [
         {
-          "size": 2
-        },
-        {
+          "type": "remote",
+          "guns": 2,
           "size": 2
         }
       ],
-      "turrets": [],
       "shields": {
         "count": 2,
         "size": 1
@@ -1908,15 +1990,14 @@
       "name": "C.O. Mustang CitizenCon 2948 Edition",
       "manufacturer": "Consolidated Outland",
       "size": "Small",
-      "pilotWeapons": [
+      "pilotWeapons": [],
+      "turrets": [
         {
-          "size": 2
-        },
-        {
+          "type": "remote",
+          "guns": 2,
           "size": 2
         }
       ],
-      "turrets": [],
       "shields": {
         "count": 2,
         "size": 1
@@ -1939,19 +2020,19 @@
       "size": "Small",
       "pilotWeapons": [
         {
-          "size": 2
-        },
-        {
-          "size": 2
-        },
-        {
           "size": 1
         },
         {
           "size": 1
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 2
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 1
@@ -2041,13 +2122,7 @@
           "size": 3
         }
       ],
-      "turrets": [
-        {
-          "type": "manned",
-          "guns": 1,
-          "size": 1
-        }
-      ],
+      "turrets": [],
       "shields": {
         "count": 3,
         "size": 1
@@ -2079,43 +2154,38 @@
       "turrets": [
         {
           "type": "remote",
-          "guns": 2,
-          "size": 5
-        },
-        {
-          "type": "remote",
-          "guns": 2,
-          "size": 5
-        },
-        {
-          "type": "remote",
-          "guns": 4,
-          "size": 5
-        },
-        {
-          "type": "remote",
-          "guns": 4,
-          "size": 5
-        },
-        {
-          "type": "remote",
-          "guns": 4,
-          "size": 4
-        },
-        {
-          "type": "remote",
-          "guns": 4,
-          "size": 4
-        },
-        {
-          "type": "remote",
-          "guns": 4,
-          "size": 4
-        },
-        {
-          "type": "manned",
           "guns": 1,
           "size": 5
+        },
+        {
+          "type": "remote",
+          "guns": 1,
+          "size": 5
+        },
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 5
+        },
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 5
+        },
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 4
+        },
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 4
+        },
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 4
         }
       ],
       "shields": {
@@ -2139,6 +2209,9 @@
       "manufacturer": "Crusader",
       "size": "Medium",
       "pilotWeapons": [
+        {
+          "size": 7
+        },
         {
           "size": 1
         }
@@ -2165,6 +2238,9 @@
       "manufacturer": "Crusader",
       "size": "Medium",
       "pilotWeapons": [
+        {
+          "size": 7
+        },
         {
           "size": 1
         }
@@ -2201,12 +2277,12 @@
       "turrets": [
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         }
       ],
@@ -2267,17 +2343,17 @@
       "turrets": [
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         }
       ],
@@ -2304,13 +2380,18 @@
       "pilotWeapons": [],
       "turrets": [
         {
-          "type": "manned",
-          "guns": 4,
+          "type": "remote",
+          "guns": 2,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
+          "size": 3
+        },
+        {
+          "type": "manned",
+          "guns": 2,
           "size": 3
         }
       ],
@@ -2340,18 +2421,17 @@
         },
         {
           "size": 3
-        },
-        {
-          "size": 3
-        },
-        {
-          "size": 3
         }
       ],
       "turrets": [
         {
+          "type": "remote",
+          "guns": 2,
+          "size": 3
+        },
+        {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 2
         }
       ],
@@ -2381,15 +2461,15 @@
         },
         {
           "size": 3
-        },
+        }
+      ],
+      "turrets": [
         {
-          "size": 3
-        },
-        {
+          "type": "remote",
+          "guns": 2,
           "size": 3
         }
       ],
-      "turrets": [],
       "shields": {
         "count": 1,
         "size": 2
@@ -2433,12 +2513,12 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 2
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 2
         }
       ],
@@ -2479,13 +2559,8 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
-        },
-        {
-          "type": "manned",
-          "guns": 1,
-          "size": 1
         }
       ],
       "shields": {
@@ -2566,12 +2641,12 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         }
       ],
@@ -2653,12 +2728,12 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 2
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 2
         }
       ],
@@ -2699,13 +2774,8 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
-        },
-        {
-          "type": "manned",
-          "guns": 1,
-          "size": 1
         }
       ],
       "shields": {
@@ -2745,7 +2815,7 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -2816,12 +2886,27 @@
         },
         {
           "size": 3
+        },
+        {
+          "size": 1
+        },
+        {
+          "size": 1
+        },
+        {
+          "size": 1
+        },
+        {
+          "size": 1
+        },
+        {
+          "size": 1
         }
       ],
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
@@ -3046,19 +3131,19 @@
       "size": "Medium",
       "pilotWeapons": [
         {
-          "size": 3
-        },
-        {
-          "size": 3
-        },
-        {
           "size": 5
         },
         {
           "size": 5
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 3
+        }
+      ],
       "shields": {
         "count": 4,
         "size": 2
@@ -3218,7 +3303,7 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 3
         }
       ],
@@ -3486,11 +3571,24 @@
       "name": "MISC Freelancer",
       "manufacturer": "MISC",
       "size": "Medium",
-      "pilotWeapons": [],
+      "pilotWeapons": [
+        {
+          "size": 3
+        },
+        {
+          "size": 3
+        },
+        {
+          "size": 3
+        },
+        {
+          "size": 3
+        }
+      ],
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -3515,7 +3613,13 @@
       "manufacturer": "MISC",
       "size": "Small",
       "pilotWeapons": [],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 1
+        }
+      ],
       "shields": {
         "count": 1,
         "size": 2
@@ -3540,12 +3644,17 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
+          "size": 3
+        },
+        {
+          "type": "remote",
+          "guns": 2,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -3738,21 +3847,34 @@
       "name": "MISC Starfarer",
       "manufacturer": "MISC",
       "size": "Large",
-      "pilotWeapons": [],
+      "pilotWeapons": [
+        {
+          "size": 4
+        },
+        {
+          "size": 4
+        },
+        {
+          "size": 4
+        },
+        {
+          "size": 4
+        }
+      ],
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -3776,16 +3898,29 @@
       "name": "MISC Starlancer MAX",
       "manufacturer": "MISC",
       "size": "Large",
-      "pilotWeapons": [],
+      "pilotWeapons": [
+        {
+          "size": 4
+        },
+        {
+          "size": 4
+        },
+        {
+          "size": 4
+        },
+        {
+          "size": 4
+        }
+      ],
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         }
       ],
@@ -3809,26 +3944,45 @@
       "name": "MISC Starlancer TAC",
       "manufacturer": "MISC",
       "size": "Large",
-      "pilotWeapons": [],
+      "pilotWeapons": [
+        {
+          "size": 4
+        },
+        {
+          "size": 4
+        },
+        {
+          "size": 4
+        },
+        {
+          "size": 4
+        },
+        {
+          "size": 1
+        },
+        {
+          "size": 1
+        }
+      ],
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 5
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 5
         }
       ],
@@ -4081,12 +4235,12 @@
       "turrets": [
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -4124,12 +4278,12 @@
       "turrets": [
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -4164,7 +4318,7 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 2
         }
       ],
@@ -4192,22 +4346,22 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 4
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "remote",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -4510,12 +4664,12 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -4556,7 +4710,7 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -4597,12 +4751,12 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 4,
+          "guns": 2,
           "size": 3
         }
       ],
@@ -4643,13 +4797,8 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 4,
-          "size": 3
-        },
-        {
-          "type": "manned",
           "guns": 2,
-          "size": 2
+          "size": 3
         }
       ],
       "shields": {
@@ -4775,12 +4924,12 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 8
         },
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 8
         }
       ],
@@ -4808,27 +4957,27 @@
       "turrets": [
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 3
         },
         {
           "type": "manned",
-          "guns": 8,
-          "size": 4
-        },
-        {
-          "type": "manned",
-          "guns": 8,
+          "guns": 4,
           "size": 4
         },
         {
           "type": "manned",
           "guns": 4,
+          "size": 4
+        },
+        {
+          "type": "manned",
+          "guns": 2,
           "size": 6
         },
         {
@@ -4918,7 +5067,7 @@
       "turrets": [
         {
           "type": "remote",
-          "guns": 8,
+          "guns": 4,
           "size": 3
         }
       ],
