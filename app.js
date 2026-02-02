@@ -2,7 +2,7 @@
 
 // ============ Data Layer ============
 
-const APP_VERSION = '0.72';
+const APP_VERSION = '0.74';
 const STORAGE_KEY = 'sc-component-tracker-data';
 const DATA_VERSION_KEY = 'sc-component-tracker-data-version';
 
@@ -259,8 +259,8 @@ function populateShipDropdown() {
     // Exclude problematic variants (Wikelo special editions, etc.)
     const isExcludedVariant = name => /wikelo|best in show|best-in-show/i.test(name || '');
 
-    // Group ships by manufacturer
-    const byManufacturer = {};
+    // Build flat list of ships with manufacturer info
+    const shipList = [];
 
     allShipNames.forEach(shipName => {
         if (isExcludedVariant(shipName)) return;
@@ -269,32 +269,22 @@ function populateShipDropdown() {
         const spec = getShipSpec(shipName);
         if (!spec) return; // Skip if no spec found (no base ship)
 
-        const manufacturer = spec.manufacturer;
-        if (!byManufacturer[manufacturer]) {
-            byManufacturer[manufacturer] = [];
-        }
-        byManufacturer[manufacturer].push({
+        shipList.push({
             name: shipName,
-            displayName: getShipDisplayName(shipName)
+            displayName: getShipDisplayName(shipName),
+            manufacturer: spec.manufacturer
         });
     });
 
-    // Sort ships within each manufacturer by display name
-    Object.values(byManufacturer).forEach(ships => {
-        ships.sort((a, b) => a.displayName.localeCompare(b.displayName));
-    });
+    // Sort alphabetically by display name
+    shipList.sort((a, b) => a.displayName.localeCompare(b.displayName));
 
-    // Build dropdown with optgroups
-    Object.keys(byManufacturer).sort().forEach(manufacturer => {
-        const optgroup = document.createElement('optgroup');
-        optgroup.label = manufacturer;
-        byManufacturer[manufacturer].forEach(ship => {
-            const option = document.createElement('option');
-            option.value = ship.name;
-            option.textContent = ship.displayName;
-            optgroup.appendChild(option);
-        });
-        select.appendChild(optgroup);
+    // Build dropdown with "DisplayName (Manufacturer)" format
+    shipList.forEach(ship => {
+        const option = document.createElement('option');
+        option.value = ship.name;
+        option.textContent = `${ship.displayName} (${ship.manufacturer})`;
+        select.appendChild(option);
     });
 }
 

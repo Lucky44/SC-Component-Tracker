@@ -173,6 +173,15 @@ function cleanShipName(name) {
 
     let cleanName = words.join(' ');
 
+    // Strip manufacturer prefixes that shouldn't be in the display name
+    const stripPrefixes = ['Kruger '];
+    for (const prefix of stripPrefixes) {
+        if (cleanName.startsWith(prefix)) {
+            cleanName = cleanName.slice(prefix.length);
+            break;
+        }
+    }
+
     // Apply name normalizations
     if (NAME_NORMALIZATIONS[cleanName]) {
         cleanName = NAME_NORMALIZATIONS[cleanName];

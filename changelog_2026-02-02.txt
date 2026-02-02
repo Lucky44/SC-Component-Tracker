@@ -105,17 +105,55 @@ Files Modified:
 
 ---
 
-TODO for Next Session:
-======================
-1. Component size extraction bug:
-   - Ships like L-21, L-22, Perseus, Polaris have shields/powerPlants with size: 0
-   - Need to investigate extractComponents() in extract-ships.js
-   - Root cause: scunpacked data may store sizes differently
+Changelog - 2026-02-02 (v0.73 - data fixes)
+===========================================
 
-2. Stock loadout incomplete data:
-   - Hurricane shows 1/4 turret weapons (should be 4)
-   - Many ships have fewer weapons than hardpoints in scunpacked data
-   - May need to filter updates to not overwrite user data with incomplete loadouts
+Summary:
+--------
+Fixed component size extraction bug, synced stock loadouts, and improved extraction scripts.
 
-3. Add "Kruger" to NAME_NORMALIZATIONS in update-from-scunpacked.js:
-   - Strip "Kruger" prefix from ship names during extraction
+Changes:
+--------
+1. Fixed component size extraction bug in extract-ships.js:
+   - scunpacked data has MaxSize: 0 for some valid components
+   - Added ClassName fallback for shields, coolers, powerPlants (was only QD)
+   - Parses size from ClassName pattern (e.g., _S01_ = size 1)
+   - L-21 Wolf: shields/powerPlants now size 1 (was 0)
+   - RSI Perseus: shields/powerPlants/coolers now size 3 (was 0)
+
+2. Fixed stock loadout incomplete data:
+   - Root cause: data.js had stale stockLoadouts that were never synced
+   - Created sync-stockloadouts-to-datajs.js to replace stockLoadouts section
+   - Hurricane now shows 4 turret weapons (was 1)
+   - Hammerhead now shows 24 turret weapons (correct)
+   - Synced 214 stock loadouts from new-stockloadouts.js
+
+3. Added Kruger prefix stripping to extraction scripts:
+   - update-from-scunpacked.js: cleanShipName() now strips "Kruger " prefix
+   - extract-ships.js: Added cleanShipName() for consistent naming
+   - Ensures ship names match between extracted data and data.js
+
+4. Created fix-component-sizes.js utility:
+   - Updates component sizes in data.js from extracted-ships.js
+   - Fixed 72 component size entries total
+
+5. Updated CLAUDE.md with:
+   - Key extraction scripts documentation
+   - Data pipeline steps
+   - Known data quirks (MaxSize: 0, Kruger prefix, snub sizes)
+
+Files Modified:
+---------------
+- scripts/extract-ships.js - ClassName fallback for all components, cleanShipName()
+- scripts/update-from-scunpacked.js - stripPrefixes for Kruger
+- scripts/sync-stockloadouts-to-datajs.js - NEW: syncs stock loadouts to data.js
+- scripts/fix-component-sizes.js - NEW: fixes component sizes in data.js
+- data.js - Fixed 72 component sizes, synced 214 stock loadouts
+- CLAUDE.md - Added scripts documentation
+
+Technical Notes:
+----------------
+- MPUV ships legitimately have size 0 powerPlants/coolers (S00 in ClassName)
+- Snub ships have size 0 quantumDrive (no QD equipped)
+- sync-ships-to-datajs.js only ADDS new ships, doesn't update existing
+- Use fix-component-sizes.js to update existing ship component sizes

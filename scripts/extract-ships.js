@@ -55,6 +55,19 @@ const MANUFACTURER_MAP = {
 };
 
 /**
+ * Clean up ship name - strip manufacturer prefixes that shouldn't be in display name
+ */
+function cleanShipName(name) {
+    const stripPrefixes = ['Kruger '];
+    for (const prefix of stripPrefixes) {
+        if (name.startsWith(prefix)) {
+            return name.slice(prefix.length);
+        }
+    }
+    return name;
+}
+
+/**
  * Check if a ship is a variant (not a base ship)
  * Variants have suffixes like Pirate, Valiant, Special, Edition, etc.
  */
@@ -283,17 +296,23 @@ function extractComponents(loadout) {
 
     if (shields.length > 0) {
         components.shields.count = shields.length;
-        components.shields.size = Math.max(...shields.map(s => s.MaxSize || s.Size || 0));
+        components.shields.size = Math.max(...shields.map(s =>
+            s.MaxSize || s.Size || getSizeFromClassName(s.ClassName) || 0
+        ));
     }
 
     if (coolers.length > 0) {
         components.coolers.count = coolers.length;
-        components.coolers.size = Math.max(...coolers.map(c => c.MaxSize || c.Size || 0));
+        components.coolers.size = Math.max(...coolers.map(c =>
+            c.MaxSize || c.Size || getSizeFromClassName(c.ClassName) || 0
+        ));
     }
 
     if (powerPlants.length > 0) {
         components.powerPlants.count = powerPlants.length;
-        components.powerPlants.size = Math.max(...powerPlants.map(p => p.MaxSize || p.Size || 0));
+        components.powerPlants.size = Math.max(...powerPlants.map(p =>
+            p.MaxSize || p.Size || getSizeFromClassName(p.ClassName) || 0
+        ));
     }
 
     if (qDrives.length > 0) {
@@ -319,7 +338,7 @@ function processShip(ship) {
     const components = extractComponents(ship.Loadout);
 
     return {
-        name: ship.Name,
+        name: cleanShipName(ship.Name),
         manufacturer,
         size,
         pilotWeapons,

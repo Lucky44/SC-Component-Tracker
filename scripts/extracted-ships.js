@@ -1,5 +1,5 @@
 // Auto-generated ship specs from ships.json
-// Generated: 2026-02-02T17:47:33.187Z
+// Generated: 2026-02-02T23:07:20.780Z
 // Ships with hardpoint data: 167
 
 const EXTRACTED_SHIPS = [
@@ -1015,11 +1015,11 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 1,
@@ -1044,11 +1044,11 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 1,
@@ -1079,11 +1079,11 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 1,
@@ -2004,7 +2004,7 @@ const EXTRACTED_SHIPS = [
         ],
         "shields": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 1,
@@ -2354,15 +2354,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "quantumDrive": {
             "size": 1
@@ -3014,15 +3014,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "quantumDrive": {
             "size": 1
@@ -3149,15 +3149,15 @@ const EXTRACTED_SHIPS = [
         ],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 3
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -3201,15 +3201,15 @@ const EXTRACTED_SHIPS = [
         ],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 3
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -3457,15 +3457,15 @@ const EXTRACTED_SHIPS = [
         ],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 3
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -3786,15 +3786,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "quantumDrive": {
             "size": 1
@@ -3815,15 +3815,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "quantumDrive": {
             "size": 1
@@ -3880,11 +3880,11 @@ const EXTRACTED_SHIPS = [
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "quantumDrive": {
             "size": 1
@@ -4077,15 +4077,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "quantumDrive": {
             "size": 1
@@ -4109,15 +4109,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "quantumDrive": {
             "size": 1
@@ -4141,15 +4141,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "quantumDrive": {
             "size": 1
@@ -4191,7 +4191,7 @@ const EXTRACTED_SHIPS = [
         }
     },
     {
-        "name": "Kruger L-21 Wolf",
+        "name": "L-21 Wolf",
         "manufacturer": "Kruger Intergalatic",
         "size": "Small",
         "pilotWeapons": [
@@ -4205,11 +4205,11 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 2,
@@ -4220,7 +4220,7 @@ const EXTRACTED_SHIPS = [
         }
     },
     {
-        "name": "Kruger L-22 Alpha Wolf",
+        "name": "L-22 Alpha Wolf",
         "manufacturer": "Kruger Intergalatic",
         "size": "Small",
         "pilotWeapons": [
@@ -4234,11 +4234,11 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 2,
@@ -4249,7 +4249,7 @@ const EXTRACTED_SHIPS = [
         }
     },
     {
-        "name": "Kruger P-52 Merlin",
+        "name": "P-52 Merlin",
         "manufacturer": "Kruger Intergalatic",
         "size": "Small",
         "pilotWeapons": [
@@ -4278,7 +4278,7 @@ const EXTRACTED_SHIPS = [
         }
     },
     {
-        "name": "Kruger P-72 Archimedes",
+        "name": "P-72 Archimedes",
         "manufacturer": "Kruger Intergalatic",
         "size": "Small",
         "pilotWeapons": [
@@ -4333,15 +4333,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "quantumDrive": {
             "size": 0
@@ -4362,15 +4362,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 1,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -5292,15 +5292,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 4,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -5321,15 +5321,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 4,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -5350,15 +5350,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 4,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -5379,15 +5379,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 4,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -5408,15 +5408,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 4,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -5437,15 +5437,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 4,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -5466,15 +5466,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 4,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -5495,15 +5495,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 4,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -5534,7 +5534,7 @@ const EXTRACTED_SHIPS = [
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 2,
@@ -5569,7 +5569,7 @@ const EXTRACTED_SHIPS = [
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 2,
@@ -5604,7 +5604,7 @@ const EXTRACTED_SHIPS = [
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 2,
@@ -5639,7 +5639,7 @@ const EXTRACTED_SHIPS = [
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 2,
@@ -5674,7 +5674,7 @@ const EXTRACTED_SHIPS = [
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 2,
@@ -5873,15 +5873,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 4,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -5976,15 +5976,15 @@ const EXTRACTED_SHIPS = [
         ],
         "shields": {
             "count": 2,
-            "size": 0
+            "size": 3
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 3
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 3
         },
         "quantumDrive": {
             "size": 3
@@ -6044,15 +6044,15 @@ const EXTRACTED_SHIPS = [
         ],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 4
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 4
         },
         "coolers": {
             "count": 1,
-            "size": 0
+            "size": 4
         },
         "quantumDrive": {
             "size": 3
@@ -6112,15 +6112,15 @@ const EXTRACTED_SHIPS = [
         ],
         "shields": {
             "count": 1,
-            "size": 0
+            "size": 4
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 4
         },
         "coolers": {
             "count": 1,
-            "size": 0
+            "size": 4
         },
         "quantumDrive": {
             "size": 3
@@ -6141,15 +6141,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 2,
-            "size": 0
+            "size": 1
         },
         "powerPlants": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "coolers": {
             "count": 1,
-            "size": 0
+            "size": 1
         },
         "quantumDrive": {
             "size": 1
@@ -6211,15 +6211,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 3,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -6240,15 +6240,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 3,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2
@@ -6269,15 +6269,15 @@ const EXTRACTED_SHIPS = [
         "turrets": [],
         "shields": {
             "count": 4,
-            "size": 0
+            "size": 2
         },
         "powerPlants": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "coolers": {
             "count": 2,
-            "size": 0
+            "size": 2
         },
         "quantumDrive": {
             "size": 2

@@ -54,10 +54,36 @@ Modals use `openModal(id)`/`closeModal(id)` pattern. Key modals: `shipModal`, `s
 
 The `scripts/` folder contains ~45 Node.js utilities for data processing:
 
-- `update-from-scunpacked.js` - Main data update script
+### Key Extraction Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `extract-ships.js` | Extracts ship specs (hardpoints, components) from ships.json |
+| `extract-loadouts.js` | Extracts stock loadouts (weapons, components) from ships.json |
+| `update-from-scunpacked.js` | Main update script - combines extraction, cleaning, deduplication |
+| `sync-ships-to-datajs.js` | Adds new ships from processed-data.json to data.js (doesn't update existing) |
+| `sync-stockloadouts-to-datajs.js` | Replaces stockLoadouts section in data.js from new-stockloadouts.js |
+| `fix-component-sizes.js` | Updates component sizes in data.js from extracted-ships.js |
+
+### Utility Scripts
+
 - `validate.js` - Data consistency checking
 - `audit_problem_slots.js` - Find incomplete hardpoints
 - `apply_wiki_solutions_v2.js` - Batch data fixes
+
+### Data Pipeline
+
+1. Download latest `ships.json` from scunpacked
+2. Run `extract-ships.js` → generates `extracted-ships.js`
+3. Run `extract-loadouts.js` → generates `extracted-loadouts.js`
+4. Run `update-from-scunpacked.js` → generates `processed-data.json`
+5. Run sync scripts to update `data.js`
+
+### Known Data Quirks
+
+- **Component sizes**: scunpacked sometimes has `MaxSize: 0` even for valid components. The extraction scripts fall back to parsing size from `ClassName` (e.g., `_S01_` = size 1)
+- **Ship name prefixes**: "Kruger" prefix is stripped from ship names (L-21 Wolf, P-52 Merlin, etc.)
+- **Snub ships**: MPUV ships legitimately have size 0 powerPlants/coolers; snubs have size 0 quantumDrive
 
 ## Releasing a New Version
 
