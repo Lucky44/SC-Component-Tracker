@@ -3172,6 +3172,76 @@
       }
     },
     {
+      "name": "Esperia Prowler Utility",
+      "manufacturer": "Esperia",
+      "size": "Medium",
+      "pilotWeapons": [
+        {
+          "size": 4
+        },
+        {
+          "size": 4
+        }
+      ],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 3
+        }
+      ],
+      "shields": {
+        "count": 4,
+        "size": 2
+      },
+      "powerPlants": {
+        "count": 1,
+        "size": 2
+      },
+      "coolers": {
+        "count": 2,
+        "size": 2
+      },
+      "quantumDrive": {
+        "size": 2
+      }
+    },
+    {
+      "name": "Esperia Prowler Utility Wikelo Work Special",
+      "manufacturer": "Esperia",
+      "size": "Medium",
+      "pilotWeapons": [
+        {
+          "size": 4
+        },
+        {
+          "size": 4
+        }
+      ],
+      "turrets": [
+        {
+          "type": "remote",
+          "guns": 2,
+          "size": 3
+        }
+      ],
+      "shields": {
+        "count": 4,
+        "size": 2
+      },
+      "powerPlants": {
+        "count": 1,
+        "size": 2
+      },
+      "coolers": {
+        "count": 2,
+        "size": 2
+      },
+      "quantumDrive": {
+        "size": 2
+      }
+    },
+    {
       "name": "Esperia Talon",
       "manufacturer": "Esperia",
       "size": "Small",
