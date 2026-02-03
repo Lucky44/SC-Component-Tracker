@@ -1,5 +1,5 @@
 {
-  "version": "2026-02-03T00:10:33.568Z",
+  "version": "2026-02-03T03:52:41.347Z",
   "lastUpdated": "2026-02-03",
   "ships": [
     {
@@ -424,7 +424,13 @@
           "size": 2
         }
       ],
-      "turrets": [],
+      "turrets": [
+        {
+          "type": "manned",
+          "guns": 2,
+          "size": 3
+        }
+      ],
       "shields": {
         "count": 2,
         "size": 2

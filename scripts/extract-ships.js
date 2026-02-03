@@ -216,6 +216,13 @@ function extractTurrets(loadout) {
                 continue;
             }
 
+            // Rockets (WeaponGun.Rocket) also count - they can be swapped for guns
+            if (type === 'WeaponGun.Rocket' && size > 0) {
+                count++;
+                maxSize = Math.max(maxSize, size);
+                continue;
+            }
+
             // Recurse into other nested items (but not gimbals/guns)
             if (item.Loadout) {
                 const sub = countWeaponHardpoints(item.Loadout);

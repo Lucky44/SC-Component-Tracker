@@ -1,5 +1,5 @@
 // Auto-generated ship specs from ships.json
-// Generated: 2026-02-03T00:10:33.130Z
+// Generated: 2026-02-03T03:52:40.899Z
 // Ships with hardpoint data: 167
 
 const EXTRACTED_SHIPS = [
@@ -770,7 +770,13 @@ const EXTRACTED_SHIPS = [
                 "size": 2
             }
         ],
-        "turrets": [],
+        "turrets": [
+            {
+                "type": "manned",
+                "guns": 2,
+                "size": 3
+            }
+        ],
         "shields": {
             "count": 2,
             "size": 2

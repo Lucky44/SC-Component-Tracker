@@ -619,7 +619,9 @@ quantumDrives: [
             manufacturer: "Aegis",
             size: "Medium",
             pilotWeapons: [{ size: 5 }, { size: 2 }, { size: 2 }, { size: 2 }, { size: 2 }],
-            turrets: [],
+            turrets: [
+            { type: "manned", guns: 2, size: 3 }
+        ],
             shields: { count: 2, size: 2 },
             powerPlants: { count: 1, size: 2 },
             coolers: { count: 2, size: 2 },
