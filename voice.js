@@ -430,13 +430,36 @@ const VoiceCommands = (function() {
         const availableShips = typeof SC_DATA !== 'undefined' ?
             SC_DATA.ships.map(s => s.name) : [];
 
+        // Check if ship modal is open and get current ship details
+        let editingShip = null;
+        const shipModal = document.getElementById('shipModal');
+        const shipNameSelect = document.getElementById('shipName');
+        if (shipModal && !shipModal.classList.contains('hidden') && shipNameSelect && shipNameSelect.value) {
+            const shipSpec = SC_DATA.ships.find(s => s.name === shipNameSelect.value);
+            if (shipSpec) {
+                editingShip = {
+                    name: shipSpec.name,
+                    slots: {
+                        coolers: shipSpec.coolers,
+                        shields: shipSpec.shields,
+                        powerPlants: shipSpec.powerPlants,
+                        quantumDrive: shipSpec.quantumDrive,
+                        pilotWeapons: shipSpec.pilotWeapons,
+                        turrets: shipSpec.turrets
+                    }
+                };
+            }
+        }
+
         return {
             userShips: ships.map(s => ({
                 name: s.shipName,
                 nickname: s.nickname
             })),
             storageCount: storage.length,
+            storageItems: storage, // Include full storage for queryStorage
             availableShips: availableShips.slice(0, 50), // Limit for context size
+            editingShip: editingShip,
             recentExchanges: conversationHistory.slice(-4) // Last 2 exchanges
         };
     }
@@ -476,10 +499,13 @@ Available actions you can return:
 - { "action": "openShip", "shipName": "..." } - Open a ship's details for editing
 - { "action": "search", "query": "..." } - Search for components
 - { "action": "showStorage" } - Show the storage list
+- { "action": "queryStorage", "componentName": "..." } - Count how many of a component are in storage
+- { "action": "setComponent", "slotType": "cooler|shield|powerPlant|quantumDrive|weapon", "componentName": "...", "slotIndex": 0 } - Replace a component on the currently edited ship
 - { "action": "none", "message": "..." } - Just respond without action
 
 User's current ships: ${JSON.stringify(context.userShips)}
 Components in storage: ${context.storageCount}
+${context.editingShip ? `Currently editing ship: ${context.editingShip.name} with slots: ${JSON.stringify(context.editingShip.slots)}` : 'No ship currently being edited.'}
 
 Some available ships to add: ${context.availableShips.slice(0, 20).join(', ')}`;
 
@@ -698,11 +724,160 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
                 }
                 break;
 
+            case 'queryStorage':
+                if (response.componentName) {
+                    const result = queryStorageForComponent(response.componentName);
+                    // The message from LLM should already include the count,
+                    // but we can update it with accurate info
+                    if (result.count === 0) {
+                        response.message = `You don't have any ${response.componentName} in storage.`;
+                    } else if (result.count === 1) {
+                        response.message = `You have 1 ${result.items[0].name} in storage.`;
+                    } else {
+                        response.message = `You have ${result.count} ${response.componentName} components in storage: ${result.items.map(i => i.name + ' (x' + i.quantity + ')').join(', ')}.`;
+                    }
+                }
+                break;
+
+            case 'setComponent':
+                handleSetComponent(response);
+                break;
+
             case 'none':
             default:
                 // No action needed, just the message
                 break;
         }
+    }
+
+    /**
+     * Query storage for components matching a name
+     */
+    function queryStorageForComponent(componentName) {
+        const storage = typeof appData !== 'undefined' ? appData.storage : [];
+        const searchTerm = componentName.toLowerCase();
+
+        const matches = storage.filter(item =>
+            item.name && item.name.toLowerCase().includes(searchTerm)
+        );
+
+        const totalCount = matches.reduce((sum, item) => sum + (item.quantity || 1), 0);
+
+        return {
+            count: totalCount,
+            items: matches.map(item => ({
+                name: item.name,
+                quantity: item.quantity || 1,
+                type: item.type,
+                size: item.size
+            }))
+        };
+    }
+
+    /**
+     * Handle setComponent action - validates and sets component on current ship
+     */
+    function handleSetComponent(response) {
+        const { slotType, componentName, slotIndex = 0 } = response;
+
+        // Check if ship modal is open
+        const shipModal = document.getElementById('shipModal');
+        if (!shipModal || shipModal.classList.contains('hidden')) {
+            response.message = "Please open a ship first before changing components.";
+            return;
+        }
+
+        // Get current ship spec
+        const shipNameSelect = document.getElementById('shipName');
+        if (!shipNameSelect || !shipNameSelect.value) {
+            response.message = "Please select a ship first.";
+            return;
+        }
+
+        const shipSpec = SC_DATA.ships.find(s => s.name === shipNameSelect.value);
+        if (!shipSpec) {
+            response.message = "Ship not found in database.";
+            return;
+        }
+
+        // Map slot types to their selectors and size info
+        const slotMapping = {
+            cooler: { selector: 'coolerSlots', spec: shipSpec.coolers, db: SC_DATA.coolers },
+            shield: { selector: 'shieldSlots', spec: shipSpec.shields, db: SC_DATA.shields },
+            powerPlant: { selector: 'powerPlantSlots', spec: shipSpec.powerPlants, db: SC_DATA.powerPlants },
+            quantumDrive: { selector: 'quantumDriveSlots', spec: shipSpec.quantumDrive, db: SC_DATA.quantumDrives },
+            weapon: { selector: 'pilotWeaponSlots', spec: shipSpec.pilotWeapons, db: SC_DATA.weapons }
+        };
+
+        const mapping = slotMapping[slotType];
+        if (!mapping) {
+            response.message = `Unknown slot type: ${slotType}. Try cooler, shield, powerPlant, quantumDrive, or weapon.`;
+            return;
+        }
+
+        // Find the slot size
+        let slotSize;
+        if (slotType === 'quantumDrive') {
+            slotSize = mapping.spec.size;
+        } else if (slotType === 'weapon') {
+            if (slotIndex >= mapping.spec.length) {
+                response.message = `Invalid weapon slot. This ship has ${mapping.spec.length} pilot weapon slots.`;
+                return;
+            }
+            slotSize = mapping.spec[slotIndex].size;
+        } else {
+            slotSize = mapping.spec.size;
+        }
+
+        // Find matching components in database
+        const searchTerm = componentName.toLowerCase();
+        const matches = mapping.db.filter(comp =>
+            comp.name.toLowerCase().includes(searchTerm) && comp.size <= slotSize
+        );
+
+        if (matches.length === 0) {
+            // Check if there are matches but they don't fit
+            const allMatches = mapping.db.filter(comp =>
+                comp.name.toLowerCase().includes(searchTerm)
+            );
+            if (allMatches.length > 0) {
+                const sizes = [...new Set(allMatches.map(c => c.size))].sort();
+                response.message = `Found ${componentName} but it doesn't fit. This slot is size ${slotSize}, but ${componentName} comes in size ${sizes.join(', ')}.`;
+            } else {
+                response.message = `No ${slotType} found matching "${componentName}".`;
+            }
+            return;
+        }
+
+        if (matches.length > 1) {
+            // Multiple matches - ask for clarification
+            const options = matches.slice(0, 4).map(c => `${c.name} (S${c.size})`).join(', ');
+            response.message = `Multiple matches found: ${options}. Which one do you want?`;
+            response.action = 'none'; // Don't complete action, wait for clarification
+            return;
+        }
+
+        // Single match - apply the component
+        const component = matches[0];
+        const slotContainer = document.getElementById(mapping.selector);
+        if (!slotContainer) {
+            response.message = "Could not find the slot on the form.";
+            return;
+        }
+
+        // Find the select element (first one for single slots, or by index for multiple)
+        const selects = slotContainer.querySelectorAll('select');
+        const targetSelect = selects[slotIndex];
+        if (!targetSelect) {
+            response.message = `Slot ${slotIndex + 1} not found.`;
+            return;
+        }
+
+        // Set the value
+        targetSelect.value = component.name;
+        targetSelect.dispatchEvent(new Event('change'));
+
+        response.message = `Set ${slotType} to ${component.name}.`;
     }
 
     /**
