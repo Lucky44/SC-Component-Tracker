@@ -1033,3 +1033,216 @@ form {
         width: 100%;
     }
 }
+
+/* Voice Commands */
+.voice-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.voice-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
+}
+
+.voice-btn.listening {
+    border-color: var(--accent);
+    color: var(--accent);
+    animation: voice-pulse 1.5s ease-in-out infinite;
+}
+
+.voice-btn.listening .voice-waves {
+    display: flex;
+}
+
+.voice-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.voice-waves {
+    display: none;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 2px;
+}
+
+.voice-waves span {
+    width: 3px;
+    height: 8px;
+    background-color: var(--accent);
+    border-radius: 2px;
+    animation: voice-wave 0.5s ease-in-out infinite;
+}
+
+.voice-waves span:nth-child(1) { animation-delay: 0s; }
+.voice-waves span:nth-child(2) { animation-delay: 0.1s; }
+.voice-waves span:nth-child(3) { animation-delay: 0.2s; }
+
+@keyframes voice-pulse {
+    0%, 100% { box-shadow: 0 0 5px rgba(255, 149, 0, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(255, 149, 0, 0.6); }
+}
+
+@keyframes voice-wave {
+    0%, 100% { transform: scaleY(0.5); }
+    50% { transform: scaleY(1); }
+}
+
+/* Voice Modal */
+.voice-intro {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.api-key-input {
+    display: flex;
+    gap: 8px;
+}
+
+.api-key-input input {
+    flex: 1;
+}
+
+.btn-icon {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.provider-info {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 0.9rem;
+}
+
+.provider-info a {
+    color: var(--accent);
+}
+
+.voice-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background-color: var(--bg-card);
+    border-radius: 4px;
+    margin: 16px 0;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--text-secondary);
+}
+
+.status-indicator.ready {
+    background-color: #4caf50;
+}
+
+.status-indicator.listening {
+    background-color: var(--accent);
+    animation: status-pulse 1s ease-in-out infinite;
+}
+
+.status-indicator.error {
+    background-color: #f44336;
+}
+
+@keyframes status-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.voice-commands-help {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.voice-commands-help h4 {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.voice-commands-help ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.voice-commands-help li {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    padding: 4px 0;
+    font-style: italic;
+}
+
+.voice-commands-help li::before {
+    content: '"';
+    color: var(--accent);
+}
+
+.voice-commands-help li::after {
+    content: '"';
+    color: var(--accent);
+}
+
+/* Voice Transcript */
+.voice-transcript {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px;
+    margin: 16px 0;
+    min-height: 60px;
+}
+
+.voice-transcript-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.voice-transcript-text {
+    font-style: italic;
+    color: var(--text-primary);
+}
+
+.voice-response {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border);
+    color: var(--accent);
+}
