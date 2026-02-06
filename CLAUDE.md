@@ -156,8 +156,9 @@ The update pipeline is complete and working. Run when new ships.json is availabl
 - **Auto-listen** - Automatically resumes listening after TTS completes for follow-up commands
 
 ### Supported Commands
-- **addShip** - "add Gladius", "add F7A Mark 2" - Adds ship to hangar
-- **openShip** - "open Gladius" - Opens ship edit modal
+- **addShip** - "add Gladius", "add F7A Mark 2" - Adds ship to hangar (two-step flow)
+- **openShip** - "open Gladius", "edit 100i" - Opens ship edit modal
+- **saveShip** - "save ship", "save" - Saves currently edited ship
 - **setComponent** - "set cooler to Atlas", "set shield to FR-76" - Swaps components on open ship
 - **editStorage** - "set Arctic to 5" - Updates storage quantities
 - **showStorage** - "show storage" - Opens storage modal

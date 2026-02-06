@@ -2,6 +2,44 @@
 
 All notable changes to this project are documented here.
 
+## 2026-02-06 — v0.81
+
+**Voice Commands Feature Complete** (PR #2)
+
+- Voice commands integration:
+  - LLM-powered natural language control with OpenAI (gpt-4o-mini), Anthropic (claude-3-haiku), or Google (gemini-2.5-flash)
+  - BYOK (Bring Your Own Key) - users provide their own API keys for privacy and control
+  - Browser-native Web Speech API for STT/TTS (Chrome/Edge only)
+  - Settings persist to localStorage across sessions
+
+- Voice actions supported:
+  - **addShip**: "add Gladius", "add F7A Mark 2" - Adds ships to hangar with two-step flow
+  - **openShip**: "open Gladius", "edit 100i" - Opens ship for editing
+  - **saveShip**: "save ship", "save" - Saves currently edited ship
+  - **setComponent**: "set cooler to Atlas", "set shield to FR-76" - Swaps components on open ship
+  - **editStorage**: "set Arctic to 5" - Updates storage quantities with fuzzy matching
+  - **showStorage**: "show storage" - Opens storage inventory
+  - **queryStorage**: "how many shields do I have" - Queries storage
+  - **search**: "search for coolers" - Opens search with query
+  - **close**: "close" - Closes current modal
+
+- Auto-listen improvements:
+  - Uses TTS `onend` event for reliable timing (not estimation)
+  - Detects clarification requests beyond just '?' (checks for "please provide", "which ship", "what ship")
+  - Automatically resumes listening after openShip, showStorage, editStorage, setComponent actions
+  - Enables seamless multi-step voice workflows
+
+- Bug fixes:
+  - "edit [ship]" now correctly uses openShip action (was incorrectly using addShip or editStorage)
+  - System prompt updated with few-shot examples and CRITICAL RULES to prevent action confusion
+
+- UI improvements:
+  - Fixed button alignment: Export/Import buttons set to 135px each for perfect alignment with MY STORED COMPONENTS button
+
+- Documentation:
+  - Updated README.md with voice commands usage guide and browser compatibility
+  - Updated CLAUDE.md with supported commands and known limitations
+
 ## 2026-02-05 — v0.77
 
 - Robust data update pipeline:
