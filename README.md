@@ -4,7 +4,7 @@ A browser-based component management application for Star Citizen. Track your sh
 
 **[Use the App](https://lucky44.github.io/SC-Component-Tracker/)** — Runs in your browser.
 
-**Version:** 0.75
+**Version:** 0.81
 
 ## Features
 
@@ -39,8 +39,22 @@ A browser-based component management application for Star Citizen. Track your sh
 
 ### Data Management
 - **Export/Import** - Backup your data to JSON files and restore on any device
-- **Check for Update** - In-app button to fetch latest ship data from GitHub
-- Data persists in browser localStorage across sessions
+- **Auto-Update** - Click "Check for Update" to fetch the latest ship data from GitHub
+  - Compares your current data version with the latest available
+  - Shows what's new (ships added, removed, or modified)
+  - Apply updates with one click without losing your hangar or storage
+- **LocalStorage** - All data persists in your browser across sessions
+
+### Voice Commands (Chrome/Edge only)
+- **Hands-free control** - Manage ships and components using natural language
+- **Multi-LLM support** - Choose from OpenAI (gpt-4o-mini), Anthropic (claude-3-haiku), or Google (gemini-2.5-flash)
+- **BYOK (Bring Your Own Key)** - Use your own API key for privacy and control
+- **Supported commands:**
+  - Ship management: "add Gladius", "open F7A Mark 2"
+  - Component swapping: "set cooler to Atlas", "set shield to FR-76"
+  - Storage: "set Arctic to 5", "show storage", "how many shields"
+  - Navigation: "search for coolers", "close"
+- **Auto-listen** - Automatically resumes listening after responses for multi-step workflows
 
 ## Tech Stack
 
@@ -75,14 +89,37 @@ Just visit **https://lucky44.github.io/SC-Component-Tracker/** — no installati
 
 ## Usage
 
+### Basic Workflow
 1. **Add a Ship** - Click "+ Add Ship" and select from the dropdown organized by manufacturer
 2. **Configure Components** - Use the dropdowns to select weapons, shields, power plants, coolers, and quantum drives
 3. **Manage Storage** - Click "My Stored Components" to view and manage your spare components inventory
 4. **Search Components** - Use the search bar to find components across all ships and storage
 5. **Export/Import** - Use the Export/Import buttons to backup or restore your data
-6. **Check for Updates** - Click "Check for Update" to fetch the latest ship data
 
 All data is automatically saved to your browser's local storage.
+
+### Updating Ship Data
+When new ships or components are added to Star Citizen:
+1. Click the **"Check for Update"** button in the header
+2. The app fetches the latest data from GitHub and compares it with your current version
+3. Review the changes (ships added, removed, or modified)
+4. Click **"Apply Update"** to update your database
+5. Your hangar and storage inventory remain unchanged
+
+### Using Voice Commands (Optional)
+Voice commands require Chrome or Edge browser and an API key from OpenAI, Anthropic, or Google.
+
+1. Click the **microphone icon** in the header
+2. Select your preferred LLM provider and enter your API key
+3. Click **"Enable Voice"** and then the microphone icon to start listening
+4. Speak naturally:
+   - "Add Gladius" - Adds ship to hangar
+   - "Open Gladius" - Opens ship edit modal
+   - "Set cooler to Atlas" - Swaps component on open ship
+   - "Show storage" - Opens storage inventory
+   - "How many shields do I have" - Queries storage
+
+The system auto-listens after responses, so you can chain multiple commands without clicking.
 
 ## Project Structure
 
@@ -111,10 +148,12 @@ To update ship data:
 
 ## Browser Support
 
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
+- **Chrome** (recommended - full feature support including voice commands)
+- **Edge** (full feature support including voice commands)
+- **Firefox** (core features only - no voice commands support)
+- **Safari** (core features only - voice commands not tested)
+
+**Note:** Voice commands require the Web Speech API, which is only available in Chrome and Edge browsers.
 
 ## Contributing
 
