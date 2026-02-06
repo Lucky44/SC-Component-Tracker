@@ -561,6 +561,8 @@ User: "F7A Hornet Mark 2" → {"action":"addShip","shipName":"F7A Hornet Mark 2"
 User: "open Gladius" → {"action":"openShip","shipName":"Gladius","message":"Opening Gladius."}
 User: "edit Gladius" → {"action":"openShip","shipName":"Gladius","message":"Opening Gladius."}
 User: "edit 100i" → {"action":"openShip","shipName":"100i","message":"Opening 100i."}
+User: "save ship" → {"action":"saveShip","message":"Saving ship."}
+User: "save" → {"action":"saveShip","message":"Saving ship."}
 User: "show storage" → {"action":"showStorage","message":"Here's your storage."}
 User: "set arctic to 5" → {"action":"editStorage","componentName":"arctic","quantity":5,"message":"Setting arctic to 5."}
 User: "close" → {"action":"close","message":"Done."}
@@ -570,6 +572,7 @@ User: "close" → {"action":"close","message":"Done."}
 - addShip: {"action":"addShip","shipName":"<exact words user said>"} - Use for ANY ship name. ALWAYS include shipName.
 - removeShip: {"action":"removeShip","shipName":"..."}
 - openShip: {"action":"openShip","shipName":"..."} - Use when user says "open [ship]" or "edit [ship]"
+- saveShip: {"action":"saveShip"} - Use when user says "save ship" or "save" (only when editing a ship)
 - showStorage: {"action":"showStorage"}
 - editStorage: {"action":"editStorage","componentName":"...","quantity":N}
 - queryStorage: {"action":"queryStorage","componentName":"..."}
@@ -881,6 +884,18 @@ ${pendingAddShip ? '\n** USER IS RESPONDING TO "WHICH SHIP?" - Their response IS
 
             case 'setComponent':
                 handleSetComponent(response);
+                break;
+
+            case 'saveShip':
+                // Save the currently edited ship by submitting the form
+                const shipForm = document.getElementById('shipForm');
+                const shipModal = document.getElementById('shipModal');
+                if (shipModal && !shipModal.classList.contains('hidden') && shipForm) {
+                    shipForm.requestSubmit();
+                    response.message = 'Ship saved.';
+                } else {
+                    response.message = 'No ship is currently being edited.';
+                }
                 break;
 
             case 'close':
