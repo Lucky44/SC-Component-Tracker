@@ -698,9 +698,9 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
                         (s.shipName && s.shipName.toLowerCase().includes(response.shipName.toLowerCase())) ||
                         (s.nickname && s.nickname.toLowerCase().includes(response.shipName.toLowerCase()))
                     );
-                    if (userShip && typeof editShip === 'function') {
-                        editShip(userShip.id);
-                    } else {
+                    if (userShip && typeof window.openShipModal === 'function') {
+                        window.openShipModal(userShip.id);
+                    } else if (!userShip) {
                         showToast(`Ship "${response.shipName}" not found in your fleet.`);
                     }
                 }
@@ -718,10 +718,10 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
                 break;
 
             case 'showStorage':
-                openModal('storageListModal');
-                if (typeof renderStorageList === 'function') {
-                    renderStorageList();
+                if (typeof window.renderStorage === 'function') {
+                    window.renderStorage();
                 }
+                openModal('storageListModal');
                 break;
 
             case 'queryStorage':
