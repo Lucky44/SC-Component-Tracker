@@ -400,17 +400,22 @@ const VoiceCommands = (function() {
 
         } catch (error) {
             console.error('Voice command error:', error);
+            console.error('Error details:', error.message, error.stack);
             let errorMsg = 'Sorry, I had trouble processing that command.';
 
             // Provide more specific error messages
-            if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+            if (error.message && error.message.includes('Failed to fetch') || error.message && error.message.includes('NetworkError')) {
                 errorMsg = 'API connection failed. Anthropic requires server-side calls - try Google instead.';
-            } else if (error.message.includes('401') || error.message.includes('Unauthorized')) {
+            } else if (error.message && (error.message.includes('401') || error.message.includes('Unauthorized'))) {
                 errorMsg = 'Invalid API key. Please check your key in settings.';
-            } else if (error.message.includes('429')) {
+            } else if (error.message && error.message.includes('429')) {
                 errorMsg = 'Rate limited. Please wait a moment and try again.';
-            } else if (error.message.includes('CORS')) {
+            } else if (error.message && error.message.includes('CORS')) {
                 errorMsg = 'Browser blocked the request. Try using Google Gemini instead.';
+            } else if (error.message) {
+                // Show actual error for debugging
+                console.error('Actual error:', error.message);
+                errorMsg = `Error: ${error.message.substring(0, 100)}`;
             }
 
             speak(errorMsg);
@@ -594,6 +599,7 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
      */
     async function sendToGoogle(transcript, systemPrompt, provider) {
         const endpoint = `${provider.endpoint}?key=${settings.apiKey}`;
+        console.log('Sending to Google API:', endpoint.replace(settings.apiKey, '***'));
 
         const response = await fetch(endpoint, {
             method: 'POST',
@@ -614,12 +620,32 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
         });
 
         if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.error?.message || 'Google API error');
+            const errorText = await response.text();
+            console.error('Google API error response:', response.status, errorText);
+            try {
+                const error = JSON.parse(errorText);
+                throw new Error(error.error?.message || `Google API error: ${response.status}`);
+            } catch (e) {
+                throw new Error(`Google API error: ${response.status} - ${errorText.substring(0, 100)}`);
+            }
         }
 
         const data = await response.json();
-        const content = data.candidates[0].content.parts[0].text;
+        console.log('Google API response:', JSON.stringify(data).substring(0, 500));
+
+        // Safely extract content with error checking
+        if (!data.candidates || !data.candidates[0]) {
+            console.error('No candidates in response:', data);
+            throw new Error('No response from API - check your API key or try again');
+        }
+
+        const candidate = data.candidates[0];
+        if (!candidate.content || !candidate.content.parts || !candidate.content.parts[0]) {
+            console.error('Invalid candidate structure:', candidate);
+            throw new Error('Invalid API response structure');
+        }
+
+        const content = candidate.content.parts[0].text;
         return parseJsonResponse(content);
     }
 
