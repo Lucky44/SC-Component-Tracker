@@ -2,7 +2,7 @@
 
 // ============ Data Layer ============
 
-const APP_VERSION = '0.77';
+const APP_VERSION = '0.85';
 const STORAGE_KEY = 'sc-component-tracker-data';
 const DATA_VERSION_KEY = 'sc-component-tracker-data-version';
 
@@ -904,8 +904,32 @@ function openShipModal(shipId = null) {
                     }
 
                     const mergeArray = (key) => {
-                        const dst = existing[key] || [];
+                        let dst = existing[key] || [];
                         const src = defaults[key] || [];
+
+                        // Reorder saved pilot weapons to align with spec hardpoint sizes
+                        if (key === 'pilotWeapons' && dst.length > 0 && src.length > 0) {
+                            const reordered = new Array(src.length).fill(null);
+                            const used = new Array(dst.length).fill(false);
+                            for (let i = 0; i < src.length; i++) {
+                                const slotSize = src[i].size;
+                                for (let j = 0; j < dst.length; j++) {
+                                    if (!used[j] && dst[j] && dst[j].size === slotSize) {
+                                        reordered[i] = dst[j];
+                                        used[j] = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            const unmatched = dst.filter((_, j) => !used[j]);
+                            for (let i = 0; i < reordered.length; i++) {
+                                if (!reordered[i] && unmatched.length > 0) {
+                                    reordered[i] = unmatched.shift();
+                                }
+                            }
+                            dst = reordered.map(r => r || {});
+                        }
+
                         const len = Math.max(dst.length, src.length);
                         const out = [];
                         for (let i = 0; i < len; i++) {

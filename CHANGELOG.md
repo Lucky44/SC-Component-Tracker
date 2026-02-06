@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here.
 
+## 2026-02-06 — v0.85
+
+- Fix: Edit modal pilot weapons showing "Empty" when saved weapon order doesn't match spec hardpoint order
+  - Added size-aware reordering in `mergeDefaultsInto` to align saved weapons with hardpoint sizes before populating dropdowns
+  - Affected ships like Drake Buccaneer where stock loadout order differs from spec order
+- Removed voice commands feature (reverted to pre-voice codebase)
+- Version bump to 0.85
+
 ## 2026-02-05 — v0.77
 
 - Robust data update pipeline:
