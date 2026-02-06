@@ -1808,3 +1808,10 @@ window.confirmDeleteShip = confirmDeleteShip;
 window.confirmDeleteStorage = confirmDeleteStorage;
 window.exportData = exportData;
 window.importData = importData;
+
+// Expose for voice commands module
+window.openModal = openModal;
+window.closeModal = closeModal;
+window.showToast = showToast;
+window.renderStorage = renderStorage;
+window.appData = appData;

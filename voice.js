@@ -381,20 +381,64 @@ const VoiceCommands = (function() {
                 }
             }
 
+            // Provide default messages for actions without one
+            if (!response.message && response.action) {
+                switch (response.action) {
+                    case 'openShip':
+                        response.message = `Opening ${response.shipName || 'ship'}. What would you like to change?`;
+                        break;
+                    case 'addShip':
+                        response.message = `Adding ${response.shipName || 'ship'} to your fleet.`;
+                        break;
+                    case 'removeShip':
+                        response.message = `Confirm deletion of ${response.shipName || 'ship'}?`;
+                        break;
+                    case 'showStorage':
+                        response.message = 'Here is your storage.';
+                        break;
+                    case 'search':
+                        response.message = `Searching for ${response.query || 'items'}.`;
+                        break;
+                    case 'editStorage':
+                        response.message = `Updating ${response.componentName || 'component'} quantity.`;
+                        break;
+                }
+            }
+
             // Speak the response
             if (response.message) {
-                speak(response.message);
                 showToast(response.message);
 
-                // If the LLM is asking a follow-up question, restart listening after speech ends
-                if (response.action === 'none' && response.message.includes('?')) {
-                    // Wait for TTS to finish, then restart listening
-                    const estimatedSpeechTime = response.message.length * 60; // ~60ms per character
-                    setTimeout(() => {
+                // Auto-restart listening in these cases:
+                // 1. LLM is asking a follow-up question (check for ? or clarification phrases)
+                // 2. After opening a ship (user likely wants to set components)
+                // 3. After showing storage (user might want to query items)
+                // 4. After editing storage (user might want to make more changes)
+                const isAskingForClarification = response.action === 'none' && (
+                    response.message.includes('?') ||
+                    response.message.toLowerCase().includes('please provide') ||
+                    response.message.toLowerCase().includes('which ship') ||
+                    response.message.toLowerCase().includes('what ship') ||
+                    response.message.toLowerCase().includes('name of the ship')
+                );
+                const shouldAutoListen =
+                    isAskingForClarification ||
+                    response.action === 'openShip' ||
+                    response.action === 'showStorage' ||
+                    response.action === 'setComponent' ||
+                    response.action === 'editStorage';
+
+                if (shouldAutoListen) {
+                    // Speak and auto-listen when TTS completes
+                    speak(response.message, () => {
                         if (!isListening) {
+                            showToast('Listening...');
                             startListening();
                         }
-                    }, estimatedSpeechTime + 500);
+                    });
+                } else {
+                    // Just speak without auto-listen
+                    speak(response.message);
                 }
             }
 
@@ -458,7 +502,7 @@ const VoiceCommands = (function() {
 
         return {
             userShips: ships.map(s => ({
-                name: s.shipName,
+                name: s.name,  // Use s.name, not s.shipName
                 nickname: s.nickname
             })),
             storageCount: storage.length,
@@ -496,39 +540,60 @@ const VoiceCommands = (function() {
      * Build system prompt with app context
      */
     function buildSystemPrompt(context) {
-        let prompt = `You are a voice assistant for the SC Component Tracker app, which helps Star Citizen players manage their ship components.
+        // Format storage items for context
+        const storageList = context.storageItems && context.storageItems.length > 0
+            ? context.storageItems.map(item => `${item.name} (x${item.quantity || 1})`).join(', ')
+            : 'empty';
 
-Available actions you can return:
-- { "action": "addShip", "shipName": "..." } - Add a ship to the user's fleet
-- { "action": "removeShip", "shipName": "..." } - Remove a ship from the fleet
-- { "action": "openShip", "shipName": "..." } - Open a ship's details for editing
-- { "action": "search", "query": "..." } - Search for components
-- { "action": "showStorage" } - Show the storage list
-- { "action": "queryStorage", "componentName": "..." } - Count how many of a component are in storage
-- { "action": "setComponent", "slotType": "cooler|shield|powerPlant|quantumDrive|weapon", "componentName": "...", "slotIndex": 0 } - Replace a component on the currently edited ship
-- { "action": "none", "message": "..." } - Just respond without action
+        // Check if we're in the middle of an addShip conversation
+        const pendingAddShip = context.recentExchanges && context.recentExchanges.some(e =>
+            e.assistant && (e.assistant.includes('which ship') || e.assistant.includes('What ship') || e.assistant.includes('name of the ship'))
+        );
 
-User's current ships: ${JSON.stringify(context.userShips)}
-Components in storage: ${context.storageCount}
-${context.editingShip ? `Currently editing ship: ${context.editingShip.name} with slots: ${JSON.stringify(context.editingShip.slots)}` : 'No ship currently being edited.'}
+        let prompt = `You are a voice assistant for the SC Component Tracker app. Respond with JSON only.
 
-Some available ships to add: ${context.availableShips.slice(0, 20).join(', ')}`;
+## EXAMPLES (follow these exactly):
+
+User: "add a gladius" → {"action":"addShip","shipName":"gladius","message":"Adding gladius."}
+User: "add F7A Mark 2" → {"action":"addShip","shipName":"F7A Mark 2","message":"Adding F7A Mark 2."}
+User: "add the Hornet" → {"action":"addShip","shipName":"Hornet","message":"Adding Hornet."}
+User: "F7A Hornet Mark 2" → {"action":"addShip","shipName":"F7A Hornet Mark 2","message":"Adding F7A Hornet Mark 2."}
+User: "show storage" → {"action":"showStorage","message":"Here's your storage."}
+User: "set arctic to 5" → {"action":"editStorage","componentName":"arctic","quantity":5,"message":"Setting arctic to 5."}
+User: "close" → {"action":"close","message":"Done."}
+
+## ACTIONS:
+
+- addShip: {"action":"addShip","shipName":"<exact words user said>"} - Use for ANY ship name. ALWAYS include shipName.
+- removeShip: {"action":"removeShip","shipName":"..."}
+- openShip: {"action":"openShip","shipName":"..."} - Only for ships in user's fleet
+- showStorage: {"action":"showStorage"}
+- editStorage: {"action":"editStorage","componentName":"...","quantity":N}
+- queryStorage: {"action":"queryStorage","componentName":"..."}
+- setComponent: {"action":"setComponent","slotType":"cooler|shield|powerPlant|quantumDrive|weapon","componentName":"...","slotIndex":0}
+- search: {"action":"search","query":"..."}
+- close: {"action":"close"}
+- none: {"action":"none","message":"..."} - ONLY for greetings or unrelated questions
+
+## CONTEXT:
+
+User's ships: ${JSON.stringify(context.userShips)}
+Storage: ${storageList}
+${context.editingShip ? `Editing: ${context.editingShip.name}` : ''}
+${pendingAddShip ? '\n** USER IS RESPONDING TO "WHICH SHIP?" - Their response IS the ship name. Use addShip! **' : ''}`;
 
         // Add conversation history if available
         if (context.recentExchanges && context.recentExchanges.length > 0) {
-            prompt += `\n\nRecent conversation:\n`;
+            prompt += `\n\nRecent:\n`;
             context.recentExchanges.forEach(exchange => {
-                prompt += `User: "${exchange.user}"\nAssistant: ${exchange.assistant}\n`;
+                prompt += `User: "${exchange.user}" → Assistant: ${exchange.assistant}\n`;
             });
-            prompt += `\nUse this context to understand follow-up responses like ship names.`;
         }
 
-        prompt += `\n\nRespond with a JSON object containing:
-- "action": one of the actions above
-- "message": a brief spoken response (keep it short, 1-2 sentences)
-- Any action-specific parameters
-
-Keep responses concise and friendly. If you're not sure what the user wants, ask for clarification.`;
+        prompt += `\n\n## CRITICAL RULES:
+1. If user says ANYTHING that sounds like a ship name, use addShip with that exact text as shipName
+2. NEVER ask "which ship" or "what ship" - just use addShip with whatever they said
+3. The app handles fuzzy matching - just pass through the name`;
 
         return prompt;
     }
@@ -622,10 +687,19 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
         if (!response.ok) {
             const errorText = await response.text();
             console.error('Google API error response:', response.status, errorText);
+
+            // Check status code directly for common errors
+            if (response.status === 429) {
+                throw new Error('429 Rate limited');
+            } else if (response.status === 401 || response.status === 403) {
+                throw new Error('401 Unauthorized - check API key');
+            }
+
             try {
                 const error = JSON.parse(errorText);
                 throw new Error(error.error?.message || `Google API error: ${response.status}`);
             } catch (e) {
+                if (e.message.includes('429') || e.message.includes('401')) throw e;
                 throw new Error(`Google API error: ${response.status} - ${errorText.substring(0, 100)}`);
             }
         }
@@ -653,8 +727,6 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
      * Safely parse JSON from LLM response, handling edge cases
      */
     function parseJsonResponse(content) {
-        console.log('LLM raw response:', content);
-
         // Try direct parse first
         try {
             return JSON.parse(content);
@@ -684,10 +756,29 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
         switch (response.action) {
             case 'addShip':
                 if (response.shipName) {
-                    // Find ship in database
-                    const shipData = SC_DATA.ships.find(s =>
-                        s.name.toLowerCase().includes(response.shipName.toLowerCase())
-                    );
+                    // Normalize ship name for matching
+                    const normalizeShipName = (name) => {
+                        return name.toLowerCase()
+                            .replace(/\s+/g, ' ')
+                            .replace(/mark\s*2/gi, 'mk ii')
+                            .replace(/mark\s*ii/gi, 'mk ii')
+                            .replace(/mk\s*2/gi, 'mk ii')
+                            .replace(/m\s*k\s*2/gi, 'mk ii')
+                            .replace(/m\s*k\s*i\s*i/gi, 'mk ii')
+                            .trim();
+                    };
+
+                    const searchName = normalizeShipName(response.shipName);
+
+                    // Find ship in database with fuzzy matching
+                    const shipData = SC_DATA.ships.find(s => {
+                        const dbName = normalizeShipName(s.name);
+                        // Check if search matches any part of the db name or vice versa
+                        return dbName.includes(searchName) || searchName.includes(dbName) ||
+                               // Also check without manufacturer prefix
+                               dbName.split(' ').slice(1).join(' ').includes(searchName);
+                    });
+
                     if (shipData) {
                         // Open ship modal with pre-selected ship
                         openModal('shipModal');
@@ -695,6 +786,8 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
                         document.getElementById('shipName').value = shipData.name;
                         // Trigger change event to populate slots
                         document.getElementById('shipName').dispatchEvent(new Event('change'));
+                    } else {
+                        response.message = `Could not find a ship matching "${response.shipName}". Try saying the full name.`;
                     }
                 }
                 break;
@@ -702,15 +795,19 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
             case 'removeShip':
                 if (response.shipName) {
                     // Find user's ship
-                    const userShip = appData.ships.find(s =>
-                        (s.shipName && s.shipName.toLowerCase().includes(response.shipName.toLowerCase())) ||
-                        (s.nickname && s.nickname.toLowerCase().includes(response.shipName.toLowerCase()))
-                    );
+                    const searchName = response.shipName.toLowerCase();
+                    const userShip = appData.ships.find(s => {
+                        const shipName = (s.name || '').toLowerCase();  // Use s.name, not s.shipName
+                        const nickname = (s.nickname || '').toLowerCase();
+                        // Check both directions: user's name includes search OR search includes user's name
+                        return (shipName && (shipName.includes(searchName) || searchName.includes(shipName))) ||
+                               (nickname && (nickname.includes(searchName) || searchName.includes(nickname)));
+                    });
                     if (userShip) {
                         // Confirm deletion - set up the delete modal
                         window.pendingDelete = { type: 'ship', id: userShip.id };
                         document.getElementById('deleteMessage').textContent =
-                            `Delete ${userShip.nickname || userShip.shipName}?`;
+                            `Delete ${userShip.nickname || userShip.name}?`;
                         openModal('deleteModal');
                     } else {
                         showToast(`Ship "${response.shipName}" not found in your fleet.`);
@@ -720,14 +817,26 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
 
             case 'openShip':
                 if (response.shipName) {
-                    const userShip = appData.ships.find(s =>
-                        (s.shipName && s.shipName.toLowerCase().includes(response.shipName.toLowerCase())) ||
-                        (s.nickname && s.nickname.toLowerCase().includes(response.shipName.toLowerCase()))
-                    );
+                    const searchName = response.shipName.toLowerCase();
+                    console.log('openShip: searching for:', searchName);
+                    console.log('openShip: user ships:', appData.ships.map(s => ({ name: s.name, nick: s.nickname })));
+                    const userShip = appData.ships.find(s => {
+                        const shipName = (s.name || '').toLowerCase();  // Use s.name, not s.shipName
+                        const nickname = (s.nickname || '').toLowerCase();
+                        // Check both directions: user's name includes search OR search includes user's name
+                        const nameMatch = shipName && (shipName.includes(searchName) || searchName.includes(shipName));
+                        const nickMatch = nickname && (nickname.includes(searchName) || searchName.includes(nickname));
+                        console.log(`  checking "${shipName}" / "${nickname}": nameMatch=${nameMatch}, nickMatch=${nickMatch}`);
+                        return nameMatch || nickMatch;
+                    });
                     if (userShip && typeof window.openShipModal === 'function') {
+                        console.log('openShip: found ship, opening modal for id:', userShip.id);
                         window.openShipModal(userShip.id);
                     } else if (!userShip) {
+                        console.log('openShip: no ship found');
                         showToast(`Ship "${response.shipName}" not found in your fleet.`);
+                    } else {
+                        console.log('openShip: openShipModal function not available:', typeof window.openShipModal);
                     }
                 }
                 break;
@@ -767,6 +876,64 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
 
             case 'setComponent':
                 handleSetComponent(response);
+                break;
+
+            case 'close':
+                // Close any open modal
+                const openModals = document.querySelectorAll('.modal:not(.hidden)');
+                openModals.forEach(modal => {
+                    modal.classList.add('hidden');
+                });
+                if (!response.message) {
+                    response.message = 'Done.';
+                }
+                break;
+
+            case 'editStorage':
+                if (response.componentName) {
+                    const storage = typeof appData !== 'undefined' ? appData.storage : [];
+                    const searchTerm = response.componentName.toLowerCase().replace(/\s+/g, '');
+
+                    // Find matching item in storage
+                    const itemIndex = storage.findIndex(item => {
+                        const nameNormalized = (item.name || '').toLowerCase().replace(/\s+/g, '');
+                        return nameNormalized.includes(searchTerm) || searchTerm.includes(nameNormalized);
+                    });
+
+                    if (itemIndex === -1) {
+                        response.message = `Could not find ${response.componentName} in your storage.`;
+                    } else {
+                        const item = storage[itemIndex];
+                        const newQuantity = parseInt(response.quantity, 10);
+
+                        if (isNaN(newQuantity) || newQuantity < 0) {
+                            response.message = `Invalid quantity. Please say a number like "set to 5".`;
+                        } else if (newQuantity === 0) {
+                            // Remove item from storage
+                            storage.splice(itemIndex, 1);
+                            if (typeof window.saveData === 'function') {
+                                window.saveData();
+                            }
+                            if (typeof window.renderStorage === 'function') {
+                                window.renderStorage();
+                            }
+                            response.message = `Removed ${item.name} from storage.`;
+                        } else {
+                            // Update quantity
+                            const oldQuantity = item.quantity || 1;
+                            item.quantity = newQuantity;
+                            if (typeof window.saveData === 'function') {
+                                window.saveData();
+                            }
+                            if (typeof window.renderStorage === 'function') {
+                                window.renderStorage();
+                            }
+                            response.message = `Updated ${item.name} from ${oldQuantity} to ${newQuantity}.`;
+                        }
+                    }
+                } else {
+                    response.message = "Which component do you want to edit?";
+                }
                 break;
 
             case 'none':
@@ -827,12 +994,13 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
         }
 
         // Map slot types to their selectors and size info
+        // Note: weapons are organized by size in SC_DATA.weapons[size], not a flat array
         const slotMapping = {
             cooler: { selector: 'coolerSlots', spec: shipSpec.coolers, db: SC_DATA.coolers },
             shield: { selector: 'shieldSlots', spec: shipSpec.shields, db: SC_DATA.shields },
             powerPlant: { selector: 'powerPlantSlots', spec: shipSpec.powerPlants, db: SC_DATA.powerPlants },
             quantumDrive: { selector: 'quantumDriveSlots', spec: shipSpec.quantumDrive, db: SC_DATA.quantumDrives },
-            weapon: { selector: 'pilotWeaponSlots', spec: shipSpec.pilotWeapons, db: SC_DATA.weapons }
+            weapon: { selector: 'pilotWeaponSlots', spec: shipSpec.pilotWeapons, db: null } // Handle weapons separately
         };
 
         const mapping = slotMapping[slotType];
@@ -856,16 +1024,49 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
         }
 
         // Find matching components in database
-        const searchTerm = componentName.toLowerCase();
-        const matches = mapping.db.filter(comp =>
-            comp.name.toLowerCase().includes(searchTerm) && comp.size <= slotSize
-        );
+        // Normalize search term: remove spaces and compare case-insensitively
+        const searchTerm = componentName.toLowerCase().replace(/\s+/g, '');
+
+        let matches = [];
+        let allMatches = [];
+
+        if (slotType === 'weapon') {
+            // Weapons are organized by size: SC_DATA.weapons[1], SC_DATA.weapons[2], etc.
+            // Search all sizes up to and including slotSize
+            for (let size = 1; size <= slotSize; size++) {
+                const weaponsOfSize = SC_DATA.weapons[size] || [];
+                for (const weapon of weaponsOfSize) {
+                    const nameNormalized = weapon.name.toLowerCase().replace(/\s+/g, '');
+                    if (nameNormalized.includes(searchTerm) || searchTerm.includes(nameNormalized)) {
+                        matches.push({ ...weapon, size });
+                    }
+                }
+            }
+            // Also check larger sizes for "doesn't fit" message
+            for (let size = slotSize + 1; size <= 10; size++) {
+                const weaponsOfSize = SC_DATA.weapons[size] || [];
+                for (const weapon of weaponsOfSize) {
+                    const nameNormalized = weapon.name.toLowerCase().replace(/\s+/g, '');
+                    if (nameNormalized.includes(searchTerm) || searchTerm.includes(nameNormalized)) {
+                        allMatches.push({ ...weapon, size });
+                    }
+                }
+            }
+            allMatches = [...matches, ...allMatches];
+        } else {
+            // Other components are flat arrays with size property
+            matches = mapping.db.filter(comp => {
+                const nameNormalized = comp.name.toLowerCase().replace(/\s+/g, '');
+                return (nameNormalized.includes(searchTerm) || searchTerm.includes(nameNormalized)) && comp.size <= slotSize;
+            });
+            allMatches = mapping.db.filter(comp => {
+                const nameNormalized = comp.name.toLowerCase().replace(/\s+/g, '');
+                return nameNormalized.includes(searchTerm) || searchTerm.includes(nameNormalized);
+            });
+        }
 
         if (matches.length === 0) {
             // Check if there are matches but they don't fit
-            const allMatches = mapping.db.filter(comp =>
-                comp.name.toLowerCase().includes(searchTerm)
-            );
             if (allMatches.length > 0) {
                 const sizes = [...new Set(allMatches.map(c => c.size))].sort();
                 response.message = `Found ${componentName} but it doesn't fit. This slot is size ${slotSize}, but ${componentName} comes in size ${sizes.join(', ')}.`;
@@ -908,8 +1109,10 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
 
     /**
      * Speak text using TTS
+     * @param {string} text - Text to speak
+     * @param {function} onEnd - Optional callback when speech ends
      */
-    function speak(text) {
+    function speak(text, onEnd) {
         if (!synthesis) return;
 
         // Cancel any ongoing speech
@@ -919,6 +1122,10 @@ Keep responses concise and friendly. If you're not sure what the user wants, ask
         utterance.rate = 1.0;
         utterance.pitch = 1.0;
         utterance.volume = 1.0;
+
+        if (onEnd) {
+            utterance.onend = onEnd;
+        }
 
         synthesis.speak(utterance);
     }

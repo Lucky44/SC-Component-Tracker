@@ -145,6 +145,32 @@ The update pipeline is complete and working. Run when new ships.json is availabl
 - PDC turrets: Skipped (non-swappable)
 - Door guns (`WeaponMount.WeaponControl`): Skipped (crew-operated)
 
+## Voice Commands Feature
+
+**File**: `voice.js` (~1180 lines)
+
+### Architecture
+- **BYOK (Bring Your Own Key)** - Users provide their own API keys (OpenAI, Anthropic, or Google)
+- **Web Speech API** - Browser-native speech recognition (STT) and synthesis (TTS)
+- **LLM Integration** - OpenAI (gpt-4o-mini), Anthropic (claude-3-haiku), Google (gemini-2.5-flash)
+- **Auto-listen** - Automatically resumes listening after TTS completes for follow-up commands
+
+### Supported Commands
+- **addShip** - "add Gladius", "add F7A Mark 2" - Adds ship to hangar
+- **openShip** - "open Gladius" - Opens ship edit modal
+- **setComponent** - "set cooler to Atlas", "set shield to FR-76" - Swaps components on open ship
+- **editStorage** - "set Arctic to 5" - Updates storage quantities
+- **showStorage** - "show storage" - Opens storage modal
+- **queryStorage** - "how many shields do I have" - Queries storage inventory
+- **search** - "search for coolers" - Opens search with query
+- **close** - "close" - Closes current modal
+
+### Known Limitations
+- **Browser compatibility** - Requires Chrome or Edge (Firefox doesn't support Web Speech API)
+- **Speech recognition accuracy** - May mishear ship/component names (e.g., "Cutlass" → "Kutlass"). User can retry when this happens.
+- **Component swapping** - Works partially; complex multi-step swaps may need manual intervention
+- **Settings persistence** - API keys stored in localStorage, persists across sessions
+
 ## Releasing a New Version
 
 1. **Update `APP_VERSION`** in `app.js:5`
