@@ -558,6 +558,9 @@ User: "add a gladius" → {"action":"addShip","shipName":"gladius","message":"Ad
 User: "add F7A Mark 2" → {"action":"addShip","shipName":"F7A Mark 2","message":"Adding F7A Mark 2."}
 User: "add the Hornet" → {"action":"addShip","shipName":"Hornet","message":"Adding Hornet."}
 User: "F7A Hornet Mark 2" → {"action":"addShip","shipName":"F7A Hornet Mark 2","message":"Adding F7A Hornet Mark 2."}
+User: "open Gladius" → {"action":"openShip","shipName":"Gladius","message":"Opening Gladius."}
+User: "edit Gladius" → {"action":"openShip","shipName":"Gladius","message":"Opening Gladius."}
+User: "edit 100i" → {"action":"openShip","shipName":"100i","message":"Opening 100i."}
 User: "show storage" → {"action":"showStorage","message":"Here's your storage."}
 User: "set arctic to 5" → {"action":"editStorage","componentName":"arctic","quantity":5,"message":"Setting arctic to 5."}
 User: "close" → {"action":"close","message":"Done."}
@@ -566,7 +569,7 @@ User: "close" → {"action":"close","message":"Done."}
 
 - addShip: {"action":"addShip","shipName":"<exact words user said>"} - Use for ANY ship name. ALWAYS include shipName.
 - removeShip: {"action":"removeShip","shipName":"..."}
-- openShip: {"action":"openShip","shipName":"..."} - Only for ships in user's fleet
+- openShip: {"action":"openShip","shipName":"..."} - Use when user says "open [ship]" or "edit [ship]"
 - showStorage: {"action":"showStorage"}
 - editStorage: {"action":"editStorage","componentName":"...","quantity":N}
 - queryStorage: {"action":"queryStorage","componentName":"..."}
@@ -591,9 +594,11 @@ ${pendingAddShip ? '\n** USER IS RESPONDING TO "WHICH SHIP?" - Their response IS
         }
 
         prompt += `\n\n## CRITICAL RULES:
-1. If user says ANYTHING that sounds like a ship name, use addShip with that exact text as shipName
-2. NEVER ask "which ship" or "what ship" - just use addShip with whatever they said
-3. The app handles fuzzy matching - just pass through the name`;
+1. "edit [ship]" or "open [ship]" → use openShip (NOT addShip, NOT editStorage)
+2. "add [ship]" or just "[ship name]" → use addShip with exact ship name
+3. "set [component] to [number]" → use editStorage (NOT openShip)
+4. NEVER ask "which ship" - just use the action with whatever ship name they said
+5. The app handles fuzzy matching - pass through names exactly as spoken`;
 
         return prompt;
     }
