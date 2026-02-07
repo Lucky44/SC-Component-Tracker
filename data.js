@@ -8832,12 +8832,55 @@ SC_DATA.getDefaultComponents = function(shipSpec) {
     const stockPilotWeapons = Array.isArray(stockLoadout?.pilotWeapons) && stockLoadout.pilotWeapons.length > 0 ? stockLoadout.pilotWeapons : null;
     const stockTurretWeapons = Array.isArray(stockLoadout?.turretWeapons) && stockLoadout.turretWeapons.length > 0 ? stockLoadout.turretWeapons : null;
 
-    // Populate pilot weapons from stock or leave empty (avoid duplicating the first stock weapon across all mounts)
+    // Populate pilot weapons from stock, reordering by size to match hardpoints
     if (shipSpec.pilotWeapons && shipSpec.pilotWeapons.length > 0) {
-        defaults.pilotWeapons = shipSpec.pilotWeapons.map((w, i) => ({
-            name: stockPilotWeapons ? (stockPilotWeapons[i] || "") : "",
-            size: w.size
-        }));
+        if (stockPilotWeapons) {
+            // Look up each stock weapon's size
+            function lookupWeaponSize(name) {
+                if (!name) return null;
+                for (const key of Object.keys(SC_DATA.weapons)) {
+                    const sz = parseInt(key, 10);
+                    if ((SC_DATA.weapons[sz] || []).find(w => w.name && w.name.toLowerCase() === name.toLowerCase())) return sz;
+                }
+                return null;
+            }
+            const stockWithSize = stockPilotWeapons.map(name => ({ name, size: lookupWeaponSize(name) }));
+            // Match stock weapons to hardpoint slots by size (best-fit)
+            const reordered = new Array(shipSpec.pilotWeapons.length).fill(null);
+            const used = new Array(stockWithSize.length).fill(false);
+            // First pass: exact size matches
+            for (let i = 0; i < shipSpec.pilotWeapons.length; i++) {
+                const slotSize = shipSpec.pilotWeapons[i].size;
+                for (let j = 0; j < stockWithSize.length; j++) {
+                    if (!used[j] && stockWithSize[j].size === slotSize) {
+                        reordered[i] = stockWithSize[j].name;
+                        used[j] = true;
+                        break;
+                    }
+                }
+            }
+            // Second pass: undersized weapons (weapon smaller than slot)
+            for (let i = 0; i < reordered.length; i++) {
+                if (reordered[i] !== null) continue;
+                const slotSize = shipSpec.pilotWeapons[i].size;
+                for (let j = 0; j < stockWithSize.length; j++) {
+                    if (!used[j] && stockWithSize[j].size != null && stockWithSize[j].size <= slotSize) {
+                        reordered[i] = stockWithSize[j].name;
+                        used[j] = true;
+                        break;
+                    }
+                }
+            }
+            defaults.pilotWeapons = shipSpec.pilotWeapons.map((w, i) => ({
+                name: reordered[i] || "",
+                size: w.size
+            }));
+        } else {
+            defaults.pilotWeapons = shipSpec.pilotWeapons.map(w => ({
+                name: "",
+                size: w.size
+            }));
+        }
     }
 
     // Populate turrets with stock weapons. Only apply stock loadout mapping when it provides
