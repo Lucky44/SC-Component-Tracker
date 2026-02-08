@@ -1,9 +1,11 @@
 // ============ Modal System ============
 
 import { state } from './state.js';
-import { getShipById, getShipSpec } from './ship-crud.js';
+import { getShipById, getShipSpec, deleteShip } from './ship-crud.js';
 import { clearAllSlots, populateSlotsForShip } from './slots.js';
 import { filterShipDropdown } from './dropdowns.js';
+import { deleteStorageItem } from './storage.js';
+import { renderShips, renderStorage } from './render.js';
 
 export function openModal(modalId) {
     document.getElementById(modalId).classList.remove('hidden');
@@ -266,13 +268,9 @@ export function executeDelete() {
     if (!pendingDelete) return;
 
     if (pendingDelete.type === 'ship') {
-        const { deleteShip } = await import('./ship-crud.js');
-        const { renderShips } = await import('./render.js');
         deleteShip(pendingDelete.id);
         renderShips();
     } else if (pendingDelete.type === 'storage') {
-        const { deleteStorageItem } = await import('./storage.js');
-        const { renderStorage } = await import('./render.js');
         deleteStorageItem(pendingDelete.index);
         renderStorage();
     }

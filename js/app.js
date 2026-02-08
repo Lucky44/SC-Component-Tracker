@@ -3,10 +3,10 @@
 import { APP_VERSION, showToast } from './state.js';
 import { populateShipDropdown, initShipSearch } from './dropdowns.js';
 import { renderShips, renderStorage, renderSearchResults, toggleViewMode } from './render.js';
-import { openShipModal, openStorageModal, onShipSelectionChange, confirmDeleteShip, confirmDeleteStorage, executeDelete, closeModal, populateStorageComponentsForType } from './modals.js';
+import { openModal, openShipModal, openStorageModal, onShipSelectionChange, confirmDeleteShip, confirmDeleteStorage, executeDelete, closeModal, populateStorageComponentsForType } from './modals.js';
 import { handleShipSubmit, handleStorageSubmit } from './forms.js';
 import { searchComponents } from './search.js';
-import { exportData, importData, executeImport, showImportConfirmModal } from './import-export.js';
+import { exportData, importData, executeImport } from './import-export.js';
 import { loadCachedShipData, checkForUpdate, applyUpdate } from './update-check.js';
 
 // Set app version badge

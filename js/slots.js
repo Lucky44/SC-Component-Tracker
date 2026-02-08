@@ -1,6 +1,57 @@
 // ============ Slot Management ============
 
-import { createComponentDropdown } from './dropdowns.js';
+function createComponentDropdown(type, size, selectedValue = '') {
+    const SC_DATA = window.SC_DATA;
+    const select = document.createElement('select');
+    select.innerHTML = '<option value="">Empty</option>';
+
+    let components;
+    switch (type) {
+        case 'shield':
+            components = SC_DATA.shields.filter(c => c.size <= size);
+            break;
+        case 'powerPlant':
+            components = SC_DATA.powerPlants.filter(c => c.size <= size);
+            break;
+        case 'cooler':
+            components = SC_DATA.coolers.filter(c => c.size <= size);
+            break;
+        case 'quantumDrive':
+            components = SC_DATA.quantumDrives.filter(c => c.size <= size);
+            break;
+        case 'weapon':
+            components = SC_DATA.weapons[size] || [];
+            break;
+        default:
+            components = [];
+    }
+
+    components.sort((a, b) => a.name.localeCompare(b.name));
+
+    components.forEach(comp => {
+        const option = document.createElement('option');
+        option.value = comp.name;
+        const isUnknownName = (comp.name || '').toLowerCase() === 'unknown';
+        const isUnknownType = (comp.type || '').toLowerCase() === 'unknown';
+
+        if (type === 'weapon') {
+            option.textContent = isUnknownName || isUnknownType
+                ? 'Unknown'
+                : `${comp.name} (${comp.type})`;
+        } else {
+            option.textContent = isUnknownName
+                ? 'Unknown'
+                : `${comp.name} (${comp.manufacturer})`;
+        }
+
+        if (comp.name === selectedValue) {
+            option.selected = true;
+        }
+        select.appendChild(option);
+    });
+
+    return select;
+}
 
 export function clearAllSlots() {
     ['pilotWeaponSlots', 'turretSlots', 'shieldSlots', 'powerPlantSlots', 'coolerSlots', 'quantumDriveSlots'].forEach(id => {
