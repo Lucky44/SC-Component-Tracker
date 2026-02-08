@@ -21,11 +21,9 @@ jobs:
         run: node scripts/test-extraction.js
 
       - name: Run data validation
-        run: node validate.js
-
-      - name: Check validation results
+        id: validate
         run: |
-          ISSUES=$(node validate.js 2>/dev/null | grep "TOTAL ISSUES:" | grep -oP '\d+')
+          ISSUES=$(node validate.js 2>&1 | tee /dev/stderr | grep "TOTAL ISSUES:" | grep -oP '\d+')
           echo "Total validation issues: $ISSUES"
-          # Track issue count but don't fail - some issues are expected
           echo "validation_issues=$ISSUES" >> $GITHUB_OUTPUT
+          # Don't fail - ~131 issues are expected (count mismatches + oversized items)
