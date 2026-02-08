@@ -11,7 +11,11 @@
  * - Component size mismatches
  * - Cross-validation against ships.json (if available)
  *
- * Usage: node validate.js [--verbose] [--fix-suggestions]
+ * Usage: node validate.js [--verbose] [--fix-suggestions] [--json]
+ *
+ * Flags:
+ *   --json    Output machine-readable JSON instead of human-readable text.
+ *             JSON object contains: summary, issues, metadata.
  */
 
 const fs = require('fs');
@@ -20,6 +24,15 @@ const path = require('path');
 
 const VERBOSE = process.argv.includes('--verbose');
 const SHOW_FIX_SUGGESTIONS = process.argv.includes('--fix-suggestions');
+const JSON_OUTPUT = process.argv.includes('--json');
+
+// When --json is active, suppress all progress/report console output.
+// Only the final JSON blob is written to stdout.
+function log(...args) {
+  if (!JSON_OUTPUT) {
+    console.log(...args);
+  }
+}
 
 function loadSCData(filePath) {
   const code = fs.readFileSync(filePath, 'utf8');
@@ -64,8 +77,8 @@ function findWeaponSizeByName(SC_DATA, name) {
 }
 
 function validate() {
-  console.log('SC Component Tracker - Data Validation\n');
-  console.log('='.repeat(50));
+  log('SC Component Tracker - Data Validation\n');
+  log('='.repeat(50));
 
   const SC_DATA = loadSCData('data.js');
   const shipsJson = loadShipsJson('ships.json');
@@ -110,7 +123,7 @@ function validate() {
   }
 
   // ========== CHECK 1: Orphaned Loadouts (loadout exists but no ship spec) ==========
-  console.log('\n[1/6] Checking for orphaned loadouts...');
+  log('\n[1/6] Checking for orphaned loadouts...');
   for (const shipName of Object.keys(stock)) {
     const spec = shipByNorm.get(normalize(shipName));
     if (!spec) {
@@ -120,7 +133,7 @@ function validate() {
   }
 
   // ========== CHECK 2: Orphaned Specs (ship spec exists but no loadout) ==========
-  console.log('[2/6] Checking for orphaned ship specs...');
+  log('[2/6] Checking for orphaned ship specs...');
   for (const ship of ships) {
     // Find matching loadout by normalized name
     let hasLoadout = false;
@@ -138,7 +151,7 @@ function validate() {
 
   // ========== CHECK 3: Cross-validate against ships.json ==========
   if (shipsJson) {
-    console.log('[3/6] Cross-validating against ships.json...');
+    log('[3/6] Cross-validating against ships.json...');
     const sourceShips = new Map();
     for (const ship of shipsJson) {
       if (ship.IsSpaceship && ship.Name) {
@@ -164,11 +177,11 @@ function validate() {
       }
     }
   } else {
-    console.log('[3/6] Skipping ships.json validation (file not found)');
+    log('[3/6] Skipping ships.json validation (file not found)');
   }
 
-  console.log('[4/6] Validating weapon references...');
-  console.log('[5/6] Checking component counts and sizes...');
+  log('[4/6] Validating weapon references...');
+  log('[5/6] Checking component counts and sizes...');
 
   // Validate each stock loadout entry against catalogs and (if matched) ship specs
   for (const [shipName, loadout] of Object.entries(stock)) {
@@ -283,35 +296,50 @@ function validate() {
     });
   }
 
-  console.log('[6/6] Generating report...');
+  // --json mode: output structured JSON and skip text report / file writing
+  if (JSON_OUTPUT) {
+    const output = {
+      summary,
+      issues,
+      metadata: {
+        shipsCount: ships.length,
+        loadoutsCount: Object.keys(stock).length,
+        generatedAt: new Date().toISOString()
+      }
+    };
+    process.stdout.write(JSON.stringify(output, null, 2) + '\n');
+    return issues.length;
+  }
+
+  log('[6/6] Generating report...');
 
   // Print summary
-  console.log('\n' + '='.repeat(50));
-  console.log('VALIDATION SUMMARY');
-  console.log('='.repeat(50));
+  log('\n' + '='.repeat(50));
+  log('VALIDATION SUMMARY');
+  log('='.repeat(50));
 
-  console.log(`\nShips in data.js:     ${ships.length}`);
-  console.log(`Stock loadouts:       ${Object.keys(stock).length}`);
+  log(`\nShips in data.js:     ${ships.length}`);
+  log(`Stock loadouts:       ${Object.keys(stock).length}`);
   if (shipsJson) {
     const sourceCount = shipsJson.filter(s => s.IsSpaceship).length;
-    console.log(`Ships in ships.json:  ${sourceCount}`);
+    log(`Ships in ships.json:  ${sourceCount}`);
   }
 
-  console.log('\n--- Issue Counts by Category ---');
-  console.log(`Orphaned loadouts (no ship spec):  ${summary.orphanedLoadouts}`);
-  console.log(`Orphaned specs (no loadout):       ${summary.orphanedSpecs}`);
-  console.log(`Count mismatches:                  ${summary.countMismatches}`);
-  console.log(`Unknown items:                     ${summary.unknownItems}`);
-  console.log(`Oversized items:                   ${summary.oversizedItems}`);
-  console.log(`Size mismatches:                   ${summary.sizeMismatches}`);
+  log('\n--- Issue Counts by Category ---');
+  log(`Orphaned loadouts (no ship spec):  ${summary.orphanedLoadouts}`);
+  log(`Orphaned specs (no loadout):       ${summary.orphanedSpecs}`);
+  log(`Count mismatches:                  ${summary.countMismatches}`);
+  log(`Unknown items:                     ${summary.unknownItems}`);
+  log(`Oversized items:                   ${summary.oversizedItems}`);
+  log(`Size mismatches:                   ${summary.sizeMismatches}`);
   if (shipsJson) {
-    console.log(`Source discrepancies:              ${summary.sourceDiscrepancies}`);
+    log(`Source discrepancies:              ${summary.sourceDiscrepancies}`);
   }
-  console.log(`${'─'.repeat(40)}`);
-  console.log(`TOTAL ISSUES:                      ${issues.length}`);
+  log(`${'─'.repeat(40)}`);
+  log(`TOTAL ISSUES:                      ${issues.length}`);
 
   if (issues.length === 0) {
-    console.log('\n✓ No issues found! Data is consistent.');
+    log('\n✓ No issues found! Data is consistent.');
     return 0;
   }
 
@@ -339,9 +367,9 @@ function validate() {
     const catIssues = byCategory.get(cat);
     if (!catIssues || catIssues.length === 0) continue;
 
-    console.log(`\n${'─'.repeat(50)}`);
-    console.log(`${categoryNames[cat]} (${catIssues.length})`);
-    console.log('─'.repeat(50));
+    log(`\n${'─'.repeat(50)}`);
+    log(`${categoryNames[cat]} (${catIssues.length})`);
+    log('─'.repeat(50));
 
     // Group by ship within category
     const byShip = new Map();
@@ -351,8 +379,8 @@ function validate() {
     }
 
     for (const [ship, arr] of byShip.entries()) {
-      console.log(`\n  ${ship}:`);
-      arr.forEach(x => console.log(`    - ${x.type}: ${x.detail}`));
+      log(`\n  ${ship}:`);
+      arr.forEach(x => log(`    - ${x.type}: ${x.detail}`));
     }
   }
 
@@ -388,7 +416,7 @@ function validate() {
   }
 
   fs.writeFileSync(reportPath, reportLines.join('\n'));
-  console.log(`\n\nDetailed report written to: ${reportPath}`);
+  log(`\n\nDetailed report written to: ${reportPath}`);
 
   return issues.length;
 }
