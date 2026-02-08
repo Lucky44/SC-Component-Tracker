@@ -39,7 +39,7 @@ node validate.js
 
 Output includes a summary and detailed report saved to `validation_report.txt`.
 
-**Important**: After editing `data.js` or `app.js`, hard refresh (`Ctrl+Shift+R`) is required due to browser caching. Cache-busting version tokens are used in production (e.g., `styles.css?v=86`).
+**Important**: After editing `data.js` or `app.js`, hard refresh (`Ctrl+Shift+R`) is required due to browser caching. Cache-busting version tokens are used in production (e.g., `styles.css?v=87`).
 
 ## Architecture
 
@@ -107,7 +107,6 @@ node validate.js
 
 - `validate.js` - Data consistency checking (run after updates)
 - `debug-ship.js "Ship Name"` - Debug weapon hardpoints for a specific ship
-- `scripts/archive/fix-ship-names.js` - Fix naming mismatches between spec/loadout (archived)
 
 ### Known Data Quirks
 
@@ -123,7 +122,7 @@ node validate.js
   - `Turret.CanardTurret` - fixed nose turrets (weapons count as pilot weapons)
 - **Weapon types**: `WeaponGun.Gun` and `WeaponGun.Rocket` are both valid weapon types. Rockets can be swapped for guns so both are included in weapon counts.
 
-## Data Update Pipeline (v0.86)
+## Data Update Pipeline (v0.87)
 
 The update pipeline is complete and working. Run when new ships.json is available from scunpacked.
 
@@ -149,13 +148,13 @@ The update pipeline is complete and working. Run when new ships.json is availabl
 
 1. **Update `APP_VERSION`** in `app.js:5`
    ```js
-   const APP_VERSION = '0.86';
+   const APP_VERSION = '0.87';
    ```
 
 2. **Update cache-bust params** in `index.html` (3 places):
-   - Line 7: `styles.css?v=86`
-   - Line 253: `data.js?v=86`
-   - Line 254: `app.js?v=86`
+   - Line 7: `styles.css?v=87`
+   - Line 253: `data.js?v=87`
+   - Line 254: `app.js?v=87`
 
 3. **Update `CHANGELOG.md`** with version notes
 

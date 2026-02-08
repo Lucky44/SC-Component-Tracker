@@ -2,7 +2,7 @@
 
 // ============ Data Layer ============
 
-const APP_VERSION = '0.86';
+const APP_VERSION = '0.87';
 
 /**
  * @typedef {Object} ComponentSlot

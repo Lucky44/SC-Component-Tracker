@@ -2,6 +2,24 @@
 
 All notable changes to this project are documented here.
 
+## 2026-02-08 — v0.87
+
+**Project Cleanup & Tooling**
+
+- Root directory cleanup:
+  - Moved 8 dev note files to `docs/` (PROGRESS_SUMMARY, SYNC_NOTES, PROPOSED_CHANGES, etc.)
+  - Removed generated validation reports, old backups, and superseded assets
+  - Removed `tmp/` debug directory
+  - Updated `.gitignore` to exclude `validation_report.txt`, `changelog_*.txt`, and `tmp/`
+
+- Merged community PRs (from timfallmk):
+  - PR #7: Added `--json` flag to `validate.js` for machine-readable output
+  - PR #8: Archived 43 legacy utility scripts to `scripts/archive/`
+  - PR #9: Added property-based invariant tests (`test-invariants.js`, 47 test cases)
+  - PR #10: Added GitHub Actions CI workflow for automated testing
+  - PR #12: Unified test framework to Node.js native `node:test` module
+  - PR #15: Added JSDoc type annotations to `app.js` and `data.js`
+
 ## 2026-02-07 — v0.86
 
 - Version bump to 0.86
