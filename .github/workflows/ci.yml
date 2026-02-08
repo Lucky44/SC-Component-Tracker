@@ -18,7 +18,10 @@ jobs:
           node-version: '20'
 
       - name: Run unit tests
-        run: node scripts/test-extraction.js
+        run: 
+          node scripts/test-extraction.js
+          node scripts/test-update-pipeline.js
+          node --test scripts/test-invariants.js
 
       - name: Run data validation
         id: validate
