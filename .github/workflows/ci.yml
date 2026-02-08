@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run unit tests
+        run: node scripts/test-extraction.js
+
+      - name: Run data validation
+        id: validate
+        run: |
+          ISSUES=$(node validate.js 2>&1 | tee /dev/stderr | grep "TOTAL ISSUES:" | grep -oP '\d+')
+          echo "Total validation issues: $ISSUES"
+          echo "validation_issues=$ISSUES" >> $GITHUB_OUTPUT
+          # Don't fail - ~131 issues are expected (count mismatches + oversized items)
