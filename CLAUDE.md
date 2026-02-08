@@ -72,7 +72,7 @@ Modals use `openModal(id)`/`closeModal(id)` pattern. Key modals: `shipModal`, `s
 
 ## Scripts Directory
 
-The `scripts/` folder contains ~45 Node.js utilities for data processing:
+The `scripts/` folder contains active Node.js utilities for data processing. Legacy and one-off scripts have been moved to `scripts/archive/`.
 
 ### Key Extraction Scripts
 
@@ -107,7 +107,7 @@ node validate.js
 
 - `validate.js` - Data consistency checking (run after updates)
 - `debug-ship.js "Ship Name"` - Debug weapon hardpoints for a specific ship
-- `fix-ship-names.js` - Fix naming mismatches between spec/loadout
+- `scripts/archive/fix-ship-names.js` - Fix naming mismatches between spec/loadout (archived)
 
 ### Known Data Quirks
 

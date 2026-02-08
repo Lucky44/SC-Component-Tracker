@@ -98,9 +98,11 @@ SC-Component-Tracker/
 ├── data.js             # Bundled ship and component database (fallback)
 ├── processed-data.json # Latest ship data for browser updates
 └── scripts/            # Utility scripts for data management
+    ├── extract-ships.js           # Extract ship specs from ships.json
+    ├── extract-loadouts.js        # Extract stock loadouts from ships.json
+    ├── sync-all-data.js           # Main sync script for data.js updates
     ├── update-from-scunpacked.js  # Generate processed-data.json
-    ├── compare-ships.js           # Compare data.js vs processed-data.json
-    └── replace-ships-array.js     # Sync ships to data.js
+    └── archive/                   # Legacy and one-off scripts
 ```
 
 ## Updating Ship Data

@@ -51,7 +51,7 @@
 ## Solutions Repository
 - **Total Ships with Data**: 90+ ships
 - **Total Weapon/Component Fixes Collected**: ~1,200+ entries
-- **File**: `scripts/solutions_from_wiki.json` 
+- **File**: `scripts/archive/solutions_from_wiki.json`
 
 ## Remaining Problem Slots (48 total across 32 ships)
 Most remaining issues are secondary weapon hardpoints (indices 3-7) for:
@@ -69,8 +69,8 @@ These secondary hardpoints would require:
 - In-game verification
 
 ## Tools Created
-1. `apply_wiki_solutions_v2.js` - Safe string-based replacement engine
-2. `audit_problem_slots.js` - Problem identification and tracking
+1. `scripts/archive/apply_wiki_solutions_v2.js` - Safe string-based replacement engine (archived)
+2. `scripts/archive/audit_problem_slots.js` - Problem identification and tracking (archived)
 3. Multiple merge scripts for batch processing
 
 ## Impact
