@@ -8817,7 +8817,11 @@ SC_DATA.stockLoadouts = {
 };
 
 
-// Generate default loadout for a ship using actual stock components from game data
+/**
+ * Generates default loadout for a ship using actual stock components from game data
+ * @param {ShipSpec} shipSpec - The ship specification
+ * @returns {ShipComponents|null} Default component configuration or null if no spec provided
+ */
 SC_DATA.getDefaultComponents = function(shipSpec) {
     if (!shipSpec) return null;
 
