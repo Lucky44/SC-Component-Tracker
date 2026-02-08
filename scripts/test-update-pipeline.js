@@ -2,25 +2,15 @@
 /**
  * End-to-end test for the ship data update pipeline
  * Simulates running the full update process and validates results
+ *
+ * Run with: node --test scripts/test-update-pipeline.js
  */
 
+const { describe, it, before } = require('node:test');
+const assert = require('node:assert/strict');
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-
-let passed = 0;
-let failed = 0;
-
-function test(name, condition, details = '') {
-    if (condition) {
-        console.log(`  ✓ ${name}`);
-        passed++;
-    } else {
-        console.log(`  ✗ ${name}`);
-        if (details) console.log(`    ${details}`);
-        failed++;
-    }
-}
 
 function run(cmd) {
     try {
@@ -30,111 +20,179 @@ function run(cmd) {
     }
 }
 
-console.log('\n=== Update Pipeline Tests ===\n');
+describe('Update Pipeline', () => {
+    describe('extract-ships.js', () => {
+        let shipOutput;
 
-// Test 1: Extract ships runs without error
-console.log('1. Running extract-ships.js:');
-const shipOutput = run('node scripts/extract-ships.js');
-test('Script completes', shipOutput.includes('Processed') && shipOutput.includes('ships'));
-test('Output file created', fs.existsSync(path.join(__dirname, 'extracted-ships.js')));
+        before(() => {
+            shipOutput = run('node scripts/extract-ships.js');
+        });
 
-// Verify extracted ships structure
-const ships = require('./extracted-ships.js');
-test('Ships array not empty', ships.length > 200, `Got: ${ships.length}`);
-test('Ships have required fields', ships[0].name && ships[0].manufacturer && ships[0].pilotWeapons);
+        it('script completes successfully', () => {
+            assert.ok(shipOutput.includes('Processed') && shipOutput.includes('ships'),
+                `Output: ${shipOutput.slice(0, 200)}`);
+        });
 
-// Test 2: Extract loadouts runs without error
-console.log('\n2. Running extract-loadouts.js:');
-const loadoutOutput = run('node scripts/extract-loadouts.js');
-test('Script completes', loadoutOutput.includes('Processed') && loadoutOutput.includes('loadout'));
-test('Output file created', fs.existsSync(path.join(__dirname, 'extracted-loadouts.js')));
+        it('output file created', () => {
+            assert.ok(fs.existsSync(path.join(__dirname, 'extracted-ships.js')),
+                'extracted-ships.js not found');
+        });
 
-// Clear require cache and reload
-delete require.cache[require.resolve('./extracted-loadouts.js')];
-const loadouts = require('./extracted-loadouts.js');
-const loadoutCount = Object.keys(loadouts).length;
-test('Loadouts object not empty', loadoutCount > 200, `Got: ${loadoutCount}`);
-test('Loadouts have required fields',
-     loadouts['Aegis Gladius']?.pilotWeapons && loadouts['Aegis Gladius']?.shields);
+        it('ships array has more than 200 entries', () => {
+            const ships = require('./extracted-ships.js');
+            assert.ok(ships.length > 200, `Got: ${ships.length}`);
+        });
 
-// Test 3: Validate spec-loadout consistency for key ships
-console.log('\n3. Spec-Loadout consistency:');
+        it('ships have required fields', () => {
+            const ships = require('./extracted-ships.js');
+            assert.ok(ships[0].name, 'Missing name field');
+            assert.ok(ships[0].manufacturer, 'Missing manufacturer field');
+            assert.ok(ships[0].pilotWeapons, 'Missing pilotWeapons field');
+        });
+    });
 
-function getShip(name) {
-    return ships.find(s => s.name === name);
-}
+    describe('extract-loadouts.js', () => {
+        let loadoutOutput;
 
-const testShips = [
-    { name: 'Aegis Gladius', expectPilot: 3, expectTurret: 0 },
-    { name: 'Anvil Asgard', expectPilot: 6, expectTurret: 2 },
-    { name: 'Kruger P-52 Merlin', expectPilot: 3, expectTurret: 0 },
-    { name: 'Drake Cutlass Black', expectPilot: 2, expectTurret: 2 },
-];
+        before(() => {
+            loadoutOutput = run('node scripts/extract-loadouts.js');
+        });
 
-testShips.forEach(({ name, expectPilot, expectTurret }) => {
-    const spec = getShip(name);
-    const loadout = loadouts[name];
+        it('script completes successfully', () => {
+            assert.ok(loadoutOutput.includes('Processed') && loadoutOutput.includes('loadout'),
+                `Output: ${loadoutOutput.slice(0, 200)}`);
+        });
 
-    if (!spec || !loadout) {
-        test(`${name} exists in both`, false, `spec: ${!!spec}, loadout: ${!!loadout}`);
-        return;
-    }
+        it('output file created', () => {
+            assert.ok(fs.existsSync(path.join(__dirname, 'extracted-loadouts.js')),
+                'extracted-loadouts.js not found');
+        });
 
-    const specPilot = spec.pilotWeapons.length;
-    const stockPilot = loadout.pilotWeapons.length;
-    const specTurretGuns = spec.turrets.reduce((sum, t) => sum + t.guns, 0);
-    const stockTurret = loadout.turretWeapons.length;
+        it('loadouts object has more than 200 entries', () => {
+            delete require.cache[require.resolve('./extracted-loadouts.js')];
+            const loadouts = require('./extracted-loadouts.js');
+            const count = Object.keys(loadouts).length;
+            assert.ok(count > 200, `Got: ${count}`);
+        });
 
-    test(`${name} pilot weapons match (spec ${specPilot} = stock ${stockPilot})`,
-         specPilot === stockPilot || stockPilot <= specPilot);
+        it('loadouts have required fields', () => {
+            const loadouts = require('./extracted-loadouts.js');
+            assert.ok(loadouts['Aegis Gladius']?.pilotWeapons, 'Missing pilotWeapons for Gladius');
+            assert.ok(loadouts['Aegis Gladius']?.shields, 'Missing shields for Gladius');
+        });
+    });
 
-    // Turret weapons should roughly match (stock may have more due to PDC)
-    test(`${name} turret weapons reasonable (spec ${specTurretGuns}, stock ${stockTurret})`,
-         stockTurret >= specTurretGuns * 0.8 && stockTurret <= specTurretGuns * 2);
+    describe('Spec-Loadout consistency', () => {
+        let ships;
+        let loadouts;
+
+        before(() => {
+            ships = require('./extracted-ships.js');
+            delete require.cache[require.resolve('./extracted-loadouts.js')];
+            loadouts = require('./extracted-loadouts.js');
+        });
+
+        function getShip(name) {
+            return ships.find(s => s.name === name);
+        }
+
+        const testShips = [
+            { name: 'Aegis Gladius' },
+            { name: 'Anvil Asgard' },
+            { name: 'Kruger P-52 Merlin' },
+            { name: 'Drake Cutlass Black' },
+        ];
+
+        for (const { name } of testShips) {
+            it(`${name} pilot weapons match between spec and stock`, () => {
+                const spec = getShip(name);
+                const loadout = loadouts[name];
+                assert.ok(spec, `${name} not found in specs`);
+                assert.ok(loadout, `${name} not found in loadouts`);
+
+                const specPilot = spec.pilotWeapons.length;
+                const stockPilot = loadout.pilotWeapons.length;
+                assert.ok(specPilot === stockPilot || stockPilot <= specPilot,
+                    `spec ${specPilot} vs stock ${stockPilot}`);
+            });
+
+            it(`${name} turret weapons reasonable between spec and stock`, () => {
+                const spec = getShip(name);
+                const loadout = loadouts[name];
+                assert.ok(spec, `${name} not found in specs`);
+                assert.ok(loadout, `${name} not found in loadouts`);
+
+                const specTurretGuns = spec.turrets.reduce((sum, t) => sum + t.guns, 0);
+                const stockTurret = loadout.turretWeapons.length;
+                // Turret weapons should roughly match (stock may have more due to PDC)
+                assert.ok(stockTurret >= specTurretGuns * 0.8 && stockTurret <= specTurretGuns * 2,
+                    `spec turret guns ${specTurretGuns}, stock ${stockTurret}`);
+            });
+        }
+    });
+
+    describe('Data integrity', () => {
+        let ships;
+
+        before(() => {
+            ships = require('./extracted-ships.js');
+        });
+
+        it('duplicate count within expected range', () => {
+            const shipNames = ships.map(s => s.name);
+            const uniqueNames = new Set(shipNames);
+            const dupeCount = shipNames.length - uniqueNames.size;
+            // Some duplicates expected (e.g., Eclipse, Idris-P have multiple entries in scunpacked)
+            assert.ok(dupeCount <= 25,
+                `Total: ${shipNames.length}, Unique: ${uniqueNames.size}, Dupes: ${dupeCount}`);
+        });
+    });
+
+    describe('Weapon size sanity checks', () => {
+        let ships;
+
+        before(() => {
+            ships = require('./extracted-ships.js');
+        });
+
+        it('all weapon sizes in valid range (0-10)', () => {
+            const invalidSizes = ships.filter(s =>
+                s.pilotWeapons.some(w => w.size < 0 || w.size > 10) ||
+                s.turrets.some(t => t.size < 0 || t.size > 10)
+            );
+            assert.equal(invalidSizes.length, 0,
+                `Ships with invalid sizes: ${invalidSizes.map(s => s.name).join(', ')}`);
+        });
+    });
+
+    describe('Component count checks', () => {
+        let ships;
+
+        before(() => {
+            ships = require('./extracted-ships.js');
+        });
+
+        it('most ships have components', () => {
+            const shipsWithComponents = ships.filter(s =>
+                s.shields.count > 0 || s.powerPlants.count > 0 || s.coolers.count > 0
+            );
+            assert.ok(shipsWithComponents.length > ships.length * 0.9,
+                `Ships with components: ${shipsWithComponents.length}/${ships.length}`);
+        });
+    });
+
+    describe('Validation script', () => {
+        let validationOutput;
+
+        before(() => {
+            validationOutput = run('node validate.js');
+        });
+
+        it('validation completes and parses issue count', () => {
+            const issueMatch = validationOutput.match(/TOTAL ISSUES:\s+(\d+)/);
+            assert.ok(issueMatch, 'Could not parse validation output');
+            const totalIssues = parseInt(issueMatch[1]);
+            assert.ok(totalIssues >= 0, `Unexpected issue count: ${totalIssues}`);
+        });
+    });
 });
-
-// Test 4: Check for duplicate ships (some dupes expected from scunpacked)
-console.log('\n4. Data integrity:');
-const shipNames = ships.map(s => s.name);
-const uniqueNames = new Set(shipNames);
-const dupeCount = shipNames.length - uniqueNames.size;
-// Some duplicates expected (e.g., Eclipse, Idris-P have multiple entries in scunpacked)
-test('Duplicate count within expected range', dupeCount <= 25,
-     `Total: ${shipNames.length}, Unique: ${uniqueNames.size}, Dupes: ${dupeCount}`);
-
-// Test 5: Validate weapon sizes are reasonable
-console.log('\n5. Weapon size sanity checks:');
-const invalidSizes = ships.filter(s =>
-    s.pilotWeapons.some(w => w.size < 0 || w.size > 10) ||
-    s.turrets.some(t => t.size < 0 || t.size > 10)
-);
-test('All weapon sizes in valid range (0-10)', invalidSizes.length === 0,
-     `Ships with invalid sizes: ${invalidSizes.map(s => s.name).join(', ')}`);
-
-// Test 6: Validate component counts
-console.log('\n6. Component count checks:');
-const shipsWithComponents = ships.filter(s =>
-    s.shields.count > 0 || s.powerPlants.count > 0 || s.coolers.count > 0
-);
-test('Most ships have components', shipsWithComponents.length > ships.length * 0.9,
-     `Ships with components: ${shipsWithComponents.length}/${ships.length}`);
-
-// Test 7: Run validation script
-console.log('\n7. Running validation:');
-const validationOutput = run('node validate.js');
-const issueMatch = validationOutput.match(/TOTAL ISSUES:\s+(\d+)/);
-const totalIssues = issueMatch ? parseInt(issueMatch[1]) : -1;
-test('Validation completes', totalIssues >= 0, 'Could not parse validation output');
-test('Issue count is tracked', true, `Current issues: ${totalIssues}`);
-
-// Summary
-console.log('\n' + '='.repeat(50));
-console.log(`RESULTS: ${passed} passed, ${failed} failed`);
-console.log('='.repeat(50));
-
-if (totalIssues >= 0) {
-    console.log(`\nValidation found ${totalIssues} issues to review`);
-}
-
-console.log('\n');
-process.exit(failed > 0 ? 1 : 0);

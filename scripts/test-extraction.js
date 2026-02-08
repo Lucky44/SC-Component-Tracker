@@ -2,27 +2,16 @@
 /**
  * Test script for ship extraction pipeline
  * Validates that extract-ships.js and extract-loadouts.js produce correct results
+ *
+ * Run with: node --test scripts/test-extraction.js
  */
 
+const { describe, it } = require('node:test');
+const assert = require('node:assert/strict');
 const path = require('path');
 
-// Load extracted data
 const extractedShips = require('./extracted-ships.js');
 const extractedLoadouts = require('./extracted-loadouts.js');
-
-let passed = 0;
-let failed = 0;
-
-function test(name, condition, details = '') {
-    if (condition) {
-        console.log(`  ✓ ${name}`);
-        passed++;
-    } else {
-        console.log(`  ✗ ${name}`);
-        if (details) console.log(`    ${details}`);
-        failed++;
-    }
-}
 
 function getShip(name) {
     return extractedShips.find(s => s.name === name);
@@ -32,153 +21,197 @@ function getLoadout(name) {
     return extractedLoadouts[name];
 }
 
-console.log('\n=== Ship Extraction Tests ===\n');
+describe('Ship Extraction', () => {
+    describe('Snub ships QD size', () => {
+        const snubs = [
+            'Kruger P-52 Merlin',
+            'Kruger P-72 Archimedes',
+            'Mirai Fury',
+            'Mirai Fury MX',
+            'Mirai Fury LX',
+            'Argo MPUV Cargo',
+            'Argo MPUV Personnel',
+            'Argo MPUV Tractor'
+        ];
+        for (const name of snubs) {
+            it(`${name} has QD size 0`, () => {
+                const ship = getShip(name);
+                assert.ok(ship, `${name} not found`);
+                assert.equal(ship.quantumDrive.size, 0);
+            });
+        }
+    });
 
-// Test 1: Snub ships have QD size 0
-console.log('1. Snub ships QD size:');
-const snubs = [
-    'Kruger P-52 Merlin',
-    'Kruger P-72 Archimedes',
-    'Mirai Fury',
-    'Mirai Fury MX',
-    'Mirai Fury LX',
-    'Argo MPUV Cargo',
-    'Argo MPUV Personnel',
-    'Argo MPUV Tractor'
-];
-snubs.forEach(name => {
-    const ship = getShip(name);
-    if (ship) {
-        test(`${name} QD size = 0`, ship.quantumDrive.size === 0,
-             `Got: ${ship.quantumDrive.size}`);
-    } else {
-        test(`${name} exists`, false, 'Ship not found');
-    }
+    describe('Merlin pilot weapons (NoseMounted fix)', () => {
+        it('has 3 pilot weapons', () => {
+            const merlin = getShip('Kruger P-52 Merlin');
+            assert.ok(merlin, 'Merlin not found');
+            assert.equal(merlin.pilotWeapons.length, 3);
+        });
+        it('has S2 nose gun', () => {
+            const merlin = getShip('Kruger P-52 Merlin');
+            assert.ok(merlin, 'Merlin not found');
+            assert.ok(merlin.pilotWeapons.some(w => w.size === 2),
+                `Sizes: ${merlin.pilotWeapons.map(w => w.size).join(', ')}`);
+        });
+        it('has 2x S1 wing guns', () => {
+            const merlin = getShip('Kruger P-52 Merlin');
+            assert.ok(merlin, 'Merlin not found');
+            assert.equal(merlin.pilotWeapons.filter(w => w.size === 1).length, 2);
+        });
+    });
+
+    describe('Asgard weapon classification', () => {
+        it('has 6 pilot weapons', () => {
+            const ship = getShip('Anvil Asgard');
+            assert.ok(ship, 'Asgard not found');
+            assert.equal(ship.pilotWeapons.length, 6);
+        });
+        it('pilot weapons are all S3', () => {
+            const ship = getShip('Anvil Asgard');
+            assert.ok(ship, 'Asgard not found');
+            assert.ok(ship.pilotWeapons.every(w => w.size === 3),
+                `Sizes: ${ship.pilotWeapons.map(w => w.size).join(', ')}`);
+        });
+        it('has 1 manned turret', () => {
+            const ship = getShip('Anvil Asgard');
+            assert.ok(ship, 'Asgard not found');
+            assert.equal(ship.turrets.length, 1);
+        });
+        it('turret is 2x S4', () => {
+            const ship = getShip('Anvil Asgard');
+            assert.ok(ship, 'Asgard not found');
+            assert.equal(ship.turrets[0].guns, 2);
+            assert.equal(ship.turrets[0].size, 4);
+        });
+    });
+
+    describe('Reclaimer turret classification', () => {
+        it('has 0 pilot weapons', () => {
+            const ship = getShip('Aegis Reclaimer');
+            assert.ok(ship, 'Reclaimer not found');
+            assert.equal(ship.pilotWeapons.length, 0);
+        });
+        it('has 7 turrets total', () => {
+            const ship = getShip('Aegis Reclaimer');
+            assert.ok(ship, 'Reclaimer not found');
+            assert.equal(ship.turrets.length, 7);
+        });
+        it('has 1 manned turret', () => {
+            const ship = getShip('Aegis Reclaimer');
+            assert.ok(ship, 'Reclaimer not found');
+            assert.equal(ship.turrets.filter(t => t.type === 'manned').length, 1);
+        });
+        it('has 6 remote turrets', () => {
+            const ship = getShip('Aegis Reclaimer');
+            assert.ok(ship, 'Reclaimer not found');
+            assert.equal(ship.turrets.filter(t => t.type === 'remote').length, 6);
+        });
+    });
+
+    describe('Redeemer turret classification', () => {
+        it('has 2 pilot weapons', () => {
+            const ship = getShip('Aegis Redeemer');
+            assert.ok(ship, 'Redeemer not found');
+            assert.equal(ship.pilotWeapons.length, 2);
+        });
+        it('has 4 turrets total', () => {
+            const ship = getShip('Aegis Redeemer');
+            assert.ok(ship, 'Redeemer not found');
+            assert.equal(ship.turrets.length, 4);
+        });
+        it('has 2 manned turrets', () => {
+            const ship = getShip('Aegis Redeemer');
+            assert.ok(ship, 'Redeemer not found');
+            assert.equal(ship.turrets.filter(t => t.type === 'manned').length, 2);
+        });
+        it('has 2 remote turrets', () => {
+            const ship = getShip('Aegis Redeemer');
+            assert.ok(ship, 'Redeemer not found');
+            assert.equal(ship.turrets.filter(t => t.type === 'remote').length, 2);
+        });
+    });
+
+    describe('Standard ships', () => {
+        it('Gladius has 3 pilot weapons', () => {
+            const ship = getShip('Aegis Gladius');
+            assert.ok(ship, 'Gladius not found');
+            assert.equal(ship.pilotWeapons.length, 3);
+        });
+        it('Gladius has no turrets', () => {
+            const ship = getShip('Aegis Gladius');
+            assert.ok(ship, 'Gladius not found');
+            assert.equal(ship.turrets.length, 0);
+        });
+        it('Hammerhead has 0 pilot weapons', () => {
+            const ship = getShip('Aegis Hammerhead');
+            assert.ok(ship, 'Hammerhead not found');
+            assert.equal(ship.pilotWeapons.length, 0);
+        });
+        it('Hammerhead has 6 turrets', () => {
+            const ship = getShip('Aegis Hammerhead');
+            assert.ok(ship, 'Hammerhead not found');
+            assert.equal(ship.turrets.length, 6);
+        });
+    });
 });
 
-// Test 2: Merlin has correct pilot weapons (NoseMounted fix)
-console.log('\n2. Merlin pilot weapons (NoseMounted fix):');
-const merlin = getShip('Kruger P-52 Merlin');
-if (merlin) {
-    test('Merlin has 3 pilot weapons', merlin.pilotWeapons.length === 3,
-         `Got: ${merlin.pilotWeapons.length}`);
-    test('Merlin has S2 nose gun', merlin.pilotWeapons.some(w => w.size === 2),
-         `Sizes: ${merlin.pilotWeapons.map(w => w.size).join(', ')}`);
-    test('Merlin has 2x S1 wing guns', merlin.pilotWeapons.filter(w => w.size === 1).length === 2,
-         `S1 count: ${merlin.pilotWeapons.filter(w => w.size === 1).length}`);
-}
+describe('Stock Loadout', () => {
+    describe('Asgard loadout', () => {
+        it('has 6 pilot weapons in stock', () => {
+            const loadout = getLoadout('Anvil Asgard');
+            assert.ok(loadout, 'Asgard loadout not found');
+            assert.equal(loadout.pilotWeapons.length, 6);
+        });
+        it('has 2 turret weapons in stock', () => {
+            const loadout = getLoadout('Anvil Asgard');
+            assert.ok(loadout, 'Asgard loadout not found');
+            assert.equal(loadout.turretWeapons.length, 2);
+        });
+        it('excludes door guns (no YellowJacket in pilot weapons)', () => {
+            const loadout = getLoadout('Anvil Asgard');
+            assert.ok(loadout, 'Asgard loadout not found');
+            assert.ok(!loadout.pilotWeapons.some(w => w.includes('YellowJacket')),
+                `Found YellowJacket: ${loadout.pilotWeapons.filter(w => w.includes('YellowJacket'))}`);
+        });
+    });
 
-// Test 3: Asgard pilot/turret classification
-console.log('\n3. Asgard weapon classification:');
-const asgard = getShip('Anvil Asgard');
-if (asgard) {
-    test('Asgard has 6 pilot weapons', asgard.pilotWeapons.length === 6,
-         `Got: ${asgard.pilotWeapons.length}`);
-    test('Asgard pilot weapons are all S3', asgard.pilotWeapons.every(w => w.size === 3),
-         `Sizes: ${asgard.pilotWeapons.map(w => w.size).join(', ')}`);
-    test('Asgard has 1 manned turret', asgard.turrets.length === 1,
-         `Got: ${asgard.turrets.length} turrets`);
-    test('Asgard turret is 2x S4',
-         asgard.turrets[0]?.guns === 2 && asgard.turrets[0]?.size === 4,
-         `Got: ${asgard.turrets[0]?.guns}x S${asgard.turrets[0]?.size}`);
-}
+    describe('Merlin loadout', () => {
+        it('has 3 pilot weapons in stock', () => {
+            const loadout = getLoadout('Kruger P-52 Merlin');
+            assert.ok(loadout, 'Merlin loadout not found');
+            assert.equal(loadout.pilotWeapons.length, 3);
+        });
+        it('has 0 turret weapons', () => {
+            const loadout = getLoadout('Kruger P-52 Merlin');
+            assert.ok(loadout, 'Merlin loadout not found');
+            assert.equal(loadout.turretWeapons.length, 0);
+        });
+    });
 
-// Test 4: Reclaimer remote turrets
-console.log('\n4. Reclaimer turret classification:');
-const reclaimer = getShip('Aegis Reclaimer');
-if (reclaimer) {
-    test('Reclaimer has 0 pilot weapons', reclaimer.pilotWeapons.length === 0,
-         `Got: ${reclaimer.pilotWeapons.length}`);
-    test('Reclaimer has 7 turrets', reclaimer.turrets.length === 7,
-         `Got: ${reclaimer.turrets.length}`);
-    const mannedCount = reclaimer.turrets.filter(t => t.type === 'manned').length;
-    const remoteCount = reclaimer.turrets.filter(t => t.type === 'remote').length;
-    test('Reclaimer has 1 manned turret', mannedCount === 1, `Got: ${mannedCount}`);
-    test('Reclaimer has 6 remote turrets', remoteCount === 6, `Got: ${remoteCount}`);
-}
+    describe('Reclaimer loadout', () => {
+        it('has 0 pilot weapons in stock', () => {
+            const loadout = getLoadout('Aegis Reclaimer');
+            assert.ok(loadout, 'Reclaimer loadout not found');
+            assert.equal(loadout.pilotWeapons.length, 0);
+        });
+        it('has 21 turret weapons (includes PDC)', () => {
+            const loadout = getLoadout('Aegis Reclaimer');
+            assert.ok(loadout, 'Reclaimer loadout not found');
+            // 7 turrets x 2 guns = 14 + 7 PDC turrets x 1 gun = 21 total turret weapons
+            // PDC weapons are included in stock but PDC turrets aren't in spec (non-swappable)
+            assert.equal(loadout.turretWeapons.length, 21);
+        });
+    });
 
-// Test 5: Redeemer turrets
-console.log('\n5. Redeemer turret classification:');
-const redeemer = getShip('Aegis Redeemer');
-if (redeemer) {
-    test('Redeemer has 2 pilot weapons', redeemer.pilotWeapons.length === 2,
-         `Got: ${redeemer.pilotWeapons.length}`);
-    test('Redeemer has 4 turrets total', redeemer.turrets.length === 4,
-         `Got: ${redeemer.turrets.length}`);
-    const mannedCount = redeemer.turrets.filter(t => t.type === 'manned').length;
-    const remoteCount = redeemer.turrets.filter(t => t.type === 'remote').length;
-    test('Redeemer has 2 manned turrets', mannedCount === 2, `Got: ${mannedCount}`);
-    test('Redeemer has 2 remote turrets', remoteCount === 2, `Got: ${remoteCount}`);
-}
-
-console.log('\n=== Stock Loadout Tests ===\n');
-
-// Test 6: Asgard loadout matches spec
-console.log('6. Asgard loadout:');
-const asgardLoadout = getLoadout('Anvil Asgard');
-if (asgardLoadout) {
-    test('Asgard has 6 pilot weapons in stock', asgardLoadout.pilotWeapons.length === 6,
-         `Got: ${asgardLoadout.pilotWeapons.length}`);
-    test('Asgard has 2 turret weapons in stock', asgardLoadout.turretWeapons.length === 2,
-         `Got: ${asgardLoadout.turretWeapons.length}`);
-    test('No YellowJacket in pilot weapons (door guns excluded)',
-         !asgardLoadout.pilotWeapons.some(w => w.includes('YellowJacket')),
-         `Found: ${asgardLoadout.pilotWeapons.filter(w => w.includes('YellowJacket'))}`);
-}
-
-// Test 7: Merlin loadout matches spec
-console.log('\n7. Merlin loadout:');
-const merlinLoadout = getLoadout('Kruger P-52 Merlin');
-if (merlinLoadout) {
-    test('Merlin has 3 pilot weapons in stock', merlinLoadout.pilotWeapons.length === 3,
-         `Got: ${merlinLoadout.pilotWeapons.length}`);
-    test('Merlin has 0 turret weapons', merlinLoadout.turretWeapons.length === 0,
-         `Got: ${merlinLoadout.turretWeapons.length}`);
-}
-
-// Test 8: Reclaimer loadout
-console.log('\n8. Reclaimer loadout:');
-const reclaimerLoadout = getLoadout('Aegis Reclaimer');
-if (reclaimerLoadout) {
-    test('Reclaimer has 0 pilot weapons in stock', reclaimerLoadout.pilotWeapons.length === 0,
-         `Got: ${reclaimerLoadout.pilotWeapons.length}`);
-    // 7 turrets x 2 guns = 14 + 7 PDC turrets x 1 gun = 21 total turret weapons
-    // PDC weapons are included in stock but PDC turrets aren't in spec (non-swappable)
-    test('Reclaimer turret weapons count (includes PDC)', reclaimerLoadout.turretWeapons.length === 21,
-         `Got: ${reclaimerLoadout.turretWeapons.length}`);
-}
-
-// Test 9: Snub loadouts have no QD
-console.log('\n9. Snub loadouts (no QD):');
-snubs.slice(0, 3).forEach(name => {
-    const loadout = getLoadout(name);
-    if (loadout) {
-        test(`${name} has 0 QD in stock`, loadout.quantumDrives.length === 0,
-             `Got: ${loadout.quantumDrives.length}`);
-    }
+    describe('Snub loadouts have no QD', () => {
+        const snubsToCheck = ['Kruger P-52 Merlin', 'Kruger P-72 Archimedes', 'Mirai Fury'];
+        for (const name of snubsToCheck) {
+            it(`${name} has 0 quantum drives in stock`, () => {
+                const loadout = getLoadout(name);
+                assert.ok(loadout, `${name} loadout not found`);
+                assert.equal(loadout.quantumDrives.length, 0);
+            });
+        }
+    });
 });
-
-// Test 10: Standard ship checks
-console.log('\n10. Standard ships:');
-const gladius = getShip('Aegis Gladius');
-if (gladius) {
-    test('Gladius has 3 pilot weapons', gladius.pilotWeapons.length === 3,
-         `Got: ${gladius.pilotWeapons.length}`);
-    test('Gladius has no turrets', gladius.turrets.length === 0,
-         `Got: ${gladius.turrets.length}`);
-}
-
-const hammerhead = getShip('Aegis Hammerhead');
-if (hammerhead) {
-    test('Hammerhead has 0 pilot weapons', hammerhead.pilotWeapons.length === 0,
-         `Got: ${hammerhead.pilotWeapons.length}`);
-    test('Hammerhead has 6 turrets', hammerhead.turrets.length === 6,
-         `Got: ${hammerhead.turrets.length}`);
-}
-
-// Summary
-console.log('\n' + '='.repeat(50));
-console.log(`RESULTS: ${passed} passed, ${failed} failed`);
-console.log('='.repeat(50) + '\n');
-
-process.exit(failed > 0 ? 1 : 0);
