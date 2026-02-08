@@ -14,8 +14,10 @@
  * Usage: node validate.js [--verbose] [--fix-suggestions] [--json]
  *
  * Flags:
- *   --json    Output machine-readable JSON instead of human-readable text.
- *             JSON object contains: summary, issues, metadata.
+ *   --verbose          Show detailed per-issue output
+ *   --fix-suggestions  Show suggested fixes for fixable issues
+ *   --json             Output machine-readable JSON instead of human-readable text.
+ *                      JSON object contains: summary, issues, metadata.
  */
 
 const fs = require('fs');
@@ -26,8 +28,11 @@ const VERBOSE = process.argv.includes('--verbose');
 const SHOW_FIX_SUGGESTIONS = process.argv.includes('--fix-suggestions');
 const JSON_OUTPUT = process.argv.includes('--json');
 
-// When --json is active, suppress all progress/report console output.
-// Only the final JSON blob is written to stdout.
+/**
+ * Wrapper around console.log that suppresses output in --json mode.
+ * Ensures only the final JSON blob is written to stdout when --json is active.
+ * @param {...*} args - Arguments forwarded to console.log
+ */
 function log(...args) {
   if (!JSON_OUTPUT) {
     console.log(...args);
@@ -36,7 +41,11 @@ function log(...args) {
 
 function loadSCData(filePath) {
   const code = fs.readFileSync(filePath, 'utf8');
-  const sandbox = { window: {}, console };
+  // In JSON mode, provide a silent console to prevent data.js from polluting stdout
+  const sandboxConsole = JSON_OUTPUT
+    ? { log() {}, warn() {}, error() {}, info() {}, debug() {} }
+    : console;
+  const sandbox = { window: {}, console: sandboxConsole };
   vm.createContext(sandbox);
   vm.runInContext(code, sandbox);
   return sandbox.window.SC_DATA || sandbox.SC_DATA;
