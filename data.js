@@ -1,3 +1,62 @@
+/**
+ * @file Ship and component database for SC Component Tracker
+ *
+ * @typedef {Object} Weapon
+ * @property {string} name - Display name (e.g., "CF-117 Bulldog Repeater")
+ * @property {string} manufacturer - Manufacturer name
+ * @property {string} [type] - Weapon type (e.g., "Repeater", "Cannon")
+ *
+ * @typedef {Object} Component
+ * @property {string} name - Display name
+ * @property {string} manufacturer - Manufacturer name
+ * @property {number} size - Component size (1-4)
+ *
+ * @typedef {Object} PilotWeaponSlot
+ * @property {number} size - Hardpoint size (1-7)
+ *
+ * @typedef {Object} TurretSlot
+ * @property {"manned"|"remote"} type - Turret type
+ * @property {number} guns - Number of weapon mounts on turret
+ * @property {number} size - Weapon size per mount
+ *
+ * @typedef {Object} ComponentSlot
+ * @property {number} count - Number of slots
+ * @property {number} size - Slot size (0 = not applicable, e.g., snub ships)
+ *
+ * @typedef {Object} QDSlot
+ * @property {number} size - QD size (0 = no QD, e.g., snub ships)
+ *
+ * @typedef {Object} ShipSpec
+ * @property {string} name - Full name with manufacturer (e.g., "Aegis Gladius")
+ * @property {string} manufacturer - Manufacturer name
+ * @property {string} size - Ship size category ("Small", "Medium", "Large", "Capital")
+ * @property {PilotWeaponSlot[]} pilotWeapons - Pilot-controlled weapon hardpoints
+ * @property {TurretSlot[]} turrets - Turret hardpoints (manned or remote)
+ * @property {ComponentSlot} shields - Shield generator slots
+ * @property {ComponentSlot} powerPlants - Power plant slots
+ * @property {ComponentSlot} coolers - Cooler slots
+ * @property {QDSlot} quantumDrive - Quantum drive slot
+ *
+ * @typedef {Object} StockLoadout
+ * @property {string[]} pilotWeapons - Weapon names (or "Empty" for unfilled slots)
+ * @property {string[]} turretWeapons - Turret weapon names (per-gun or per-turret)
+ * @property {string[]} shields - Shield generator names
+ * @property {string[]} powerPlants - Power plant names
+ * @property {string[]} coolers - Cooler names
+ * @property {string[]} quantumDrives - Quantum drive names
+ *
+ * @typedef {Object} SCData
+ * @property {Object<number, Weapon[]>} weapons - Weapons indexed by size (1-7)
+ * @property {Component[]} shields - All shield generators
+ * @property {Component[]} powerPlants - All power plants
+ * @property {Component[]} coolers - All coolers
+ * @property {Component[]} quantumDrives - All quantum drives
+ * @property {ShipSpec[]} ships - All ship specifications
+ * @property {Object<string, StockLoadout>} stockLoadouts - Stock loadouts by ship name
+ * @property {function(ShipSpec): Object} getDefaultComponents - Get defaults for a ship
+ * @property {function(number): string} getComponentSizeLabel - Format size as "S1", "S2", etc.
+ */
+
 // Star Citizen Ships and Components Database
 // Component data extracted from game files (ship-items.json)
 // Weapon sizes: 1-7 (S1-S7)
@@ -8758,7 +8817,11 @@ SC_DATA.stockLoadouts = {
 };
 
 
-// Generate default loadout for a ship using actual stock components from game data
+/**
+ * Generates default loadout for a ship using actual stock components from game data
+ * @param {ShipSpec} shipSpec - The ship specification
+ * @returns {ShipComponents|null} Default component configuration or null if no spec provided
+ */
 SC_DATA.getDefaultComponents = function(shipSpec) {
     if (!shipSpec) return null;
 

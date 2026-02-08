@@ -3,6 +3,42 @@
 // ============ Data Layer ============
 
 const APP_VERSION = '0.86';
+
+/**
+ * @typedef {Object} ComponentSlot
+ * @property {string} name - Component name
+ * @property {number} size - Component size
+ *
+ * @typedef {Object} TurretSlot
+ * @property {string} type - Turret type (e.g., "manned", "remote")
+ * @property {number} guns - Number of guns in turret
+ * @property {number} size - Weapon size
+ * @property {string} weapon - Equipped weapon name
+ *
+ * @typedef {Object} ShipComponents
+ * @property {ComponentSlot[]} pilotWeapons - Equipped pilot weapons
+ * @property {TurretSlot[]} turrets - Equipped turret configurations
+ * @property {ComponentSlot[]} shields - Equipped shields
+ * @property {ComponentSlot[]} powerPlants - Equipped power plants
+ * @property {ComponentSlot[]} coolers - Equipped coolers
+ * @property {ComponentSlot[]} quantumDrives - Equipped quantum drives
+ *
+ * @typedef {Object} UserShip
+ * @property {string} id - Unique identifier
+ * @property {string} name - Ship name (matches ShipSpec.name)
+ * @property {string} [nickname] - User-defined nickname
+ * @property {ShipComponents} components - All equipped components
+ *
+ * @typedef {Object} StorageItem
+ * @property {string} name - Component name
+ * @property {string} type - Component type ("weapons", "shields", "powerPlants", "coolers", "quantumDrives")
+ * @property {number} size - Component size
+ * @property {number} quantity - Quantity in storage
+ *
+ * @typedef {Object} AppData
+ * @property {UserShip[]} ships - User's ships
+ * @property {StorageItem[]} storage - User's stored components
+ */
 const STORAGE_KEY = 'sc-component-tracker-data';
 const DATA_VERSION_KEY = 'sc-component-tracker-data-version';
 
@@ -14,6 +50,10 @@ const defaultData = {
     storage: []
 };
 
+/**
+ * Loads user data from localStorage
+ * @returns {AppData} The loaded app data or default empty data
+ */
 function loadData() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
@@ -27,6 +67,10 @@ function loadData() {
     return { ...defaultData };
 }
 
+/**
+ * Saves user data to localStorage
+ * @param {AppData} data - The app data to save
+ */
 function saveData(data) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
@@ -40,6 +84,10 @@ let currentShipSpec = null; // Holds the selected ship's specification
 
 // ============ Ship CRUD ============
 
+/**
+ * Adds a new ship to the user's hangar
+ * @param {UserShip} ship - The ship to add (id will be auto-generated)
+ */
 function addShip(ship) {
     ship.id = generateId();
     appData.ships.push(ship);
@@ -66,8 +114,12 @@ function getShipById(id) {
     return appData.ships.find(s => s.id === id);
 }
 
-// Get ship spec from database
-// Falls back to base ship for variants (e.g., "Aegis Gladius Pirate" -> "Aegis Gladius")
+/**
+ * Retrieves ship specification from the database
+ * Falls back to base ship for variants (e.g., "Aegis Gladius Pirate" -> "Aegis Gladius")
+ * @param {string} shipName - The ship name to look up
+ * @returns {Object|null} The ship specification or null if not found
+ */
 function getShipSpec(shipName) {
     // Direct match
     let spec = SC_DATA.ships.find(s => s.name === shipName);
