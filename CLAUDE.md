@@ -72,7 +72,7 @@ Modals use `openModal(id)`/`closeModal(id)` pattern. Key modals: `shipModal`, `s
 
 ## Scripts Directory
 
-The `scripts/` folder contains ~45 Node.js utilities for data processing:
+The `scripts/` folder contains active Node.js utilities for data processing. Legacy and one-off scripts have been moved to `scripts/archive/`.
 
 ### Key Extraction Scripts
 
@@ -107,7 +107,6 @@ node validate.js
 
 - `validate.js` - Data consistency checking (run after updates)
 - `debug-ship.js "Ship Name"` - Debug weapon hardpoints for a specific ship
-- `fix-ship-names.js` - Fix naming mismatches between spec/loadout
 
 ### Known Data Quirks
 
@@ -176,13 +175,14 @@ The update pipeline is complete and working. Run when new ships.json is availabl
 
 1. **Update `APP_VERSION`** in `app.js:5`
    ```js
-   const APP_VERSION = '0.68';
+   const APP_VERSION = '0.87';
    ```
 
-2. **Update cache-bust params** in `index.html` (3 places):
-   - Line 7: `styles.css?v=68`
-   - Line 252: `data.js?v=68`
-   - Line 253: `app.js?v=68`
+2. **Update cache-bust params** in `index.html` (4 places):
+   - Line 7: `styles.css?v=87`
+   - Line 321: `data.js?v=87`
+   - Line 322: `app.js?v=87`
+   - Line 323: `voice.js?v=87`
 
 3. **Update `CHANGELOG.md`** with version notes
 

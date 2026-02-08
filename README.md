@@ -4,7 +4,7 @@ A browser-based component management application for Star Citizen. Track your sh
 
 **[Use the App](https://lucky44.github.io/SC-Component-Tracker/)** — Runs in your browser.
 
-**Version:** 0.81
+**Version:** 0.87
 
 ## Features
 
@@ -127,13 +127,20 @@ The system auto-listens after responses, so you can chain multiple commands with
 SC-Component-Tracker/
 ├── index.html          # Main HTML structure with modals
 ├── app.js              # Application logic and event handlers
+├── voice.js            # Voice commands feature (Chrome/Edge)
 ├── styles.css          # Responsive styling with sci-fi theme
 ├── data.js             # Bundled ship and component database (fallback)
 ├── processed-data.json # Latest ship data for browser updates
-└── scripts/            # Utility scripts for data management
+├── validate.js         # Data validation script
+├── docs/               # Archived development notes
+└── scripts/            # Data processing and test scripts
+    ├── extract-ships.js           # Extract ship specs from ships.json
+    ├── extract-loadouts.js        # Extract stock loadouts from ships.json
+    ├── sync-all-data.js           # Main sync script - updates data.js
     ├── update-from-scunpacked.js  # Generate processed-data.json
-    ├── compare-ships.js           # Compare data.js vs processed-data.json
-    └── replace-ships-array.js     # Sync ships to data.js
+    ├── test-extraction.js         # Unit tests for extraction logic
+    ├── test-update-pipeline.js    # Integration tests for pipeline
+    └── archive/                   # Legacy one-off utility scripts
 ```
 
 ## Updating Ship Data
