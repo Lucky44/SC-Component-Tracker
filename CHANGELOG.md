@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 2026-02-08 — v0.88
+
+- Added "Buy Me a Beer" donation button in the header (links to buymeacoffee.com/lucky44)
+  - Pint glass icon positioned between search bar and Export/Import buttons
+- Version bump to 0.88
+
 ## 2026-02-08 — v0.87
 
 **Project Cleanup & Tooling**

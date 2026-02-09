@@ -185,7 +185,28 @@ h1, h2, h3, h4, .btn, .section-header {
 
 .search-container {
     position: relative;
-    width: 66%;
+    width: 50%;
+}
+
+/* Donate button */
+.btn.donate-btn {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    clip-path: none;
+    border-radius: 8px;
+    flex-shrink: 0;
+    margin-left: 3.5%;
+}
+
+.donate-icon {
+    height: 30px;
+    width: auto;
 }
 
 #searchInput {
@@ -963,7 +984,16 @@ form {
 
     /* Search bar */
     .search-container {
-        width: 100%;
+        flex: 1;
+        width: auto;
+    }
+
+    .donate-btn {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        line-height: 38px;
+        font-size: 1.1rem;
     }
 
     #searchInput {

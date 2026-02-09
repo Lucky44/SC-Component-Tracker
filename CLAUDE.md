@@ -39,7 +39,7 @@ node validate.js
 
 Output includes a summary and detailed report saved to `validation_report.txt`.
 
-**Important**: After editing `data.js` or `app.js`, hard refresh (`Ctrl+Shift+R`) is required due to browser caching. Cache-busting version tokens are used in production (e.g., `styles.css?v=87`).
+**Important**: After editing `data.js` or `app.js`, hard refresh (`Ctrl+Shift+R`) is required due to browser caching. Cache-busting version tokens are used in production (e.g., `styles.css?v=88`).
 
 ## Architecture
 
@@ -148,13 +148,13 @@ The update pipeline is complete and working. Run when new ships.json is availabl
 
 1. **Update `APP_VERSION`** in `app.js:5`
    ```js
-   const APP_VERSION = '0.87';
+   const APP_VERSION = '0.88';
    ```
 
 2. **Update cache-bust params** in `index.html` (3 places):
-   - Line 7: `styles.css?v=87`
-   - Line 253: `data.js?v=87`
-   - Line 254: `app.js?v=87`
+   - Line 7: `styles.css?v=88`
+   - Line 254: `data.js?v=88`
+   - Line 255: `app.js?v=88`
 
 3. **Update `CHANGELOG.md`** with version notes
 
